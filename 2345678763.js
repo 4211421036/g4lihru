@@ -22,11 +22,11 @@
 
 // @ts-nocheck // typescript checks disabled as this is pure javascript
 
-import Human from './human.esm.js'; // equivalent of @vladmandic/human
-import Menu from './menu.js';
-import GLBench from './gl-bench.js';
-import webRTC from './webrtc.js';
-import jsonView from './jsonview.js';
+import Human from 'https://vladmandic.github.io/human/dist/human.esm.js'; // equivalent of @vladmandic/human
+import Menu from 'https://vladmandic.github.io/human/demo/helpers/menu.js';
+import GLBench from 'https://vladmandic.github.io/human/demo/helpers/gl-bench.js';
+import webRTC from 'https://vladmandic.github.io/human/demo/helpers/webrtc.js';
+import jsonView from 'https://vladmandic.github.io/human/demo/helpers/jsonview.js';
 
 let human;
 
@@ -80,7 +80,7 @@ const ui = {
   baseBackground: 'rgba(50, 50, 50, 1)', // 'grey'
   columns: 2, // when processing sample images create this many columns
   useWorker: true, // use web workers for processing
-  worker: 'index-worker.js',
+  worker: 'https://vladmandic.github.io/human/demo/index-worker.js',
   maxFPSframes: 10, // keep fps history for how many frames
   modelsPreload: false, // preload human models on startup
   modelsWarmup: false, // warmup human models on startup
@@ -123,7 +123,7 @@ const ui = {
 const pwa = {
   enabled: true,
   cacheName: 'Human',
-  scriptFile: 'index-pwa.js',
+  scriptFile: 'https://vladmandic.github.io/human/demo/index-pwa.js',
   cacheModels: true,
   cacheWASM: true,
   cacheOther: false,
