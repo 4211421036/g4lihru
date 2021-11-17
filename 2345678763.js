@@ -80,7 +80,7 @@ const ui = {
   baseBackground: 'rgba(50, 50, 50, 1)', // 'grey'
   columns: 2, // when processing sample images create this many columns
   useWorker: true, // use web workers for processing
-  worker: 'https://vladmandic.github.io/human/demo/index-worker.js',
+  worker: 'index-worker.js',
   maxFPSframes: 10, // keep fps history for how many frames
   modelsPreload: false, // preload human models on startup
   modelsWarmup: false, // warmup human models on startup
@@ -123,7 +123,7 @@ const ui = {
 const pwa = {
   enabled: true,
   cacheName: 'Human',
-  scriptFile: 'https://vladmandic.github.io/human/demo/index-pwa.js',
+  scriptFile: 'index-pwa.js',
   cacheModels: true,
   cacheWASM: true,
   cacheOther: false,
