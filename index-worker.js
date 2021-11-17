@@ -6,7 +6,7 @@
 /// <reference lib="webworker"/>
 
 // load Human using IIFE script as Chome Mobile does not support Modules as Workers
-self.importScripts('../dist/human.js');
+self.importScripts('./human.js');
 
 let busy = false;
 // @ts-ignore
