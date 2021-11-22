@@ -7,6 +7,8 @@
 
 /** @type {Human} */
 import Human from '../../dist/human.esm.js';
+import * as cocoSsd from "@tensorflow-models/coco-ssd";
+import "@tensorflow/tfjs";
 
 const userConfig = {
   backend: 'humangl',
