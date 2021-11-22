@@ -101,7 +101,12 @@
     </style>
   </head>
   <body>
-    <app-root id="map"></app-root>    
+    <main id="map">
+      <div class="progress" id="progress-bar">
+        <div class="indeterminate"></div>
+      </div>
+    </main>
+    <app-root></app-root>    
     <div id="play" class="play icon-play"></div>
     <div id="background">
       <div class='wave one'></div>
@@ -146,6 +151,12 @@
             document.getElementById("loader-wrapper").style.display = "";
         }, 2000);
     </script>
+      <script type="text/javascript">
+        setTimeout(function() {
+            document.getElementById("map").style.display = "none";
+        }, 2000);
+    </script>
+
   <!--
   <script type="text/javascript" src="./runtime.a66f828dca56eeb90e02.js"></script>
   <script type="text/javascript" src="./polyfills.a45719e04e0a2139ff57.js"></script>
