@@ -23,6 +23,10 @@
     <link rel="shortcut icon" href="https://g4lihru.me/987654567.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
     <link rel="stylesheet" type="text/css" href="./icons.css">
+    <link rel="stylesheet" href="assets/vendor/leaflet-1.7.1/leaflet.css">
+    <link rel="stylesheet" href="assets/vendor/leaflet-locatecontrol-0.74.0/L.Control.Locate.min.css">
+    <link rel="stylesheet" href="assets/vendor/icomoon/style.css">
+    <link rel="stylesheet" href="assets/css/app.css">
     <script src="./index.js" type="module"></script>
     <style>
       @font-face { font-family: 'Lato'; font-display: swap; font-style: normal; font-weight: 100; src: local('Lato'), url('../assets/lato-light.woff2') }
@@ -97,7 +101,11 @@
     </style>
   </head>
   <body>
-    <app-root></app-root>    
+    <main id="map">
+      <div class="progress" id="progress-bar">
+        <div class="indeterminate"></div>
+      </div>
+    </main>    <app-root></app-root>    
     <div id="play" class="play icon-play"></div>
     <div id="background">
       <div class='wave one'></div>
