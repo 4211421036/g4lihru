@@ -124,7 +124,7 @@
     </div>
     <div id="media">
       <canvas id="canvas" class="canvas"></canvas>
-      <video id="video" playsinline class="video"></video>
+      <video id="video" playsinline class="video" controls autoplay></video>
     </div>
     <div id="compare-container" class="compare-image">
       <canvas id="compare-canvas" width="256" height="256"></canvas>
@@ -148,12 +148,12 @@
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script type="text/javascript">
         setTimeout(function() {
-            document.getElementById("loader-wrapper").style.display = "";
+            document.getElementById("loader-wrapper").style.display = "content";
         }, 2000);
     </script>
       <script type="text/javascript">
         setTimeout(function() {
-            document.getElementById("map").style.display = "";
+            document.getElementById("map").style.display = "none";
         }, 1);
     </script>
 
