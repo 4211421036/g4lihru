@@ -222,8 +222,11 @@
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
     <div id="status" class="status"></div>
-    
-  
+    <script type="text/javascript">
+        setTimeout(function() {
+            document.getElementById("loader-wrapper").style.display = "content";
+        }, 2000);
+    </script>
     
     <script src="./assets/vendor/localForage-1.10.0/localforage.min.js"></script>
     <script src="./assets/vendor/leaflet-1.7.1/leaflet.js"></script>
