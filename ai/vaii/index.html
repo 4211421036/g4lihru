@@ -94,6 +94,8 @@
       .fas { display: inline-block;	width: 0;	height: 0; border-style: solid; }
       .fa-caret-down { border-width: 10px 8px 0 8px; border-color: white transparent }
       .fa-caret-right {	border-width: 10px 0 8px 10px; border-color: transparent transparent transparent white; }
+      .float{position:fixed; bottom:40px; right:40px; }
+      .my-float{ margin-top:22px;}
     </style>
   </head>
   <body>
@@ -114,7 +116,10 @@
     </div>
     <div id="media">
       <canvas id="canvas" class="canvas"></canvas>
-      <video id="video" playsinline class="video" scrolling="no"></video>
+      <div class="float">
+          <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="640" height="480" allow="autoplay" allowfullscreen="true"></iframe>
+      </div>
+      <video id="video" playsinline class="video"></video>
     </div>
     <div id="compare-container" class="compare-image">
       <canvas id="compare-canvas" width="256" height="256"></canvas>
