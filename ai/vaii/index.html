@@ -113,6 +113,8 @@
       <div id="btnProcess" class="icon"><div class="icon-stats"></div>options</div>
       <div id="btnModel" class="icon"><div class="icon-games"></div>models</div>
       <div id="btnStart" class="icon"><div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
+      <div id="record" class="icon"><button id="start"><div class="icon-record">Record</button></div></div>
+      <div id="record" class="icon"><button id="stop"><div class="icon-record">Stop Record</button></div></div>
     </div>
     <div id="media">
       <canvas id="canvas" class="canvas"></canvas>
@@ -144,12 +146,43 @@
             document.getElementById("loader-wrapper").style.display = "content";
         }, 2000);
     </script>
+    <script type="text/javascript">
+          const start = document.getElementById("start");
+          const stop = document.getElementById("stop");
+          const video = document.querySelector("video");
+          let recorder, stream;
 
-  <!--
-  <script type="text/javascript" src="./runtime.a66f828dca56eeb90e02.js"></script>
-  <script type="text/javascript" src="./polyfills.a45719e04e0a2139ff57.js"></script>
-      <script type="text/javascript" src="https://tfjs-objectdetection.firebaseapp.com/main.3855541125395e37a7f2.js"></script>
--->
+          async function startRecording() {
+            stream = await navigator.mediaDevices.getDisplayMedia({
+              video: { mediaSource: "screen" }
+            });
+            recorder = new MediaRecorder(stream);
+
+            const chunks = [];
+            recorder.ondataavailable = e => chunks.push(e.data);
+            recorder.onstop = e => {
+              const completeBlob = new Blob(chunks, { type: chunks[0].type });
+              video.src = URL.createObjectURL(completeBlob);
+            };
+
+            recorder.start();
+          }
+
+          start.addEventListener("click", () => {
+            start.setAttribute("disabled", true);
+            stop.removeAttribute("disabled");
+
+            startRecording();
+          });
+
+          stop.addEventListener("click", () => {
+            stop.setAttribute("disabled", true);
+            start.removeAttribute("disabled");
+
+            recorder.stop();
+            stream.getVideoTracks()[0].stop();
+          });
+     </script>                 
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
   </body>
 </html>
