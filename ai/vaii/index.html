@@ -113,7 +113,7 @@
       <div id="btnProcess" class="icon"><div class="icon-stats"></div>options</div>
       <div id="btnModel" class="icon"><div class="icon-games"></div>models</div>
       <div id="record" class="icon"><div id="start" class="icon-record"></div>Record</div>
-      <div id="record" class="icon"><div id="stop download" class="icon-record"></div>Stop Record</div>
+      <div id="record" class="icon"><div id="stop" class="icon-record"></div>Stop Record</div>
       <div id="btnStart" class="icon"><div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
     </div>
     <div id="media">
@@ -150,7 +150,6 @@
 	const start = document.getElementById("start");
           const stop = document.getElementById("stop");
           const video = document.querySelector("video");
-	  const downloadMy = document.querySelectorId("download");
           let recorder, stream;
 
           async function startRecording() {
@@ -174,8 +173,8 @@
 		chunks = [];
 
 		video.href = URL.createObjectURL(blob);
-		downloadMy.download = 'video.mp4';
-		downloadMy.disabled = false;
+		stop.download = 'video.mp4';
+		stop.disabled = false;
 
 		video.src = URL.createObjectURL(blob);
 		video.load();
