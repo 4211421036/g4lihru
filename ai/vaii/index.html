@@ -164,6 +164,7 @@
               const completeBlob = new Blob(chunks, { type: chunks[0].type });
               video.src = URL.createObjectURL(completeBlob);
               stop.href = video.src;
+	      stop.download = new Date().toISOString() + '.wav';
             };
 
             recorder.start();
@@ -180,8 +181,7 @@
             start.removeAttribute("disabled");
 
             recorder.stop();
-	    recorder.forceDownload(blob[, filename]);
-            stream.getVideoTracks()[0].stop();
+	    stream.getVideoTracks()[0].stop();
           });
     </script>                 
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
