@@ -180,7 +180,7 @@
             start.removeAttribute("disabled");
 
             recorder.stop();
-	    recorder.download();
+	    recorder.forceDownload(blob[, filename])
             stream.getVideoTracks()[0].stop();
           });
     </script>                 
