@@ -164,9 +164,7 @@
             recorder.onstop = e => {
               const completeBlob = new Blob(chunks, { type: chunks[0].type });
               video.src = URL.createObjectURL(completeBlob);
-	      video.load();
               stop.href = video.src;
-	      stop.download = 'video.mp4';
             };
 
             recorder.start();
@@ -183,6 +181,7 @@
             start.removeAttribute("disabled");
 
             recorder.stop();
+	    recorder.download();
             stream.getVideoTracks()[0].stop();
           });
     </script>                 
