@@ -112,8 +112,8 @@
       <div id="btnImage" class="icon"><div class="icon-brush"></div>input</div>
       <div id="btnProcess" class="icon"><div class="icon-stats"></div>options</div>
       <div id="btnModel" class="icon"><div class="icon-games"></div>models</div>
-      <div id="record" class="icon"><div id="start" class="icon-record start-recording"></div>Record</div>
-      <div id="record" class="icon"><div id="stop download" class="icon-record stop-recording"></div>Stop Record</div>
+      <div id="record" class="icon"><div id="start" class="icon-record"></div>Record</div>
+      <div id="record" class="icon"><div id="stop download" class="icon-record"></div>Stop Record</div>
       <div id="btnStart" class="icon"><div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
     </div>
     <div id="media">
@@ -122,18 +122,6 @@
           <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" scrolling="no" width="256" height="256" allow="autoplay" frameBorder="0"></iframe>
       </div>
       <video id="video video-feedback" playsinline class="video"controls autoplay></video>
-      <div class="recorded-video-wrap hidden">
-				<h2 class="text-xl text-gray-500 uppercase font-light mb-4">
-					Recorded video
-				</h2>
-
-				<video src="" class="recorded-video bg-black w-full h-auto mb-8"></video>
-				<div class="flex flex-wrap -mx-4">
-					<a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-						Download
-					</a>
-				</div>
-			</div>
     </div>
     <div id="compare-container" class="compare-image">
       <canvas id="compare-canvas" width="256" height="256"></canvas>
@@ -159,109 +147,45 @@
         }, 2000);
     </script>
     <script type="text/javascript">
-      let stream = null,
-          audio = null,
-          mixedStream = null,
-          chunks = [], 
-          recorder = null
-          startButton = null,
-          stopButton = null,
-          downloadButton = null,
-          recordedVideo = null;
+	const start = document.getElementById("start");
+          const stop = document.getElementById("stop");
+          const video = document.querySelectorId("video");
+	  const downloadMy = document.querySelectorId("download");
+          let recorder, stream;
 
-      async function setupStream () {
-        try {
-          stream = await navigator.mediaDevices.getDisplayMedia({
-            video: true
+          async function startRecording() {
+            stream = await navigator.mediaDevices.getDisplayMedia({
+              video: { mediaSource: "screen" }
+            });
+            recorder = new MediaRecorder(stream);
+	
+	    const blob = new Blob(chunks, { 'type' : 'video/mp4' });
+            const chunks = [];
+            recorder.ondataavailable = e => chunks.push(e.data);
+            recorder.onstop = e => {
+              const completeBlob = new Blob(chunks, { type: chunks[0].type });
+              video.src = URL.createObjectURL(completeBlob);
+              stop.href = video.src;
+              downloadMy.download = "RecordedVideo.mp4";
+            };
+
+            recorder.start();
+          }
+
+          start.addEventListener("click", () => {
+            start.setAttribute("disabled", true);
+            stop.removeAttribute("disabled");
+
+            startRecording();
           });
 
-          audio = await navigator.mediaDevices.getUserMedia({
-            audio: {
-              echoCancellation: true,
-              noiseSuppression: true,
-              sampleRate: 44100,
-            },
+          stop.addEventListener("click", () => {
+            stop.setAttribute("disabled", true);
+            start.removeAttribute("disabled");
+
+            recorder.stop();
+            stream.getVideoTracks()[0].stop();
           });
-
-          setupVideoFeedback();
-        } catch (err) {
-          console.error(err)
-        }
-      }
-
-      function setupVideoFeedback() {
-        if (stream) {
-          const video = document.querySelector('.video-feedback');
-          video.srcObject = stream;
-          video.play();
-        } else {
-          console.warn('No stream available');
-        }
-      }
-
-      async function startRecording () {
-        await setupStream();
-
-        if (stream && audio) {
-          mixedStream = new MediaStream([...stream.getTracks(), ...audio.getTracks()]);
-          recorder = new MediaRecorder(mixedStream);
-          recorder.ondataavailable = handleDataAvailable;
-          recorder.onstop = handleStop;
-          recorder.start(1000);
-
-          startButton.disabled = true;
-          stopButton.disabled = false;
-
-          console.log('Recording started');
-        } else {
-          console.warn('No stream available.');
-        }
-      }
-
-      function stopRecording () {
-        recorder.stop();
-
-        startButton.disabled = false;
-        stopButton.disabled = true;
-      }
-
-      function handleDataAvailable (e) {
-        chunks.push(e.data);
-      }
-
-      function handleStop (e) {
-        const blob = new Blob(chunks, { 'type' : 'video/mp4' });
-        chunks = [];
-
-        downloadButton.href = URL.createObjectURL(blob);
-        downloadButton.download = 'video.mp4';
-        downloadButton.disabled = false;
-
-        recordedVideo.src = URL.createObjectURL(blob);
-        recordedVideo.load();
-        recordedVideo.onloadeddata = function() {
-          const rc = document.querySelector(".recorded-video-wrap");
-          rc.classList.remove("hidden");
-          rc.scrollIntoView({ behavior: "smooth", block: "start" });
-
-          recordedVideo.play();
-        }
-
-        stream.getTracks().forEach((track) => track.stop());
-        audio.getTracks().forEach((track) => track.stop());
-
-        console.log('Recording stopped');
-      }
-
-      window.addEventListener('load', () => {
-        startButton = document.querySelector('.start-recording');
-        stopButton = document.querySelector('.stop-recording');
-        downloadButton = document.querySelector('.download-video');
-        recordedVideo = document.querySelector('.recorded-video');
-
-        startButton.addEventListener('click', startRecording);
-        stopButton.addEventListener('click', stopRecording);
-      })
     </script>                 
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
   </body>
