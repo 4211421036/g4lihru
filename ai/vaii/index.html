@@ -146,6 +146,11 @@
             document.getElementById("loader-wrapper").style.display = "content";
         }, 2000);
     </script>
+    <script>
+	html2canvas(document.querySelector("#stop")).then(canvas => {
+    	document.body.appendChild(canvas)
+	});
+    </script>
     <script type="text/javascript">
 	const start = document.getElementById("start");
           const stop = document.getElementById("stop");
