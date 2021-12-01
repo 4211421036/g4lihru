@@ -159,19 +159,32 @@
             });
             recorder = new MediaRecorder(stream);
 	
-	    const blob = new Blob(chunks, { 'type' : 'video/mp4' });
             const chunks = [];
             recorder.ondataavailable = e => chunks.push(e.data);
             recorder.onstop = e => {
               const completeBlob = new Blob(chunks, { type: chunks[0].type });
               video.src = URL.createObjectURL(completeBlob);
               stop.href = video.src;
-              downloadMy.download = "RecordedVideo.mp4";
             };
 
             recorder.start();
           }
+	function handleStop (e) {
+		const blob = new Blob(chunks, { 'type' : 'video/mp4' });
+		chunks = [];
 
+		video.href = URL.createObjectURL(blob);
+		downloadMy.download = 'video.mp4';
+		downloadMy.disabled = false;
+
+		video.src = URL.createObjectURL(blob);
+		video.load();
+
+		stream.getTracks().forEach((track) => track.stop());
+		audio.getTracks().forEach((track) => track.stop());
+
+		console.log('Recording stopped');
+	}
           start.addEventListener("click", () => {
             start.setAttribute("disabled", true);
             stop.removeAttribute("disabled");
