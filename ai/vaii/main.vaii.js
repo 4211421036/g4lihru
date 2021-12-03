@@ -9,7 +9,7 @@ function startListening() {
   
   recog.onresult = handleResults(data){
     handleResults(data);
-  };
+  }
 }
 
 function handleResults(data){
