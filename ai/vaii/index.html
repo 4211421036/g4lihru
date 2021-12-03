@@ -157,7 +157,7 @@
           recog.start();
           recog.onstart = console.log("silakan bicara");
 
-          recog.onresult = handleResults(data){
+          recog.onresult = function (data){
             handleResults(data);
           }
         }
