@@ -97,6 +97,25 @@
       .fa-caret-right {	border-width: 10px 0 8px 10px; border-color: transparent transparent transparent white; }
       .float{position:fixed; bottom:40px; right:40px; overflow: hidden; }
       .my-float{ margin-top:22px;}
+      .one {
+        transform:scaleY(.01) scaleX(0);
+        animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        .modal-background {
+          .modal {
+            transform:scale(0);
+            animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          }
+        }
+        &.out {
+          transform:scale(1);
+          animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          .modal-background {
+            .modal {
+              animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+          }
+        }
+      }
       .modal { display: none; /* Hidden by default */ position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ padding-top: 100px; /* Location of the box */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */ }
       .modal-content { background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%; }
       .close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; }
@@ -125,7 +144,7 @@
       <div class="float">
           <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
       </div>
-      <div id="myModal" class="modal">
+      <div id="myModal one" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
