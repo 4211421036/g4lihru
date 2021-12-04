@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="https://g4lihru.me/987654567.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
     <link rel="stylesheet" type="text/css" href="./icons.css">
+    <link rel="stylesheet" href="dist/tailwind.css" />
     <script src="./index.js" type="module"></script>
     <style>
       @font-face { font-family: 'Lato'; font-display: swap; font-style: normal; font-weight: 100; src: local('Lato'), url('../assets/lato-light.woff2') }
@@ -128,7 +129,45 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-          <iframe src="https://g4lihru.me/meet" width: 100%; height: 100%; allow="autoplay" frameBorder="0"></iframe>
+          <header class="bg-gray-900">
+             <div class="container mx-auto">
+                <div class="flex justify-center items-center py-4">
+                    <h1 class="text-2xl font-bold uppercase">Meet Record</h1>
+                </div>  
+             </div>
+          </header>
+            <main class="overflow-hidden">
+              <div class="container mx-auto py-8 px-4">
+                <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
+                  Meet Record
+                </h2>
+
+                <video src="" autplay class="video-feedback bg-black w-full h-auto mb-4"></video>
+
+                <div class="flex flex-wrap -mx-4 mb-8">
+                  <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
+                    Record Screen
+                  </button>
+                  <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                    Stop Recording
+                  </button>
+                </div>
+
+                <div class="recorded-video-wrap hidden">
+                  <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
+                    Hasil Meet
+                  </h2>
+
+                  <video src="" class="recorded-video bg-black w-full h-auto mb-8"></video>
+                  <div class="flex flex-wrap -mx-4">
+                    <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                      Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <script src="https://g4lihru.me/meet/dist/main.js"></script>   
       </div>
     </div>
       <video id="video" playsinline class="video"controls autoplay></video>
