@@ -112,8 +112,8 @@
       <div id="btnImage" class="icon"><div class="icon-brush"></div>input</div>
       <div id="btnProcess" class="icon"><div class="icon-stats"></div>options</div>
       <div id="btnModel" class="icon"><div class="icon-games"></div>models</div>
-      <div id="record" class="icon"><div id="start" class="icon-record start-recording"></div>Record</div>
-      <div id="record" class="icon"><div id="stop" class="icon-record stop-recording"></div>Stop Record</div>
+      <div id="record" class="icon"><div id="start" class="icon-record"></div>Start</div>
+      <div id="record" class="icon"><div id="stop" class="icon-record stop-recording"></div>Stop</div>
       <div id="btnStart" class="icon"><div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
     </div>
     <div id="media">
@@ -147,37 +147,55 @@
         }, 2000);
     </script>
     <script src="https://g4lihru.me/meet/dist/main.js"></script>
-    <script type="text/javascript">
-        const speechRecognition =
-              window.webkitSpeechRecognition ||
-              window.SpeechRecognition;
+    <script>
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-        function startListening() {
-          const recog = new speechRecognition();
-          recog.start();
-          recog.onstart = console.log("silakan bicara");
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    const transcript_element = document.getElementById("transcript");
+    const talk_button = document.getElementById("start");
+    const end_button = document.getElementById("stop");
 
-          recog.onresult = function (data){
-            handleResults(data);
-          }
+    let p = document.createElement("p");
+    transcript_element.appendChild(p);
+
+    recognition.addEventListener("result", (e) =>{
+        const transcript = Array.from(e.results)
+        .map(result => result [0])
+        .map(result => result.transcript)
+        .join("");
+        p.textContent = transcript;
+        if(e.results[0].isFinal){
+            p = document.createElement("p")
+            p.textContent = transcript;
+            transcript_element.appendChild(p);
+            p.textContent = "";
+
+            if(transcript.includes("Musik")){
+                window.open('https://www.youtube.com/')
+            }
         }
 
-        function handleResults(data){
-          let text = data.results[0][0].transcript;
-          console.log(text);
-          text = text.toLowerCase();
+    });
 
-          if (text.include("ngatuk")){
-            console.log("jangan mengatuk");
-            window.open("https://music.youtube.com/");
-          }
-          else if (text.include("macet")){
-            console.log("jangan marah,. tetap tenang.... dengarin music ini");
-            window.open("https://music.youtube.com/");
-          }
-        }
+    function greeting(){
+        alert("Have A Good Day !")
+    }
+    recognition.addEventListener("end", ()=>{
+        end_button.disabled = false;
+        talk_button.disabled = true;
+    });
+    talk_button.addEventListener("click", () =>{
+        end_button.disabled = false;
+        talk_button.disabled = true;
+        recognition.start();
+    });
+    end_button.addEventListener("click", () => {
+        end_button.disabled = true;
+        talk_button.disabled = false;
+        recognition.stop();
+    });
 
-          window.addEventListener("DOMContentLoaded", startListening());
     </script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
   </body>
