@@ -1,0 +1,72 @@
+
+<html>
+
+<head>
+    <title>Cloud SIGMA 24 | Galih Ridho Utomo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="https://sigma-24.web.app/img/Fevicon.png" type="image/png">
+
+    <meta name="theme-color" content="#023b4d">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#023b4d">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#023b4d">
+    <!-- Description -->
+</head>
+
+<body>
+    <div class="container mt-2">
+        <div class="card">
+            <div class="card-body">
+                <form id="post-form">
+                    <center>
+                        <h3>Storage Galih</h3>
+                    </center>
+                    <textarea id="post" class="form-control" placeholder="What's on your mind..."></textarea>
+                    <input type="file" class="form-control" id="image" accept="images/* application/* video/* audio/*">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-success" onclick="upload()">Upload</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+        <div class="row mt-4" id="posts">
+
+        </div>
+
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
+        authDomain: "g4lihriu.firebaseapp.com",
+        databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
+        projectId: "g4lihriu",
+        storageBucket: "g4lihriu.appspot.com",
+        messagingSenderId: "387783527536",
+        appId: "1:387783527536:web:8df38ac72783aea162b8b5",
+        measurementId: "G-DCSX3TS7ZS"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./drive.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
