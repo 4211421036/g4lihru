@@ -31,7 +31,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/facemesh.json
 INFO:  created on: 2020-10-12T18:46:46.944Z
-INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', convertedBy: 'https://github.com/vladmandic', version: undefined }
+INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', version: undefined }
 INFO:  model inputs based on signature
  { name: 'input_1:0', dtype: 'DT_FLOAT', shape: [ 1, 192, 192, 3 ] }
 INFO:  model outputs based on signature
@@ -55,7 +55,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/emotion.json
 INFO:  created on: 2020-11-05T20:11:29.740Z
-INFO:  metadata: { generatedBy: 'https://github.com/oarriaga/face_classification', convertedBy: 'https://github.com/vladmandic', version: undefined }
+INFO:  metadata: { generatedBy: 'https://github.com/oarriaga/face_classification', version: undefined }
 INFO:  model inputs based on signature
  { name: 'input_1:0', dtype: 'DT_FLOAT', shape: [ -1, 64, 64, 1 ] }
 INFO:  model outputs based on signature
@@ -78,7 +78,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/faceres.json
 INFO:  created on: 2021-03-21T14:12:59.863Z
-INFO:  metadata: { generatedBy: 'https://github.com/HSE-asavchenko/HSE_FaceRec_tf', convertedBy: 'https://github.com/vladmandic', version: undefined }
+INFO:  metadata: { generatedBy: 'https://github.com/HSE-asavchenko/HSE_FaceRec_tf', version: undefined }
 INFO:  model inputs based on signature
  { name: 'input_1', dtype: 'DT_FLOAT', shape: [ -1, 224, 224, 3 ] }
 INFO:  model outputs based on signature
@@ -104,7 +104,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/blazeface.json
 INFO:  created on: 2020-10-15T19:57:26.419Z
-INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', convertedBy: 'https://github.com/vladmandic', version: undefined }
+INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', version: undefined }
 INFO:  model inputs based on signature
  { name: 'input:0', dtype: 'DT_FLOAT', shape: [ 1, 256, 256, 3 ] }
 INFO:  model outputs based on signature
@@ -129,7 +129,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/mb3-centernet.json
 INFO:  created on: 2021-05-19T11:50:13.013Z
-INFO:  metadata: { generatedBy: 'https://github.com/610265158/mobilenetv3_centernet', convertedBy: 'https://github.com/vladmandic', version: undefined }
+INFO:  metadata: { generatedBy: 'https://github.com/610265158/mobilenetv3_centernet', version: undefined }
 INFO:  model inputs based on signature
  { name: 'tower_0/images', dtype: 'DT_FLOAT', shape: [ 1, 512, 512, 3 ] }
 INFO:  model outputs based on signature
@@ -158,7 +158,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/movenet-lightning.json
 INFO:  created on: 2021-05-29T12:26:32.994Z
-INFO:  metadata: { generatedBy: 'https://tfhub.dev/google/movenet/singlepose/lightning/4', convertedBy: 'https://github.com/vladmandic', version: undefined }
+INFO:  metadata: { generatedBy: 'https://tfhub.dev/google/movenet/singlepose/lightning/4', version: undefined }
 INFO:  model inputs based on signature
  { name: 'input:0', dtype: 'DT_INT32', shape: [ 1, 192, 192, 3 ] }
 INFO:  model outputs based on signature
@@ -183,7 +183,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/selfie.json
 INFO:  created on: 2021-06-04T13:46:56.904Z
-INFO:  metadata: { generatedBy: 'https://github.com/PINTO0309/PINTO_model_zoo/tree/main/109_Selfie_Segmentation', convertedBy: 'https://github.com/vladmandic', version: '561.undefined' }
+INFO:  metadata: { generatedBy: 'https://github.com/PINTO0309/PINTO_model_zoo/tree/main/109_Selfie_Segmentation', version: '561.undefined' }
 INFO:  model inputs based on signature
  { name: 'input_1:0', dtype: 'DT_FLOAT', shape: [ 1, 256, 256, 3 ] }
 INFO:  model outputs based on signature
@@ -205,7 +205,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/handtrack.json
 INFO:  created on: 2021-09-21T12:09:47.583Z
-INFO:  metadata: { generatedBy: 'https://github.com/victordibia/handtracking', convertedBy: 'https://github.com/vladmandic', version: '561.undefined' }
+INFO:  metadata: { generatedBy: 'https://github.com/victordibia/handtracking', version: '561.undefined' }
 INFO:  model inputs based on signature
  { name: 'input_tensor:0', dtype: 'DT_UINT8', shape: [ 1, 320, 320, 3 ] }
 INFO:  model outputs based on signature
@@ -243,7 +243,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/antispoof.json
 INFO:  created on: 2021-10-13T14:20:27.100Z
-INFO:  metadata: { generatedBy: 'https://www.kaggle.com/anku420/fake-face-detection', convertedBy: 'https://github.com/vladmandic', version: '716.undefined' }
+INFO:  metadata: { generatedBy: 'https://www.kaggle.com/anku420/fake-face-detection', version: '716.undefined' }
 INFO:  model inputs based on signature
  { name: 'conv2d_input', dtype: 'DT_FLOAT', shape: [ -1, 128, 128, 3 ] }
 INFO:  model outputs based on signature
@@ -259,7 +259,7 @@ DATA:  weights: {
 DATA:  kernel ops: { graph: [ 'Const', 'Placeholder', 'Identity' ], convolution: [ '_FusedConv2D', 'MaxPool' ], basic_math: [ 'Relu', 'Sigmoid' ], transformation: [ 'Reshape' ], matrices: [ '_FusedMatMul' ] }
 INFO:  graph model: /home/vlado/dev/human/models/handlandmark-full.json
 INFO:  created on: 2021-10-31T12:27:49.343Z
-INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', convertedBy: 'https://github.com/vladmandic', version: '808.undefined' }
+INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', version: '808.undefined' }
 INFO:  model inputs based on signature
  { name: 'input_1', dtype: 'DT_FLOAT', shape: [ 1, 224, 224, 3 ] }
 INFO:  model outputs based on signature
@@ -285,7 +285,7 @@ DATA:  kernel ops: {
 }
 INFO:  graph model: /home/vlado/dev/human/models/liveness.json
 INFO:  created on: 2021-11-09T12:39:11.760Z
-INFO:  metadata: { generatedBy: 'https://github.com/leokwu/livenessnet', convertedBy: 'https://github.com/vladmandic', version: '808.undefined' }
+INFO:  metadata: { generatedBy: 'https://github.com/leokwu/livenessnet', version: '808.undefined' }
 INFO:  model inputs based on signature
  { name: 'conv2d_1_input', dtype: 'DT_FLOAT', shape: [ -1, 32, 32, 3 ] }
 INFO:  model outputs based on signature
