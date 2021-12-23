@@ -2,14 +2,13 @@
 
 For details see Wiki:
 
-- [**List of Models & Credits**](https://github.com/vladmandic/human/wiki/Models)
 
 ## Model signatures:
 
 ```js
 INFO:  graph model: /home/vlado/dev/human/models/iris.json
 INFO:  created on: 2020-10-12T18:46:47.060Z
-INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', convertedBy: 'https://github.com/vladmandic', version: undefined }
+INFO:  metadata: { generatedBy: 'https://github.com/google/mediapipe', version: undefined }
 INFO:  model inputs based on signature
  { name: 'input_1:0', dtype: 'DT_FLOAT', shape: [ -1, 64, 64, 3 ] }
 INFO:  model outputs based on signature
