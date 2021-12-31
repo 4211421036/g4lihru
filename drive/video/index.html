@@ -38,6 +38,18 @@
         from { transform: rotate(0deg); }
         from { transform: rotate(360deg); }
       }
+      .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+      }
+      .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
@@ -46,10 +58,87 @@
         <div id="float">
           <div id="play" class="play icon-play"></div>
             <div id="background">
-            <iframe style="position: relative; buttom: -100px; top: -300px" src="https://g4lihriu.web.app/"  width="1080" height="1280" allowfullscreen="true" frameborder="0"></iframe>
+            <div id="video videoWrapper">
+              <iframe style="position: relative; buttom: -100px; top: -300px" src="https://g4lihriu.web.app/"  width="1080" height="1280" allowfullscreen="true" frameborder="0"></iframe>
+            </div>
           </div>
         </div>
       </div>
     </center>
+    <script type="text/javascript">
+      const video = document.getElementById("video");
+        const pipButton = document.getElementById("pipButton");
+
+        pipButton.addEventListener("click", async () => {
+          try {
+            await video.requestPictureInPicture();
+          } catch (error) {
+            // Video failed to enter Picture-in-Picture mode.
+          }
+        });
+
+        video.addEventListener("enterpictureinpicture", (event) => {
+          // Video entered Picture-in-Picture mode.
+          const pipWindow = event.pictureInPictureWindow;
+          updateVideoSize(pipWindow.width, pipWindow.height);
+          pipWindow.addEventListener("resize", onPipWindowResize);
+        });
+
+        video.addEventListener("leavepictureinpicture", (event) => {
+          // Video left Picture-in-Picture mode.
+          const pipWindow = event.pictureInPictureWindow;
+          pipWindow.removeEventListener("resize", onPipWindowResize);
+        });
+
+        function onPipWindowResize(event) {
+          // Picture-in-Picture window has been resized.
+          const { width, height } = event.target;
+          updateVideoSize(width, height);
+        }
+
+        function updateVideoSize(width, height) {
+          // TODO: Update video size based on pip window width and height.
+        }
+      </script>
+
+      <script>
+        // Find all YouTube videos
+      // Expand that selector for Vimeo and whatever else
+      var $allVideos = $("iframe[src^='//drive.google.com/']"),
+
+        // The element that is fluid width
+        $fluidEl = $("body");
+
+      // Figure out and save aspect ratio for each video
+      $allVideos.each(function() {
+
+        $(this)
+          .data('aspectRatio', this.height / this.width)
+
+          // and remove the hard coded width/height
+          .removeAttr('height')
+          .removeAttr('width');
+
+      });
+
+      // When the window is resized
+      $(window).resize(function() {
+
+        var newWidth = $fluidEl.width();
+
+        // Resize all videos according to their own aspect ratio
+        $allVideos.each(function() {
+
+          var $el = $(this);
+          $el
+            .width(newWidth)
+            .height(newWidth * $el.data('aspectRatio'));
+
+        });
+
+      // Kick off one resize to fix all videos on page load
+      }).resize();
+
+    </script>  
   </body>
 </html>
