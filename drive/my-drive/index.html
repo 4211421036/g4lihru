@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive</title>
+    <script src="https://kit.fontawesome.com/5e14d5d81a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="src/notify.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+     <section class="border-bottom">
+        <div class="container-fluid">
+        <div class="row p-4">
+
+            <div class="col-2 d-flex align-items-center" id="logo">
+                <a href=""><img class="google-drive-logo mr-2" width="120" src="img/Logo.png" alt="goole-drive-logo"></a>
+            </div>
+
+            <div class="col-10 d-flex align-items-center" id="top-left">
+
+                <div class="input-group">
+                    <i class="fas fa-search"></i>
+                    <input class="search-input" id="fileSearch" type="text" placeholder="Search in drive">
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    
+                    <div class="d-flex align-items-center">                         
+                        <i id="list" class="fas fa-list" style="font: 1rem; margin: 0px 5px;cursor: pointer;display: none;" onclick="listviewToggle()"></i>
+                        <i id="grid" class="fas fa-th" style="font: 1rem; margin: 0px 5px;cursor: pointer;" onclick="listviewToggle()"></i>
+                        <a href="#"><img class="profile-img" src="img/New-Icon.png" alt="profile-img"></a>
+                        <i id="nav" class="fas fa-bars mr-3 ml-4" style="cursor: pointer;" onclick="openNav()"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+     </section>
+     
+     <section>
+         <div class="container-fluid">
+            <div class="row">
+                <!-- Sidbar -->
+                <div class="col-2 p-4" id="left">
+                    <div class="dropdown d-flex justify-content-center align-items-center mb-4" >
+                        <button class="btn bg-light dropdown-toggle my-drive-btn font-weight-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My Drive
+                        </button>
+                        <i class="far fa-times-circle"  id="nav-close"></i>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="upload">Upload File</a>
+                              <a class="dropdown-item"  onclick="createFolder()">Create Folder</a>
+                            </div>
+
+                    </div>
+                    <a href="#" class="d-flex ml-4 left-bar-btn mb-4">
+                        <div class="mr-4">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div>
+                            <h5 class="my-auto">Shared with me</h5>
+                        </div>
+                    </a>
+                    <a href="javascript: void(0)" class="d-flex ml-4 left-bar-btn mb-4">
+                        <div class="mr-4">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div>
+                            <h5 class="my-auto">Recent</h5>
+                        </div>
+                    </a>
+                    <a href="#javascript: void(0)" class="d-flex ml-4 left-bar-btn mb-4">
+                        <div>
+                            <label class="switch">
+                                <input type="checkbox"  id="darkSwitch">
+                                <span class="slider round"></span>
+                              </label>
+                        </div>
+                          <div>
+                              <h5 class="my-auto" >Dark Mode</h5>
+                          </div>
+                    </a>
+                    <a href="javascript: void(0)" class="d-flex ml-4 left-bar-btn">
+                        <div class="mr-4">
+                            <i class="fas fa-sign-out-alt" style="font: 1rem; margin: 0px 5px;cursor: pointer;"></i>
+                        </div>
+                        <div>
+                            <h5 class="my-auto">SignOut</h5>
+                        </div>
+                    </a>
+
+                    <label id="storage" class="m-4" style="color: #fff;">Storage</label>
+                    
+                </div>
+                <!-- main -->
+                <div class="col-10 py-4" id="right">
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a  onclick="home()" style="cursor: pointer;color: #000;">Home</a></li>
+                       
+                          
+                        </ol>
+                      </nav>
+                    <div class="quick-access ml-2 mb-5" id="main">
+                        <div>
+                            <p class="mb-3">Home</p>
+                        </div>
+
+                       <div class="d-flex" id="docs" >
+     
+
+                       </div>
+
+                   </div>
+
+                   <div class="quick-access ml-2 mb-5" style="display: none;" id="folder">
+
+                    <div>
+                        <p class="mb-3">Files</p>
+                    </div>
+
+                   <div class="d-flex" id="files" >
+                
+                   </div>
+
+               </div>
+               <div class="emailList__list" id="file_list" style="display: none;">
+                <!-- Email Row Starts -->
+
+<!-- Email Row Ends -->   
+      </div>
+
+                </div>
+
+            </div>
+         </div>
+     </section>
+
+
+<!-- Folder Delete -->
+     <div id="overlay">
+        <div class="delete-content">
+            <div>
+                <h3 style="color:red">Are Sure You Want To Delete this Folder?</h1>
+            </div>
+            <div>
+                <button type="button" id="deleteFolder" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('overlay').style.display='none'">Cancel</button>
+            </div>
+        </div>
+     </div>
+
+<!-- Right Sidebar -->
+<div id="right-sidebar"> 
+    <div class="options">
+        <h2>Options</h2>
+        <i class="fas fa-times" style="cursor: pointer;" id="sidebar-close"></i>
+    </div>
+    <hr>
+    <div class="filename">
+        <h4>File Name</h4>
+        <h5 id="title-option">xyx.mp4</h5>
+    </div>
+    <div class="size">
+        <h4>File Size</h4>
+        <h5 id="size">29.4 MB</h4>
+    </div>
+    <div class="modified">
+        <h4>File Uploaded on:</h4>
+        <h5 id="date">3/4/21</h4>
+    </div>
+    <div class="share">
+        <h4>File Share:</h4>
+        <label class="switch">
+            <input type="checkbox"  id="view" >
+            <span class="slider round"></span>
+          </label>
+    </div>
+    <hr>
+    <div class="buttons">
+        <button id="button-download">Download File</button>
+        <button id="button-Delete" onclick="deleteFile(this)">Delete File </button>
+    </div>
+    <div class="buttons">
+        <button id="button-copy">Copy Link</button>
+    </div>
+
+
+</div>
+
+<!-- Folder Context Menu -->
+<ul class="menu2">
+    <li class="menu-item">
+        <a href="#" class="menu-btn" id="openFolder" onclick="folderClick(this)">
+            <i class="fa fa-folder-open"></i>
+            <span class="menu-text" >Open</span>
+        </a>
+    </li>
+    <li class="menu-separator"></li>
+    <li class="menu-item" id="shareFolder" onclick="CopyFolderLink(this)">
+        <button type="button" class="menu-btn">
+            <i class="fa fa-link"></i>
+            <span class="menu-text" id="fshare">share Link</span>
+        </button>
+    </li>
+    <li class="menu-item" id="rename" onclick="RenameFolder(this)">
+        <button type="button" class="menu-btn" >
+            <i class="fa fa-edit"></i>
+            <span class="menu-text" >Rename</span>
+        </button>
+    </li>
+    <li class="menu-item"  id="folderDelete" onclick="DeleteFolder(this)">
+        <button type="button" class="menu-btn">
+            <i class="fa fa-trash"></i>
+            <span class="menu-text">Delete</span>
+        </button>
+    </li>
+    <li class="menu-item" >
+        <label class="switch">
+            <input type="checkbox"  id="folderShare" >
+            <span class="slider round"></span>
+          </label>
+    </li>
+</ul>
+<!-- Uploading files List & Status -->
+<div class="jnotify" style="bottom: 40px; color: white; background: rgb(40, 167, 69); display: none;">
+  <div class="message-container" style="color: white; background: rgb(26, 107, 44);"><div class="icon success"></div>
+  <div class="message">Files</div> <div></div><div class="close" id="close_upload_box"></div>
+</div>
+<div class="description" id="upload_elem">
+    
+
+</div>
+</div>  
+
+
+     <!-- ------FIREBASE SDK---------- -->
+     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+     <!-- ------FIREBASE SDK---------- -->
+          <!-- CONGIG -->
+          <script src="./js/config.js"></script>
+     <!-- Extra Libs -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="./js/resumableupload.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/dark-mode-switch.min.js"></script>
+<script src="./js/longpress.min.js"></script>
+<script src="src/notify.js"></script>
+    <!-- Main file -->
+<script src="./js/main.js"></script>
+<script src="./js/components.js"></script>
+<script src="./js/upload.js"></script>
+<script src="./js/DomFunction.js"></script>
+        
+</body>
+</html>
