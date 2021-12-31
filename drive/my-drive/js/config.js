@@ -1,11 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBpsBdBbaUvAe04KywoN2caAPf9T69_IGQ",
-    authDomain: "drive-clone-cb216.firebaseapp.com",
-    projectId: "drive-clone-cb216",
-    storageBucket: "drive-clone-cb216.appspot.com",
-    messagingSenderId: "1098261564496",
-    appId: "1:1098261564496:web:1d76ea6f495a8b63295555",
-    measurementId: "G-7SB9S4NDNG"
-  };
+    apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
+    authDomain: "g4lihriu.firebaseapp.com",
+    databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
+    projectId: "g4lihriu",
+    storageBucket: "g4lihriu.appspot.com",
+    messagingSenderId: "387783527536",
+    appId: "1:387783527536:web:8df38ac72783aea162b8b5",
+    measurementId: "G-DCSX3TS7ZS"  
+ };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
