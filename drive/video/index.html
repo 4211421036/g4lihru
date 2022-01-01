@@ -50,15 +50,35 @@
         width: 100%;
         height: 100%;
       }
-      .scrollable-content {
-      overflow-x:hidden;
-      overflow-y:scroll; // manage scrollbar content overflow settings
+      body::-webkit-scrollbar {
+          width: 15px;
       }
-      .scrollable-content::-webkit-scrollbar {
-        width:30px; // manage scrollbar width here
+
+      body::-webkit-scrollbar-track {
+          background: transparent;
       }
-      .scrollable-content::-webkit-scrollbar * {
-        background:transparent; // manage scrollbar background color here
+
+      body::-webkit-scrollbar-thumb {
+          background: transparent;
+      }
+
+      body::-webkit-scrollbar-thumb:hover {
+          background: transparent;
+      }
+      body::-webkit-scrollbar {
+          width: 15px;
+      }
+
+      iframe::-webkit-scrollbar-track {
+          background: transparent;
+      }
+
+      iframe::-webkit-scrollbar-thumb {
+          background: transparent;
+      }
+
+      iframe::-webkit-scrollbar-thumb:hover {
+          background: transparent;
       }
     </style>
   </head>
