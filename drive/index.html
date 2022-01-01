@@ -5,272 +5,473 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Drive</title>
     <script src="https://kit.fontawesome.com/5e14d5d81a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://g4lihru.me/drive/my-drive/src/notify.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://g4lihru.me/drive/my-drive/style.css">
+    <title>Drive | Galih Ridho Utomo</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAuCAYAAAC4e0AJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGwWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4wLWMwMDAgNzkuMjE3YmNhNiwgMjAyMS8wNi8xNC0xODoyODoxMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIyLjQgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMS0xMS0wOFQxODowMTozMiswNzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjEtMTEtMDhUMTg6MDk6NDErMDc6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjEtMTEtMDhUMTg6MDk6NDErMDc6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmE0ZmI2ZjFhLTY3NjYtM2Q0MC1iYzU1LWNmYjFkY2QzMjZkNCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjVkYzMxMDNjLTZjNmUtZmU0Yy05NjVhLTVjYTFjNWU4OTI5NCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmMxNzRmMWE1LTZjNGYtOGU0YS04MGQ3LWQxY2ZiYjdlMmFlMiI+IDxwaG90b3Nob3A6RG9jdW1lbnRBbmNlc3RvcnM+IDxyZGY6QmFnPiA8cmRmOmxpPnhtcC5kaWQ6YWIwYTYzYmYtOWFjNC1jMDRmLTg2ZTEtZGUwNDIzMjFkZTVjPC9yZGY6bGk+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6RG9jdW1lbnRBbmNlc3RvcnM+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YzE3NGYxYTUtNmM0Zi04ZTRhLTgwZDctZDFjZmJiN2UyYWUyIiBzdEV2dDp3aGVuPSIyMDIxLTExLTA4VDE4OjAxOjMyKzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjIuNCAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YTRmYjZmMWEtNjc2Ni0zZDQwLWJjNTUtY2ZiMWRjZDMyNmQ0IiBzdEV2dDp3aGVuPSIyMDIxLTExLTA4VDE4OjA5OjQxKzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjIuNCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ws3IrAAAB8JJ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">
+    <link rel="stylesheet" href="https://g4lihru.me/345678987.css" />
+    <link rel="stylesheet" href="https://g4lihru.me/09873234.css">
+    <meta name="theme-color" content="#3367D6">
+    <link rel="manifest" href="https://g4lihru.me/manifest.json">
+    <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta property="og:title" content="G4lihru Website's" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="https://www.g4lihru.me/" />
+    <meta property="og:image" content="https://g4lihru.me/345677.png" />
+    <meta name="keywords" content="Drive">
+    <meta name="application-name" content="Drive">
+    <meta name="description" content="Sebuah Inovasi cloud computing based, penyimpanan unlimited hasil penelitian">
+    <meta name="msapplication-tooltip" content="Sebuah Inovasi cloud computing based, penyimpanan unlimited hasil penelitian">
+    <link rel="manifest" href="https://g4lihru.me/demo/manifest.webmanifest">
+    <link rel="shortcut icon" href="https://g4lihru.me/987654567.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
-</head>
-
-<body>
-    <section class="border-bottom">
-        <div class="container-fluid">
-            <div class="row p-4">
-
-                <div class="col-2 d-flex align-items-center" id="logo">
-                    <a href=""><img class="google-drive-logo mr-2" width="120" src="img/Logo.png" alt="goole-drive-logo"></a>
-                </div>
-
-                <div class="col-10 d-flex align-items-center" id="top-left">
-
-                    <div class="input-group">
-                        <i class="fas fa-search"></i>
-                        <input class="search-input" id="fileSearch" type="text" placeholder="Search in drive">
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-
-                        <div class="d-flex align-items-center">
-                            <i id="list" class="fas fa-list" style="font: 1rem; margin: 0px 5px;cursor: pointer;display: none;" onclick="listviewToggle()"></i>
-                            <i id="grid" class="fas fa-th" style="font: 1rem; margin: 0px 5px;cursor: pointer;" onclick="listviewToggle()"></i>
-                            <a href="#"><img class="profile-img" src="img/New-Icon.png" alt="profile-img"></a>
-                            <i id="nav" class="fas fa-bars mr-3 ml-4" style="cursor: pointer;" onclick="openNav()"></i>
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i src="//g4lihru.me/drive/logo.png" class='bx-tada bx-rotate-90'></i>
+                <div class="logo_name">Drive</div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/">
+                        <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Drive Saya</span>
+                    </a>
+                    <span class="tooltip">Drive Saya</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/video/">
+                        <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Video</span>
+                    </a>
+                    <span class="tooltip">Video</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/pdf/">
+                        <i class='bx bxs-file-pdf bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Pdf</span>
+                    </a>
+                    <span class="tooltip">Pdf</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/img/">
+                        <i class='bx bxs-file-image bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Gambar</span>
+                    </a>
+                    <span class="tooltip">Gambar</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <img src="https://g4lihru.me/345677.png" alt="profileImg">-->
+                        <div class="name_job">
+                            <div class="name">Galih Ridho Utomo</div>
+                            <div class="job">Mahasiswa UNNES</div>
                         </div>
-
                     </div>
-
-                </div>
+                    <a href="//g4lihru.me/drive/video/">
+                        <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <div class="text">Drive Video</div>
+            <div class="row mt-4" id="posts">
 
             </div>
-        </div>
-    </section>
+            <script src="https://g4lihriu.web.app/defualt.js"></script>
+        </section>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+        <section class="border-bottom">
+            <div class="container-fluid">
+                <div class="row p-4">
 
-    <section>
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Sidbar -->
-                <div class="col-2 p-4" id="left">
-                    <div class="dropdown d-flex justify-content-center align-items-center mb-4">
-                        <button class="btn bg-light dropdown-toggle my-drive-btn font-weight-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            My Drive
-                        </button>
-                        <i class="far fa-times-circle" id="nav-close"></i>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" id="upload">Upload File</a>
-                            <a class="dropdown-item" onclick="createFolder()">Create Folder</a>
+                    <div class="col-2 d-flex align-items-center" id="logo">
+                        <a href=""><img class="google-drive-logo mr-2" width="120" src="img/Logo.png" alt="goole-drive-logo"></a>
+                    </div>
+
+                    <div class="col-10 d-flex align-items-center" id="top-left">
+
+                        <div class="input-group">
+                            <i class="fas fa-search"></i>
+                            <input class="search-input" id="fileSearch" type="text" placeholder="Search in drive">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div class="d-flex align-items-center">
+                                <i id="list" class="fas fa-list" style="font: 1rem; margin: 0px 5px;cursor: pointer;display: none;" onclick="listviewToggle()"></i>
+                                <i id="grid" class="fas fa-th" style="font: 1rem; margin: 0px 5px;cursor: pointer;" onclick="listviewToggle()"></i>
+                                <a href="#"><img class="profile-img" src="img/New-Icon.png" alt="profile-img"></a>
+                                <i id="nav" class="fas fa-bars mr-3 ml-4" style="cursor: pointer;" onclick="openNav()"></i>
+                            </div>
+
                         </div>
 
                     </div>
-                    <a href="#" class="d-flex ml-4 left-bar-btn mb-4">
-                        <div class="mr-4">
-                            <i class="fas fa-user-friends"></i>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidbar -->
+                    <div class="col-2 p-4" id="left">
+                        <div class="dropdown d-flex justify-content-center align-items-center mb-4">
+                            <button class="btn bg-light dropdown-toggle my-drive-btn font-weight-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My Drive
+                        </button>
+                            <i class="far fa-times-circle" id="nav-close"></i>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" id="upload">Upload File</a>
+                                <a class="dropdown-item" onclick="createFolder()">Create Folder</a>
+                            </div>
+
                         </div>
-                        <div>
-                            <h5 class="my-auto">Shared with me</h5>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="d-flex ml-4 left-bar-btn mb-4">
-                        <div class="mr-4">
-                            <i class="far fa-clock"></i>
-                        </div>
-                        <div>
-                            <h5 class="my-auto">Recent</h5>
-                        </div>
-                    </a>
-                    <a href="#javascript: void(0)" class="d-flex ml-4 left-bar-btn mb-4">
-                        <div>
-                            <label class="switch">
+                        <a href="#" class="d-flex ml-4 left-bar-btn mb-4">
+                            <div class="mr-4">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div>
+                                <h5 class="my-auto">Shared with me</h5>
+                            </div>
+                        </a>
+                        <a href="javascript: void(0)" class="d-flex ml-4 left-bar-btn mb-4">
+                            <div class="mr-4">
+                                <i class="far fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="my-auto">Recent</h5>
+                            </div>
+                        </a>
+                        <a href="#javascript: void(0)" class="d-flex ml-4 left-bar-btn mb-4">
+                            <div>
+                                <label class="switch">
                                 <input type="checkbox"  id="darkSwitch">
                                 <span class="slider round"></span>
                               </label>
-                        </div>
-                        <div>
-                            <h5 class="my-auto">Dark Mode</h5>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="d-flex ml-4 left-bar-btn">
-                        <div class="mr-4">
-                            <i class="fas fa-sign-out-alt" style="font: 1rem; margin: 0px 5px;cursor: pointer;"></i>
-                        </div>
-                        <div>
-                            <h5 class="my-auto">SignOut</h5>
-                        </div>
-                    </a>
+                            </div>
+                            <div>
+                                <h5 class="my-auto">Dark Mode</h5>
+                            </div>
+                        </a>
+                        <a href="javascript: void(0)" class="d-flex ml-4 left-bar-btn">
+                            <div class="mr-4">
+                                <i class="fas fa-sign-out-alt" style="font: 1rem; margin: 0px 5px;cursor: pointer;"></i>
+                            </div>
+                            <div>
+                                <h5 class="my-auto">SignOut</h5>
+                            </div>
+                        </a>
 
-                    <label id="storage" class="m-4" style="color: #fff;">Storage</label>
+                        <label id="storage" class="m-4" style="color: #fff;">Storage</label>
+
+                    </div>
+                    <!-- main -->
+                    <div class="col-10 py-4" id="right">
+
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a onclick="home()" style="cursor: pointer;color: #000;">Home</a></li>
+
+
+                            </ol>
+                        </nav>
+                        <div class="quick-access ml-2 mb-5" id="main">
+                            <div>
+                                <p class="mb-3">Home</p>
+                            </div>
+
+                            <div class="d-flex" id="docs">
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="quick-access ml-2 mb-5" style="display: none;" id="folder">
+
+                            <div>
+                                <p class="mb-3">Files</p>
+                            </div>
+
+                            <div class="d-flex" id="files">
+
+                            </div>
+
+                        </div>
+                        <div class="emailList__list" id="file_list" style="display: none;">
+                            <!-- Email Row Starts -->
+
+                            <!-- Email Row Ends -->
+                        </div>
+
+                    </div>
 
                 </div>
-                <!-- main -->
-                <div class="col-10 py-4" id="right">
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a onclick="home()" style="cursor: pointer;color: #000;">Home</a></li>
+            </div>
+        </section>
 
 
-                        </ol>
-                    </nav>
-                    <div class="quick-access ml-2 mb-5" id="main">
-                        <div>
-                            <p class="mb-3">Home</p>
-                        </div>
-
-                        <div class="d-flex" id="docs">
-
-
-                        </div>
-
-                    </div>
-
-                    <div class="quick-access ml-2 mb-5" style="display: none;" id="folder">
-
-                        <div>
-                            <p class="mb-3">Files</p>
-                        </div>
-
-                        <div class="d-flex" id="files">
-
-                        </div>
-
-                    </div>
-                    <div class="emailList__list" id="file_list" style="display: none;">
-                        <!-- Email Row Starts -->
-
-                        <!-- Email Row Ends -->
-                    </div>
-
+        <!-- Folder Delete -->
+        <div id="overlay">
+            <div class="delete-content">
+                <div>
+                    <h3 style="color:red">Are Sure You Want To Delete this Folder?</h1>
                 </div>
-
+                <div>
+                    <button type="button" id="deleteFolder" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-primary" onclick="document.getElementById('overlay').style.display='none'">Cancel</button>
+                </div>
             </div>
         </div>
-    </section>
 
-
-    <!-- Folder Delete -->
-    <div id="overlay">
-        <div class="delete-content">
-            <div>
-                <h3 style="color:red">Are Sure You Want To Delete this Folder?</h1>
+        <!-- Right Sidebar -->
+        <div id="right-sidebar">
+            <div class="options">
+                <h2>Options</h2>
+                <i class="fas fa-times" style="cursor: pointer;" id="sidebar-close"></i>
             </div>
-            <div>
-                <button type="button" id="deleteFolder" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-primary" onclick="document.getElementById('overlay').style.display='none'">Cancel</button>
+            <hr>
+            <div class="filename">
+                <h4>File Name</h4>
+                <h5 id="title-option">xyx.mp4</h5>
             </div>
-        </div>
-    </div>
-
-    <!-- Right Sidebar -->
-    <div id="right-sidebar">
-        <div class="options">
-            <h2>Options</h2>
-            <i class="fas fa-times" style="cursor: pointer;" id="sidebar-close"></i>
-        </div>
-        <hr>
-        <div class="filename">
-            <h4>File Name</h4>
-            <h5 id="title-option">xyx.mp4</h5>
-        </div>
-        <div class="size">
-            <h4>File Size</h4>
-            <h5 id="size">29.4 MB</h4>
-        </div>
-        <div class="modified">
-            <h4>File Uploaded on:</h4>
-            <h5 id="date">3/4/21</h4>
-        </div>
-        <div class="share">
-            <h4>File Share:</h4>
-            <label class="switch">
+            <div class="size">
+                <h4>File Size</h4>
+                <h5 id="size">29.4 MB</h4>
+            </div>
+            <div class="modified">
+                <h4>File Uploaded on:</h4>
+                <h5 id="date">3/4/21</h4>
+            </div>
+            <div class="share">
+                <h4>File Share:</h4>
+                <label class="switch">
             <input type="checkbox"  id="view" >
             <span class="slider round"></span>
           </label>
-        </div>
-        <hr>
-        <div class="buttons">
-            <button id="button-download">Download File</button>
-            <button id="button-Delete" onclick="deleteFile(this)">Delete File </button>
-        </div>
-        <div class="buttons">
-            <button id="button-copy">Copy Link</button>
-        </div>
+            </div>
+            <hr>
+            <div class="buttons">
+                <button id="button-download">Download File</button>
+                <button id="button-Delete" onclick="deleteFile(this)">Delete File </button>
+            </div>
+            <div class="buttons">
+                <button id="button-copy">Copy Link</button>
+            </div>
 
 
-    </div>
+        </div>
 
-    <!-- Folder Context Menu -->
-    <ul class="menu2">
-        <li class="menu-item">
-            <a href="#" class="menu-btn" id="openFolder" onclick="folderClick(this)">
-                <i class="fa fa-folder-open"></i>
-                <span class="menu-text">Open</span>
-            </a>
-        </li>
-        <li class="menu-separator"></li>
-        <li class="menu-item" id="shareFolder" onclick="CopyFolderLink(this)">
-            <button type="button" class="menu-btn">
+        <!-- Folder Context Menu -->
+        <ul class="menu2">
+            <li class="menu-item">
+                <a href="#" class="menu-btn" id="openFolder" onclick="folderClick(this)">
+                    <i class="fa fa-folder-open"></i>
+                    <span class="menu-text">Open</span>
+                </a>
+            </li>
+            <li class="menu-separator"></li>
+            <li class="menu-item" id="shareFolder" onclick="CopyFolderLink(this)">
+                <button type="button" class="menu-btn">
             <i class="fa fa-link"></i>
             <span class="menu-text" id="fshare">share Link</span>
         </button>
-        </li>
-        <li class="menu-item" id="rename" onclick="RenameFolder(this)">
-            <button type="button" class="menu-btn">
+            </li>
+            <li class="menu-item" id="rename" onclick="RenameFolder(this)">
+                <button type="button" class="menu-btn">
             <i class="fa fa-edit"></i>
             <span class="menu-text" >Rename</span>
         </button>
-        </li>
-        <li class="menu-item" id="folderDelete" onclick="DeleteFolder(this)">
-            <button type="button" class="menu-btn">
+            </li>
+            <li class="menu-item" id="folderDelete" onclick="DeleteFolder(this)">
+                <button type="button" class="menu-btn">
             <i class="fa fa-trash"></i>
             <span class="menu-text">Delete</span>
         </button>
-        </li>
-        <li class="menu-item">
-            <label class="switch">
+            </li>
+            <li class="menu-item">
+                <label class="switch">
             <input type="checkbox"  id="folderShare" >
             <span class="slider round"></span>
           </label>
-        </li>
-    </ul>
-    <!-- Uploading files List & Status -->
-    <div class="jnotify" style="bottom: 40px; color: white; background: rgb(40, 167, 69); display: none;">
-        <div class="message-container" style="color: white; background: rgb(26, 107, 44);">
-            <div class="icon success"></div>
-            <div class="message">Files</div>
-            <div></div>
-            <div class="close" id="close_upload_box"></div>
+            </li>
+        </ul>
+        <!-- Uploading files List & Status -->
+        <div class="jnotify" style="bottom: 40px; color: white; background: rgb(40, 167, 69); display: none;">
+            <div class="message-container" style="color: white; background: rgb(26, 107, 44);">
+                <div class="icon success"></div>
+                <div class="message">Files</div>
+                <div></div>
+                <div class="close" id="close_upload_box"></div>
+            </div>
+            <div class="description" id="upload_elem">
+
+
+            </div>
         </div>
-        <div class="description" id="upload_elem">
 
 
-        </div>
-    </div>
+        <!-- ------FIREBASE SDK---------- -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+        <!-- ------FIREBASE SDK---------- -->
+        <!-- CONGIG -->
+        <script src="https://g4lihru.me/drive/my-drive/js/config.js"></script>
+        <!-- Extra Libs -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/api.js"></script>
+        <script src="https://g4lihru.me/drive/my-drive/./js/resumableupload.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://g4lihru.me/drive/my-drive/js/dark-mode-switch.min.js"></script>
+        <script src="https://g4lihru.me/drive/my-drive/js/longpress.min.js"></script>
+        <script src="https://g4lihru.me/drive/my-drive/src/notify.js"></script>
+        <!-- Main file -->
+        <script src="https://g4lihru.me/drive/my-drive/js/main.js"></script>
+        <script src="https://g4lihru.me/drive/my-drive/js/components.js"></script>
+        <script src="https://g4lihru.me/drive/my-drive/js/upload.js"></script>
+        <script src="https://g4lihru.me/drive/my-drive/js/DomFunction.js"></script>
 
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
+                authDomain: "g4lihriu.firebaseapp.com",
+                databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
+                projectId: "g4lihriu",
+                storageBucket: "g4lihriu.appspot.com",
+                messagingSenderId: "387783527536",
+                appId: "1:387783527536:web:8df38ac72783aea162b8b5",
+                measurementId: "G-DCSX3TS7ZS"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let closeBtn = document.querySelector("#btn");
+            let searchBtn = document.querySelector(".bx-search");
 
-    <!-- ------FIREBASE SDK---------- -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
-    <!-- ------FIREBASE SDK---------- -->
-    <!-- CONGIG -->
-    <script src="https://g4lihru.me/drive/my-drive/js/config.js"></script>
-    <!-- Extra Libs -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src="https://g4lihru.me/drive/my-drive/./js/resumableupload.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://g4lihru.me/drive/my-drive/js/dark-mode-switch.min.js"></script>
-    <script src="https://g4lihru.me/drive/my-drive/js/longpress.min.js"></script>
-    <script src="https://g4lihru.me/drive/my-drive/src/notify.js"></script>
-    <!-- Main file -->
-    <script src="https://g4lihru.me/drive/my-drive/js/main.js"></script>
-    <script src="https://g4lihru.me/drive/my-drive/js/components.js"></script>
-    <script src="https://g4lihru.me/drive/my-drive/js/upload.js"></script>
-    <script src="https://g4lihru.me/drive/my-drive/js/DomFunction.js"></script>
+            closeBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("open");
+                menuBtnChange(); //calling the function(optional)
+            });
 
-</body>
+            searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+                sidebar.classList.toggle("open");
+                menuBtnChange(); //calling the function(optional)
+            });
+
+            // following are the code to change sidebar button(optional)
+            function menuBtnChange() {
+                if (sidebar.classList.contains("open")) {
+                    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+                } else {
+                    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            const video = document.getElementById("video");
+            const pipButton = document.getElementById("pipButton");
+
+            pipButton.addEventListener("click", async() => {
+                try {
+                    await video.requestPictureInPicture();
+                } catch (error) {
+                    // Video failed to enter Picture-in-Picture mode.
+                }
+            });
+
+            video.addEventListener("enterpictureinpicture", (event) => {
+                // Video entered Picture-in-Picture mode.
+                const pipWindow = event.pictureInPictureWindow;
+                updateVideoSize(pipWindow.width, pipWindow.height);
+                pipWindow.addEventListener("resize", onPipWindowResize);
+            });
+
+            video.addEventListener("leavepictureinpicture", (event) => {
+                // Video left Picture-in-Picture mode.
+                const pipWindow = event.pictureInPictureWindow;
+                pipWindow.removeEventListener("resize", onPipWindowResize);
+            });
+
+            function onPipWindowResize(event) {
+                // Picture-in-Picture window has been resized.
+                const {
+                    width,
+                    height
+                } = event.target;
+                updateVideoSize(width, height);
+            }
+
+            function updateVideoSize(width, height) {
+                // TODO: Update video size based on pip window width and height.
+            }
+        </script>
+
+        <script>
+            // Find all YouTube videos
+            // Expand that selector for Vimeo and whatever else
+            var $allVideos = $("iframe[src^='//drive.google.com/']"),
+
+                // The element that is fluid width
+                $fluidEl = $("body");
+
+            // Figure out and save aspect ratio for each video
+            $allVideos.each(function() {
+
+                $(this)
+                    .data('aspectRatio', this.height / this.width)
+
+                // and remove the hard coded width/height
+                .removeAttr('height')
+                    .removeAttr('width');
+
+            });
+
+            // When the window is resized
+            $(window).resize(function() {
+
+                var newWidth = $fluidEl.width();
+
+                // Resize all videos according to their own aspect ratio
+                $allVideos.each(function() {
+
+                    var $el = $(this);
+                    $el
+                        .width(newWidth)
+                        .height(newWidth * $el.data('aspectRatio'));
+
+                });
+
+                // Kick off one resize to fix all videos on page load
+            }).resize();
+        </script>
+
+    </body>
 
 </html>
