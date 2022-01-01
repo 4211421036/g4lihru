@@ -53,6 +53,16 @@
       body {
         overflow: hidden; /* Hide scrollbars */
       }
+      .scrollable-content {
+      overflow-x:hidden;
+      overflow-y:scroll; // manage scrollbar content overflow settings
+      }
+      .scrollable-content::-webkit-scrollbar {
+        width:30px; // manage scrollbar width here
+      }
+      .scrollable-content::-webkit-scrollbar * {
+        background:transparent; // manage scrollbar background color here
+      }
     </style>
   </head>
   <body>
