@@ -400,6 +400,36 @@
     </div>
     <section class="home-section">
         <div class="text">Drive Video</div>
+        <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+            <header class="modal-header">
+               <div class="mx-auto">
+                  <div align="center"class="py-4">
+                      <h1 align="center" style="font-size="42px" >Record VAII</h1>
+                  </div>  
+               </div>
+            </header>
+               <div class="card">
+                <div class="card-body">
+                    <form id="post-form">
+                        <center>
+                            <h3>Drive Galih Ridho Utomo</h3>
+                        </center>
+                        <textarea id="post" class="form-control" placeholder="What's on your mind..."></textarea>
+                        <input type="file" class="form-control" id="image" accept="images/*">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success" onclick="upload()">Upload</button>
+                        </div>
+                        <center>
+                            <progress value="0" max="100" id="progress"></progress>
+                        </center>
+                    </form>
+                </div>
+
+               </div>
+            </div>
         <div class="row mt-4" id="posts">
 
         </div>
