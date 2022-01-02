@@ -568,7 +568,6 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
   /* 1 */
   vertical-align: middle;
   /* 2 */
@@ -580,12 +579,6 @@ object {
  *
  * https://github.com/mozdevs/cssremedy/issues/14
  */
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
 
 /**
  * Ensure the default browser behavior of the `hidden` attribute.
