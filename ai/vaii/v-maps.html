@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
@@ -369,30 +371,26 @@
     </div>
     <section class="home-section">
         <main id="map">
-            <div class="progress" id="progress-bar">
-                <div class="indeterminate"></div>
-            </div>
+          <div class="progress" id="progress-bar">
+            <div class="indeterminate"></div>
+          </div>
         </main>
+        <script src="assets/vendor/sqljs-1.6.1/sql-wasm.js"></script>
+        <script src="assets/vendor/localForage-1.10.0/localforage.min.js"></script>
+        <script src="assets/vendor/leaflet-1.7.1/leaflet.js"></script>
+        <script src="assets/vendor/leaflet-locatecontrol-0.74.0/L.Control.Locate.min.js"></script>
+        <script src="assets/vendor/leaflet-mbtiles/Leaflet.TileLayer.MBTiles.js"></script>
+        <script src="assets/vendor/csv2geojson-5.1.1/csv2geojson.min.js"></script>
+        <script src="assets/vendor/togeojson-0.16.0/togeojson.min.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script>
+          if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+          }
+        </script>
+        <noscript>This website requires JavaScript!</noscript>
     </section>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first...make sure you remove -app from below line -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyBBE8be6lT8ecEUTRLUPIo0djIgsGyUozU",
-            authDomain: "fileg4lihru.firebaseapp.com",
-            databaseURL: "https://fileg4lihru-default-rtdb.firebaseio.com",
-            projectId: "fileg4lihru",
-            storageBucket: "fileg4lihru.appspot.com",
-            messagingSenderId: "670582766166",
-            appId: "1:670582766166:web:59e46e170b9db0173bd9f7",
-            measurementId: "G-LE1S890LM1"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
     <script>
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");
@@ -417,97 +415,6 @@
             }
         }
     </script>
-    <script type="text/javascript">
-        const video = document.getElementById("video");
-        const pipButton = document.getElementById("pipButton");
-
-        pipButton.addEventListener("click", async() => {
-            try {
-                await video.requestPictureInPicture();
-            } catch (error) {
-                // Video failed to enter Picture-in-Picture mode.
-            }
-        });
-
-        video.addEventListener("enterpictureinpicture", (event) => {
-            // Video entered Picture-in-Picture mode.
-            const pipWindow = event.pictureInPictureWindow;
-            updateVideoSize(pipWindow.width, pipWindow.height);
-            pipWindow.addEventListener("resize", onPipWindowResize);
-        });
-
-        video.addEventListener("leavepictureinpicture", (event) => {
-            // Video left Picture-in-Picture mode.
-            const pipWindow = event.pictureInPictureWindow;
-            pipWindow.removeEventListener("resize", onPipWindowResize);
-        });
-
-        function onPipWindowResize(event) {
-            // Picture-in-Picture window has been resized.
-            const {
-                width,
-                height
-            } = event.target;
-            updateVideoSize(width, height);
-        }
-
-        function updateVideoSize(width, height) {
-            // TODO: Update video size based on pip window width and height.
-        }
-    </script>
-
-    <script>
-        // Find all YouTube videos
-        // Expand that selector for Vimeo and whatever else
-        var $allVideos = $("iframe[src^='//drive.google.com/']"),
-
-            // The element that is fluid width
-            $fluidEl = $("body");
-
-        // Figure out and save aspect ratio for each video
-        $allVideos.each(function() {
-
-            $(this)
-                .data('aspectRatio', this.height / this.width)
-
-            // and remove the hard coded width/height
-            .removeAttr('height')
-                .removeAttr('width');
-
-        });
-
-        // When the window is resized
-        $(window).resize(function() {
-
-            var newWidth = $fluidEl.width();
-
-            // Resize all videos according to their own aspect ratio
-            $allVideos.each(function() {
-
-                var $el = $(this);
-                $el
-                    .width(newWidth)
-                    .height(newWidth * $el.data('aspectRatio'));
-
-            });
-
-            // Kick off one resize to fix all videos on page load
-        }).resize();
-    </script>
-    <script src="assets/vendor/sqljs-1.6.1/sql-wasm.js"></script>
-    <script src="assets/vendor/localForage-1.10.0/localforage.min.js"></script>
-    <script src="assets/vendor/leaflet-1.7.1/leaflet.js"></script>
-    <script src="assets/vendor/leaflet-locatecontrol-0.74.0/L.Control.Locate.min.js"></script>
-    <script src="assets/vendor/leaflet-mbtiles/Leaflet.TileLayer.MBTiles.js"></script>
-    <script src="assets/vendor/csv2geojson-5.1.1/csv2geojson.min.js"></script>
-    <script src="assets/vendor/togeojson-0.16.0/togeojson.min.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("service-worker.js");
-        }
-    </script>
-    <noscript>This website requires JavaScript!</noscript>
 </body>
 
 </html>
