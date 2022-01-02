@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="https://g4lihru.me/987654567.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
     <link rel="stylesheet" type="text/css" href="./icons.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://g4lihru.me/meet/dist/tailwind.css" />
     <script src="./index.js" type="module"></script>
     <style>
@@ -101,148 +102,487 @@
       .modal-content { background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%; }
       .close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; }
       .close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer;}
+      .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 78px;
+            background: #11101D;
+            padding: 6px 14px;
+            z-index: 99;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open {
+            width: 250px;
+        }
+        
+        .sidebar .logo-details {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .sidebar .logo-details .icon {
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar .logo-details .logo_name {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .logo-details .icon,
+        .sidebar.open .logo-details .logo_name {
+            opacity: 1;
+        }
+        
+        .sidebar .logo-details #btn {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 22px;
+            transition: all 0.4s ease;
+            font-size: 23px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .logo-details #btn {
+            text-align: right;
+        }
+        
+        .sidebar i {
+            color: #fff;
+            height: 60px;
+            min-width: 50px;
+            font-size: 28px;
+            text-align: center;
+            line-height: 60px;
+        }
+        
+        .sidebar .nav-list {
+            margin-top: 20px;
+            height: 100%;
+        }
+        
+        .sidebar li {
+            position: relative;
+            margin: 8px 0;
+            list-style: none;
+        }
+        
+        .sidebar li .tooltip {
+            position: absolute;
+            top: -20px;
+            left: calc(100% + 15px);
+            z-index: 3;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: 0s;
+        }
+        
+        .sidebar li:hover .tooltip {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .sidebar.open li .tooltip {
+            display: none;
+        }
+        
+        .sidebar input {
+            font-size: 15px;
+            color: #FFF;
+            font-weight: 400;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            width: 50px;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.5s ease;
+            background: #1d1b31;
+        }
+        
+        .sidebar.open input {
+            padding: 0 20px 0 50px;
+            width: 100%;
+        }
+        
+        .sidebar .bx-search {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 22px;
+            background: #1d1b31;
+            color: #FFF;
+        }
+        
+        .sidebar.open .bx-search:hover {
+            background: #1d1b31;
+            color: #FFF;
+        }
+        
+        .sidebar .bx-search:hover {
+            background: #FFF;
+            color: #11101d;
+        }
+        
+        .sidebar li a {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: #11101D;
+        }
+        
+        .sidebar li a:hover {
+            background: #FFF;
+        }
+        
+        .sidebar li a .links_name {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+        }
+        
+        .sidebar.open li a .links_name {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .sidebar li a:hover .links_name,
+        .sidebar li a:hover i {
+            transition: all 0.5s ease;
+            color: #11101D;
+        }
+        
+        .sidebar li i {
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            border-radius: 12px;
+        }
+        
+        .sidebar li.profile {
+            position: fixed;
+            height: 60px;
+            width: 78px;
+            left: 0;
+            bottom: -8px;
+            padding: 10px 14px;
+            background: #1d1b31;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        
+        .sidebar.open li.profile {
+            width: 250px;
+        }
+        
+        .sidebar li .profile-details {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        
+        .sidebar li img {
+            height: 45px;
+            width: 45px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+        
+        .sidebar li.profile .name,
+        .sidebar li.profile .job {
+            font-size: 15px;
+            font-weight: 400;
+            color: #fff;
+            white-space: nowrap;
+        }
+        
+        .sidebar li.profile .job {
+            font-size: 12px;
+        }
+        
+        .sidebar .profile #log_out {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: #1d1b31;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 0px;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .profile #log_out {
+            width: 50px;
+            background: none;
+        }
+        
+        .home-section {
+            position: relative;
+            background: #E4E9F7;
+            min-height: 100vh;
+            top: 0;
+            left: 78px;
+            width: calc(100% - 78px);
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+        
+        .sidebar.open~.home-section {
+            left: 250px;
+            width: calc(100% - 250px);
+        }
+        
+        .home-section .text {
+            display: inline-block;
+            color: #11101d;
+            font-size: 25px;
+            font-weight: 500;
+            margin: 18px
+        }
+        
+        @media (max-width: 420px) {
+            .sidebar li .tooltip {
+                display: none;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div id="play" class="play icon-play"></div>
-    <div id="background">
-      <div class='wave one'></div>
-      <div class='wave two'></div>
-      <div class='wave three'></div>         
-    </div>
-    <div id="loader" class="loader"></div>
-    <div id="status" class="status"></div>
-      <div id="menubar" class="menubar">
-      <div id="btnDisplay" class="icon"><div class="icon-binoculars"> </div>display</div>
-      <div id="btnImage" class="icon"><div class="icon-brush"></div>input</div>
-      <div id="btnProcess" class="icon"><div class="icon-stats"></div>options</div>
-      <div id="btnModel" class="icon"><div class="icon-games"></div>models</div>
-      <div id="chatVAII" class="icon"><div id="myBtn" class="icon-record"></div>Start</div>
-      <div id="btnStart" class="icon"><div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
-    </div>
-    <div id="media">
-      <canvas id="canvas" class="canvas"></canvas>
-      <div class="float">
-          <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
-      </div>
-      <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-          <header class="modal-header">
-             <div class="mx-auto">
-                <div align="center"class="py-4">
-                    <h1 align="center" style="font-size="42px" >Record VAII</h1>
-                </div>  
-             </div>
-          </header>
-            <main class="modal-body overflow-hidden">
-              <div class="container mx-auto py-8 px-4">
-                <h2 class="text-xl font-light mb-4">
-                  Record 
-                </h2>
 
-                <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
-
-                <div class="flex flex-wrap -mx-4 mb-8">
-                  <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
-                    Record Screen VAII
-                  </button>
-                  <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                    Stop Recording
-                  </button>
-                </div>
-
-                <div class="recorded-video-wrap hidden">
-                  <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
-                    Hasil Record VAII
-                  </h2>
-
-                  <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
-                  <div class="flex flex-wrap -mx-4">
-                    <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                      Download
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i src="//g4lihru.me/drive/logo.png" class='bx-tada bx-rotate-90'></i>
+                <div class="logo_name">Drive</div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <i class='bx bx-search'></i>
+                    <input class="search-input" id="fileSearch" type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/">
+                        <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Drive Saya</span>
                     </a>
-                    <button type="button" class="btn btn-success" onclick="upload()">Upload</button>
-                  </div>
+                    <span class="tooltip">Drive Saya</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/video/">
+                        <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Video</span>
+                    </a>
+                    <span class="tooltip">Video</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/pdf/">
+                        <i class='bx bxs-file-pdf bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Pdf</span>
+                    </a>
+                    <span class="tooltip">Pdf</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/img/">
+                        <i class='bx bxs-file-image bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Gambar</span>
+                    </a>
+                    <span class="tooltip">Gambar</span>
+                </li>
+                <li>
+                    <a href="//instagram.com/galih_ridho_utomo">
+                        <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
+                        <span class="links_name">Instagram</span>
+                    </a>
+                    <span class="tooltip">Instagram</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <img src="https://g4lihru.me/345677.png" alt="profileImg">-->
+                        <div class="name_job">
+                            <div class="name">Galih Ridho Utomo</div>
+                            <div class="job">Mahasiswa UNNES</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+              <div class="text">Drive Pdf</div>
+              <div id="play" class="play icon-play"></div>
+              <div id="background">
+                <div class='wave one'></div>
+                <div class='wave two'></div>
+                <div class='wave three'></div>         
+              </div>
+              <div id="loader" class="loader"></div>
+              <div id="status" class="status"></div>
+                <div id="menubar" class="menubar">
+                <div id="btnDisplay" class="icon"><div class="icon-binoculars"> </div>display</div>
+                <div id="btnImage" class="icon"><div class="icon-brush"></div>input</div>
+                <div id="btnProcess" class="icon"><div class="icon-stats"></div>options</div>
+                <div id="btnModel" class="icon"><div class="icon-games"></div>models</div>
+                <div id="chatVAII" class="icon"><div id="myBtn" class="icon-record"></div>Start</div>
+                <div id="btnStart" class="icon"><div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
+              </div>
+              <div id="media">
+                <canvas id="canvas" class="canvas"></canvas>
+                <div class="float">
+                    <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
+                </div>
+                <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                    <header class="modal-header">
+                       <div class="mx-auto">
+                          <div align="center"class="py-4">
+                              <h1 align="center" style="font-size="42px" >Record VAII</h1>
+                          </div>  
+                       </div>
+                    </header>
+                      <main class="modal-body overflow-hidden">
+                        <div class="container mx-auto py-8 px-4">
+                          <h2 class="text-xl font-light mb-4">
+                            Record 
+                          </h2>
+
+                          <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+
+                          <div class="flex flex-wrap -mx-4 mb-8">
+                            <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
+                              Record Screen VAII
+                            </button>
+                            <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                              Stop Recording
+                            </button>
+                          </div>
+
+                          <div class="recorded-video-wrap hidden">
+                            <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
+                              Hasil Record VAII
+                            </h2>
+
+                            <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+                            <div class="flex flex-wrap -mx-4">
+                              <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                                Download
+                              </a>
+                              <button type="button" class="btn btn-success" onclick="upload()">Upload</button>
+                            </div>
+                          </div>
+                        </div>
+                      </main>
+                      <script src="https://g4lihru.me/meet/dist/main.js"></script>   
                 </div>
               </div>
-            </main>
-            <script src="https://g4lihru.me/meet/dist/main.js"></script>   
-      </div>
-    </div>
-      <video id="video" playsinline class="video"controls autoplay></video>
-    </div>
-    <div id="compare-container" class="compare-image">
-      <canvas id="compare-canvas" width="256" height="256"></canvas>
-      <div id="similarity"></div>
-    </div>
-    <div id="segmentation-container" class="compare-image">
-      <canvas id="segmentation-mask" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
-      <canvas id="segmentation-canvas" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
-    </div>
-    <div id="samples-container" class="samples-container"></div>
-    <div id="hint" class="hint"></div>
-    <div id="log" class="log"></div>
-    <div id="results" class="results"></div>
-    <div id="transcript"></div>
-    <!-- import the webpage's javascript file -->
-    <script src="https://g4lihru.me/script.js" defer></script>
-    
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script type="text/javascript">
-        setTimeout(function() {
-            document.getElementById("loader-wrapper").style.display = "content";
-        }, 2000);
-    </script>
-    <script type="text/javascript">
-      // Get the modal
-      var modal = document.getElementById("myModal");
+                <video id="video" playsinline class="video"controls autoplay></video>
+              </div>
+              <div id="compare-container" class="compare-image">
+                <canvas id="compare-canvas" width="256" height="256"></canvas>
+                <div id="similarity"></div>
+              </div>
+              <div id="segmentation-container" class="compare-image">
+                <canvas id="segmentation-mask" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
+                <canvas id="segmentation-canvas" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
+              </div>
+              <div id="samples-container" class="samples-container"></div>
+              <div id="hint" class="hint"></div>
+              <div id="log" class="log"></div>
+              <div id="results" class="results"></div>
+              <div id="transcript"></div>
+        </section>
+        <!-- import the webpage's javascript file -->
+        <script src="https://g4lihru.me/script.js" defer></script>
 
-      // Get the button that opens the modal
-      var btn = document.getElementById("myBtn");
+        <!-- include the Glitch button to show what the webpage is about and
+              to make it easier for folks to view source and remix -->
+        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+        <script type="text/javascript">
+            setTimeout(function() {
+                document.getElementById("loader-wrapper").style.display = "content";
+            }, 2000);
+        </script>
+        <script type="text/javascript">
+          // Get the modal
+          var modal = document.getElementById("myModal");
 
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
+          // Get the button that opens the modal
+          var btn = document.getElementById("myBtn");
 
-      // When the user clicks the button, open the modal 
-      btn.onclick = function() {
-        modal.style.display = "block";
-      }
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
 
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
+          // When the user clicks the button, open the modal 
+          btn.onclick = function() {
+            modal.style.display = "block";
+          }
 
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
-        authDomain: "g4lihriu.firebaseapp.com",
-        databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
-        projectId: "g4lihriu",
-        storageBucket: "g4lihriu.appspot.com",
-        messagingSenderId: "387783527536",
-        appId: "1:387783527536:web:8df38ac72783aea162b8b5",
-        measurementId: "G-DCSX3TS7ZS"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
-    <script src="https://g4lihriu.web.app/main-1.js"></script>
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
+            authDomain: "g4lihriu.firebaseapp.com",
+            databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
+            projectId: "g4lihriu",
+            storageBucket: "g4lihriu.appspot.com",
+            messagingSenderId: "387783527536",
+            appId: "1:387783527536:web:8df38ac72783aea162b8b5",
+            measurementId: "G-DCSX3TS7ZS"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+        <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
+        <script src="https://g4lihriu.web.app/main-1.js"></script>
   </body>
 </html>
