@@ -24,6 +24,14 @@
     <link rel="stylesheet" href="https://g4lihru.me/meet/dist/tailwind.css" />
     <script src="./index.js" type="module"></script>
     <style>
+        html, body {
+          width: 100%;
+          height: 100%;
+          margin: 0px;
+          border: 0;
+          overflow: hidden; /*  Disable scrollbars */
+          display: block;  /* No floating content on sides */
+        }
         @font-face {
             font-family: 'Lato';
             font-display: swap;
@@ -790,7 +798,7 @@
                     <div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
             </div>
             <div id="media">
-                <canvas id="canvas" class="canvas"></canvas>
+                <canvas id="canvas" class="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
