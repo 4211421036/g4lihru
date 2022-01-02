@@ -21,6 +21,7 @@
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
     <link rel="stylesheet" type="text/css" href="./icons.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://g4lihru.me/meet/dist/tailwind.css" />
     <script src="./index.js" type="module"></script>
     <style>
@@ -409,46 +410,46 @@
             border-color: transparent transparent transparent white;
         }
         
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 70px;
-            /* Location of the box */
-            bottom: 50%;
-            width: 100%;
-            /* Full width */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
+         .modal:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
         }
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
+          
+        .modal-dialog {
+            display: inline-block;
+            vertical-align: middle;
         }
-        
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
+          
+        .modal .modal-content {
+            padding: 20px 20px 20px 20px;
+            -webkit-animation-name: modal-animation;
+            -webkit-animation-duration: 0.5s;
+            animation-name: modal-animation;
+            animation-duration: 0.5s;
         }
-        
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
+          
+        @-webkit-keyframes modal-animation {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
+          
+        @keyframes modal-animation {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0px;
+                opacity: 1;
+            }
         }
         
         .sidebar {
@@ -787,7 +788,7 @@
                     <span class="tooltip">Model</span>
                 </li>
                 <li>
-                    <a href="#" id="myBtn">
+                    <a href="#" id="myBtn" data-toggle="modal">
                         <i class="bx bxs-video-recording bx-flashing"></i>
                         <span class="links_name">Record</span>
                     </a>
@@ -839,48 +840,50 @@
                 <canvas id="canvas" class="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <header class="modal-header">
-                            <div class="mx-auto">
-                                <div align="center" class="py-4">
-                                    <h1 align="center" style="font-size: 42px;" >Record VAII</h1>
-                                </div>  
-                            </div>
-                        </header>
-                        <main class="modal-body overflow-hidden">
-                          <div class="container mx-auto py-8 px-4">
-                            <h2 class="text-xl font-light mb-4">
-                              Record 
-                            </h2>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <header class="modal-header">
+                                <div class="mx-auto">
+                                    <div align="center" class="py-4">
+                                        <h1 align="center" style="font-size: 42px;" >Record VAII</h1>
+                                    </div>  
+                                </div>
+                            </header>
+                            <main class="modal-body overflow-hidden">
+                              <div class="container mx-auto py-8 px-4">
+                                <h2 class="text-xl font-light mb-4">
+                                  Record 
+                                </h2>
 
-                            <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+                                <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
 
-                            <div class="flex flex-wrap -mx-4 mb-8">
-                              <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
-                                Record Screen VAII
-                              </button>
-                              <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                                Stop Recording
-                              </button>
-                            </div>
+                                <div class="flex flex-wrap -mx-4 mb-8">
+                                  <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
+                                    Record Screen VAII
+                                  </button>
+                                  <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                                    Stop Recording
+                                  </button>
+                                </div>
 
-                            <div class="recorded-video-wrap hidden">
-                              <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
-                                Hasil Record VAII
-                              </h2>
+                                <div class="recorded-video-wrap hidden">
+                                  <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
+                                    Hasil Record VAII
+                                  </h2>
 
-                              <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
-                              <div class="flex flex-wrap -mx-4">
-                                <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                                  Download
-                                </a>
-                                <button type="button " class="btn btn-success" onclick="upload()">Upload</button>
+                                  <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+                                  <div class="flex flex-wrap -mx-4">
+                                    <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                                      Download
+                                    </a>
+                                    <button type="button " class="btn btn-success" onclick="upload()">Upload</button>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                          </div>
-                        </main>
-                        <script src="https://g4lihru.me/meet/dist/main.js"></script>   
+                            </main>
+                            <script src="https://g4lihru.me/meet/dist/main.js"></script>   
+                        </div>
                     </div>
                 </div>
                 <video id="video" playsinline class="video"></video>
