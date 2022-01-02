@@ -3,7 +3,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
@@ -314,76 +315,76 @@
 </style>
 
 <body>
-    <div class="sidebar">
-        <div class="logo-details">
-            <i src="//g4lihru.me/drive/logo.png" class='bx-tada bx-rotate-90'></i>
-            <div class="logo_name">Drive</div>
-            <i class='bx bx-menu' id="btn"></i>
-        </div>
-        <ul class="nav-list">
-            <li>
-                <i class='bx bx-search'></i>
-                <input class="search-input" id="fileSearch" type="text" placeholder="Search...">
-                <span class="tooltip">Search</span>
-            </li>
-            <li>
-                <a href="//g4lihru.me/drive/">
-                    <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
-                    <span class="links_name">Drive Saya</span>
-                </a>
-                <span class="tooltip">Drive Saya</span>
-            </li>
-            <li>
-                <a href="//g4lihru.me/ai/vaii/">
-                    <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
-                    <span class="links_name">Video</span>
-                </a>
-                <span class="tooltip">Video</span>
-            </li>
-            <li>
-                <a href="//g4lihru.me/ai/vaii/v-maps">
-                    <i class='bx bxs-location-plus bx-tada' ></i>
-                    <span class="links_name">Lokasi</span>
-                </a>
-                <span class="tooltip">Lokasi</span>
-            </li>
-            <li>
-                <a href="//instagram.com/galih_ridho_utomo">
-                    <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
-                    <span class="links_name">Instagram</span>
-                </a>
-                <span class="tooltip">Instagram</span>
-            </li>
-            <li class="profile">
-                <div class="profile-details">
-                    <img src="https://g4lihru.me/345677.png" alt="profileImg">-->
-                    <div class="name_job">
-                        <div class="name">Galih Ridho Utomo</div>
-                        <div class="job">Mahasiswa UNNES</div>
+    <main id="map">
+        <div class="sidebar">
+            <div class="logo-details">
+                <i src="//g4lihru.me/drive/logo.png" class='bx-tada bx-rotate-90'></i>
+                <div class="logo_name">Drive</div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <i class='bx bx-search'></i>
+                    <input class="search-input" id="fileSearch" type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/">
+                        <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Drive Saya</span>
+                    </a>
+                    <span class="tooltip">Drive Saya</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/ai/vaii/">
+                        <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Video</span>
+                    </a>
+                    <span class="tooltip">Video</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/ai/vaii/v-maps">
+                        <i class='bx bxs-location-plus bx-tada'></i>
+                        <span class="links_name">Lokasi</span>
+                    </a>
+                    <span class="tooltip">Lokasi</span>
+                </li>
+                <li>
+                    <a href="//instagram.com/galih_ridho_utomo">
+                        <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
+                        <span class="links_name">Instagram</span>
+                    </a>
+                    <span class="tooltip">Instagram</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <img src="https://g4lihru.me/345677.png" alt="profileImg">
+                        <div class="name_job">
+                            <div class="name">Galih Ridho Utomo</div>
+                            <div class="job">Mahasiswa UNNES</div>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-        <main id="map">
-          <div class="progress" id="progress-bar">
+                </li>
+            </ul>
+        </div>
+        <div class="progress" id="progress-bar">
             <div class="indeterminate"></div>
-          </div>
-        </main>
-        <script src="assets/vendor/sqljs-1.6.1/sql-wasm.js"></script>
-        <script src="assets/vendor/localForage-1.10.0/localforage.min.js"></script>
-        <script src="assets/vendor/leaflet-1.7.1/leaflet.js"></script>
-        <script src="assets/vendor/leaflet-locatecontrol-0.74.0/L.Control.Locate.min.js"></script>
-        <script src="assets/vendor/leaflet-mbtiles/Leaflet.TileLayer.MBTiles.js"></script>
-        <script src="assets/vendor/csv2geojson-5.1.1/csv2geojson.min.js"></script>
-        <script src="assets/vendor/togeojson-0.16.0/togeojson.min.js"></script>
-        <script src="assets/js/app.js"></script>
-        <script>
-          if ("serviceWorker" in navigator) {
+        </div>
+    </main>
+    <script src="assets/vendor/sqljs-1.6.1/sql-wasm.js"></script>
+    <script src="assets/vendor/localForage-1.10.0/localforage.min.js"></script>
+    <script src="assets/vendor/leaflet-1.7.1/leaflet.js"></script>
+    <script src="assets/vendor/leaflet-locatecontrol-0.74.0/L.Control.Locate.min.js"></script>
+    <script src="assets/vendor/leaflet-mbtiles/Leaflet.TileLayer.MBTiles.js"></script>
+    <script src="assets/vendor/csv2geojson-5.1.1/csv2geojson.min.js"></script>
+    <script src="assets/vendor/togeojson-0.16.0/togeojson.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register("service-worker.js");
-          }
-        </script>
-        <noscript>This website requires JavaScript!</noscript>
+        }
+    </script>
+    <noscript>This website requires JavaScript!</noscript>
     <script>
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");
