@@ -1,0 +1,22 @@
+# Contributing Guidelines
+
+Pull requests from everyone are welcome
+
+Procedure for contributing:
+
+- Create a fork of the repository on github  
+  In a top right corner of a GitHub, select "Fork"
+  Its recommended to fork latest version from main branch to avoid any possible conflicting code updates
+- Clone your forked repository to your local system  
+  `git clone https://github.com/<your-username>/<your-fork>
+- Make your changes  
+- Test your changes against code guidelines  
+  `npm run lint`
+- Test your changes in Browser and NodeJS  
+  `npm run dev` and naviate to https://localhost:10031  
+  `node test/test-node.js`  
+- Push changes to your fork  
+  Exclude files in `/dist', '/types', '/typedoc' from the commit as they are dynamically generated during build
+- Submit a PR (pull request)
+
+Your pull request will be reviewed and pending review results, merged into main branch
