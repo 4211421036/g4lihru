@@ -19,208 +19,12 @@
     <link rel="stylesheet" href="assets/vendor/icomoon/style.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </head>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <style>
-    .btn-primary .caret,
-    .btn-warning .caret,
-    .btn-danger .caret,
-    .btn-info .caret,
-    .btn-success .caret,
-    .btn-inverse .caret {
-        border-top-color: #ffffff;
-        border-bottom-color: #ffffff;
-    }
-    
-    .btn-primary.active,
-    .btn-warning.active,
-    .btn-danger.active,
-    .btn-success.active,
-    .btn-info.active,
-    .btn-inverse.active {
-        color: rgba(255, 255, 255, 0.75);
-    }
-    
-    .btn-primary {
-        color: #ffffff;
-        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-        background-color: #006dcc;
-        background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-        background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-        background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-        background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-        background-repeat: repeat-x;
-        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-        border-color: #0044cc #0044cc #002a80;
-        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-        *background-color: #0044cc;
-        filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
-    }
-    
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active,
-    .btn-primary.disabled,
-    .btn-primary[disabled] {
-        color: #ffffff;
-        background-color: #0044cc;
-        *background-color: #003bb3;
-    }
-    
-    .btn-primary:active,
-    .btn-primary.active {
-        background-color: #003399 \9;
-    }
-    
-    .item {
-        transition: .5s ease-in-out;
-    }
-    
-    .item:hover {
-        filter: brightness(80%);
-    }
-    
-    .action_btn {
-        width: 200px;
-        margin: 0 auto;
-        display: inline;
-    }
-    
-    .loader {
-        width: 300px;
-        height: 300px;
-        border: 3px solid transparent;
-        border-radius: 50%;
-        border-top: 4px solid #f15e41;
-        animation: spin 4s linear infinite;
-        position: absolute;
-        bottom: 15%;
-        left: 50%;
-        margin-left: -150px;
-        z-index: 15;
-    }
-    
-    .loader::before,
-    .loader::after {
-        content: "";
-        position: absolute;
-        top: 6px;
-        bottom: 6px;
-        left: 6px;
-        right: 6px;
-        border-radius: 50%;
-        border: 4px solid transparent;
-    }
-    
-    .loader::before {
-        border-top-color: #bad375;
-        animation: 3s spin linear infinite;
-    }
-    
-    .loader::after {
-        border-top-color: #26a9e0;
-        animation: spin 1.5s linear infinite;
-    }
-    
-    @keyframes spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-    
-    .wave {
-        position: fixed;
-        top: 0;
-        left: -90%;
-        width: 100vw;
-        height: 100vh;
-        border-radius: 10%;
-        opacity: .3;
-        z-index: -1;
-    }
-    
-    .wave.one {
-        animation: rotate 10000ms infinite linear;
-        background: #2F4F4F;
-    }
-    
-    .wave.two {
-        animation: rotate 15000ms infinite linear;
-        background: #1F3F3F;
-    }
-    
-    .wave.three {
-        animation: rotate 20000ms infinite linear;
-        background: #0F1F1F;
-    }
-    
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        from {
-            transform: rotate(360deg);
-        }
-    }
-    
-    .videoWrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        /* 16:9 */
-        height: 0;
-    }
-    
-    .videoWrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    body::-webkit-scrollbar {
-        width: 15px;
-    }
-    
-    body::-webkit-scrollbar-track {
-        background: transparent;
-    }
-    
-    body::-webkit-scrollbar-thumb {
-        background: transparent;
-    }
-    
-    body::-webkit-scrollbar-thumb:hover {
-        background: transparent;
-    }
-    
-    iframe::-webkit-scrollbar {
-        width: 15px;
-        display: none;
-    }
-    
-    iframe::-webkit-scrollbar-track {
-        background: transparent;
-        display: none;
-    }
-    
-    iframe::-webkit-scrollbar-thumb {
-        background: transparent;
-        display: none;
-    }
-    
-    iframe::-webkit-scrollbar-thumb:hover {
-        background: transparent;
-        display: none;
-    }
     /* Google Font Link */
     
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -532,25 +336,18 @@
                 <span class="tooltip">Drive Saya</span>
             </li>
             <li>
-                <a href="//g4lihru.me/drive/video/">
+                <a href="//g4lihru.me/ai/vaii/">
                     <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
                     <span class="links_name">Video</span>
                 </a>
                 <span class="tooltip">Video</span>
             </li>
             <li>
-                <a href="//g4lihru.me/drive/pdf/">
-                    <i class='bx bxs-file-pdf bx-tada bx-rotate-90'></i>
-                    <span class="links_name">Pdf</span>
+                <a href="//g4lihru.me/ai/vaii/v-maps">
+                    <i class='bx bxs-location-plus bx-tada' ></i>
+                    <span class="links_name">Lokasi</span>
                 </a>
-                <span class="tooltip">Pdf</span>
-            </li>
-            <li>
-                <a href="//g4lihru.me/drive/img/">
-                    <i class='bx bxs-file-image bx-tada bx-rotate-90'></i>
-                    <span class="links_name">Gambar</span>
-                </a>
-                <span class="tooltip">Gambar</span>
+                <span class="tooltip">Lokasi</span>
             </li>
             <li>
                 <a href="//instagram.com/galih_ridho_utomo">
