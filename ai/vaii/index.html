@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" id="viewport">
+    <title>VAII | Galih Ridho Utomo</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAuCAYAAAC4e0AJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGwWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4wLWMwMDAgNzkuMjE3YmNhNiwgMjAyMS8wNi8xNC0xODoyODoxMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIyLjQgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMS0xMS0wOFQxODowMTozMiswNzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjEtMTEtMDhUMTg6MDk6NDErMDc6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjEtMTEtMDhUMTg6MDk6NDErMDc6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmE0ZmI2ZjFhLTY3NjYtM2Q0MC1iYzU1LWNmYjFkY2QzMjZkNCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjVkYzMxMDNjLTZjNmUtZmU0Yy05NjVhLTVjYTFjNWU4OTI5NCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmMxNzRmMWE1LTZjNGYtOGU0YS04MGQ3LWQxY2ZiYjdlMmFlMiI+IDxwaG90b3Nob3A6RG9jdW1lbnRBbmNlc3RvcnM+IDxyZGY6QmFnPiA8cmRmOmxpPnhtcC5kaWQ6YWIwYTYzYmYtOWFjNC1jMDRmLTg2ZTEtZGUwNDIzMjFkZTVjPC9yZGY6bGk+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6RG9jdW1lbnRBbmNlc3RvcnM+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YzE3NGYxYTUtNmM0Zi04ZTRhLTgwZDctZDFjZmJiN2UyYWUyIiBzdEV2dDp3aGVuPSIyMDIxLTExLTA4VDE4OjAxOjMyKzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjIuNCAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YTRmYjZmMWEtNjc2Ni0zZDQwLWJjNTUtY2ZiMWRjZDMyNmQ0IiBzdEV2dDp3aGVuPSIyMDIxLTExLTA4VDE4OjA5OjQxKzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjIuNCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ws3IrAAAB8JJ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">
+    <meta name="theme-color" content="#3367D6">
+    <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
+    <meta property="og:title" content="G4lihru Website's" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="https://www.g4lihru.me/" />
+    <meta property="og:image" content="https://g4lihru.me/345677.png" />
+    <meta name="keywords" content="VAII">
+    <meta name="application-name" content="VAII">
+    <meta name="description" content="Sebuah Inovasi Articial Intellangance yang membantu dalam mengurangi angka kecelakaan di jalan raya">
+    <meta name="msapplication-tooltip" content="Sebuah Inovasi Articial Intellangance yang membantu dalam mengurangi angka kecelakaan di jalan raya">
+    <link rel="manifest" href="https://g4lihru.me/demo/manifest.webmanifest">
+    <link rel="shortcut icon" href="https://g4lihru.me/987654567.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
+    <link rel="stylesheet" type="text/css" href="./icons.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://g4lihru.me/meet/dist/tailwind.css" />
+    <script src="./index.js" type="module"></script>
+    <style>
+        html, body {
+          width: 100%;
+          height: 100%;
+          margin: 0px;
+          border: 0;
+          overflow: hidden; /*  Disable scrollbars */
+          display: block;  /* No floating content on sides */
+        }
+        .menu {
+            padding: 0;
+        }
+        @font-face {
+            font-family: 'Lato';
+            font-display: swap;
+            font-style: normal;
+            font-weight: 100;
+            src: local('Lato'), url('../assets/lato-light.woff2')
+        }
+        
+        html {
+            font-family: 'Lato', 'Segoe UI';
+            font-size: 16px;
+            font-variant: small-caps;
+        }
+        
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            overflow-x: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        hr {
+            width: 100%;
+        }
+        
+        .play {
+            position: absolute;
+            width: 256px;
+            height: 256px;
+            z-index: 9;
+            bottom: 50%;
+            left: 50%;
+            margin-left: -125px;
+            display: none;
+            filter: grayscale(1);
+        }
+        
+        .play:hover {
+            filter: grayscale(0);
+        }
+        
+        .btn-background {
+            fill: grey;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        
+        .btn-background:hover {
+            opacity: 1;
+        }
+        
+        .btn-foreground {
+            fill: white;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        
+        .btn-foreground:hover {
+            opacity: 1;
+        }
+        
+        .status {
+            position: absolute;
+            width: 100vw;
+            bottom: 44%;
+            left: 0;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 100;
+            text-shadow: 2px 2px #303030;
+        }
+        
+        .thumbnail {
+            margin: 8px;
+            box-shadow: 0 0 4px 4px dimgrey;
+        }
+        
+        .thumbnail:hover {
+            box-shadow: 0 0 8px 8px dimgrey;
+            filter: grayscale(1);
+        }
+        
+        .log {
+            position: absolute;
+            bottom: 45%;
+            margin: 0.4rem 0.4rem 0 0.4rem;
+            font-size: 0.9rem;
+        }
+        
+        .menubar {
+            width: auto;
+            background: #303030;
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .samples-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .video {
+            display: none;
+        }
+        
+        .canvas {
+            margin: 0 auto;
+        }
+        
+        .bench {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .compare-image {
+            width: 256px;
+            position: absolute;
+            top: 150px;
+            left: 30px;
+            box-shadow: 0 0 2px 2px black;
+            background: black;
+            display: none;
+        }
+        
+        .loader {
+            width: 300px;
+            height: 300px;
+            border: 3px solid transparent;
+            border-radius: 50%;
+            border-top: 4px solid #f15e41;
+            animation: spin 4s linear infinite;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            margin-left: -150px;
+            z-index: 15;
+        }
+        
+        .loader::before,
+        .loader::after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+        }
+        
+        .loader::before {
+            border-top-color: #bad375;
+            animation: 3s spin linear infinite;
+        }
+        
+        .loader::after {
+            border-top-color: #26a9e0;
+            animation: spin 1.5s linear infinite;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .wave {
+            position: fixed;
+            top: 0;
+            left: -90%;
+            width: 100vw;
+            height: 100vh;
+            border-radius: 10%;
+            opacity: .3;
+            z-index: -1;
+        }
+        
+        .wave.one {
+            animation: rotate 10000ms infinite linear;
+            background: #2F4F4F;
+        }
+        
+        .wave.two {
+            animation: rotate 15000ms infinite linear;
+            background: #1F3F3F;
+        }
+        
+        .wave.three {
+            animation: rotate 20000ms infinite linear;
+            background: #0F1F1F;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            from {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .button {
+            text-shadow: 2px 2px black;
+            display: flex;
+        }
+        
+        .button:hover {
+            text-shadow: -2px -2px black;
+            color: lightblue;
+        }
+        
+        .button::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "FA";
+            font-weight: 900;
+            font-size: 2.4rem;
+            margin-right: 0.4rem;
+        }
+        
+        .button-display::before {
+            content: "\f8c4";
+        }
+        
+        .button-image::before {
+            content: "\f3f2";
+        }
+        
+        .button-process::before {
+            content: "\f3f0";
+        }
+        
+        .button-model::before {
+            content: "\f2c2";
+        }
+        
+        .button-start::before {
+            content: "\f144";
+        }
+        
+        .button-stop::before {
+            content: "\f28b";
+        }
+        
+        .icon {
+            width: 180px;
+            text-align: -webkit-center;
+            text-align: -moz-center;
+            filter: grayscale(1);
+        }
+        
+        .icon:hover {
+            background: #505050;
+            filter: grayscale(0);
+        }
+        
+        .hint {
+            opacity: 0;
+            transition-duration: 0.5s;
+            transition-property: opacity;
+            font-style: italic;
+            color: #000;
+            position: fixed;
+            top: 12rem;
+            padding: 8px;
+            margin: 8px;
+            box-shadow: 0 0 2px 2px #303030;
+        }
+        
+        .input-file {
+            align-self: center;
+            width: 5rem;
+        }
+        
+        .results {
+            position: absolute;
+            left: 0;
+            top: 5rem;
+            background: #303030;
+            width: 20rem;
+            height: 90%;
+            font-size: 0.8rem;
+            overflow-y: auto;
+            display: none
+        }
+        
+        .results::-webkit-scrollbar {
+            background-color: #303030;
+        }
+        
+        .results::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 10px;
+        }
+        
+        .json-line {
+            margin: 4px 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .json {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+        
+        .json-type {
+            color: lightyellow;
+        }
+        
+        .json-key {
+            color: white;
+        }
+        
+        .json-index {
+            color: lightcoral;
+        }
+        
+        .json-value {
+            margin-left: 20px;
+        }
+        
+        .json-number {
+            color: lightgreen;
+        }
+        
+        .json-boolean {
+            color: lightyellow;
+        }
+        
+        .json-string {
+            color: lightblue;
+        }
+        
+        .json-size {
+            color: gray;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        .fas {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .fa-caret-down {
+            border-width: 10px 8px 0 8px;
+            border-color: white transparent
+        }
+        
+        .fa-caret-right {
+            border-width: 10px 0 8px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .float {
+            position: fixed;
+            bottom: 25%;
+            right: 40px;
+            overflow: hidden;
+        }
+        
+        .my-float {
+            margin-top: 22px;
+        }
+        
+        .modal:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+          
+        .modal-dialog {
+            display: inline-block;
+            vertical-align: middle;
+        }
+          
+        .modal .modal-content {
+            padding: 20px 20px 20px 20px;
+            -webkit-animation-name: modal-animation;
+            -webkit-animation-duration: 0.5s;
+            animation-name: modal-animation;
+            animation-duration: 0.5s;
+        }
+          
+        @-webkit-keyframes modal-animation {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
+          
+        @keyframes modal-animation {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
+        
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 78px;
+            background: #11101D;
+            padding: 6px 14px;
+            z-index: 99;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open {
+            width: 250px;
+        }
+        
+        .sidebar .logo-details {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .sidebar .logo-details .icon {
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar .logo-details .logo_name {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .logo-details .icon,
+        .sidebar.open .logo-details .logo_name {
+            opacity: 1;
+        }
+        
+        .sidebar .logo-details #btn {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 22px;
+            transition: all 0.4s ease;
+            font-size: 23px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .logo-details #btn {
+            text-align: right;
+        }
+        
+        .sidebar i {
+            color: #fff;
+            height: 60px;
+            min-width: 50px;
+            font-size: 28px;
+            text-align: center;
+            line-height: 60px;
+        }
+        
+        .sidebar .nav-list {
+            margin-top: 20px;
+            height: 100%;
+        }
+        
+        .sidebar li {
+            position: relative;
+            margin: 8px 0;
+            list-style: none;
+        }
+        
+        .sidebar li .tooltip {
+            position: absolute;
+            top: -20px;
+            left: calc(100% + 15px);
+            z-index: 3;
+            background: #000;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: 0s;
+        }
+        
+        .sidebar li:hover .tooltip {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .sidebar.open li .tooltip {
+            display: none;
+        }
+        
+        .sidebar input {
+            font-size: 15px;
+            color: #FFF;
+            font-weight: 400;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            width: 50px;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.5s ease;
+            background: #1d1b31;
+        }
+        
+        .sidebar.open input {
+            padding: 0 20px 0 50px;
+            width: 100%;
+        }
+        
+        .sidebar .bx-search {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 22px;
+            background: #1d1b31;
+            color: #FFF;
+        }
+        
+        .sidebar.open .bx-search:hover {
+            background: #1d1b31;
+            color: #FFF;
+        }
+        
+        .sidebar .bx-search:hover {
+            background: #FFF;
+            color: #11101d;
+        }
+        
+        .sidebar li a {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: #11101D;
+        }
+        
+        .sidebar li a:hover {
+            background: #FFF;
+        }
+        
+        .sidebar li a .links_name {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+        }
+        
+        .sidebar.open li a .links_name {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .sidebar li a:hover .links_name,
+        .sidebar li a:hover i {
+            transition: all 0.5s ease;
+            color: #11101D;
+        }
+        
+        .sidebar li i {
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            border-radius: 12px;
+        }
+        
+        .sidebar li.profile {
+            position: fixed;
+            height: 60px;
+            width: 78px;
+            left: 0;
+            bottom: -8px;
+            padding: 10px 14px;
+            background: #1d1b31;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        
+        .sidebar.open li.profile {
+            width: 250px;
+        }
+        
+        .sidebar li .profile-details {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        
+        .sidebar li img {
+            height: 45px;
+            width: 45px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+        
+        .sidebar li.profile .name,
+        .sidebar li.profile .job {
+            font-size: 15px;
+            font-weight: 400;
+            color: #fff;
+            white-space: nowrap;
+        }
+        
+        .sidebar li.profile .job {
+            font-size: 12px;
+        }
+        
+        .sidebar .profile #log_out {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: #1d1b31;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 0px;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .profile #log_out {
+            width: 50px;
+            background: none;
+        }
+        
+        .home-section {
+            position: relative;
+            background: #E4E9F7;
+            min-height: 100vh;
+            top: 0;
+            left: 78px;
+            width: calc(100% - 78px);
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+        
+        .sidebar.open~.home-section {
+            left: 250px;
+            width: calc(100% - 250px);
+        }
+        
+        .home-section .text {
+            display: inline-block;
+            color: #11101d;
+            font-size: 25px;
+            font-weight: 500;
+            margin: 18px
+        }
+        
+        @media (max-width: 420px) {
+            .sidebar li .tooltip {
+                display: none;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <div class="logo_name" align="center">AI VAII</div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav-list" style="overflow: scroll;">
+                <li>
+                    <i class='bx bx-search'></i>
+                    <input class="search-input" id="fileSearch" type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/">
+                        <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Drive Saya</span>
+                    </a>
+                    <span class="tooltip">Drive Saya</span>
+                </li>
+                <li>
+                <a href="//g4lihru.me/ai/vaii/">
+                    <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
+                    <span class="links_name">VAII</span>
+                </a>
+                <span class="tooltip">VAII</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/ai/vaii/v-maps">
+                        <i class='bx bxs-location-plus bx-tada' ></i>
+                        <span class="links_name">Lokasi</span>
+                    </a>
+                    <span class="tooltip">Lokasi</span>
+                </li>
+                <li>
+                    <a href="#" id="btnDisplay">
+                        <i class='bx bx-desktop bx-tada' ></i>
+                        <span class="links_name">Display</span>
+                    </a>
+                    <span class="tooltip">Display</span>
+                </li>
+                <li>
+                    <a href="#" id="btnImage">
+                        <i class='bx bxs-brush-alt bx-tada' ></i>
+                        <span class="links_name">Input</span>
+                    </a>
+                    <span class="tooltip">Input</span>
+                </li>
+                <li>
+                    <a href="#" id="btnProcess">
+                        <i class='bx bx-stats bx-tada' ></i>
+                        <span class="links_name">Option</span>
+                    </a>
+                    <span class="tooltip">Input</span>
+                </li>
+                <li>
+                    <a href="#" id="btnModel">
+                        <i class='bx bxs-game bx-tada' ></i>
+                        <span class="links_name">Model</span>
+                    </a>
+                    <span class="tooltip">Model</span>
+                </li>
+                <li>
+                    <a href="#" id="myBtn">
+                        <i class="bx bxs-video-recording bx-flashing"></i>
+                        <span class="links_name">Record</span>
+                    </a>
+                    <span class="tooltip">Record</span>
+                </li>
+                <li>
+                    <a href="//instagram.com/galih_ridho_utomo">
+                        <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
+                        <span class="links_name">Instagram</span>
+                    </a>
+                    <span class="tooltip">Instagram</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <img src="https://g4lihru.me/345677.png" alt="profileImg">
+                        <div class="name_job">
+                            <div class="name">Galih Ridho Utomo</div>
+                            <div class="job">Mahasiswa UNNES</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <div class="text">VAII</div>
+            <div id="play" class="play icon-play"></div>
+            <div id="background">
+                <div class='wave one'></div>
+                <div class='wave two'></div>
+                <div class='wave three'></div>
+            </div>
+            <div id="loader" class="loader"></div>
+            <div id="status" class="status"></div>
+            <div id="menubar" class="menubar">
+                <div id="btnDisplay" class="icon">
+                    <div class="icon-binoculars"> </div>display</div>
+                <div id="btnImage" class="icon">
+                    <div class="icon-brush"></div>input</div>
+                <div id="btnProcess" class="icon">
+                    <div class="icon-stats"></div>options</div>
+                <div id="btnModel" class="icon">
+                    <div class="icon-games"></div>models</div>
+                <div id="chatVAII" class="icon">
+                    <div id="myBtn" class="icon-record"></div>Start</div>
+                <div id="btnStart" class="icon">
+                    <div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
+            </div>
+            <div id="media">
+                <canvas id="canvas" class="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
+                <div class="float">
+                    <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
+                </div>
+                <div style="overflow: scroll;" id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <header class="modal-header">
+                            <div class="mx-auto">
+                                <div align="center" class="py-4">
+                                    <h1 align="center" style="font-size: 42px;" >Record VAII</h1>
+                                </div>  
+                            </div>
+                        </header>
+                        <main class="modal-body overflow-hidden">
+                          <div class="container mx-auto py-8 px-4">
+                            <h2 class="text-xl font-light mb-4">
+                              Record 
+                            </h2>
+
+                            <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+
+                            <div class="flex flex-wrap -mx-4 mb-8">
+                              <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
+                                Record Screen VAII
+                              </button>
+                              <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                                Stop Recording
+                              </button>
+                            </div>
+
+                            <div class="recorded-video-wrap hidden">
+                              <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
+                                Hasil Record VAII
+                              </h2>
+
+                              <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+                              <div class="flex flex-wrap -mx-4">
+                                <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                                  Download
+                                </a>
+                                <button type="button " class="btn btn-success" onclick="upload()">Upload</button>
+                              </div>
+                            </div>
+                          </div>
+                        </main>
+                        <script src="https://g4lihru.me/meet/dist/main.js"></script>   
+                    </div>
+                </div>
+                <video id="video" playsinline class="video"></video>
+            </div>
+            <div id="compare-container" class="compare-image">
+              <canvas id="compare-canvas" width="256" height="256"></canvas>
+              <div id="similarity"></div>
+            </div>
+            <div id="segmentation-container" class="compare-image">
+              <canvas id="segmentation-mask" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
+              <canvas id="segmentation-canvas" width="256" height="256 " style="width: 256px; height: 256px;"></canvas>
+            </div>
+            <div id="samples-container" class="samples-container"></div>
+            <div id="hint" class="hint"></div>
+            <div id="log" class="log"></div>
+            <div id="results" class="results"></div>
+            <div id="transcript"></div>
+        </section>
+        <!-- import the webpage's javascript file -->
+        <script src="https://g4lihru.me/script.js" defer></script>
+
+        <!-- include the Glitch button to show what the webpage is about and
+              to make it easier for folks to view source and remix -->
+        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+        <script type="text/javascript">
+            setTimeout(function() {
+                document.getElementById("loader-wrapper").style.display = "content ";
+            }, 2000);
+        </script>
+        <script type="text/javascript">
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
+                authDomain: "g4lihriu.firebaseapp.com",
+                databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
+                projectId: "g4lihriu",
+                storageBucket: "g4lihriu.appspot.com",
+                messagingSenderId: "387783527536",
+                appId: "1:387783527536:web:8df38ac72783aea162b8b5",
+                measurementId: "G-DCSX3TS7ZS"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let closeBtn = document.querySelector("#btn");
+            let searchBtn = document.querySelector(".bx-search");
+
+            closeBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("open");
+                menuBtnChange(); //calling the function(optional)
+            });
+
+            searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+                sidebar.classList.toggle("open");
+                menuBtnChange(); //calling the function(optional)
+            });
+
+            // following are the code to change sidebar button(optional)
+            function menuBtnChange() {
+                if (sidebar.classList.contains("open")) {
+                    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+                } else {
+                    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+                }
+            }
+        </script>
+        <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
+        <script src="https://g4lihriu.web.app/main-1.js"></script>
+    </body>
+
+</html>
