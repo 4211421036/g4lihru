@@ -762,12 +762,13 @@
                 <div class="logo_name" align="center">AI VAII</div>
                 <i class='bx bx-menu' id="btn"></i>
             </div>
-            <ul class="nav-list" style="overflow: scroll;">
-                <li>
-                    <i class='bx bx-search'></i>
-                    <input class="search-input" id="fileSearch" type="text" placeholder="Search...">
+            <div class="logo-details">
+                <i class='bx bx-search'>
+                    <input class="search-input" id="myInput" type="text" onkeyup="myFunction()" placeholder="Search...">
                     <span class="tooltip">Search</span>
-                </li>
+                </i>
+            <div>
+            <ul class="nav-list" style="overflow: scroll;" id="myUL">
                 <li>
                     <a href="//g4lihru.me/drive/">
                         <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
@@ -775,19 +776,13 @@
                     </a>
                     <span class="tooltip">Drive Saya</span>
                 </li>
+                
                 <li>
-                <a href="//g4lihru.me/ai/vaii/">
-                    <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
-                    <span class="links_name">VAII</span>
-                </a>
-                <span class="tooltip">VAII</span>
-                </li>
-                <li>
-                    <a href="//g4lihru.me/ai/vaii/v-maps">
-                        <i class='bx bxs-location-plus bx-tada' ></i>
-                        <span class="links_name">Lokasi</span>
+                    <a href="//g4lihru.me/ai/vaii/">
+                        <i class='bx bxs-videos bx-tada' ></i>
+                        <span class="links_name">VAII</span>
                     </a>
-                    <span class="tooltip">Lokasi</span>
+                    <span class="tooltip">VAII</span>
                 </li>
                 <li>
                     <a href="#" id="btnDisplay">
@@ -818,7 +813,7 @@
                     <span class="tooltip">Model</span>
                 </li>
                 <li>
-                    <a href="#" id="myBtn">
+                    <a href="#" id="myBtn" data-toggle="modal">
                         <i class="bx bxs-video-recording bx-flashing"></i>
                         <span class="links_name">Record</span>
                     </a>
@@ -940,11 +935,6 @@
               to make it easier for folks to view source and remix -->
         <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
         <script type="text/javascript">
-            setTimeout(function() {
-                document.getElementById("loader-wrapper").style.display = "content ";
-            }, 2000);
-        </script>
-        <script type="text/javascript">
             // Get the modal
             var modal = document.getElementById("myModal");
 
@@ -971,24 +961,6 @@
                 }
             }
         </script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
-                authDomain: "g4lihriu.firebaseapp.com",
-                databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
-                projectId: "g4lihriu",
-                storageBucket: "g4lihriu.appspot.com",
-                messagingSenderId: "387783527536",
-                appId: "1:387783527536:web:8df38ac72783aea162b8b5",
-                measurementId: "G-DCSX3TS7ZS"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-        </script>
         <script>
             let sidebar = document.querySelector(".sidebar");
             let closeBtn = document.querySelector("#btn");
@@ -1010,6 +982,24 @@
                     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
                 } else {
                     closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+                }
+            }
+        </script>
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
                 }
             }
         </script>
