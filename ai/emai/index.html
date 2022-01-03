@@ -738,12 +738,11 @@
                 <div class="logo_name" align="center">AI EMAI</div>
                 <i class='bx bx-menu' id="btn"></i>
             </div>
-            <ul class="nav-list" style="overflow: scroll;">
-                <li>
-                    <i class='bx bx-search'></i>
-                    <input class="search-input" id="fileSearch" type="text" placeholder="Search...">
+            <ul class="nav-list" style="overflow: scroll;" id="myUL">
+                <i class='bx bx-search'>
+                    <input class="search-input" id="myInput" type="text" onkeyup="myFunction()" placeholder="Search...">
                     <span class="tooltip">Search</span>
-                </li>
+                </i>
                 <li>
                     <a href="//g4lihru.me/drive/">
                         <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
@@ -752,18 +751,18 @@
                     <span class="tooltip">Drive Saya</span>
                 </li>
                 <li>
-                    <a href="//g4lihru.me/ai/vaii/">
+                    <a href="#" id="myBtn">
                         <i class='bx bxs-video-recording bx-tada' ></i>
+                        <span class="links_name">Record</span>
+                    </a>
+                    <span class="tooltip">Record</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/ai/vaii/">
+                        <i class='bx bxs-videos bx-tada' ></i>
                         <span class="links_name">VAII</span>
                     </a>
                     <span class="tooltip">VAII</span>
-                </li>
-                <li>
-                    <a href="//g4lihru.me/ai/vaii/v-maps">
-                        <i class='bx bxs-location-plus bx-tada' ></i>
-                        <span class="links_name">Lokasi</span>
-                    </a>
-                    <span class="tooltip">Lokasi</span>
                 </li>
                 <li>
                     <a href="#" id="btnDisplay">
@@ -946,6 +945,26 @@
                 }
             }
         </script>
+
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+
         <script>
             let sidebar = document.querySelector(".sidebar");
             let closeBtn = document.querySelector("#btn");
