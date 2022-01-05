@@ -1,0 +1,139 @@
+* {
+	box-sizing: border-box;
+}
+
+.mdc-text-field {
+	padding: 0;
+}
+
+body {
+	color: rgba(0, 0, 0, 0.87);
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	margin: 5px;
+}
+
+/* remote videos */
+
+div#videos {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+/*
+div#videos {
+	display: none;
+} */
+
+div#videos > video {
+	background: black;
+	width: 300px;
+	height: 100%;
+	display: block;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+
+/* one video */
+#videos > video:first-child:nth-last-child(1) {
+	width: 100%;
+	height: 100vh;
+}
+
+/* two videos */
+#videos > video:first-child:nth-last-child(2),
+#videos > video:first-child:nth-last-child(2) ~ video {
+	width: 50%;
+	height: 100vh;
+}
+
+/* three videos */
+#videos > video:first-child:nth-last-child(3),
+#videos > video:first-child:nth-last-child(3) ~ video {
+	width: 50%;
+	height: 50vh;
+}
+
+/* four videos */
+#videos > video:first-child:nth-last-child(4),
+#videos > video:first-child:nth-last-child(4) ~ video {
+	width: 50%;
+	height: 50vh;
+}
+
+/* five videos */
+#videos > video:first-child:nth-last-child(5),
+#videos > video:first-child:nth-last-child(5) ~ video {
+	width: 33.33%;
+	height: 50vh;
+}
+
+/* six videos */
+#videos > video:first-child:nth-last-child(6),
+#videos > video:first-child:nth-last-child(6) ~ video {
+	width: 33.33%;
+	height: 50vh;
+}
+
+/* buttons wrapper before call */
+
+.in-call #buttons {
+	display: none;
+}
+
+#buttons {
+	z-index: 3;
+	width: 254px;
+	position: absolute;
+	border: 2px solid var(--mdc-theme-primary);
+	padding: 20px;
+	border-radius: 4px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+}
+
+#buttons button {
+	width: 200px;
+}
+
+/* hangup button */
+#hangupBtn {
+	display: none;
+}
+
+.in-call #hangupBtn {
+	display: block;
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 3;
+}
+
+/* current room text */
+#currentRoom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: red;
+	z-index: 3;
+}
+
+/* mobile devices */
+
+@media (max-width: 768px) {
+	/* two videos */
+	#videos > video:first-child:nth-last-child(2),
+	#videos > video:first-child:nth-last-child(2) ~ video {
+		width: 100%;
+		height: 50vh;
+	}
+}
