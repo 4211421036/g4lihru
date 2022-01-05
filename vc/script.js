@@ -140,7 +140,7 @@ async function run() {
   const welcomePrompt = document.querySelector(".welcome-box");
   welcomePrompt.classList.toggle("hidden");
 
-  let room = { url: "https://popschools.daily.co/qOrbXQ3zJZC7o7aH8ycI" };
+  let room = { url: "https://g4lihru.me/vc/" };
 
   window.callFrame = DailyIframe.wrap(document.getElementById("call-frame"), {
     showLeaveButton: true
