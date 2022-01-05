@@ -1,79 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Community Call</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Raise your hand app for daily.co" />
-    <link rel="apple-touch-icon" href="assets/logo192.png" />
-    <script defer src="./script.js"></script>
-    <script src="https://unpkg.com/@daily-co/daily-js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <title>videoChatApp</title>
+    <link rel="stylesheet" href="https://video-chat-app-v1.herokuapp.com/style.css" />
+    <script src="https://video-chat-app-v1.herokuapp.com/socket.io/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script>
+      const ROOM_ID = "";
+    </script>
   </head>
   <body>
-    <div class="tile is-ancestor">
-      <div class="tile is-parent is-vertical">
-        <section class="tile is-child notification is-light">
-          <div class=" welcome-box box ">
-            <p class="subtitle">
-              Click the button below to join the call
-            </p>
-            <button
-              class="button is-fullwidth is-link is-medium"
-              onclick="run()"
-            >
-              Join Call
-            </button>
-          </div>
-          <section class="box thanks hidden">
-            <p class="subtitle">
-              Thanks for joining the call. Have a great day!
-            </p>
-          </section>
-          <div class="participants-section">
-            <p class="title">Participants</p>
-            <p class="subtitle">
-              Raise your hand to get the moderator's attention
-            </p>
-            <div class="box local-participant-info ">
-              <img
-                id="hand-img"
-                class=" is-pulled-right hidden"
-                src="assets/hand.png"
-                alt="hand icon"
-              />
-              <p class="name-label"><strong>You</strong></p>
-              <button
-                class="button is-primary hidden raise-hand-button"
-                onclick="raiseOrLowerHand()"
-              >
-              <p class="hand-state has-text-right"></p>
-            </div>
-            <ul class="participant-list"></ul>
-          </div>
-        </section>
+    <div class="header">
+      <div class="logo">
+        <div class="header__back">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <h3>Video Chat</h2>
       </div>
-      <div class="tile is-vertical is-8">
-        <div class="tile">
-          <div class="tile is-parent">
-            <div class="call-panel tile is-child notification is-light">
-              <iframe
-                class="is-overlay"
-                id="call-frame"
-                title="daily.co call frame"
-                allow="camera; microphone"
-              ></iframe>
-            </div>
+    </div>  
+    <div class="main">  
+    <div class="main__left">
+      <div class="videos__group">
+        <div id="video-grid">
+
+        </div>
+      </div>
+      <div class="options">
+        <div class="options__left">
+          <div id="stopVideo" class="options__button">
+            <i class="fa fa-video-camera"></i>
+          </div>
+          <div id="muteButton" class="options__button">
+            <i class="fa fa-microphone"></i>
+          </div>
+          <div id="showChat" class="options__button">
+            <i class="fa fa-comment"></i>
+          </div>
+        </div>
+        <div class="options__right">
+          <div id="inviteButton" class="options__button">
+            <i class="fas fa-user-plus"></i>
           </div>
         </div>
       </div>
     </div>
+    <div class="main__right">
+      <div class="main__chat_window">
+          <div class="messages">
+
+          </div>
+      </div>
+      <div class="main__message_container">
+        <input id="chat_message" type="text" autocomplete="off" placeholder="Type message here...">
+        <div id="send" class="options__button">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
+  <script src="https://video-chat-app-v1.herokuapp.com/script.js"></script>
 </html>
