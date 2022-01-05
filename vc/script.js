@@ -1,116 +1,160 @@
-// Generate random room name if needed
-if (!location.hash) {
-  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
-}
-const roomHash = location.hash.substring(1);
-
-// TODO: Replace with your own channel ID
-const drone = new ScaleDrone('isD5EhTs9n8jQVB0');
-// Room name needs to be prefixed with 'observable-'
-const roomName = 'VAII' + roomHash;
-const configuration = {
-  iceServers: [{
-    urls: 'stun:stun.l.google.com:19302'
-  }]
+let localParticipant = {
+  handRaised: false
 };
-let room;
-let pc;
-
-
-function onSuccess() {};
-function onError(error) {
-  console.error(error);
-};
-
-drone.on('open', error => {
-  if (error) {
-    return console.error(error);
+let handState = {
+  list: [],
+  // sends the current hand state without raising or lowering the hand
+  broadcastLocalHandState() {
+    let data = {
+      handRaised: localParticipant.handRaised,
+      session_id: localParticipant.session_id
+    };
+    window.callFrame.sendAppMessage(data, "*");
+  },
+  addHandToList(e) {
+    this.list = [...this.list].concat([
+      { session_id: e.fromId, handRaised: e.data.handRaised }
+    ]);
+    updateParticipants();
+  },
+  removeHandFromList(e) {
+    this.list.splice(this.list.indexOf(e.data.session_id), 1);
+    updateParticipants();
+  },
+  // gets called when a message is received, adds the session id and the hand state to this list
+  updateList(e) {
+    e.data.handRaised
+      ? handState.addHandToList(e)
+      : handState.removeHandFromList(e);
+  },
+  // raise or lower the local hand
+  toggleState() {
+    localParticipant = {
+      ...localParticipant,
+      handRaised: !localParticipant.handRaised
+    };
   }
-  room = drone.subscribe(roomName);
-  room.on('open', error => {
-    if (error) {
-      onError(error);
-    }
-  });
-  // We're connected to the room and received an array of 'members'
-  // connected to the room (including us). Signaling server is ready.
-  room.on('members', members => {
-    console.log('MEMBERS', members);
-    // If we are the second user to connect to the room we will be creating the offer
-    const isOfferer = members.length === 2;
-    startWebRTC(isOfferer);
-  });
-});
+};
 
-// Send signaling data via Scaledrone
-function sendMessage(message) {
-  drone.publish({
-    room: roomName,
-    message
-  });
+async function raiseOrLowerHand() {
+  handState.toggleState();
+  // Let other users see my hand state by sending a message
+  handState.broadcastLocalHandState();
+  updateParticipants();
+  // Update the UI to show my own hand state
+  document.getElementById("hand-img").classList.toggle("hidden");
+  document.querySelector(".raise-hand-button").innerText = `${
+    localParticipant.handRaised ? "lower your hand" : "raise your hand"
+    }`;
+  document.querySelector(".hand-state").innerText = `${
+    localParticipant.handRaised ? "your hand is up" : "your hand is down"
+    }`;
 }
 
-function startWebRTC(isOfferer) {
-  pc = new RTCPeerConnection(configuration);
+// Send a message to update everyone's hand state
+async function messageReceived(e) {
+  handState.updateList(e);
+}
 
-  // 'onicecandidate' notifies us whenever an ICE agent needs to deliver a
-  // message to the other peer through the signaling server
-  pc.onicecandidate = event => {
-    if (event.candidate) {
-      sendMessage({'candidate': event.candidate});
-    }
+async function joinedMeeting(e) {
+  localParticipant = {
+    ...e.participants.local,
+    handRaised: false
   };
 
-  // If user is offerer let the 'negotiationneeded' event create the offer
-  if (isOfferer) {
-    pc.onnegotiationneeded = () => {
-      pc.createOffer().then(localDescCreated).catch(onError);
-    }
-  }
+  let localParticipantInfoBox = document.querySelector(
+    ".local-participant-info"
+  );
+  localParticipantInfoBox.innerHTML = `
+    <img
+    id="hand-img"
+    class=" is-pulled-right hidden"
+    src="assets/hand.png"
+    alt="hand icon"
+    />  
 
-  // When a remote stream arrives display it in the #remoteVideo element
-  pc.onaddstream = event => {
-    remoteVideo.srcObject = event.stream;
-  };
+    <p class="name-label"><strong>${localParticipant.user_name ||
+    "You"}</strong></p>
+    <button
+      class="button is-info raise-hand-button"
+      onclick="raiseOrLowerHand()"
+      >raise your hand
+    </button>
+    <p class="hand-state has-text-right">your hand is down</p>
+`;
+  await updateParticipants();
+  setTimeout(handState.broadcastLocalHandState, 2500)
+}
 
-  navigator.mediaDevices.getUserMedia({
-    audio: true,
-    video: true,
-  }).then(stream => {
-    // Display your local video in #localVideo element
-    localVideo.srcObject = stream;
-    // Add your stream to be sent to the conneting peer
-    pc.addStream(stream);
-  }, onError);
+async function participantJoined() {
+  localParticipant = { ...localParticipant };
+  await updateParticipants();
+  setTimeout(handState.broadcastLocalHandState, 2500)
+}
 
-  // Listen to signaling data from Scaledrone
-  room.on('data', (message, client) => {
-    // Message was sent by us
-    if (client.id === drone.clientId) {
+function leftMeeting(e) {
+  document.querySelector(".participants-section").classList.toggle("hidden");
+  document.querySelector(".thanks").classList.toggle("hidden");
+  let list = document.querySelector(".participant-list");
+  list.innerHTML = "";
+
+  window.callFrame.destroy();
+}
+
+function updateParticipants() {
+  // the local user has their own hand state. Other callers raised hands are saved in the handState list
+  let raisedHands = handState.list.map(caller => caller.session_id);
+  let ps = callFrame.participants();
+  // will append the li elements (call participants) to this list
+  let list = document.querySelector(".participant-list");
+  // clear so the list shows current info when participants enter or leave
+  list.innerHTML = "";
+
+  Object.keys(ps).forEach(p => {
+    let participant = ps[p];
+    let callerHandUp = raisedHands.includes(participant.session_id);
+    // This li will display the single participant info
+    let li = document.createElement("li");
+    // Don't list the local user again. Their info is in the first box.
+    if (participant.local) {
       return;
     }
-
-    if (message.sdp) {
-      // This is called after receiving an offer or answer from another peer
-      pc.setRemoteDescription(new RTCSessionDescription(message.sdp), () => {
-        // When receiving an offer lets answer it
-        if (pc.remoteDescription.type === 'offer') {
-          pc.createAnswer().then(localDescCreated).catch(onError);
-        }
-      }, onError);
-    } else if (message.candidate) {
-      // Add the new ICE candidate to our connections remote description
-      pc.addIceCandidate(
-        new RTCIceCandidate(message.candidate), onSuccess, onError
-      );
-    }
+    let handStateLabel = callerHandUp ? "hand up" : "";
+    li.innerHTML =
+      `<div class="box">
+        ${raisedHands.includes(participant.session_id)
+        ? `<img
+          id="hand-img"
+          class=" is-pulled-right"
+          src="assets/hand.png"
+          alt="hand icon"
+          />`
+        : ""
+      }
+        <p>${participant.user_name || "Guest"}</p>
+        <p class="hand-state has-text-right">${handStateLabel}</p> 
+      </div>`;
+    list.append(li);
   });
 }
+async function run() {
+  // setting up for conditional rendering
+  const welcomePrompt = document.querySelector(".welcome-box");
+  welcomePrompt.classList.toggle("hidden");
 
-function localDescCreated(desc) {
-  pc.setLocalDescription(
-    desc,
-    () => sendMessage({'sdp': pc.localDescription}),
-    onError
-  );
+  let room = { url: "https://popschools.daily.co/qOrbXQ3zJZC7o7aH8ycI" };
+
+  window.callFrame = DailyIframe.wrap(document.getElementById("call-frame"), {
+    showLeaveButton: true
+  });
+
+  callFrame
+    .on("joined-meeting", joinedMeeting)
+    .on("left-meeting", leftMeeting)
+    .on("participant-joined", participantJoined)
+    .on("participant-left", updateParticipants)
+    .on("app-message", messageReceived);
+
+  // join the room
+  await callFrame.join({ url: room.url });
 }
