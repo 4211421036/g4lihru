@@ -140,7 +140,7 @@ async function run() {
   const welcomePrompt = document.querySelector(".welcome-box");
   welcomePrompt.classList.toggle("hidden");
 
-  let room = { url: "https://g4lihru.me/vc/vaii" };
+  let room = { url: "https://vaii.daily.co/ayRhEEcvvpEZ8j1zDIAs" };
 
   window.callFrame = DailyIframe.wrap(document.getElementById("call-frame"), {
     showLeaveButton: true
