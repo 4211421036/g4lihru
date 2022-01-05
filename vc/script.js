@@ -83,13 +83,11 @@ async function joinedMeeting(e) {
     <p class="hand-state has-text-right">your hand is down</p>
 `;
   await updateParticipants();
-  setTimeout(handState.broadcastLocalHandState, 2500)
 }
 
 async function participantJoined() {
   localParticipant = { ...localParticipant };
   await updateParticipants();
-  setTimeout(handState.broadcastLocalHandState, 2500)
 }
 
 function leftMeeting(e) {
