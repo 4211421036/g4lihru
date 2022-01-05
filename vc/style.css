@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+.hidden {
+  display: none !important;
+}
+header,
+.participants {
+  padding: 2rem;
+}
+li {
+  margin: 1rem;
+  list-style: none;
+}
+#call-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.call-panel {
+  min-height: 600px;
+  background-image: url("../assets/people-square.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+.call-panel {
+  min-height: 600px;
+}
+.is-ancestor {
+  padding: 1.5rem;
+}
+.raise-hand-button {
+  margin: 5px 0;
+}
