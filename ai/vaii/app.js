@@ -24,7 +24,7 @@ async function init() {
 
   await openUserMedia();
   document.querySelector('#hangupBtn').addEventListener('click', await hangUp);
-  document.querySelector('#createBtn').addEventListener('click', createRoom);
+  document.querySelector('#play').addEventListener('click', createRoom);
 
   var url = new URL(window.location.href);
   var roomParam = url.searchParams.get("room");
@@ -36,7 +36,7 @@ async function init() {
 
 async function createRoom() {
   userId = 0;
-  document.querySelector('#createBtn').disabled = true;
+  document.querySelector('#play').disabled = true;
   document.querySelector('body').classList.add("in-call")
 
 
@@ -67,7 +67,7 @@ async function createRoom() {
 
 
 async function joinRoomById(roomId) {
-  document.querySelector('#createBtn').disabled = true;
+  document.querySelector('#play').disabled = true;
 
 
   const db = firebase.firestore();
@@ -116,7 +116,7 @@ async function openUserMedia(e) {
           echoCancellation: true
         }
       });
-    document.querySelector('#createBtn').disabled = false;
+    document.querySelector('#play').disabled = false;
   } catch (e) {
     console.log(e)
     alert(`Permission denied. Refresh to try again.`)
