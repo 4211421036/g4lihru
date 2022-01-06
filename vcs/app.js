@@ -21,8 +21,8 @@ let connectedUsers = {};
 
 let localStream = null;
 
-let roomId = null;
-let roomRef = roomName;
+let roomId = roomName;
+let roomRef = null;
 let userId = null;
 
 async function init() {
