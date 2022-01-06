@@ -1,4 +1,4 @@
-mdc.ripple.MDCRipple.attachTo(document.querySelector('.play'));
+play.ripple.MDCRipple.attachTo(document.querySelector('.play'));
 
 const configuration = {
   iceServers: [
