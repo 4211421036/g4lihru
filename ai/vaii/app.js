@@ -1,4 +1,4 @@
-play.ripple.MDCRipple.attachTo(document.querySelector('.play'));
+mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
 
 const configuration = {
   iceServers: [
@@ -36,7 +36,7 @@ async function init() {
 
 async function createRoom() {
   userId = 0;
-  document.querySelector('#play').disabled = true;
+  document.querySelector('#createBtn').disabled = true;
   document.querySelector('body').classList.add("in-call")
 
 
