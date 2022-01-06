@@ -1,5 +1,10 @@
 mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
 
+if (!location.hash) {
+  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+}
+const roomHash = location.hash.substring(1);
+const roomName = 'observable-' + roomHash;
 const configuration = {
   iceServers: [
     {
@@ -17,7 +22,7 @@ let connectedUsers = {};
 let localStream = null;
 
 let roomId = null;
-let roomRef = null;
+let roomRef = roomName;
 let userId = null;
 
 async function init() {
