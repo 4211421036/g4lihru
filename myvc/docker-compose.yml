@@ -1,0 +1,9 @@
+version: "2.0"
+
+services:
+  talk:
+    container_name: talk
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
