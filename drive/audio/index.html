@@ -189,42 +189,17 @@
             width: 100%;
             height: 100%;
         }
-        
-        body::-webkit-scrollbar {
-            width: 15px;
+        body::-webkit-scrollbar{
+            width: 10px;
         }
-        
-        body::-webkit-scrollbar-track {
-            background: transparent;
+        body::webkit-scrollbar-track{
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
         }
-        
-        body::-webkit-scrollbar-thumb {
-            background: transparent;
-        }
-        
-        body::-webkit-scrollbar-thumb:hover {
-            background: transparent;
-        }
-        
-        iframe::-webkit-scrollbar {
-            width: 15px;
-            display: none;
-        }
-        
-        iframe::-webkit-scrollbar-track {
-            background: transparent;
-            display: none;
-        }
-        
-        iframe::-webkit-scrollbar-thumb {
-            background: transparent;
-            display: none;
-        }
-        
-        iframe::-webkit-scrollbar-thumb:hover {
-            background: transparent;
-            display: none;
-        }
+        body::webkit-scrollbar-thumb{
+            border-radius: 5px;
+            background-color: #11101D;
+        }        
         /* Google Font Link */
         
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
