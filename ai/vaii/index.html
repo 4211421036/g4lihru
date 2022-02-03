@@ -752,10 +752,32 @@
                 display: none;
             }
         }
+
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          border-radius: 5px;
+          box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); 
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background-color: #11101D; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; 
+        }
     </style>
 
     <body>
-        <vaii-side class="sidebar">
+        <vaii-side class="sidebar" scrolling="yes">
             <div class="logo-details">
                 <div class="logo_name" align="center">AI VAII</div>
                 <i class='bx bx-menu' id="btn"></i>
