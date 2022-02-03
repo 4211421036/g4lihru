@@ -5,7 +5,7 @@ var config = {
    username: '4211421036',
    password: 'WuMAV5UD', // Either your password or an authentication token if two-factor authentication is enabled
    auth: 'basic',
-   repository: '4211421036/4211421036.github.io',
+   repository: '4211421036.github.io',
    branchName: 'master'
 };
 var gitHub = new GitHub(config);
