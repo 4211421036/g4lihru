@@ -1,0 +1,15 @@
+{
+  "name": "trapped",
+  "version": "1.0.0",
+  "description": "An entry for the Game Off 2021 game jam",
+  "scripts": {
+    "build": "./bin/build",
+    "zip": "./bin/zip"
+  },
+  "repository": "git@github.com:starzonmyarmz/trapped.git",
+  "author": "Daniel Marino <starzonmyarmz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "minify": "^8.0.3"
+  }
+}

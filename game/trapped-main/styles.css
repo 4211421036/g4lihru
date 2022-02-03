@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+html, body, main {
+  height: 100%;
+}
+
+body {
+  background: #000 url('assets/logo_white.png') 50% 50% no-repeat;
+  background-size: 158px 19px;
+  color: #fff;
+  font-family: sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  place-items: center;
+}
+
+canvas {
+  aspect-ratio: 320 / 480;
+  display: block;
+  height: revert !important;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: revert !important;
+}
+
+.alert {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+#settings {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 15vw;
+}
+
+#settings button {
+  background: #000;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px 0;
+  position: relative;
+}
+
+[data-sound]:before {
+  background: red;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 20px;
+  margin-top: -10px;
+  position: absolute;
+  top: 50%;
+  width: 20px;
+}
+
+.active:before {
+  background: green;
+}
+
+#permission,
+#mobile {
+  align-items: center;
+  background: #000;
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 15vw;
+  text-align: center;
+}
+
+#permission button {
+  background: #fff;
+  border: 0;
+  color: #000;
+  font-size: 20px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+#mobile {
+  display: none;
+}
+
+@media (min-width: 768px), (orientation: landscape) {
+  #mobile {
+    display: grid;
+    place-items: center;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+#p5_loading {
+  display: none;
+}
