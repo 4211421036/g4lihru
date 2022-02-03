@@ -838,102 +838,104 @@
             </ul>
         </vaii-side>
         <vaii-sec class="home-section">
-            <div class="text">VAII</div>
-            <vaii-play disabled id="play" class="play icon-play"></vaii-play>
-            <vaii-ground id="background" class="background">
-                <div class='wave one'></div>
-                <div class='wave two'></div>
-                <div class='wave three'></div>
-            </vaii-ground>
-            <vaii-load id="loader" class="loader"></vaii-load>
-            <vaii-status id="status" class="status"></vaii-status>
-            <vaii-bar id="menubar" class="menubar">
-                <div id="btnDisplay" class="icon">
-                    <div class="icon-binoculars"> </div>display</div>
-                <div id="btnImage" class="icon">
-                    <div class="icon-brush"></div>input</div>
-                <div id="btnProcess" class="icon">
-                    <div class="icon-stats"></div>options</div>
-                <div id="btnModel" class="icon">
-                    <div class="icon-games"></div>models</div>
-                <div id="chatVAII" class="icon">
-                    <div id="myBtn" class="icon-record"></div>Start</div>
-                <div id="btnStart" class="icon">
-                    <div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
-            </vaii-bar>
-            <vaii-media id="media">
-                <canvas id="canvas" class="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
-                    <div class="float">
-                        <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
-                        <span class="tooltip">AI automatic detected object</span>
-                    </div>
-                    <div class="float1">
-                        <iframe class="my-float" src="https://g4lihru.me/vcs" width="177" height="176" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
-                        <span class="tooltip">AI automatic detected object</span>
-                    </div>
-                    <div id="myModal" class="modal" align="center">
-                    <!-- Modal content -->
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <header class="modal-header">
-                                <div class="mx-auto">
-                                    <div align="center" class="py-4">
-                                        <h1 align="center" style="font-size: 42px;">Record VAII</h1>
-                                    </div>
-                                </div>
-                            </header>
-                            <main class="modal-body overflow-hidden">
-                                <div class="container mx-auto py-8 px-4">
-                                    <h2 class="text-xl font-light mb-4">
-                                        Record
-                                    </h2>
-
-                                    <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
-
-                                    <div class="flex flex-wrap -mx-4 mb-8">
-                                        <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
-                                    Record Screen VAII
-                                  </button>
-                                        <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                                    Stop Recording
-                                  </button>
-                                    </div>
-
-                                    <div class="recorded-video-wrap hidden">
-                                        <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
-                                            Hasil Record VAII
-                                        </h2>
-
-                                        <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
-                                        <div class="flex flex-wrap -mx-4">
-                                            <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                                      Download
-                                    </a>
-                                            <button type="button " class="btn btn-success" onclick="upload()">Upload</button>
+            <section class="home-section">
+                <div class="text">VAII</div>
+                <vaii-play disabled id="play" class="play icon-play"></vaii-play>
+                <vaii-ground id="background" class="background">
+                    <div class='wave one'></div>
+                    <div class='wave two'></div>
+                    <div class='wave three'></div>
+                </vaii-ground>
+                <vaii-load id="loader" class="loader"></vaii-load>
+                <vaii-status id="status" class="status"></vaii-status>
+                <vaii-bar id="menubar" class="menubar">
+                    <div id="btnDisplay" class="icon">
+                        <div class="icon-binoculars"> </div>display</div>
+                    <div id="btnImage" class="icon">
+                        <div class="icon-brush"></div>input</div>
+                    <div id="btnProcess" class="icon">
+                        <div class="icon-stats"></div>options</div>
+                    <div id="btnModel" class="icon">
+                        <div class="icon-games"></div>models</div>
+                    <div id="chatVAII" class="icon">
+                        <div id="myBtn" class="icon-record"></div>Start</div>
+                    <div id="btnStart" class="icon">
+                        <div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
+                </vaii-bar>
+                <vaii-media id="media">
+                    <canvas id="canvas" class="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
+                        <div class="float">
+                            <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
+                            <span class="tooltip">AI automatic detected object</span>
+                        </div>
+                        <div class="float1">
+                            <iframe class="my-float" src="https://g4lihru.me/vcs" width="177" height="176" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
+                            <span class="tooltip">AI automatic detected object</span>
+                        </div>
+                        <div id="myModal" class="modal" align="center">
+                        <!-- Modal content -->
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <header class="modal-header">
+                                    <div class="mx-auto">
+                                        <div align="center" class="py-4">
+                                            <h1 align="center" style="font-size: 42px;">Record VAII</h1>
                                         </div>
                                     </div>
-                                </div>
-                            </main>
-                            <script src="https://g4lihru.me/meet/dist/main.js"></script>
+                                </header>
+                                <main class="modal-body overflow-hidden">
+                                    <div class="container mx-auto py-8 px-4">
+                                        <h2 class="text-xl font-light mb-4">
+                                            Record
+                                        </h2>
+
+                                        <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+
+                                        <div class="flex flex-wrap -mx-4 mb-8">
+                                            <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
+                                        Record Screen VAII
+                                      </button>
+                                            <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                                        Stop Recording
+                                      </button>
+                                        </div>
+
+                                        <div class="recorded-video-wrap hidden">
+                                            <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
+                                                Hasil Record VAII
+                                            </h2>
+
+                                            <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
+                                            <div class="flex flex-wrap -mx-4">
+                                                <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                                          Download
+                                        </a>
+                                                <button type="button " class="btn btn-success" onclick="upload()">Upload</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </main>
+                                <script src="https://g4lihru.me/meet/dist/main.js"></script>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <video id="video" playsinline class="video"></video>
-            </vaii-media>
-            <vaii-compare-container id="compare-container" class="compare-image">
-                <canvas id="compare-canvas" width="256" height="256"></canvas>
-                <div id="similarity"></div>
-            </vaii-compare-container>
-            <vaii-segmen-container id="segmentation-container" class="compare-image">
-                <canvas id="segmentation-mask" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
-                <canvas id="segmentation-canvas" width="256" height="256 " style="width: 256px; height: 256px;"></canvas>
-            </vaii-segmen-container>
-            <vaii-samp-container id="samples-container" class="samples-container"></vaii-samp-container>
-            <vaii-hint id="hint" class="hint"></vaii-hint>
-            <vaii-log id="log" class="log"></vaii-log>
-            <vaii-results id="results" class="results"></vaii-results>
-            <vaii-transcript id="transcript"></vaii-transcript>
+                    <video id="video" playsinline class="video"></video>
+                </vaii-media>
+                <vaii-compare-container id="compare-container" class="compare-image">
+                    <canvas id="compare-canvas" width="256" height="256"></canvas>
+                    <div id="similarity"></div>
+                </vaii-compare-container>
+                <vaii-segmen-container id="segmentation-container" class="compare-image">
+                    <canvas id="segmentation-mask" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
+                    <canvas id="segmentation-canvas" width="256" height="256 " style="width: 256px; height: 256px;"></canvas>
+                </vaii-segmen-container>
+                <vaii-samp-container id="samples-container" class="samples-container"></vaii-samp-container>
+                <vaii-hint id="hint" class="hint"></vaii-hint>
+                <vaii-log id="log" class="log"></vaii-log>
+                <vaii-results id="results" class="results"></vaii-results>
+                <vaii-transcript id="transcript"></vaii-transcript>
+            </section>
         </vaii-sec>
         <!-- import the webpage's javascript file -->
         <script src="https://g4lihru.me/script.js" defer></script>
