@@ -973,7 +973,6 @@ class vaiisec extends HTMLElement {
         });
         this.shadowRoot.appendChild(vaiitemp.content.clodeNode(true));
         this.shadowRoot.querySelector('div').innerText = this.getElementByClassName('text');
-        this.interHTML = `${this.getElementsByClassName('home-section')}`;
     }
 }
 
