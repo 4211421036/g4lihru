@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FAD</title>
+    <link rel="stylesheet" href="custom.css">
+    <!-- For autoreload -->
+    <script type="module" src="./core.js"></script>
+    <script type="module" src="./credits.js"></script>
+    <script type="module" src="./keyboard.js"></script>
+    <script type="module" src="./levels.js"></script>
+    <script type="module" src="./player.js"></script>
+    <script type="module" src="./renderer.js"></script>
+    <script type="module" src="./utility.js"></script>
+    <!-- App -->
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+    <canvas id="screen-credits-bg" class="screen-credits" width="0" height="0"></canvas>
+    <canvas id="screen-credits-fg" class="screen-credits" width="0" height="0"></canvas>
+    <div id="main-content">
+        <img id="cover" src="assets/cover.png" />
+        <p id="note-start">
+            Click or press <code>SPACE</code> to start.
+        </p>
+        <p id="note-attribution" hidden>
+            <a href="https://github.com/DouglasOrr/FAD/blob/main/doc/attribution.md">Credits</a>
+        </p>
+        <p id="note-check-speakers" hidden>
+            You should hear instructions through your speakers or headphones,
+            <br />&hellip; please check that this site is not muted and audio is unblocked.
+        </p>
+    </div>
+    <canvas id="screen-debug" width="0" height="0"></canvas>
+</body>
+
+</html>

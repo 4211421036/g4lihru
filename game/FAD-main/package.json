@@ -1,0 +1,30 @@
+{
+    "name": "FAD",
+    "version": "0.1.0",
+    "description": "",
+    "author": "",
+    "license": "MIT",
+    "private": "true",
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint src/ --ext .ts,.tsx",
+        "check": "npx tsc --noEmit && pytest tools/ && npm run test && npm run lint"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "resolver": "ts-jest-resolver",
+        "roots": [
+            "src"
+        ]
+    },
+    "devDependencies": {
+        "@types/jest": "^27.0.2",
+        "@typescript-eslint/eslint-plugin": "^5.3.0",
+        "@typescript-eslint/parser": "^5.3.0",
+        "eslint": "^8.2.0",
+        "jest": "^27.3.1",
+        "ts-jest": "^27.0.7",
+        "ts-jest-resolver": "^2.0.0",
+        "typescript": "^4.4.4"
+    }
+}
