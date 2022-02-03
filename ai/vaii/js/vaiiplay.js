@@ -5,4 +5,4 @@ class vaiiplay extends HTMLElement {
     }
 }
 
-window.customElements.define('vaii-play', pelajaran);
+window.customElements.define('vaii-play', vaiiplay);
