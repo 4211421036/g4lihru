@@ -1,7 +1,7 @@
 class vaiiground extends HTMLElement {
     constructor() {
         super();
-        this.interHTML = `${this.getElementById('background')}`;
+        this.interHTML = `${this.getElementByClassName('background')}`;
     }
 }
 
