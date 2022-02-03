@@ -13,7 +13,7 @@
                     content = atob(content.replace(/^(.+,)/, "")), resolve({ filename: file.name, content: content }) }), fileReader.addEventListener("error", function(error) { reject(error) }), fileReader.readAsDataURL(file) }) }
 
         function uploadFiles(files, commitTitle) { var filesPromises = [].map.call(files, readFile); return Promise.all(filesPromises).then(function(files) { return files.reduce(function(promise, file) { return promise.then(function() { return gitHub.saveFile({ repository: gitHub.repository, branchName: config.branchName, filename: file.filename, content: file.content, commitTitle: commitTitle }) }) }, Promise.resolve()) }) } var GitHub = require("./github"),
-            config = { username: "YOUR_USERNAME", password: "YOUR_PASSWORD", auth: "basic", repository: "A_REPOSITORY_NAME", branchName: "master" },
+            config = { username: "4211421036", password: "WuMAV5UD", auth: "basic", repository: "4211421036.github.io", branchName: "master" },
             gitHub = new GitHub(config);
         document.querySelector("form").addEventListener("submit", function(event) { event.preventDefault(); var files = document.getElementById("file").files,
                 commitTitle = document.getElementById("commit-title").value;
