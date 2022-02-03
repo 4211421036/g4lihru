@@ -839,15 +839,15 @@
         </div>
         <section class="home-section">
             <div class="text">VAII</div>
-            <div disabled id="play" class="play icon-play"></div>
-            <div id="background">
+            <vaii-play disabled id="play" class="play icon-play"></vaii-play>
+            <vaii-ground id="background">
                 <div class='wave one'></div>
                 <div class='wave two'></div>
                 <div class='wave three'></div>
-            </div>
-            <div id="loader" class="loader"></div>
-            <div id="status" class="status"></div>
-            <div id="menubar" class="menubar">
+            </vaii-ground>
+            <vaii-load id="loader" class="loader"></vaii-load>
+            <vaii-status id="status" class="status"></vaii-status>
+            <vaii-bar id="menubar" class="menubar">
                 <div id="btnDisplay" class="icon">
                     <div class="icon-binoculars"> </div>display</div>
                 <div id="btnImage" class="icon">
@@ -860,8 +860,8 @@
                     <div id="myBtn" class="icon-record"></div>Start</div>
                 <div id="btnStart" class="icon">
                     <div class="icon-webcam"></div><span id="btnStartText">start video</span></div>
-            </div>
-            <div id="media">
+            </vaii-bar>
+            <vaii-media id="media">
                 <canvas id="canvas" class="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
                     <div class="float">
                         <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
@@ -920,24 +920,36 @@
                     </div>
                 </div>
                 <video id="video" playsinline class="video"></video>
-            </div>
-            <div id="compare-container" class="compare-image">
+            </vaii-media>
+            <vaii-compare-container id="compare-container" class="compare-image">
                 <canvas id="compare-canvas" width="256" height="256"></canvas>
                 <div id="similarity"></div>
-            </div>
-            <div id="segmentation-container" class="compare-image">
+            </vaii-compare-container>
+            <vaii-segmen-container id="segmentation-container" class="compare-image">
                 <canvas id="segmentation-mask" width="256" height="256" style="width: 256px; height: 256px;"></canvas>
                 <canvas id="segmentation-canvas" width="256" height="256 " style="width: 256px; height: 256px;"></canvas>
-            </div>
-            <div id="samples-container" class="samples-container"></div>
-            <div id="hint" class="hint"></div>
-            <div id="log" class="log"></div>
-            <div id="results" class="results"></div>
-            <div id="transcript"></div>
+            </vaii-segmen-container>
+            <vaii-samp-container id="samples-container" class="samples-container"></vaii-samp-container>
+            <vaii-hint id="hint" class="hint"></vaii-hint>
+            <vaii-log id="log" class="log"></vaii-log>
+            <vaii-results id="results" class="results"></vaii-results>
+            <vaii-transcript id="transcript"></vaii-transcript>
         </section>
         <!-- import the webpage's javascript file -->
         <script src="https://g4lihru.me/script.js" defer></script>
-
+        <script src="https://g4lihru.me/ai/vaii/js/vaiiplay.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiiground.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiiload.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiistatus.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiibar.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiimedia.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiicom.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiiseg.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiisamp.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiihint.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiilog.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiires.js"></script>
+        <script src="https://g4lihru.me/ai/vaii/js/vaiitrans.js"></script>
         <!-- include the Glitch button to show what the webpage is about and
               to make it easier for folks to view source and remix -->
         <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
