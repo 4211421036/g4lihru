@@ -968,9 +968,6 @@ vaiitemp.innerHTML = `
 class vaiisec extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({
-            mode: 'open'
-        });
         this.shadowRoot.appendChild(vaiitemp.content.clodeNode(true));
         this.shadowRoot.querySelector('div').innerText = this.getElementByClassName('text');
     }
