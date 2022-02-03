@@ -201,6 +201,11 @@
             <a-entity mixin="shadow"></a-entity>
             <a-entity mixin="shadow"></a-entity>
         </a-entity>
+        <a-text
+        value="Lokasi"
+        look-at="[gps-camera]"
+        scale="5 5 5"></a-text>
+
         <a-entity id="jadeKey" obj-model="obj: https://supermedium.com/gunters-of-oasis-deploy/assets/models/key/Key_01.obj" material="color: #AAFFAA" position="0 1.6 20" scale="0.005 0.005 0.005" item="message: GALIH RIDHO UTOMO\nMahasiswa UNNES\nPeneliti AI\n~; storeAs: GALIH RIDHO UTOMO"></a-entity>
         <a-entity id="gundam" obj-model="obj: assets/models/gundam/model.obj; mtl: assets/models/gundam/materials.mtl" position="-10 7.8 -25" scale="5 5 5" rotation="0 210 0"></a-entity>
         <a-entity id="logo" animation="property: object3D.position.y; from: 10; to: 11; dir: alternate; loop: true; dur: 8000; easing: easeInOutCubic" geometry="primitive: plane; width: 8; height: 4" material="shader: flat; src: #logo; transparent: true"
@@ -225,13 +230,6 @@
             gtag('js', new Date());
             gtag('config', 'UA-111391431-8');
         </script>
-    </a-scene>
-    <a-text
-        value="Lokasi"
-        look-at="[gps-camera]"
-        scale="5 5 5"
-      ></a-text>
-      <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
 </body>
 
