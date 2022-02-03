@@ -5,4 +5,4 @@ class vaiitrans extends HTMLElement {
     }
 }
 
-window.customElements.define('vaii-transcript', vaiihint);
+window.customElements.define('vaii-transcript', vaiitrans);
