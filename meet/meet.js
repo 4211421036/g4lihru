@@ -540,55 +540,21 @@ template.innerHTML = `
     }
   <style>
   <header class="bg-gray-900">
-		<div class="container mx-auto">
-			<div class="flex justify-center items-center py-4">
-				<h1 class="text-2xl font-bold uppercase">Meet Record</h1>
-			</div>
+	<div class="container mx-auto">
+		<div class="flex justify-center items-center py-4">
+			<h1 class="text-2xl font-bold uppercase"></h1>
 		</div>
-	</header>
-
-	<meet-main class="overflow-hidden">
-		<div class="container mx-auto py-8 px-4">
-			<h2 class="text-xl text-gray-500 uppercase font-light mb-4">
-				Meet Record
-			</h2>
-
-			<video src="" autplay class="video-feedback bg-black w-full h-auto mb-4"></video>
-
-			<div class="flex flex-wrap -mx-4 mb-8">
-				<button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
-					Record Screen
-				</button>
-				<button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-					Stop Recording
-				</button>
-			</div>
-
-			<div class="recorded-video-wrap hidden">
-				<h2 class="text-xl text-gray-500 uppercase font-light mb-4">
-					Hasil Meet
-				</h2>
-
-				<video src="" class="recorded-video bg-black w-full h-auto mb-8"></video>
-				<div class="flex flex-wrap -mx-4">
-					<a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-						Download
-					</a>
-				</div>
-			</div>
-		</div>
-	</meet-main>
+	</div>
+  </header>  
 `;
 
 class meet extends HTMLElement {
     constructor() {
         super();
-
+	this.showVideo = true;
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.shadowRoot.querySelector('video').src = this.getAttribute('record');
-        this.shadowRoot.querySelector('meet-main').src = this.getElementsByClassName('overflow-hidden');
-    }
+	this.shadowRoot.querySelector('h1').innerText = this.getAttribute('meet');
 }
 
-window.customElements.define('pljr-record', meet);
+window.customElements.define('pljr-header', meet);
