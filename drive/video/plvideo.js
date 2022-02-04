@@ -546,11 +546,9 @@ class plvideo extends HTMLElement {
       let closeBtn = this.shadowRoot.querySelector('#btn');
 
       if(this.showSide) {
-        sidebar.style.display = 'block';
-        closeBtn.innerText = 'Hide Info';
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
       } else {
-        sidebar.style.display = 'none';
-        closeBtn.innerText = 'Show Info';
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       }
     }
 
