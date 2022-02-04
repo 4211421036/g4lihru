@@ -39,7 +39,7 @@ videotemp.innerHTML = `
 </section>
 `;
 
-class plideo extends HTMLElement {
+class plvideo extends HTMLElement {
     constructor() {
         super();
 
