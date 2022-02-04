@@ -35,9 +35,28 @@ template.innerHTML = `
     <div class="text">
         <h3></h3>
     </div>
-    <div class="row mt-4" id="posts"></div>
+    <div class="row mt-4" id="posts">
+    
+    </div>
     <script src="https://g4lihriu.web.app/defualt.js"></script>
 </section>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
+        authDomain: "g4lihriu.firebaseapp.com",
+        databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
+        projectId: "g4lihriu",
+        storageBucket: "g4lihriu.appspot.com",
+        messagingSenderId: "387783527536",
+        appId: "1:387783527536:web:8df38ac72783aea162b8b5",
+        measurementId: "G-DCSX3TS7ZS"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
 `;
 
 class plvideo extends HTMLElement {
