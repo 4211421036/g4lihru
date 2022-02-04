@@ -553,7 +553,10 @@ class plvideo extends HTMLElement {
     }
 
     connectedCallback() {
-      this.shadowRoot.querySelector('#btn').addEventListener('click', () => this.toggleInfo());
+      this.shadowRoot.querySelector('#btn').addEventListener('click', () => {
+           sidebar.classList.toggle('open');
+           this.toggleInfo();
+      })
     }
 
     disconnectedCallback() {
