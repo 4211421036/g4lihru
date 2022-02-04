@@ -1,4 +1,4 @@
-const template = document.createElement('vidtem');
+const vidtem = document.createElement('vidtem');
 vidtem.innerHTML = `
 <style>
         .home-section {
@@ -47,6 +47,8 @@ vidtem.innerHTML = `
             <div class="row mt-4" id="posts">
 
             </div>
+            <script src="https://g4lihriu.web.app/defualt.js"></script>
+            <script src="https://g4lihriu.web.app/pljrcard.js"></script>
         </section>
 </body>
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
@@ -65,9 +67,7 @@ vidtem.innerHTML = `
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-</script>
-<script src="https://g4lihriu.web.app/defualt.js"></script>
-<script src="https://g4lihriu.web.app/pljrcard.js"></script>        
+</script>        
 `;
 
 class plvideo extends HTMLElement {
