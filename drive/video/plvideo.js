@@ -4,14 +4,6 @@ template.innerHTML = `
         html, body{
             overflow-x: hidden;
         }
-	.card {
-		font-family: 'Arial', sans-serif;
-		background: #f4f4f4;
-		width: 100%;
-		grid-gap: 10px;
-		margin-bottom: 15px;
-		border-bottom: coral 5px solid;
-	}
         .btn-primary .caret,
         .btn-warning .caret,
         .btn-danger .caret,
@@ -60,7 +52,7 @@ template.innerHTML = `
         
         .btn-primary:active,
         .btn-primary.active {
-            background-color: #003399 \9;
+            background-color: #003399;
         }
         
         .item {
@@ -156,9 +148,7 @@ template.innerHTML = `
                 transform: rotate(360deg);
             }
         }
-                        
-        /* Google Font Link */
-        
+                                
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
         * {
             margin: 0;
@@ -447,18 +437,15 @@ template.innerHTML = `
         }
 
 
-        /* width */
         ::-webkit-scrollbar {
           width: 10px;
         }
 
-        /* Track */
         ::-webkit-scrollbar-track {
           border-radius: 5px;
           box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); 
         }
 
-        /* Handle */
         ::-webkit-scrollbar-thumb {
           border-radius: 5px;
           background-color: #11101D; 
@@ -536,7 +523,7 @@ template.innerHTML = `
                 </li>
             </ul>
         </div>
-</body>
+    </body>
 `;
 
 class plvideo extends HTMLElement {
@@ -545,7 +532,7 @@ class plvideo extends HTMLElement {
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-	this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
+        this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
     }
 }
 
