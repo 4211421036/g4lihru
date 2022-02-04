@@ -44,7 +44,7 @@ class plvideo extends HTMLElement {
         super();
 
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.appendChild(videotemp.content.cloneNode(true));
         this.shadowRoot.querySelector('div').innerText = this.getElementsByClassName('text');
     }
 }
