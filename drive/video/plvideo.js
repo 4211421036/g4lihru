@@ -11,6 +11,19 @@ template.innerHTML = `
             transition: all 0.5s ease;
             z-index: 2;
         }
+        .card {
+	    font-family: 'Arial', sans-serif;
+	    background: #f4f4f4;
+	    width: 100%;
+            grid-gap: 10px;
+            margin-bottom: 15px;
+	    border-bottom: coral 5px solid;
+	}
+
+	.card video {
+	    width: 100%;
+            height: 100%;
+	}
         .row {
             display: -ms-flexbox;
             display: flex;
@@ -45,7 +58,9 @@ template.innerHTML = `
                 <h3></h3>
             </div>
             <div class="row mt-4" id="posts">
-
+                  <div class="card">
+                    <video class='image_Preview'></video>
+                  </div>
             </div>
             <script src="https://g4lihriu.web.app/defualt.js"></script>
         </section>
@@ -75,7 +90,8 @@ class plvideo extends HTMLElement {
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');    
+        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
+        this.shadowRoot.querySelector('video').src = this.getAttribute('avatar');
     }
 }
 
