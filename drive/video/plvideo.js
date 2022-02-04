@@ -60,7 +60,7 @@ template.innerHTML = `
 	    <div avatar class="posts row mt-4" id="posts">
             
 	    </div>
-            <script src="https://g4lihriu.web.app/defualt.js"></script>
+            <script type="text/javascript" src="https://g4lihriu.web.app/defualt.js"></script>
         </section>
 </body>
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
@@ -89,7 +89,7 @@ class plvideo extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
-        this.shadowRoot.querySelector('div').src = this.getAttribute('avatar');
+        this.shadowRoot.querySelector('video').src = this.getAttribute('avatar');
     }
 }
 
