@@ -56,31 +56,9 @@ template.innerHTML = `
 <body>
         <section class="home-section">
             <div class="text">
-                <h3></h3>
             </div>
-	    <div avatar class="posts row mt-4" id="posts">
-            
-	    </div>
-            <script type="text/javascript" src="https://g4lihriu.web.app/defualt.js"></script>
         </section>
 </body>
-<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-<script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
-        authDomain: "g4lihriu.firebaseapp.com",
-        databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
-        projectId: "g4lihriu",
-        storageBucket: "g4lihriu.appspot.com",
-        messagingSenderId: "387783527536",
-        appId: "1:387783527536:web:8df38ac72783aea162b8b5",
-        measurementId: "G-DCSX3TS7ZS"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-</script>        
 `;
 
 class plvideo extends HTMLElement {
@@ -89,8 +67,7 @@ class plvideo extends HTMLElement {
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
-        this.shadowRoot.querySelector('video').src = this.getAttribute('avatar');
+        this.shadowRoot.querySelector('div').innerText = this.getAttribute('name');
     }
 }
 
