@@ -6,8 +6,8 @@ template.innerHTML = `
 	padding-bottom: 1rem;
   }
   .container {
-  width: 100%;
-}
+  	width: 100%;
+  }
 .justify-center {
   justify-content: center;
 }
@@ -52,7 +52,7 @@ class meet extends HTMLElement {
 	this.showVideo = true;
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-	this.shadowRoot.querySelector('h1').innerText = this.getAttribute('meet');
+	this.shadowRoot.querySelector('h1').innerText = this.getAttribute('name');
 }
 
 window.customElements.define('pljr-header', meet);
