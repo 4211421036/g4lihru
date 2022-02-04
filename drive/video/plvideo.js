@@ -39,15 +39,16 @@ template.innerHTML = `
             }
         }
 </style>
-<section class="home-section">
-    <div class="text">
-        <h3></h3>
-    </div>
-    <div class="row mt-4" id="posts">
-    
-    </div>
-    <script src="https://g4lihriu.web.app/defualt.js"></script>
-</section>
+<body>
+        <section class="home-section">
+            <div class="text">
+                <h3></h3>
+            </div>
+            <div class="row mt-4" id="posts">
+
+            </div>
+        </section>
+</body>
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 <script>
     // Your web app's Firebase configuration
@@ -65,6 +66,8 @@ template.innerHTML = `
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 </script>
+<script src="https://g4lihriu.web.app/defualt.js"></script>
+<script src="https://g4lihriu.web.app/pljrcard.js"></script>        
 `;
 
 class plvideo extends HTMLElement {
