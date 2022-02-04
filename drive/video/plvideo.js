@@ -1,5 +1,5 @@
-const videotemp = document.createElement('videotemp');
-videotemp.innerHTML = `
+const template = document.createElement('template');
+template.innerHTML = `
 <style>
         .home-section {
             position: relative;
@@ -44,7 +44,7 @@ class plvideo extends HTMLElement {
         super();
 
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(videotemp.content.cloneNode(true));
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('div').innerText = this.getElementsByClassName('text');
     }
 }
