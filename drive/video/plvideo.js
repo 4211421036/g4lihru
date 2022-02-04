@@ -1,5 +1,5 @@
-const vidtem = document.createElement('vidtem');
-vidtem.innerHTML = `
+const template = document.createElement('template');
+template.innerHTML = `
 <style>
         .home-section {
             position: relative;
@@ -48,7 +48,6 @@ vidtem.innerHTML = `
 
             </div>
             <script src="https://g4lihriu.web.app/defualt.js"></script>
-            <script src="https://g4lihriu.web.app/pljrcard.js"></script>
         </section>
 </body>
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
@@ -75,7 +74,7 @@ class plvideo extends HTMLElement {
         super();
 
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(vidtem.content.cloneNode(true));
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');    
     }
 }
