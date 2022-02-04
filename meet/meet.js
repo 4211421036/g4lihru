@@ -1,13 +1,13 @@
 const template = document.createElement('template');
 template.innerHTML = `
-  <style>
-  .py-4 {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-  }
-  .container {
-  	width: 100%;
-  }
+<style>
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.container {
+  width: 100%;
+}
 .justify-center {
   justify-content: center;
 }
@@ -37,13 +37,11 @@ template.innerHTML = `
   margin-right: auto;
 }
 </style>
-  <header class="bg-gray-900">
-	<div class="container mx-auto">
-		<div class="flex justify-center items-center py-4">
-			<h1 class="text-2xl font-bold uppercase"></h1>
-		</div>
+<div class="container mx-auto">
+	<div class="flex justify-center items-center py-4">
+		<h1 class="text-2xl font-bold uppercase"></h1>
 	</div>
-  </header>  
+</div>
 `;
 
 class meet extends HTMLElement {
@@ -52,7 +50,7 @@ class meet extends HTMLElement {
 	this.showVideo = true;
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-	this.shadowRoot.querySelector('h1').innerText = this.getAttribute('name');
+	this.shadowRoot.querySelector('h1').innerText = this.getAttribute('meet');
 }
 
 window.customElements.define('pljr-header', meet);
