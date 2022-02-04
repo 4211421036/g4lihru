@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const vidtem = document.createElement('template');
 template.innerHTML = `
 <style>
         .home-section {
@@ -75,7 +75,7 @@ class plvideo extends HTMLElement {
         super();
 
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.appendChild(vidtem.content.cloneNode(true));
         this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');    
     }
 }
