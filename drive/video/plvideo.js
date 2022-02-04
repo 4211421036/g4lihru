@@ -539,31 +539,27 @@ class plvideo extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
     }
-          menuBtnChange() {
-            this.showSide = !this.showSide;
+    toggleInfo() {
+      this.showSide = !this.showSide;
 
-            const sidebar = this.shadowRoot.querySelector('.sidebar');
-            const closeBtn = this.shadowRoot.querySelector('#btn');
-            
-            // following are the code to change sidebar button(optional)
-            function menuBtnChange() {
-                if (sidebar.classList.contains("open")) {
-                    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
-                } else {
-                    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
-                }
-            }
-          }
+      let sidebar = this.shadowRoot.querySelector('.sidebar');
+      let closeBtn = this.shadowRoot.querySelector('#btn');
 
-          connectedCallback() {
-            this.shadowRoot.querySelector('#btn').addEventListener('click', () =>
-            sidebar.classList.toggle("open");
-            this.menuBtnChange(); //calling the function(optional)
-            );
-          }
+      if(this.showSide) {
+        sidebar.style.display = 'block';
+        closeBtn.innerText = 'Hide Info';
+      } else {
+        sidebar.style.display = 'none';
+        closeBtn.innerText = 'Show Info';
+      }
+    }
 
-          disconnectedCallback() {
-            this.shadowRoot.querySelector('#btn').removeEventListener();
-          }
+    connectedCallback() {
+      this.shadowRoot.querySelector('#btn').addEventListener('click', () => this.toggleInfo());
+    }
+
+    disconnectedCallback() {
+      this.shadowRoot.querySelector('#btn').removeEventListener();
+    }
 }
 window.customElements.define('pljr-side', plvideo);
