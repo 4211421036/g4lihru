@@ -532,12 +532,41 @@ template.innerHTML = `
 class plvideo extends HTMLElement {
     constructor() {
         super();
-
+        this.showSide = true;
         this.attachShadow({
             mode: 'open'
         });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
+          toggleInfo() {
+            this.showSide = !this.showSide;
+
+            const sidebar = this.shadowRoot.querySelector('.sidebar');
+            const closeBtn = this.shadowRoot.querySelector('#btn');
+            
+            // following are the code to change sidebar button(optional)
+            if (this.menuBtnChange()) {
+                if (sidebar.classList.contains("open")) {
+                    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+                } else {
+                    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+                }
+            }
+            if(this.showSide) {
+              sidebar.classList.toggle = 'open';
+              this.menuBtnChange();
+            } else {
+              sidebar.classList.toggle = 'close';
+            }
+          }
+
+          connectedCallback() {
+            this.shadowRoot.querySelector('#btn').addEventListener('click', () => this.toggleInfo());
+          }
+
+          disconnectedCallback() {
+            this.shadowRoot.querySelector('#btn').removeEventListener();
+          }
     }
 }
 window.customElements.define('pljr-side', plvideo);
