@@ -1,7 +1,413 @@
 const template = document.createElement('template');
-template.innerHTML ="";
 template.innerHTML = `
-<style>
+    <style>
+        html, body{
+            overflow-x: hidden;
+        }
+        .btn-primary .caret,
+        .btn-warning .caret,
+        .btn-danger .caret,
+        .btn-info .caret,
+        .btn-success .caret,
+        .btn-inverse .caret {
+            border-top-color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+        
+        .btn-primary.active,
+        .btn-warning.active,
+        .btn-danger.active,
+        .btn-success.active,
+        .btn-info.active,
+        .btn-inverse.active {
+            color: rgba(255, 255, 255, 0.75);
+        }
+        
+        .btn-primary {
+            color: #ffffff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            background-color: #006dcc;
+            background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+            background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+            background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+            background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+            border-color: #0044cc #0044cc #002a80;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            *background-color: #0044cc;
+            filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .btn-primary.disabled,
+        .btn-primary[disabled] {
+            color: #ffffff;
+            background-color: #0044cc;
+            *background-color: #003bb3;
+        }
+        
+        .btn-primary:active,
+        .btn-primary.active {
+            background-color: #003399 \9;
+        }
+        
+        .item {
+            transition: .5s ease-in-out;
+        }
+        
+        .item:hover {
+            filter: brightness(80%);
+        }
+        
+        .action_btn {
+            width: 200px;
+            margin: 0 auto;
+            display: inline;
+        }
+        
+        .loader {
+            width: 300px;
+            height: 300px;
+            border: 3px solid transparent;
+            border-radius: 50%;
+            border-top: 4px solid #f15e41;
+            animation: spin 4s linear infinite;
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            margin-left: -150px;
+            z-index: 15;
+        }
+        
+        .loader::before,
+        .loader::after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+        }
+        
+        .loader::before {
+            border-top-color: #bad375;
+            animation: 3s spin linear infinite;
+        }
+        
+        .loader::after {
+            border-top-color: #26a9e0;
+            animation: spin 1.5s linear infinite;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .wave {
+            position: fixed;
+            top: 0;
+            left: -90%;
+            width: 100vw;
+            height: 100vh;
+            border-radius: 10%;
+            opacity: .3;
+            z-index: -1;
+        }
+        
+        .wave.one {
+            animation: rotate 10000ms infinite linear;
+            background: #2F4F4F;
+        }
+        
+        .wave.two {
+            animation: rotate 15000ms infinite linear;
+            background: #1F3F3F;
+        }
+        
+        .wave.three {
+            animation: rotate 20000ms infinite linear;
+            background: #0F1F1F;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            from {
+                transform: rotate(360deg);
+            }
+        }
+                        
+        /* Google Font Link */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 78px;
+            background: #11101D;
+            padding: 6px 14px;
+            z-index: 99;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open {
+            width: 250px;
+        }
+        
+        .sidebar .logo-details {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .sidebar .logo-details .icon {
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar .logo-details .logo_name {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .logo-details .icon,
+        .sidebar.open .logo-details .logo_name {
+            opacity: 1;
+        }
+        
+        .sidebar .logo-details #btn {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 22px;
+            transition: all 0.4s ease;
+            font-size: 23px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .logo-details #btn {
+            text-align: right;
+        }
+        
+        .sidebar i {
+            color: #fff;
+            height: 60px;
+            min-width: 50px;
+            font-size: 28px;
+            text-align: center;
+            line-height: 60px;
+        }
+        
+        .sidebar .nav-list {
+            margin-top: 20px;
+            height: 100%;
+        }
+        
+        .sidebar li {
+            position: relative;
+            margin: 8px 0;
+            list-style: none;
+        }
+        
+        .sidebar li .tooltip {
+            position: absolute;
+            top: -20px;
+            left: calc(100% + 15px);
+            z-index: 3;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: 0s;
+        }
+        
+        .sidebar li:hover .tooltip {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .sidebar.open li .tooltip {
+            display: none;
+        }
+        
+        .sidebar input {
+            font-size: 15px;
+            color: #FFF;
+            font-weight: 400;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            width: 50px;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.5s ease;
+            background: #1d1b31;
+        }
+        
+        .sidebar.open input {
+            padding: 0 20px 0 50px;
+            width: 100%;
+        }
+        
+        .sidebar .bx-search {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 22px;
+            background: #1d1b31;
+            color: #FFF;
+        }
+        
+        .sidebar.open .bx-search:hover {
+            background: #1d1b31;
+            color: #FFF;
+        }
+        
+        .sidebar .bx-search:hover {
+            background: #FFF;
+            color: #11101d;
+        }
+        
+        .sidebar li a {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: #11101D;
+        }
+        
+        .sidebar li a:hover {
+            background: #FFF;
+        }
+        
+        .sidebar li a .links_name {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+        }
+        
+        .sidebar.open li a .links_name {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .sidebar li a:hover .links_name,
+        .sidebar li a:hover i {
+            transition: all 0.5s ease;
+            color: #11101D;
+        }
+        
+        .sidebar li i {
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            border-radius: 12px;
+        }
+        
+        .sidebar li.profile {
+            position: fixed;
+            height: 60px;
+            width: 78px;
+            left: 0;
+            bottom: -8px;
+            padding: 10px 14px;
+            background: #1d1b31;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        
+        .sidebar.open li.profile {
+            width: 250px;
+        }
+        
+        .sidebar li .profile-details {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        
+        .sidebar li img {
+            height: 45px;
+            width: 45px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+        
+        .sidebar li.profile .name,
+        .sidebar li.profile .job {
+            font-size: 15px;
+            font-weight: 400;
+            color: #fff;
+            white-space: nowrap;
+        }
+        
+        .sidebar li.profile .job {
+            font-size: 12px;
+        }
+        
+        .sidebar .profile #log_out {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: #1d1b31;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 0px;
+            transition: all 0.5s ease;
+        }
+        
+        .sidebar.open .profile #log_out {
+            width: 50px;
+            background: none;
+        }
+        
         .home-section {
             position: relative;
             background: #E4E9F7;
@@ -12,28 +418,7 @@ template.innerHTML = `
             transition: all 0.5s ease;
             z-index: 2;
         }
-        .card {
-	    font-family: 'Arial', sans-serif;
-	    background: #f4f4f4;
-	    width: 100%;
-            grid-gap: 10px;
-            margin-bottom: 15px;
-	    border-bottom: coral 5px solid;
-	}
-
-	.card video {
-	    width: 100%;
-            height: 100%;
-	}
-        .row {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            margin-right: -15px;
-            margin-left: -15px
-        }
-
+        
         .sidebar.open~.home-section {
             left: 250px;
             width: calc(100% - 250px);
@@ -52,12 +437,97 @@ template.innerHTML = `
                 display: none;
             }
         }
-</style>
-<body>
-        <section class="home-section">
-            <div class="text">
+
+
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          border-radius: 5px;
+          box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); 
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background-color: #11101D; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; 
+        }
+    </style>
+    <body>
+
+        <div class="sidebar">
+            <div class="logo-details">
+                <i src="//g4lihru.me/drive/logo.png" class='bx-tada bx-rotate-90'></i>
+                <div class="logo_name">Drive</div>
+                <i class='bx bx-menu' id="btn"></i>
             </div>
-        </section>
+            <ul class="nav-list">
+                <li>
+                    <i class='bx bx-search'></i>
+                    <input class="search-input" id="fileSearch" type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/">
+                        <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Drive Saya</span>
+                    </a>
+                    <span class="tooltip">Drive Saya</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/video/">
+                        <i class='bx bxs-videos bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Video</span>
+                    </a>
+                    <span class="tooltip">Video</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/pdf/">
+                        <i class='bx bxs-file-pdf bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Pdf</span>
+                    </a>
+                    <span class="tooltip">Pdf</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/img/">
+                        <i class='bx bxs-file-image bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Gambar</span>
+                    </a>
+                    <span class="tooltip">Gambar</span>
+                </li>
+                <li>
+                    <a href="//g4lihru.me/drive/audio/">
+                        <i class='bx bx-podcast bx-tada'></i>
+                        <span class="links_name">Audio</span>
+                    </a>
+                    <span class="tooltip">Audio</span>
+                </li>
+                <li>
+                    <a href="//instagram.com/galih_ridho_utomo">
+                        <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
+                        <span class="links_name">Instagram</span>
+                    </a>
+                    <span class="tooltip">Instagram</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <img src="https://g4lihru.me/345677.png" alt="profileImg">
+                        <div class="name_job">
+                            <div class="name">Galih Ridho Utomo</div>
+                            <div class="job">Mahasiswa UNNES</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 </body>
 `;
 
@@ -67,8 +537,8 @@ class plvideo extends HTMLElement {
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.shadowRoot.querySelector('div').innerText = this.getAttribute('name');
+	this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
     }
 }
 
-window.customElements.define('pljr-video', plvideo);
+window.customElements.define('pljr-side', plvideo);
