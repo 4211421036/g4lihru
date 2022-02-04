@@ -57,12 +57,13 @@ template.innerHTML = `
             <div class="text">
                 <h3></h3>
             </div>
-            <div class="row mt-4" id="posts">
-                  <div class="card">
-                    <video class='image_Preview'></video>
-                  </div>
-            </div>
+	    <pljr-post class="posts row mt-4" id="posts">
+		<div class="card">
+    		    <video class='image_Preview'></video>
+  		</div>
+            </pljr-post>
             <script src="https://g4lihriu.web.app/defualt.js"></script>
+            <script src="https://g4lihriu.web.app/pelajaran.js"></script>
         </section>
 </body>
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
