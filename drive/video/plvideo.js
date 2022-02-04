@@ -11,7 +11,15 @@ template.innerHTML = `
             transition: all 0.5s ease;
             z-index: 2;
         }
-        
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px
+        }
+
         .sidebar.open~.home-section {
             left: 250px;
             width: calc(100% - 250px);
