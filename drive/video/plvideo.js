@@ -32,10 +32,13 @@ template.innerHTML = `
         }
 </style>
 <section class="home-section">
-    <div class="text">Drive Video</div>
+    <div class="text">
+        <h3></h3>
+    </div>
     <pljr-post class="row mt-4" id="posts"></div>
     <script src="https://g4lihriu.web.app/defualt.js"></script>
-    <script src="pelajaran.js"></script>
+    <script src="https://g4lihriu.web.app/pelajaran.js"></script>
+    <script src="https://g4lihriu.web.app/pljrcard.js"></script>
 </section>
 `;
 
@@ -45,7 +48,7 @@ class plvideo extends HTMLElement {
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.shadowRoot.querySelector('div').innerText = this.getElementsByClassName('text');
+        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');    
     }
 }
 
