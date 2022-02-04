@@ -539,30 +539,27 @@ class plvideo extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
     }
-              toggleInfo() {
+          menuBtnChange() {
             this.showSide = !this.showSide;
 
             const sidebar = this.shadowRoot.querySelector('.sidebar');
             const closeBtn = this.shadowRoot.querySelector('#btn');
             
             // following are the code to change sidebar button(optional)
-            function this.menuBtnChange() {
+            function menuBtnChange() {
                 if (sidebar.classList.contains("open")) {
                     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
                 } else {
                     closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
                 }
             }
-            if(this.showSide) {
-              sidebar.classList.toggle = 'open';
-              this.menuBtnChange();
-            } else {
-              sidebar.classList.toggle = 'close';
-            }
           }
 
           connectedCallback() {
-            this.shadowRoot.querySelector('#btn').addEventListener('click', () => this.toggleInfo());
+            this.shadowRoot.querySelector('#btn').addEventListener('click', () =>
+            sidebar.classList.toggle("open");
+            this.menuBtnChange(); //calling the function(optional)
+            );
           }
 
           disconnectedCallback() {
