@@ -58,10 +58,8 @@ template.innerHTML = `
                 <h3></h3>
             </div>
 	    <pljr-post class="posts row mt-4" id="posts">
-		<div class="card">
-    		    <video class='image_Preview'></video>
-  		</div>
-            </pljr-post>
+            
+	    </pljr-post>
             <script src="https://g4lihriu.web.app/defualt.js"></script>
             <script src="https://g4lihriu.web.app/pelajaran.js"></script>
         </section>
