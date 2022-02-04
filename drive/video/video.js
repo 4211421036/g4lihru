@@ -1,7 +1,7 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const videotemp = document.createElement('videotemp');
+videotemp.innerHTML = `
 <style>
-.home-section {
+        .home-section {
             position: relative;
             background: #E4E9F7;
             min-height: 100vh;
@@ -36,11 +36,10 @@ template.innerHTML = `
     <pljr-post class="row mt-4" id="posts"></div>
     <script src="https://g4lihriu.web.app/defualt.js"></script>
     <script src="pelajaran.js"></script>
-    <script src="pljrcard.js"></script>
 </section>
 `;
 
-class video extends HTMLElement {
+class plideo extends HTMLElement {
     constructor() {
         super();
 
@@ -50,4 +49,4 @@ class video extends HTMLElement {
     }
 }
 
-window.customElements.define('pljr-video', video);
+window.customElements.define('pljr-video', plvideo);
