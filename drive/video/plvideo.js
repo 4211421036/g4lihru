@@ -546,7 +546,7 @@ class plvideo extends HTMLElement {
             const closeBtn = this.shadowRoot.querySelector('#btn');
             
             // following are the code to change sidebar button(optional)
-            if (this.menuBtnChange()) {
+            function this.menuBtnChange() {
                 if (sidebar.classList.contains("open")) {
                     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
                 } else {
