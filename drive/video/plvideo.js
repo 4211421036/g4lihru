@@ -1,5 +1,5 @@
-const vidtem = document.createElement('template');
-template.innerHTML = `
+const template = document.createElement('vidtem');
+vidtem.innerHTML = `
 <style>
         .home-section {
             position: relative;
