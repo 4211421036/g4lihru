@@ -538,7 +538,8 @@ class plvideo extends HTMLElement {
         });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
-          toggleInfo() {
+    }
+              toggleInfo() {
             this.showSide = !this.showSide;
 
             const sidebar = this.shadowRoot.querySelector('.sidebar');
@@ -567,6 +568,5 @@ class plvideo extends HTMLElement {
           disconnectedCallback() {
             this.shadowRoot.querySelector('#btn').removeEventListener();
           }
-    }
 }
 window.customElements.define('pljr-side', plvideo);
