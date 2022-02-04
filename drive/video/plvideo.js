@@ -4,6 +4,14 @@ template.innerHTML = `
         html, body{
             overflow-x: hidden;
         }
+	.card {
+		font-family: 'Arial', sans-serif;
+		background: #f4f4f4;
+		width: 100%;
+		grid-gap: 10px;
+		margin-bottom: 15px;
+		border-bottom: coral 5px solid;
+	}
         .btn-primary .caret,
         .btn-warning .caret,
         .btn-danger .caret,
