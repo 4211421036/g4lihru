@@ -1,9 +1,10 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="apple-touch-icon" href="../assets/icon.png">
-    <link rel="stylesheet" type="text/css" href="./icons.css">
-    <script src="./index.js" type="module"></script>
+    <link rel="apple-touch-icon" href="https://g4lihru.me/ai/vaii/assets/icon.png">
+    <link rel="stylesheet" type="text/css" href="https://g4lihru.me/ai/vaii/icons.css">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
+    <script src="https://g4lihru.me/ai/vaii/ai/vaii/index.js" type="module"></script>
     <style>
       html, body {
           width: 100%;
