@@ -19,24 +19,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://g4lihru.me/meet/dist/tailwind.css" />
-    <style>        
-        .fas {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-        
-        .fa-caret-down {
-            border-width: 10px 8px 0 8px;
-            border-color: white transparent
-        }
-        
-        .fa-caret-right {
-            border-width: 10px 0 8px 10px;
-            border-color: transparent transparent transparent white;
-        }
-        
+    <style>
         .modal:before {
             content: '';
             display: inline-block;
@@ -465,15 +448,7 @@
             </ul>
         </vaii-side>
         <vaii-video></vaii-video>
-        <script src="vaii.js"></script>
-        <!-- include the Glitch button to show what the webpage is about and
-              to make it easier for folks to view source and remix -->
-        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-        <script type="text/javascript">
-            setTimeout(function() {
-                document.getElementById("loader-wrapper").style.display = "content";
-            }, 2000);
-        </script>
+        <script type="text/javascript" src="https://g4lihru.me/ai/vaii/vaii.js"></script>
         <script type="text/javascript">
             // Get the modal
             var modal = document.getElementById("myModal");
@@ -500,28 +475,6 @@
                     modal.style.display = "none";
                 }
             }
-        </script>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyBvETFg2V6QYmU_TvHN3BWz1TTy4ryZqGM",
-                authDomain: "g4lihriu.firebaseapp.com",
-                databaseURL: "https://g4lihriu-default-rtdb.firebaseio.com",
-                projectId: "g4lihriu",
-                storageBucket: "g4lihriu.appspot.com",
-                messagingSenderId: "387783527536",
-                appId: "1:387783527536:web:8df38ac72783aea162b8b5",
-                measurementId: "G-DCSX3TS7ZS"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
         </script>
         <script>
             function myFunction() {
