@@ -3,7 +3,7 @@
 
 const UICSS = `
   #gl-bench { position: absolute; right: 1rem; bottom: 1rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
-  #gl-bench div { position: relative; display: block; margin: 4px; padding: 0 2px 0 2px; background: #303030; border-radius: 0.1rem; cursor: pointer; opacity: 0.9; }
+  #gl-bench vaii-bench { position: relative; display: block; margin: 4px; padding: 0 2px 0 2px; background: #303030; border-radius: 0.1rem; cursor: pointer; opacity: 0.9; }
   #gl-bench svg { height: 60px; margin: 0 0px 0px 4px; }
   #gl-bench text { font-size: 16px; font-family: 'Lato', 'Segoe UI'; dominant-baseline: middle; text-anchor: middle; }
   #gl-bench .gl-mem { font-size: 12px; fill: white; }
@@ -15,7 +15,7 @@ const UICSS = `
   `;
 
 const UISVG = `
-  <div class="gl-box">
+  <vaii-box class="gl-box">
     <svg viewBox="0 0 60 60">
       <text x="27" y="56" class="gl-fps">00 FPS</text>
       <text x="30" y="8" class="gl-mem"></text>
@@ -32,7 +32,7 @@ const UISVG = `
       <line x1="7" y1="38" x2="7" y2="11" class="gl-gpu" stroke-dasharray="0 27"/>
       <path d="M1.94775 43.3772a.736.736 0 10-.00416 1.472c.58535.00231.56465.1288.6348.3197.07015.18975.04933.43585.04933.43585l-.00653.05405v8.671a.736.736 0 101.472 0v-1.4145c.253.09522.52785.1495.81765.1495h5.267c1.2535 0 2.254-.9752 2.254-2.185v-3.105c0-1.2075-1.00625-2.185-2.254-2.185h-5.267c-.28865 0-.5635.05405-.8165.1495.01806-.16445.04209-.598-.1357-1.0787-.22425-.6072-.9499-1.2765-2.0125-1.2765zm2.9095 3.6455c.42435 0 .7659.36225.7659.8119v2.9785c0 .44965-.34155.8119-.7659.8119s-.7659-.36225-.7659-.8119v-2.9785c0-.44965.34155-.8119.7659-.8119zm4.117 0a2.3 2.3 0 012.3 2.3 2.3 2.3 0 01-2.3 2.3 2.3 2.3 0 01-2.3-2.3 2.3 2.3 0 012.3-2.3z" style="fill: grey"></path>
     </svg>
-  </div>
+  </vaii-box>
   `;
 
 class GLBench {
@@ -130,7 +130,7 @@ class GLBench {
     // init ui and ui loggers
     if (!this.withoutUI) {
       if (!this.dom) this.dom = document.body;
-      const elm = document.createElement('div');
+      const elm = document.createElement('vaii-bench');
       elm.id = 'gl-bench';
       this.dom.appendChild(elm);
       this.dom.insertAdjacentHTML('afterbegin', '<style id="gl-bench-style">' + this.css + '</style>');
