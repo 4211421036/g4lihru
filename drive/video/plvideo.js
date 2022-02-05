@@ -6,8 +6,24 @@ template.innerHTML = `
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="https://g4lihru.me/drive/video/sidebar.js"></script>
+    <script src="https://g4lihriu.web.app/defualt.js"></script>
+    <script src="https://g4lihriu.web.app/pelajaran.js"></script>
+    <script src="https://g4lihriu.web.app/pljrcard.js"></script>
     <style>
-            html, body{
+        .card {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            width: 100%;
+            grid-gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: coral 5px solid;
+        }
+
+        .card avatar {
+            width: 100%;
+            height: 100%;
+        }
+        html, body{
             overflow-x: hidden;
         }
         .btn-primary .caret,
@@ -527,6 +543,7 @@ template.innerHTML = `
                 </li>
             </ul>
         </div>
+        
 `;
 
 class plvideo extends HTMLElement {
@@ -538,6 +555,7 @@ class plvideo extends HTMLElement {
         });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
+        this.shadowRoot.querySelector('pljr-card').src = this.getAttribute('avatar');
     }
     toggleInfo() {
       this.showSide = !this.showSide;
