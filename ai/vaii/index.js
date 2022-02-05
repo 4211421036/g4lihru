@@ -3,7 +3,6 @@ import Menu from './helpers/menu.js';
 import GLBench from './helpers/gl-bench.js';
 import webRTC from './helpers/webrtc.js';
 import jsonView from './helpers/jsonview.js';
-import vaii from './vaii/js';
 
 let human;
 
