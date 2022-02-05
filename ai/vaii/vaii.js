@@ -81,11 +81,9 @@ template.innerHTML = `
     </style>
     <div class="float">
         <iframe class="my-float" src="https://g4lihru.me/ai/vaii/v" width="256" height="256" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
-        <span class="tooltip">AI automatic detected object</span>
     </div>
     <div class="float1">
         <iframe class="my-float" src="https://g4lihru.me/vcs" width="177" height="176" scrolling="no" allow="autoplay" frameBorder="0"></iframe>
-        <span class="tooltip">AI automatic detected object</span>
     </div>
     <div id="myModal" class="modal" align="center">
         <!-- Modal content -->
