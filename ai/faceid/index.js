@@ -1,10 +1,4 @@
-/*
-  Human
-  homepage: <https://github.com/vladmandic/human>
-  author: <https://github.com/vladmandic>'
-*/
 
-// demo/faceid/index.ts
 import { Human } from "../../dist/human.esm.js";
 
 // demo/faceid/indexdb.ts
@@ -206,7 +200,7 @@ async function validationLoop() {
   for (const [key, val] of Object.entries(ok)) {
     let el = document.getElementById(`ok-${key}`);
     if (!el) {
-      el = document.createElement("div");
+      el = document.createElement("vaii-human");
       el.innerText = key;
       el.className = "ok";
       el.style.top = `${y}px`;
