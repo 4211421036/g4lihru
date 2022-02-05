@@ -85,7 +85,7 @@ class Menu {
 
   createMenu(parent, title = '', position = { top: null, left: null, bottom: null, right: null }) {
     /** @type {HTMLDivElement} */
-    this.menu = document.createElement('div');
+    this.menu = document.createElement('vaii-menu');
     this.menu.id = `menu-${instance}`;
     this.menu.className = 'menu';
     if (position) {
@@ -95,12 +95,12 @@ class Menu {
       if (position.right) this.menu.style.right = `${position.right}`;
     }
 
-    this.container = document.createElement('div');
+    this.container = document.createElement('vaii-menu');
     this.container.id = `menu-container-${instance}`;
     this.container.className = 'menu-container menu-container-fadein';
 
     // set menu title with pulldown arrow
-    const elTitle = document.createElement('div');
+    const elTitle = document.createElement('vaii-menu');
     elTitle.className = 'menu-title';
     elTitle.id = `menu-title-${instance}`;
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 2rem; height: 2rem; vertical-align: top;">
@@ -175,7 +175,7 @@ class Menu {
   }
 
   addTitle(title) {
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-title';
     el.id = this.newID;
     el.innerHTML = title;
@@ -192,7 +192,7 @@ class Menu {
   }
 
   addLabel(title) {
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-item menu-label';
     el.id = this.newID;
     el.innerHTML = title;
@@ -201,9 +201,9 @@ class Menu {
   }
 
   addBool(title, object, variable, callback) {
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-item';
-    el.innerHTML = `<div class="menu-checkbox"><input class="menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}"></label></div>${title}`;
+    el.innerHTML = `<vaii-menu class="menu-checkbox"><input class="menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}"></label></vaii-menu>${title}`;
     if (this.container) this.container.appendChild(el);
     el.addEventListener('change', (evt) => {
       if (evt.target) {
@@ -215,14 +215,14 @@ class Menu {
   }
 
   async addList(title, items, selected, callback) {
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-item';
     let options = '';
     for (const item of items) {
       const def = item === selected ? 'selected' : '';
       options += `<option value="${item}" ${def}>${item}</option>`;
     }
-    el.innerHTML = `<div class="menu-list"><select name="${this.ID}" title="${title}" class="menu-list-item">${options}</select><label for="${this.ID}"></label></div>${title}`;
+    el.innerHTML = `<vaii-menu class="menu-list"><select name="${this.ID}" title="${title}" class="menu-list-item">${options}</select><label for="${this.ID}"></label></vaii-menu>${title}`;
     el.style.fontFamily = document.body.style.fontFamily;
     el.style.fontSize = document.body.style.fontSize;
     el.style.fontVariant = document.body.style.fontVariant;
@@ -234,7 +234,7 @@ class Menu {
   }
 
   addRange(title, object, variable, min, max, step, callback) {
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-item';
     el.innerHTML = `<input class="menu-range" type="range" title="${title}" id="${this.newID}" min="${min}" max="${max}" step="${step}" value="${object[variable]}">${title}`;
     if (this.container) this.container.appendChild(el);
@@ -251,7 +251,7 @@ class Menu {
   }
 
   addHTML(html) {
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-item';
     el.id = this.newID;
     if (html) el.innerHTML = html;
@@ -278,7 +278,7 @@ class Menu {
   }
 
   addValue(title, val, suffix = '') {
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-item';
     el.id = `menu-val-${title}`;
     el.innerText = `${title}: ${val}${suffix}`;
@@ -295,7 +295,7 @@ class Menu {
 
   addChart(title, id, width = 150, height = 40, color) {
     if (color) theme.chartColor = color;
-    const el = document.createElement('div');
+    const el = document.createElement('vaii-menu');
     el.className = 'menu-item menu-chart-title';
     el.id = this.newID;
     el.innerHTML = `<font color=${theme.chartColor}>${title}</font><canvas id="menu-canvas-${id}" class="menu-chart-canvas" width="${width}px" height="${height}px"></canvas>`;
