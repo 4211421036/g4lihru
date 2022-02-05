@@ -877,4 +877,4 @@ class vaii extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
-window.customElements.define('vaii', vaii);
+window.customElements.define('vaii-video', vaii);
