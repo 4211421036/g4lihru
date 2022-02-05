@@ -5,6 +5,35 @@ template.innerHTML = `
     <link rel="stylesheet" type="text/css" href="./icons.css">
     <script src="./index.js" type="module"></script>
     <style>
+      html, body {
+          width: 100%;
+          height: 100%;
+          margin: 0px;
+          border: 0;
+          overflow: hidden; /*  Disable scrollbars */
+          display: block;  /* No floating content on sides */
+        }
+        .float {
+            position:fixed;
+            bottom:40px;
+            right:40px;
+            text-align:center;
+            overflow: hidden;
+        }
+        .float1 {
+            position:fixed;
+            bottom:288px;
+            right:40px;
+            text-align:center;
+            overflow: hidden;
+        }
+        
+        .my-float {
+            margin-top: 22px;
+        }        
+        .menu {
+            padding: 0;
+        }
       .modal:before {
             content: '';
             display: inline-block;
