@@ -5,6 +5,47 @@ template.innerHTML = `
     <link rel="stylesheet" type="text/css" href="./icons.css">
     <script src="./index.js" type="module"></script>
     <style>
+      .modal:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        
+        .modal-dialog {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .modal .modal-content {
+            padding: 20px 20px 20px 20px;
+            -webkit-animation-name: modal-animation;
+            -webkit-animation-duration: 0.5s;
+            animation-name: modal-animation;
+            animation-duration: 0.5s;
+        }
+        
+        @-webkit-keyframes modal-animation {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes modal-animation {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
       @font-face { font-family: 'Lato'; font-display: swap; font-style: normal; font-weight: 100; src: local('Lato'), url('../assets/lato-light.woff2') }
       html { font-family: 'Lato', 'Segoe UI'; font-size: 16px; font-variant: small-caps; }
       body { margin: 0; background: black; color: white; overflow-x: hidden; width: 100vw; height: 100vh; }
