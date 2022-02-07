@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Making a framework</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="product-colors.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme" />
+
+    <style>
+      /* only for prez, not for speaker view */
+      @media screen and (min-width: 1500px) {
+        .slides {
+          width: 88% !important;
+        }
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        text-transform: none !important;
+      }
+
+      ol,
+      ul {
+        font-size: 150%;
+      }
+
+      i {
+        font-style: italic;
+      }
+
+      .opacity-hidden {
+        opacity: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="css-ani/fluid.css" />
+    <link rel="stylesheet" href="css-ani/arrow-right.css" />
+    <link rel="stylesheet" href="css-ani/blur-in.css" />
+    <link rel="stylesheet" href="css-ani/zoom-in-fast.css" />
+    <link rel="stylesheet" href="css-ani/pulse-right.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- https://bennettfeely.com/clippy/ -->
+
+        <!-- <section>
+          <h1>Demo</h1>
+        </section> -->
+
+        <section>
+          <h1>Focus on <span class="web-components">Web Components</span></h1>
+          <h1 class="fragment">Not <span class="webrtc-orange">WebRTC</span></h1>
+          <h1 class="fragment"><span class="youtube">Video</span> for future 📺</h1>
+        </section>
+
+        <section>
+          <h1>Let's Make a Web Framework</h1>
+          <h2 class="fragment">
+            With <span class="web-components">Web Components</span> and <span class="webpack">Webpack</span>
+          </h2>
+          <!-- <h3>Jan Greger Hemb</h3> -->
+        </section>
+
+        <section>
+          <h1>Project overview</h1>
+          <h2 class="fragment">Code on Github</h2>
+          <h2 class="fragment">web-components-webrtc.web.app</h2>
+        </section>
+
+        <section>
+          <h1><span class="web-components">Web Component</span>?</h1>
+          <h2 class="fragment js">Custom elements (JS)</h2>
+          <h2 class="html fragment">HTML templates (HTML)</h2>
+          <h2 class="css fragment">Shadow DOM (CSS)</h2>
+          <!-- Show about page -->
+          <h2 class="fragment">Universal, everlasting</h2>
+          <h2 class="fragment">Super modern <span class="js">JS</span></h2>
+        </section>
+
+        <section>
+          <h2 class=""><span class="angular">Angular</span> like structure</h2>
+          <ul>
+            <li class="fragment">Components</li>
+            <li class="fragment">Services</li>
+            <li class="fragment">Modules</li>
+            <li class="fragment">Routing</li>
+            <li class="fragment">Build system</li>
+            <li class="fragment">Super modern <span class="js">JS</span></li>
+            <!-- <li class="fragment">Google Meet "clone" with <span class="webrtc-orange">WebRTC</span></li> -->
+          </ul>
+        </section>
+
+        <section>
+          <h1 class="">Limitations</h1>
+
+          <h2 class="fragment"><span class="html">HTML</span> import</h2>
+          <h2 class="fragment">Dead <span class="html">HTML</span></h2>
+          <h2 class="fragment"><span class="css">CSS</span> shadow piercing</h2>
+          <h2 class="fragment" style="text-decoration: line-through">Browser support</h2>
+          <!-- <h2 class="fragment">No framework features</h2> -->
+        </section>
+
+        <section>
+          <h1>Let's learn <span class="webpack">Webpack</span></h1>
+          <h2 class="fragment">All files cramped into one</h2>
+          <h2 class="fragment">Even <span class="html">HTML</span> and <span class="css">CSS</span></h2>
+          <h2 class="fragment">Live reload, hot reload</h2>
+          <h2 class="fragment">Don't understand stage 3 <span class="js">JS</span></h2>
+          <h2 class="fragment">Need loader</h2>
+        </section>
+
+        <section>
+          <h1 class="babel">Babel</h1>
+          <!-- <h2 class="fragment">Loader ➡️ <span class="babel">Babel</span></h2> -->
+          <h2 class="fragment">
+            <span class="babel">Babel</span> = new <span class="js">JS</span> ➡️ old <span class="js">JS</span>
+          </h2>
+          <h2 class="fragment">Makes code slower</h2>
+          <h2 class="fragment">Browser support</h2>
+          <h2 class="fragment">github.com/tc39/proposals</h2>
+        </section>
+
+        <section>
+          <h1>Less than 20KB</h1>
+          <h2 class="fragment">Only <span class="firebase">firebase</span> as dependency</h2>
+          <h2 class="fragment">Rest shipped with browser</h2>
+          <!-- <h1 class="fragment">Let's look at bundle</h1> -->
+        </section>
+
+        <section>
+          <h1>Making a framework</h1>
+          <h1 class="fragment">Real components</h1>
+          <!-- <h1>Modern JS class</h1> -->
+          <h1 class="fragment">Services</h1>
+          <h1 class="fragment">Routing</h1>
+        </section>
+
+        <section>
+          <h1 class="">Routing</h1>
+          <h2 class="fragment">Single Page Application</h2>
+          <h2 class="fragment">All request to <span class="html">index.html</span></h2>
+          <h2 class="fragment"><span class="js">history</span><span class="fragment">.state</span></h2>
+          <h2 class="fragment"><span class="js">window</span>.addEventListener("popstate")</h2>
+          <h2 class="fragment">Reconstruct page from URL</h2>
+        </section>
+
+        <section>
+          <h1>What's missing</h1>
+          <h1 class="fragment typescript">TypeScript</h1>
+          <h1 class="fragment">Render loop</h1>
+          <h2 class="fragment">No Two way data binding</h2>
+          <!-- <h1 class="fragment">Generate components</h1> -->
+          <h1 class="fragment">Not a full framework</h1>
+        </section>
+
+        <section>
+          <h1 class="polymer">Polymer</h1>
+        </section>
+
+        <!-- <section>
+          <h1 class="">Out of time</h1>
+        </section> -->
+
+        <section>
+          <h1>Ready to go 🚀</h1>
+          <!-- <h1 class="fragment">Rest on <span class="youtube">Youtube</span></h1> -->
+          <h1 class="fragment">Thanks for listening</h1>
+          <h2 class="fragment">web-components-webrtc.web.app</h2>
+          <!-- <h1 class="fragment">Leave a comment</h1> -->
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: true,
+        controls: false,
+        progress: false,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+
+      Reveal.addEventListener("fragmentshown", function (event) {
+        if (event.fragment.classList.value.includes("addClassBelow")) {
+          Array.from(event.fragment.children).forEach((current) => {
+            current.classList.add(event.fragment.getAttribute("data-add-class"));
+          });
+        }
+      });
+      Reveal.addEventListener("fragmenthidden", function (event) {
+        if (event.fragment.classList.value.includes("addClassBelow")) {
+          Array.from(event.fragment.children).forEach((current) => {
+            current.classList.remove(event.fragment.getAttribute("data-add-class"));
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
