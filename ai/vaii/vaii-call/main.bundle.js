@@ -91,7 +91,7 @@
             await w(this, C)[C].setLocalDescription(t), await w(this, y)[y].saveAnswer(w(this, R)[R], t)
         },
         M = async function(e) { await w(this, C)[C].setRemoteDescription(e) };
-    const k = Object.freeze({ Home: { path: "/", component: "vaii-home-page", title: "Home" }, Room: { path: "/room", component: "vaii-room-page", title: "Room" }, About: { path: "/about", component: "about-page", title: "About" } });
+    const k = Object.freeze({ Home: { path: "/", component: "vaii-page-home", title: "Home" }, Room: { path: "/room", component: "vaii-page-room", title: "Room" }, About: { path: "/about", component: "vaii-page-about", title: "About" } });
 
     function H(e, t) { if (!Object.prototype.hasOwnProperty.call(e, t)) throw new TypeError("attempted to use private field on non-instance"); return e }
     var L = 0;
@@ -236,6 +236,6 @@
         disconnectedCallback() { this.removeEventListener("keyup", this.validate.bind(this)) }
         validate() { this.value ? this.style.border = "" : this.style.border = "2px solid red" }
     }
-    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), customElements.define("vaii-page", F), customElements.define("vaii-home-page", B), customElements.define("about-page", Ie), customElements.define("vaii-room-page", he), customElements.define("vaii-room-video", be), customElements.define("vaii-room-chat", Pe), customElements.define("text-input", Te, { extends: "input" })
+    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), customElements.define("vaii-page", F), customElements.define("vaii-page-home", B), customElements.define("vaii-page-about", Ie), customElements.define("vaii-page-room", he), customElements.define("vaii-room-video", be), customElements.define("vaii-room-chat", Pe), customElements.define("text-input", Te, { extends: "input" })
 })();
 //# sourceMappingURL=main.bundle.js.map
