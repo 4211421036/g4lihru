@@ -1,8 +1,3 @@
-import Human from '../dist/human.esm.js'; // equivalent of @vladmandic/human
-import Menu from './helpers/menu.js';
-import GLBench from './helpers/gl-bench.js';
-import webRTC from './helpers/webrtc.js';
-import jsonView from './helpers/jsonview.js';
 (() => {
     "use strict";
     /**
