@@ -1,5 +1,5 @@
 /* Global styles, even to web components */
-@import "ai/vaii/vaii-call/assets/css-components/normalize.css";
+@import "ai/vaii/vaii-call/normalize.css";
 @import "ai/vaii/vaii-call/assets/css-components/button.css";
 @import "ai/vaii/vaii-call/assets/css-components/scrollbar.css";
 @import "ai/vaii/vaii-call/assets/css-components/input.css";
