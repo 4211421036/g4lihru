@@ -91,7 +91,7 @@
             await w(this, C)[C].setLocalDescription(t), await w(this, y)[y].saveAnswer(w(this, R)[R], t)
         },
         M = async function(e) { await w(this, C)[C].setRemoteDescription(e) };
-    const k = Object.freeze({ Home: { path: "/", component: "home-page", title: "Home" }, Room: { path: "/room", component: "room-page-vaii", title: "Room" }, About: { path: "/about", component: "about-page", title: "About" } });
+    const k = Object.freeze({ Home: { path: "/", component: "vaii-media-home", title: "Home" }, Room: { path: "/room", component: "vaii-media-room", title: "Room" }, About: { path: "/about", component: "vaii-media-about", title: "About" } });
 
     function H(e, t) { if (!Object.prototype.hasOwnProperty.call(e, t)) throw new TypeError("attempted to use private field on non-instance"); return e }
     var L = 0;
@@ -101,7 +101,7 @@
         D = A("bc"),
         V = A("gotoRoomPage");
     class B extends HTMLElement {
-        constructor() { super(), Object.defineProperty(this, V, { value: U }), Object.defineProperty(this, S, { writable: !0, value: new T }), Object.defineProperty(this, D, { writable: !0, value: void 0 }), e(this, '<h1>Start new room</h1>\n<button class="button" onclick="this.newRoom()">New Room</button>\n<h1>Join Room</h1>\n<div>\n  <input\n    is="text-input"\n    id="roomIdInput"\n    class="input"\n    type="text"\n    placeholder="Room ID"\n    autofocus\n  />\n  <button class="button" onclick="this.joinRoom()">Join Room</button>\n</div>\n<h1>About</h1>\n<button class="button" onclick="this.gotoAboutPage()">About</button>\n', ":host {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n\nh1 {\n  text-align: center;\n}\n\n#roomIdInput {\n  min-width: 300px;\n}\n") }
+        constructor() { super(), Object.defineProperty(this, V, { value: U }), Object.defineProperty(this, S, { writable: !0, value: new T }), Object.defineProperty(this, D, { writable: !0, value: void 0 }), e(this, '<h1>Start new room</h1>\n<button class="button" onclick="this.newRoom()">New Room</button>\n<h1>Join Room</h1>\n<div>\n  <vaii-media-input\n    is="vaii-media-text-input"\n    id="roomIdInput"\n    class="input"\n    type="text"\n    placeholder="Room ID"\n    autofocus\n  />\n  <button class="button" onclick="this.joinRoom()">Join Room</button>\n</div>\n<h1>About</h1>\n<button class="button" onclick="this.gotoAboutPage()">About</button>\n', ":host {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n\nh1 {\n  text-align: center;\n}\n\n#roomIdInput {\n  min-width: 300px;\n}\n") }
         connectedCallback() { H(this, D)[D] = new BroadcastChannel("room-auto-join"), H(this, D)[D].onmessage = e => { this.shadowRoot.getElementById("roomIdInput").value = e.data, this.joinRoom() } }
         disconnectedCallback() { H(this, D)[D].close() }
         async newRoom() { await H(this, S)[S].newRoom(), H(this, V)[V]() }
@@ -161,7 +161,7 @@
         ce = oe("returnToHome"),
         de = oe("getDesiredCameraId");
     class he extends HTMLElement {
-        constructor() { super(), Object.defineProperty(this, de, { value: pe }), Object.defineProperty(this, ce, { value: le }), Object.defineProperty(this, ie, { writable: !0, value: void 0 }), Object.defineProperty(this, se, { writable: !0, value: new T }), Object.defineProperty(this, ae, { writable: !0, value: void 0 }), Object.defineProperty(this, re, { writable: !0, value: !1 }), e(this, '<h1>Welcome to the room <span id="roomID"></span></h1>\n<room-video-vaii id="video"></room-video-vaii>\n\n', ":host {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n\nh1 {\n  text-align: center;\n}\n") }
+        constructor() { super(), Object.defineProperty(this, de, { value: pe }), Object.defineProperty(this, ce, { value: le }), Object.defineProperty(this, ie, { writable: !0, value: void 0 }), Object.defineProperty(this, se, { writable: !0, value: new T }), Object.defineProperty(this, ae, { writable: !0, value: void 0 }), Object.defineProperty(this, re, { writable: !0, value: !1 }), e(this, '<h1>Welcome to the room <span id="roomID"></span></h1>\n<vaii-media-room-video id="video"></vaii-media-room-video>\n\n', ":host {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n\nh1 {\n  text-align: center;\n}\n") }
         connectedCallback() {
             if (!te(this, se)[se].getRoomId()) return te(this, ce)[ce](), !1;
             te(this, ae)[ae] = te(this, se)[se].getRoomId(), this.shadowRoot.getElementById("roomID").innerText = te(this, ae)[ae], te(this, se)[se].getIsHost() && (this.addRoomIdToClipboard(), this.sendBcMessageWithRoomId()), this.setupVideo()
@@ -182,7 +182,7 @@
         onRemoteVideo(e) { this.shadowRoot.getElementById("video").setRemoteVideo(e), te(this, re)[re] = !0, this.showChat() }
         onUserAllowVideo(e) { te(this, ie)[ie] = e, te(this, se)[se].setupPeerConnection(te(this, ie)[ie], this.onRemoteVideo.bind(this)), this.shadowRoot.getElementById("video").setLocalVideo(te(this, ie)[ie]), te(this, se)[se].connectToOtherPerson() }
         showChat() {
-            const e = document.createElement("room-chat-vaii");
+            const e = document.createElement("vaii-media-room-chat");
             this.shadowRoot.appendChild(e)
         }
     }
@@ -236,6 +236,6 @@
         disconnectedCallback() { this.removeEventListener("keyup", this.validate.bind(this)) }
         validate() { this.value ? this.style.border = "" : this.style.border = "2px solid red" }
     }
-    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), window.customElements.define("page-router", F), window.customElements.define("home-page", B), window.customElements.define("about-page", Ie), window.customElements.define("room-page-vaii", he), window.customElements.define("room-video-vaii", be), window.customElements.define("room-chat-vaii", Pe), window.customElements.define("text-input", Te, { extends: "input" })
+    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), window.customElements.define("vaii-media-router", F), window.customElements.define("vaii-media-home", B), window.customElements.define("vaii-media-about", Ie), window.customElements.define("vaii-media-room", he), window.customElements.define("vaii-media-room-video", be), window.customElements.define("vaii-media-room-chat", Pe), window.customElements.define("vaii-media-text-input", Te, { extends: "vaii-media-input" })
 })();
 //# sourceMappingURL=main.bundle.js.map
