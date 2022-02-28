@@ -3,7 +3,7 @@
     const e = (e, n, o) => {
             const i = e.attachShadow({ mode: "open" }),
                 s = document.createElement("template");
-            s.innerHTML = '<style>@import "styles.css";' + o + "</style>" + t(n, e);
+            s.innerHTML = '<style>@import "styles.css";' + o + "</style>" + t(n, e) "";
             const a = s.content;
             i.appendChild(a.cloneNode(!0))
         },
