@@ -18,7 +18,6 @@
     var o = 0;
 
     function d(e, t) { if (!Object.prototype.hasOwnProperty.call(e, t)) throw new TypeError("attempted to use private field on non-instance"); return e }
-    Object.defineProperty(s, { writable: !0, value: void 0 });
     var h = 0;
 
     function l(e) { return "__private_" + h++ + "_" + e }
