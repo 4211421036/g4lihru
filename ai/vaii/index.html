@@ -23,6 +23,11 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://g4lihru.me/meet/dist/tailwind.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://g4lihru.me/ai/vaii/vaii-call/index.css" />
+    <link rel="stylesheet" href="https://g4lihru.me/ai/vaii/vaii-call/styles.css" />
     <script src="https://g4lihru.me/script.js" defer></script>
     <script src="https://g4lihru.me/ai/vaii/index.js" type="module"></script>
     <style>
@@ -653,28 +658,12 @@
             </section>
         </vaii-sec>
         <!-- import the webpage's javascript file -->
-        <script src="https://g4lihru.me/ai/vaii/main.bundle.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
         <script src="https://g4lihru.me/script.js" defer></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiiside.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiiplay.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiisec.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiiground.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiiload.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiistatus.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiibar.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiimedia.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiicom.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiiseg.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiisamp.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiihint.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiilog.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiires.js"></script>
-        <script src="https://g4lihru.me/ai/vaii/js/vaiitrans.js"></script>
         <script src="https://code.responsivevoice.org/responsivevoice.js?key=BLzc1i7C"></script>
         <script type="text/javascript" src="https://g4lihru.me/ai/vaii/vaii.js"></script>
+        <script src="main.bundle.js" defer></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
         <script type="text/javascript">
             // Get the modal
             var modal = document.getElementById("myModal");
@@ -699,48 +688,6 @@
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
-                }
-            }
-        </script>
-        <script>
-            function myFunction() {
-                var input, filter, ul, li, a, i, txtValue;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                ul = document.getElementById("myUL");
-                li = ul.getElementsByTagName("li");
-                for (i = 0; i < li.length; i++) {
-                    a = li[i].getElementsByTagName("a")[0];
-                    txtValue = a.textContent || a.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "";
-                    } else {
-                        li[i].style.display = "none";
-                    }
-                }
-            }
-        </script>        
-        <script>
-            let sidebar = document.querySelector(".sidebar");
-            let closeBtn = document.querySelector("#btn");
-            let searchBtn = document.querySelector(".bx-search");
-
-            closeBtn.addEventListener("click", () => {
-                sidebar.classList.toggle("open");
-                menuBtnChange(); //calling the function(optional)
-            });
-
-            searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-                sidebar.classList.toggle("open");
-                menuBtnChange(); //calling the function(optional)
-            });
-
-            // following are the code to change sidebar button(optional)
-            function menuBtnChange() {
-                if (sidebar.classList.contains("open")) {
-                    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
-                } else {
-                    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
                 }
             }
         </script>
