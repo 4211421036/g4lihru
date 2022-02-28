@@ -91,7 +91,7 @@
             await w(this, C)[C].setLocalDescription(t), await w(this, y)[y].saveAnswer(w(this, R)[R], t)
         },
         M = async function(e) { await w(this, C)[C].setRemoteDescription(e) };
-    const k = Object.freeze({ Home: { path: "/", component: "home-page", title: "Home" }, Room: { path: "/room", component: "room-page-vaii", title: "Room" }, About: { path: "/about", component: "about-page", title: "About" } });
+    const k = Object.freeze({ Home: { path: "/", component: "vaii-home", title: "Home" }, Room: { path: "/room", component: "vaii-room", title: "Room" }, About: { path: "/about", component: "vaii-about", title: "About" } });
 
     function H(e, t) { if (!Object.prototype.hasOwnProperty.call(e, t)) throw new TypeError("attempted to use private field on non-instance"); return e }
     var L = 0;
@@ -161,7 +161,7 @@
         ce = oe("returnToHome"),
         de = oe("getDesiredCameraId");
     class he extends HTMLElement {
-        constructor() { super(), Object.defineProperty(this, de, { value: pe }), Object.defineProperty(this, ce, { value: le }), Object.defineProperty(this, ie, { writable: !0, value: void 0 }), Object.defineProperty(this, se, { writable: !0, value: new T }), Object.defineProperty(this, ae, { writable: !0, value: void 0 }), Object.defineProperty(this, re, { writable: !0, value: !1 }), e(this, '<h1>Welcome to the room <span id="roomID"></span></h1>\n<room-video-vaii id="video"></room-video-vaii>\n\n', ":host {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n\nh1 {\n  text-align: center;\n}\n") }
+        constructor() { super(), Object.defineProperty(this, de, { value: pe }), Object.defineProperty(this, ce, { value: le }), Object.defineProperty(this, ie, { writable: !0, value: void 0 }), Object.defineProperty(this, se, { writable: !0, value: new T }), Object.defineProperty(this, ae, { writable: !0, value: void 0 }), Object.defineProperty(this, re, { writable: !0, value: !1 }), e(this, '<h1>Welcome to the room <span id="roomID"></span></h1>\n<vaii-room-video id="video"></vaii-room-video>\n\n', ":host {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}\n\nh1 {\n  text-align: center;\n}\n") }
         connectedCallback() {
             if (!te(this, se)[se].getRoomId()) return te(this, ce)[ce](), !1;
             te(this, ae)[ae] = te(this, se)[se].getRoomId(), this.shadowRoot.getElementById("roomID").innerText = te(this, ae)[ae], te(this, se)[se].getIsHost() && (this.addRoomIdToClipboard(), this.sendBcMessageWithRoomId()), this.setupVideo()
@@ -182,7 +182,7 @@
         onRemoteVideo(e) { this.shadowRoot.getElementById("video").setRemoteVideo(e), te(this, re)[re] = !0, this.showChat() }
         onUserAllowVideo(e) { te(this, ie)[ie] = e, te(this, se)[se].setupPeerConnection(te(this, ie)[ie], this.onRemoteVideo.bind(this)), this.shadowRoot.getElementById("video").setLocalVideo(te(this, ie)[ie]), te(this, se)[se].connectToOtherPerson() }
         showChat() {
-            const e = document.createElement("room-chat-vaii");
+            const e = document.createElement("vaii-room-chat");
             this.shadowRoot.appendChild(e)
         }
     }
@@ -236,6 +236,6 @@
         disconnectedCallback() { this.removeEventListener("keyup", this.validate.bind(this)) }
         validate() { this.value ? this.style.border = "" : this.style.border = "2px solid red" }
     }
-    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), customElements.define("page-router", F), customElements.define("home-page", B), customElements.define("about-page", Ie), customElements.define("room-page-vaii", he), customElements.define("room-video-vaii", be), customElements.define("room-chat-vaii", Pe), customElements.define("text-input", Te, { extends: "input" })
+    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), customElements.define("vaii-router", F), customElements.define("vaii-home", B), customElements.define("vaii-about", Ie), customElements.define("vaii-room", he), customElements.define("vaii-room-video", be), customElements.define("vaii-room-chat", Pe), customElements.define("text-input", Te, { extends: "input" })
 })();
 //# sourceMappingURL=main.bundle.js.map
