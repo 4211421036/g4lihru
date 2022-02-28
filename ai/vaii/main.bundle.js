@@ -17,20 +17,6 @@
     function n(e, t) { if (!Object.prototype.hasOwnProperty.call(e, t)) throw new TypeError("attempted to use private field on non-instance"); return e }
     var o = 0;
 
-    function i(e) { return "__private_" + o++ + "_" + e }
-    var s = i("instance"),
-        a = i("myDataChannel"),
-        r = i("callbackOnMessage");
-    class c {
-        constructor() {
-            if (Object.defineProperty(this, a, { writable: !0, value: void 0 }), Object.defineProperty(this, r, { writable: !0, value: void 0 }), n(c, s)[s]) return n(c, s)[s];
-            n(c, s)[s] = this
-        }
-        getNewMessages(e) { n(this, r)[r] = e }
-        setupDataChannel(e) { e.ondatachannel = e => { e.channel.onmessage = e => { n(this, r)[r] && n(this, r)[r](e.data) } }, n(this, a)[a] = e.createDataChannel("myDataChannel") }
-        sendChatMessage(e) { n(this, a)[a].send(e) }
-    }
-
     function d(e, t) { if (!Object.prototype.hasOwnProperty.call(e, t)) throw new TypeError("attempted to use private field on non-instance"); return e }
     Object.defineProperty(c, s, { writable: !0, value: void 0 });
     var h = 0;
@@ -179,12 +165,8 @@
             const o = { video: t, audio: !1 };
             navigator.mediaDevices.getUserMedia(o).then((e => this.onUserAllowVideo(e)), (e => { console.warn(e), alert("Can't get camera 😞") }))
         }
-        onRemoteVideo(e) { this.shadowRoot.getElementById("video").setRemoteVideo(e), te(this, re)[re] = !0, this.showChat() }
+        onRemoteVideo(e) { this.shadowRoot.getElementById("video").setRemoteVideo(e), te(this, re)[re] = !0 }
         onUserAllowVideo(e) { te(this, ie)[ie] = e, te(this, se)[se].setupPeerConnection(te(this, ie)[ie], this.onRemoteVideo.bind(this)), this.shadowRoot.getElementById("video").setLocalVideo(te(this, ie)[ie]), te(this, se)[se].connectToOtherPerson() }
-        showChat() {
-            const e = document.createElement("vaii-media-room-chat");
-            this.shadowRoot.appendChild(e)
-        }
     }
     var le = function() {
             const e = new CustomEvent("ChangePage", { detail: k.Home });
@@ -207,23 +189,6 @@
     function ge(e, t) { if (!Object.prototype.hasOwnProperty.call(e, t)) throw new TypeError("attempted to use private field on non-instance"); return e }
     var ye = 0;
 
-    function Oe(e) { return "__private_" + ye++ + "_" + e }
-    var Ce = Oe("webRTCService"),
-        Re = Oe("DataChannelService"),
-        je = Oe("chatMessageText");
-    class Pe extends HTMLElement {
-        constructor() { super(), Object.defineProperty(this, Ce, { writable: !0, value: new T }), Object.defineProperty(this, Re, { writable: !0, value: new c }), Object.defineProperty(this, je, { writable: !0, value: "" }), e(this, '<h1>Chat!</h1>\n<div class="chat-container">\n  <div id="chatList"></div>\n  <div class="inputs-container">\n    <input\n      id="chatMessage"\n      class="input"\n      type="text"\n      placeholder="Room ID"\n      onchange="this.chatMessageChange(this)"\n      autofocus\n    />\n    <button class="button" onclick="this.sendChatMessage()">Send message</button>\n  </div>\n</div>\n', ":host {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.inputs-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.input {\n  min-width: 300px;\n  margin-right: 5px;\n}\n\n.chat-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n#chatList {\n  min-width: 300px;\n  min-height: 50px;\n  margin-right: 5px;\n  border: 1px solid #ffffff;\n  padding: 5px;\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.my-message,\n.other-message {\n  border-radius: 18px;\n  padding: 8px 12px;\n  margin: 5px 2px;\n  display: inline-block;\n}\n.my-message {\n  background-color: rgb(0, 132, 255);\n  text-align: right;\n\n  margin-left: auto;\n}\n\n.other-message {\n  background-color: rgb(62, 64, 66);\n  margin-right: auto;\n}\n") }
-        connectedCallback() { ge(this, Re)[Re].getNewMessages((e => { this.addMessageToChat(e, !1) })) }
-        chatMessageChange(e) { ge(this, je)[je] = e.value }
-        sendChatMessage() { ge(this, Re)[Re].sendChatMessage(ge(this, je)[je]), this.addMessageToChat(ge(this, je)[je], !0), ge(this, je)[je] = "", this.shadowRoot.getElementById("chatMessage").value = ge(this, je)[je] }
-        addMessageToChat(e, t) {
-            const n = t ? "You: " : "Guest: ",
-                o = t ? "my-message" : "other-message ",
-                i = this.shadowRoot.getElementById("chatList"),
-                s = `<div class="${o}"><b>${n}</b>${e}</div>`;
-            i.innerHTML = i.innerHTML + s
-        }
-    }
     var xe = 0,
         Ee = "__private_" + xe++ + "_goHomeEvent";
     class Ie extends HTMLElement {
@@ -236,6 +201,6 @@
         disconnectedCallback() { this.removeEventListener("keyup", this.validate.bind(this)) }
         validate() { this.value ? this.style.border = "" : this.style.border = "2px solid red" }
     }
-    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), window.customElements.define("vaii-media-router", F), window.customElements.define("vaii-media-home", B), window.customElements.define("vaii-media-about", Ie), window.customElements.define("vaii-media-room", he), window.customElements.define("vaii-media-room-video", be), window.customElements.define("vaii-media-room-chat", Pe), window.customElements.define("text-input", Te, { extends: "input" })
+    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), window.customElements.define("vaii-media-router", F), window.customElements.define("vaii-media-home", B), window.customElements.define("vaii-media-about", Ie), window.customElements.define("vaii-media-room", he), window.customElements.define("vaii-media-room-video", be),  window.customElements.define("text-input", Te, { extends: "input" })
 })();
 //# sourceMappingURL=main.bundle.js.map
