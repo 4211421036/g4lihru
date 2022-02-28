@@ -236,6 +236,6 @@
         disconnectedCallback() { this.removeEventListener("keyup", this.validate.bind(this)) }
         validate() { this.value ? this.style.border = "" : this.style.border = "2px solid red" }
     }
-    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), customElements.define("page-router", F), customElements.define("home-page", B), customElements.define("about-page", Ie), customElements.define("room-page-vaii", he), customElements.define("room-video-vaii", be), customElements.define("room-chat-vaii", Pe), customElements.define("text-input", Te, { extends: "input" })
+  customElements.define("page-router", F), customElements.define("home-page", B), customElements.define("about-page", Ie), customElements.define("room-page-vaii", he), customElements.define("room-video-vaii", be), customElements.define("room-chat-vaii", Pe), customElements.define("text-input", Te, { extends: "input" })
 })();
 //# sourceMappingURL=main.bundle.js.map
