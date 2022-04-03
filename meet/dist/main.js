@@ -51,9 +51,18 @@ async function startRecording () {
 		recorder.ondataavailable = handleDataAvailable;
 		recorder.onstop = handleStop;
 		recorder.start(1000);
+		recorder.addEventListener('loadedmetadata', () => {
+	    		recorder.requestPictureInPicture()
+    			.catch(console.error)
+  		});
 	
 		startButton.disabled = true;
 		stopButton.disabled = false;
+		
+		startButton.addEventListener('loadedmetadata', () => {
+			startButton.requestPictureInPicture()
+			.catch(console.error)
+		});
 	
 		console.log('Recording started');
 	} else {
@@ -63,9 +72,17 @@ async function startRecording () {
 
 function stopRecording () {
 	recorder.stop();
+	recorder.addEventListener('loadedmetadata', () => {
+    		recorder.requestPictureInPicture()
+    		.catch(console.error)
+  	});
 
 	startButton.disabled = false;
 	stopButton.disabled = true;
+	stopButton.addEventListener('loadedmetadata', () => {
+		stopButton.requestPictureInPicture()
+		.catch(console.error)
+	});
 }
 
 function handleDataAvailable (e) {
