@@ -67,7 +67,6 @@ function stopRecording () {
     	
 	startButton.disabled = false;
 	stopButton.disabled = true;
-	stopButton.requestPictureInPicture()
 }
 
 function handleDataAvailable (e) {
