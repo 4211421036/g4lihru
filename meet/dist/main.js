@@ -33,10 +33,7 @@ function setupVideoFeedback() {
 		const video = document.querySelector('.video-feedback');
 		video.srcObject = stream;
 		video.play();
-		video.addEventListener('loadedmetadata', () => {
-    		video.requestPictureInPicture()
-    			.catch(console.error)
-  		});
+		video.requestPictureInPicture();
 	} else {
 		console.warn('No stream available');
 	}
@@ -51,18 +48,12 @@ async function startRecording () {
 		recorder.ondataavailable = handleDataAvailable;
 		recorder.onstop = handleStop;
 		recorder.start(1000);
-		recorder.addEventListener('loadedmetadata', () => {
-	    		recorder.requestPictureInPicture()
-    			.catch(console.error)
-  		});
+	    	recorder.requestPictureInPicture()
 	
 		startButton.disabled = true;
 		stopButton.disabled = false;
 		
-		startButton.addEventListener('loadedmetadata', () => {
-			startButton.requestPictureInPicture()
-			.catch(console.error)
-		});
+		startButton.requestPictureInPicture()
 	
 		console.log('Recording started');
 	} else {
@@ -72,17 +63,11 @@ async function startRecording () {
 
 function stopRecording () {
 	recorder.stop();
-	recorder.addEventListener('loadedmetadata', () => {
-    		recorder.requestPictureInPicture()
-    		.catch(console.error)
-  	});
-
+    	recorder.requestPictureInPicture()
+    	
 	startButton.disabled = false;
 	stopButton.disabled = true;
-	stopButton.addEventListener('loadedmetadata', () => {
-		stopButton.requestPictureInPicture()
-		.catch(console.error)
-	});
+	stopButton.requestPictureInPicture()
 }
 
 function handleDataAvailable (e) {
@@ -105,10 +90,7 @@ function handleStop (e) {
 		rc.scrollIntoView({ behavior: "smooth", block: "start" });
 
 		recordedVideo.play();
-		recordedVideo.addEventListener('loadedmetadata', () => {
-    			recordedVideo.requestPictureInPicture()
-    			.catch(console.error)
-  		});
+    		recordedVideo.requestPictureInPicture()
 	}
 
 	stream.getTracks().forEach((track) => track.stop());
