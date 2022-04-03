@@ -33,7 +33,6 @@ function setupVideoFeedback() {
 		const video = document.querySelector('.video-feedback');
 		video.srcObject = stream;
 		video.play();
-		video.requestPictureInPicture();
 	} else {
 		console.warn('No stream available');
 	}
@@ -52,9 +51,7 @@ async function startRecording () {
 	
 		startButton.disabled = true;
 		stopButton.disabled = false;
-		
-		startButton.requestPictureInPicture()
-	
+			
 		console.log('Recording started');
 	} else {
 		console.warn('No stream available.');
