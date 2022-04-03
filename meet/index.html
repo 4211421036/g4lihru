@@ -17,6 +17,11 @@
     <link rel="shortcut icon" href="https://g4lihru.me/987654567.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
     <link rel="stylesheet" href="dist/tailwind.css" />
+    <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
+    <link href="https://www.nuevodevel.com/vdjs/v9.6.0/plugins/videojs.pip.css" rel="stylesheet" type="text/css">
+    // Load player and plugins javascript files
+    <script src='https://vjs.zencdn.net/7.5.5/video.js'></script>
+    <script src="https://www.nuevodevel.com/vdjs/v9.6.0/plugins/videojs.pip.js"></script>
 </head>
 <style>
 	/* width */
@@ -55,7 +60,6 @@
 				<button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
 					Record Screen
 				</button>
-				<button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" id="togglePipButton">Toggle Picture-in-Picture</button>
 				<button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
 					Stop Recording
 				</button>
@@ -79,66 +83,9 @@
 		</div>
 	</main>
 	<script src="dist/main.js"></script>
-	<script src="meet.js"></script>
-	<script type="text/javascript">
-		let pipWindow;
-		      
-		togglePipButton.addEventListener('click', async function(event) {
-		  log('Toggling Picture-in-Picture...');
-		  togglePipButton.disabled = true;
-		  try {
-
-		    if (video !== document.pictureInPictureElement)
-		      await video.requestPictureInPicture();
-		    else
-		      await document.exitPictureInPicture();
-
-		  } catch(error) {
-		    log(`> Argh! ${error}`);
-		  } finally {
-		    togglePipButton.disabled = false;
-		  }
-		});
-
-		// Note that this can happen if user clicked the "Toggle Picture-in-Picture"
-		// button but also if user clicked some browser context menu or if
-		// Picture-in-Picture was triggered automatically for instance.
-		video.addEventListener('enterpictureinpicture', function(event) {
-		  log('> Video entered Picture-in-Picture');
-
-		  pipWindow = event.pictureInPictureWindow;
-		  log(`> Window size is ${pipWindow.width}x${pipWindow.height}`);
-
-		  pipWindow.addEventListener('resize', onPipWindowResize);
-		});
-
-		video.addEventListener('leavepictureinpicture', function(event) {
-		  log('> Video left Picture-in-Picture');
-
-		  pipWindow.removeEventListener('resize', onPipWindowResize);
-		});
-
-		function onPipWindowResize(event) {
-		  log(`> Window size changed to ${pipWindow.width}x${pipWindow.height}`);
-		}
-
-		/* Feature support */
-
-		if ('pictureInPictureEnabled' in document) {
-		  // Set button ability depending on whether Picture-in-Picture can be used.
-		  setPipButton();
-		  video.addEventListener('loadedmetadata', setPipButton);
-		  video.addEventListener('emptied', setPipButton);
-		} else {
-		  // Hide button if Picture-in-Picture is not supported.
-		  togglePipButton.hidden = true;
-		}
-
-		function setPipButton() {
-		  togglePipButton.disabled = (video.readyState === 0) ||
-					     !document.pictureInPictureEnabled ||
-					     video.disablePictureInPicture;
-		}
+	<script src="meet.js"></script><script>
+		var player = videojs('video_1');
+		player.pip();
 	</script>
 </body>
 </html>
