@@ -47,7 +47,6 @@ async function startRecording () {
 		recorder.ondataavailable = handleDataAvailable;
 		recorder.onstop = handleStop;
 		recorder.start(1000);
-	    	recorder.requestPictureInPicture()
 	
 		startButton.disabled = true;
 		stopButton.disabled = false;
@@ -86,7 +85,6 @@ function handleStop (e) {
 		rc.scrollIntoView({ behavior: "smooth", block: "start" });
 
 		recordedVideo.play();
-    		recordedVideo.requestPictureInPicture()
 	}
 
 	stream.getTracks().forEach((track) => track.stop());
