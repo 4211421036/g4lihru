@@ -79,11 +79,43 @@ function handleStop (e) {
 	recordedVideo.src = URL.createObjectURL(blob);
 	recordedVideo.load();
 	recordedVideo.onloadeddata = function() {
+		const video = document.getElementById("video");
+  		const pipButton = document.getElementById("pipButton");
 		const rc = document.querySelector(".recorded-video-wrap");
 		rc.classList.remove("hidden");
 		rc.scrollIntoView({ behavior: "smooth", block: "start" });
 
 		recordedVideo.play();
+		pipButton.addEventListener("click", async () => {
+		    try {
+		      await video.requestPictureInPicture();
+		    } catch (error) {
+		      // Video failed to enter Picture-in-Picture mode.
+		    }
+		  });
+
+		  video.addEventListener("enterpictureinpicture", (event) => {
+		    // Video entered Picture-in-Picture mode.
+		    const pipWindow = event.pictureInPictureWindow;
+		    updateVideoSize(pipWindow.width, pipWindow.height);
+		    pipWindow.addEventListener("resize", onPipWindowResize);
+		  });
+
+		  video.addEventListener("leavepictureinpicture", (event) => {
+		    // Video left Picture-in-Picture mode.
+		    const pipWindow = event.pictureInPictureWindow;
+		    pipWindow.removeEventListener("resize", onPipWindowResize);
+		  });
+
+		  function onPipWindowResize(event) {
+		    // Picture-in-Picture window has been resized.
+		    const { width, height } = event.target;
+		    updateVideoSize(width, height);
+		  }
+
+		  function updateVideoSize(width, height) {
+		    // TODO: Update video size based on pip window width and height.
+		  }
 	}
 
 	stream.getTracks().forEach((track) => track.stop());
