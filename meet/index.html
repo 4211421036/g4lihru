@@ -17,11 +17,6 @@
     <link rel="shortcut icon" href="https://g4lihru.me/987654567.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png">
     <link rel="stylesheet" href="dist/tailwind.css" />
-    <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
-    <link href="https://www.nuevodevel.com/vdjs/v9.6.0/plugins/videojs.pip.css" rel="stylesheet" type="text/css">
-    // Load player and plugins javascript files
-    <script src='https://vjs.zencdn.net/7.5.5/video.js'></script>
-    <script src="https://www.nuevodevel.com/vdjs/v9.6.0/plugins/videojs.pip.js"></script>
 </head>
 <style>
 	/* width */
@@ -60,6 +55,7 @@
 				<button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
 					Record Screen
 				</button>
+				<button id="pipButton">enable pip</button>
 				<button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
 					Stop Recording
 				</button>
@@ -83,10 +79,23 @@
 		</div>
 	</main>
 	<script src="dist/main.js"></script>
-	<script src="auto.js"></script>
 	<script src="meet.js"></script><script>
-		var player = videojs('video_1');
-		player.pip();
+		pipButton.addEventListener('click', function() {
+		    // If there is no element in Picture-in-Picture yet, let’s request
+		    // Picture-in-Picture for the video, otherwise leave it.
+		    if (!document.pictureInPictureElement) {
+		      video.requestPictureInPicture()
+		      .catch(error => {
+			// Video failed to enter Picture-in-Picture mode.
+		      });
+		    } else {
+		      document.exitPictureInPicture()
+		      .catch(error => {
+			// Video failed to leave Picture-in-Picture mode.
+		      });
+		    }
+		  });
+	</script>
 	</script>
 </body>
 </html>
