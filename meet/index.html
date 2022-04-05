@@ -40,6 +40,25 @@
         ::-webkit-scrollbar-thumb:hover {
           background: #555; 
         }
+	.float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .float1 {
+            position: fixed;
+            bottom: 288px;
+            right: 40px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .my-float {
+            margin-top: 22px;
+        }
 </style>
 <body class="bg-gray-800 text-white">
 	<pljr-header meet="Meet Record"></pljr-header>
@@ -49,7 +68,10 @@
 				Meet Record
 			</h2>
 			
-			<video id="video" src="" autplay class="video-feedback bg-black w-full h-auto mb-4"></video>
+			<div class="bg-black w-full h-auto mb-4">
+				<video id="video" src="" autplay class="video-feedback bg-black w-full h-auto mb-4"></video>
+				<button class="my-float" id="togglePipButton">button</button>
+			</div>
 			
 			<div class="flex flex-wrap -mx-4 mb-8">
 				<button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
