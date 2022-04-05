@@ -55,7 +55,7 @@
 				<button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
 					Record Screen
 				</button>
-				<button id="pipButton">enable pip</button>
+				<button id="togglePipButton">button</button>
 				<button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
 					Stop Recording
 				</button>
@@ -79,22 +79,28 @@
 		</div>
 	</main>
 	<script src="dist/main.js"></script>
-	<script src="meet.js"></script><script>
-		pipButton.addEventListener('click', function() {
-		    // If there is no element in Picture-in-Picture yet, let’s request
-		    // Picture-in-Picture for the video, otherwise leave it.
-		    if (!document.pictureInPictureElement) {
-		      video.requestPictureInPicture()
-		      .catch(error => {
-			// Video failed to enter Picture-in-Picture mode.
-		      });
-		    } else {
-		      document.exitPictureInPicture()
-		      .catch(error => {
-			// Video failed to leave Picture-in-Picture mode.
-		      });
-		    }
-		  });
+	<script src="meet.js"></script>
+	<script>
+	  const video = document.getElementById("video");
+	  const togglePipButton = document.getElementById("togglePipButton");
+
+	  // Hide button if Picture-in-Picture is not supported or disabled.
+	  togglePipButton.hidden =
+	    !document.pictureInPictureEnabled || video.disablePictureInPicture;
+
+	  togglePipButton.addEventListener("click", async () => {
+	    // If there is no element in Picture-in-Picture yet, let’s request
+	    // Picture-in-Picture for the video, otherwise leave it.
+	    try {
+	      if (document.pictureInPictureElement) {
+		await document.exitPictureInPicture();
+	      } else {
+		await video.requestPictureInPicture();
+	      }
+	    } catch (err) {
+	      // Video failed to enter/leave Picture-in-Picture mode.
+	    }
+	  });
 	</script>
 	</script>
 </body>
