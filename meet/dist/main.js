@@ -59,16 +59,6 @@ async function startRecording () {
 
 function stopRecording () {
 	recorder.stop();
-    	try {
-	      if (document.pictureInPictureElement) {
-		await document.exitPictureInPicture();
-	      } else {
-		await video.requestPictureInPicture();
-	      }
-	    } 
-	catch (err) {
-	      // Video failed to enter/leave Picture-in-Picture mode.
-	}
     	
 	startButton.disabled = false;
 	stopButton.disabled = true;
