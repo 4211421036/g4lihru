@@ -68,8 +68,9 @@ function zipfile(title , link ,  key , date , share , size){
     var html;
     try{ html = `
     <div class="card mr-4 ${key}" size="${size}" date="${date}" share=${share} style="width:28%; height: 6rem" id="${key}" title="${title}" key="${key}" link="${btoa(link)}"  onclick="dropDown(this)">
-    <div class="card-body">
-    <h5 class="card-title mb-0 file" data-id="${key}"> <i class="fas fa-file-archive mr-4"></i></i>${title}</h5>                           
+        <div class="card-body">
+        <h5 class="card-title mb-0 file" data-id="${key}"> <i class="fas fa-file-archive mr-4"></i></i>${title}</h5>
+        <button class='btn btn-primary action_btn' href='${link2}' class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View File</i></button><br>
     </div>
     `
     if(folder == null){
