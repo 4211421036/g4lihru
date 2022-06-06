@@ -2,6 +2,11 @@
 body{
   overflow: hidden;
 }
+
+h1, h1{
+  font-size: 2.0rem;
+}
+
 #right-sidebar{
   
   position:fixed;
