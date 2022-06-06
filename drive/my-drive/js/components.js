@@ -12,7 +12,7 @@ function addFileList(title , link , key , date , share , size){
 
         <h3 class="emailRow__title" id="${key}" size="${size}" date="${date}" share=${share} key="${key}" link="${btoa(link)}" title="${title}"  onclick="dropDown(this)">${title}</h3>
 
-        <button class='btn btn-primary action_btn' src="${link2}" class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View File</i></button><br>
+        <button class='btn btn-primary action_btn' href='${link2}' class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View File</i></button><br>
         
         <p class="emailRow__time">${date}</p>
   </div>`
