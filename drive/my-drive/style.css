@@ -125,6 +125,7 @@ a:hover{
     border-radius: 0.4rem;
     border: none;
     outline: none;
+    border-radius: 100px;
 }
 .menu{
     margin: 10px;
