@@ -224,7 +224,7 @@ cursor: pointer;
   }
 
   ::placeholder {
-    padding: 0.6rem 1.5rem;
+    padding: 0.6rem 0.5rem;
     color: #bbb8b8;
   }
   #nav{
