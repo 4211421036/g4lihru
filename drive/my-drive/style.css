@@ -323,6 +323,8 @@ cursor: pointer;
     background-color: white;
     padding: 8px;
     z-index: 23;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
   }
   
   .emailList__settingsLeft {
@@ -394,11 +396,15 @@ cursor: pointer;
     border-bottom: 1px solid whitesmoke;
     cursor: pointer;
     z-index: 999;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
   }
   
   .emailRow:hover {
-    border-top: 1px solid whitesmoke;
+    border-top: 2px solid whitesmoke;
     box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
   }
   
   .emailRow__message {
