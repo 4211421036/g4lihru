@@ -516,14 +516,16 @@ cursor: pointer;
   transition: all 1s ease-in;
 }
 
-[data-theme="dark"]   nav{
+[data-theme="dark"] nav ol li a{
   background-color: var(--primary-color) !important;
+  border-radius: 100px;
   color: var(--color-text);
   transition: all 1s ease-in;
 }
 
-[data-theme="dark"] ol li ol.breadcrumb li.breadcrumb-item li.breadcrumb-item a{
+[data-theme="dark"] ol.breadcrumb li.breadcrumb-item li.breadcrumb-item a{
   background-color: var(--primary-color) !important;
+  border-radius: 100px;
   color: var(--color-text);
   transition: all 1s ease-in;
 }
