@@ -117,13 +117,13 @@ ol.breadcrumb {
 }
 
 li.breadcrumb-item{
-    background-color: transparent;
+    background-color: #fff;
 }
 
 li.breadcrumb-item a {
     left: 0.7rem;
     display: block;
-    background-color: #000;
+    background-color: #fff;
     position: relative;
     cursor: pointer;
 }
