@@ -149,8 +149,9 @@ cursor: pointer;
 #plusicon:hover , .card:hover{
     background: rgba( 255, 255, 255 , 1);
     -webkit-box-shadow:  0px  0px 5.5px 0px rgba(0,0,0, 0.29);
-box-shadow:  0px  0px 5.5px 0px rgba(0,0,0, 0.29);
-cursor: pointer;
+    box-shadow:  0px  0px 5.5px 0px rgba(0,0,0, 0.29);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 .fa-question-circle,
 .fa-cog,
@@ -204,6 +205,7 @@ cursor: pointer;
 .card{
     margin: 5px;
     overflow: hidden;
+    border-radius: 20px;
 }
 #overlay {
     position: fixed; /* Sit on top of the page content */
