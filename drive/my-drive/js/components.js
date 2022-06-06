@@ -4,14 +4,17 @@ function addFileList(title , link , key , date , share , size){
     var link2 = link.replace('https://drive.google.com/uc?export=download&id=', "")
     link2 = link2.replace(/\s/g, '')
     link2 = `https://drive.google.com/thumbnail?id=`+link2;
-    list.innerHTML += `    <div class="emailRow ${key}" >
-    <div class="emailRow__options">
-      <input type="checkbox" name="checkbox" id="" data-id="${key}" link="${btoa(link)}" />
-    </div>
+    list.innerHTML += `
+    <div class="emailRow ${key}">
+        <div class="emailRow__options">
+          <input type="checkbox" name="checkbox" id="" data-id="${key}" link="${btoa(link)}" />
+        </div>
 
-    <h3 class="emailRow__title" id="${key}" size="${size}" date="${date}" share=${share} key="${key}" link="${btoa(link)}" title="${title}"  onclick="dropDown(this)">${title}</h3>
+        <h3 class="emailRow__title" id="${key}" size="${size}" date="${date}" share=${share} key="${key}" link="${btoa(link)}" title="${title}"  onclick="dropDown(this)">${title}</h3>
 
-    <p class="emailRow__time">10pm</p>
+        <button class='btn btn-primary action_btn' href='" + ${link2} + "' class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View File</i></button><br>
+        
+        <p class="emailRow__time">10pm</p>
   </div>`
 }
 function addFolder(id, title){
