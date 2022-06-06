@@ -104,6 +104,19 @@ i#list {
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
 }
+ol.breadcrumb {
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+li.breadcrumb-item{
+    background-color: transparent;
+}
+
+li.breadcrumb-item a{
+    color: #000;
+}
+
 .options{
   width: 80%;
   display: flex;
@@ -490,7 +503,7 @@ cursor: pointer;
   transition: all 1s ease-in;
 }
 
-[data-theme="dark"]   #nav #ol #li #a{
+[data-theme="dark"]   #nav ol #li #a ol.breadcrumb li.breadcrumb-item li.breadcrumb-item a{
   background-color: var(--primary-color) !important;
   color: var(--color-text);
   transition: all 1s ease-in;
