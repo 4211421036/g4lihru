@@ -246,7 +246,7 @@ cursor: pointer;
   #nav-close{
       color: #f1f3f4;
       font-size: 2rem;
-   display: none;
+      display: none;
     }
     #docs , #files{
         flex-wrap: wrap;
@@ -485,6 +485,12 @@ cursor: pointer;
 }
 
 [data-theme="dark"] ::placeholder {
+  background-color: var(--primary-color) !important;
+  color: var(--color-text);
+  transition: all 1s ease-in;
+}
+
+[data-theme="dark"]   #nav #ol #li #a{
   background-color: var(--primary-color) !important;
   color: var(--color-text);
   transition: all 1s ease-in;
