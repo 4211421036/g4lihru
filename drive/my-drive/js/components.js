@@ -14,7 +14,7 @@ function addFileList(title , link , key , date , share , size){
 
         <button class='btn btn-primary action_btn' src="${link2}" class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View File</i></button><br>
         
-        <p class="emailRow__time">10pm</p>
+        <p class="emailRow__time">${date}</p>
   </div>`
 }
 function addFolder(id, title){
