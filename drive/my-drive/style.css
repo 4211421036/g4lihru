@@ -47,6 +47,12 @@ i#grid {
     right: 1.5rem;
     top: 1.1rem;
 }
+i#list {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.1rem;
+}
+
 #button-download{
   margin-bottom: 10px;
   fill: white;
