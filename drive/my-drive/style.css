@@ -122,7 +122,6 @@ li.breadcrumb-item{
 
 li.breadcrumb-item a {
     left: 0.7rem;
-    display: block;
     background-color: #fff;
     position: relative;
     cursor: pointer;
