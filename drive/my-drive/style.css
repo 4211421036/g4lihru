@@ -53,6 +53,13 @@ i#list {
     top: 1.1rem;
 }
 
+h2 {
+    position: relative;
+    left: 0.1rem;
+    top: 0.6rem;
+    font-size: 2rem;
+}
+
 #button-download{
   margin-bottom: 10px;
   fill: white;
@@ -130,7 +137,10 @@ li.breadcrumb-item a {
   padding-bottom: 10px;
 }
 .options i{
- font-size: 2rem;
+  font-size: 1.6rem;
+  right: 0.1rem;
+  top: 0.3rem;
+  position: relative;
 }
 .active{
   border: 2px dashed teal;
