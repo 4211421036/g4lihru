@@ -466,12 +466,14 @@ cursor: pointer;
 }
 
 [data-theme="dark"] .search-input {
-  background-color: black !important;
+  background-color: var(--primary-color) !important;
+  color: var(--color-text);
   transition: all 1s ease-in;
 }
 
 [data-theme="dark"] ::placeholder {
-  background-color: #eee !important;
+  background-color: var(--primary-color) !important;
+  color: var(--color-text);
   transition: all 1s ease-in;
 }
 
