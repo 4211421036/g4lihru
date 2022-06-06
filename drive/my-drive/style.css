@@ -65,6 +65,12 @@ h2 {
     font-size: 2rem;
 }
 
+nav {
+    position: relative;
+    border-radius: 100px;
+    background-color: #fff;
+}
+
 #button-download{
   margin-bottom: 10px;
   fill: white;
