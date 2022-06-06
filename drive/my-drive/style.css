@@ -42,6 +42,11 @@ body{
    align-items: center;
    flex-direction: column;
  }
+i#grid {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.1rem;
+}
 #button-download{
   margin-bottom: 10px;
   fill: white;
