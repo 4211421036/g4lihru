@@ -113,8 +113,11 @@ li.breadcrumb-item{
     background-color: transparent;
 }
 
-li.breadcrumb-item a{
-    color: #000;
+li.breadcrumb-item a {
+    left: 0.7rem;
+    display: block;
+    background-color: #000;
+    position: relative;
 }
 
 .options{
