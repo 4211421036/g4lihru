@@ -352,7 +352,7 @@ function DeleteFolder(folder){
 function CopyFolderLink(folder){
     const key = folder.getAttribute('data-id');
     const param = `?folder=${btoa(key)}`
-    linkfile ='https://faiezwaseem.github.io/Google-Drive-Clone/fileSharing/' + param
+    linkfile ='https://g4lihru.me/drive/my-drive/fileSharing/' + param
     copytext(linkfile);
 }
 function RemoveFolderSharing(id){
