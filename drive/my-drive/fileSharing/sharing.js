@@ -154,7 +154,6 @@ firebase.database().ref(`sharing/${key}`).once('value').then(function (snapshot)
         }
         })
     }
-function goback(){window.location.replace("../index.html");}
-
-
+function goback(){
+  window.location.replace("https://g4lihru.me/drive/my-drive/index.html");}
 }
