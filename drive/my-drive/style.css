@@ -117,27 +117,6 @@ h2 {
   border-radius: 100px;
 }
 
-ol.breadcrumb {
-    background-color: #fff;
-    border-radius: 100px;
-}
-
-li.breadcrumb-item{
-    background-color: #fff;
-}
-
-a {
-  color: black;
-}
-
-li.breadcrumb-item a {
-    left: 0.7rem;
-    background-color: #fff;
-    position: relative;
-    cursor: pointer;
-    color: black;
-}
-
 .options{
   width: 80%;
   display: flex;
@@ -583,8 +562,7 @@ breadcrumb-item::before {
     padding-right: 0.2rem;
     padding-left: 0.8rem;
     color: #6C757C;
-    content: "  /";
-    white-space: pre;
+    content: "/";
 }
 
 .slider {
