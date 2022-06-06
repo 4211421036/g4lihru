@@ -243,6 +243,23 @@
             font-family: "Poppins", sans-serif;
         }
         
+        .row button .tooltip {
+            position: absolute;
+            top: -20px;
+            left: calc(100% + 15px);
+            z-index: 3;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: 0s;
+        }
+        
         .sidebar {
             position: fixed;
             left: 0;
@@ -632,6 +649,7 @@
                         <button class="btn bg-light dropdown-toggle my-drive-btn font-weight-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             My Drive
                         </button>
+                        <span class="tooltip">Drive Saya</span>
                         <i class="far fa-times-circle"  id="nav-close"></i>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item" id="upload">Upload File</a>
