@@ -111,6 +111,7 @@ h2 {
   background-color: rgb(255, 255, 255);
   border-radius: 100px;
 }
+
 ol.breadcrumb {
     background-color: #fff;
     border-radius: 100px;
@@ -120,11 +121,16 @@ li.breadcrumb-item{
     background-color: #fff;
 }
 
+a {
+  color: black;
+}
+
 li.breadcrumb-item a {
     left: 0.7rem;
     background-color: #fff;
     position: relative;
     cursor: pointer;
+    color: black;
 }
 
 .options{
@@ -511,12 +517,6 @@ cursor: pointer;
 }
 
 [data-theme="dark"] ::placeholder {
-  background-color: var(--primary-color) !important;
-  color: var(--color-text);
-  transition: all 1s ease-in;
-}
-
-[data-theme="dark"] ol.breadcrumb li.breadcrumb-item a{
   background-color: var(--primary-color) !important;
   color: var(--color-text);
   transition: all 1s ease-in;
