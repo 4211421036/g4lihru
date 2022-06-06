@@ -574,11 +574,11 @@ cursor: pointer;
   height: 0;
 }
 
-breadcrumb-item+.breadcrumb-item::before {
+breadcrumb-item::before {
     padding-right: 0.2rem;
     padding-left: 0.8rem;
     color: #6C757C;
-    content: " /";
+    content: "  /";
     white-space: pre;
 }
 
