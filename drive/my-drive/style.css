@@ -517,7 +517,7 @@ cursor: pointer;
   transition: all 1s ease-in;
 }
 
-[data-theme="dark"]   #nav ol #li #a ol.breadcrumb li.breadcrumb-item li.breadcrumb-item a{
+[data-theme="dark"]   nav ol li ol.breadcrumb li.breadcrumb-item li.breadcrumb-item a{
   background-color: var(--primary-color) !important;
   color: var(--color-text);
   transition: all 1s ease-in;
