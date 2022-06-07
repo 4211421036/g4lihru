@@ -74,7 +74,7 @@ auth.onAuthStateChanged(function(user){
        uid = user.uid;
        localStorage.setItem("uid",uid); 
        window.setInterval(function(){
-        window.location.replace("index.html");
+        window.location.replace("https://g4lihru.me/drive/my-drive/");
        },2000)
     
     }else{
