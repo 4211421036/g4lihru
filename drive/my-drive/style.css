@@ -435,6 +435,10 @@ cursor: pointer;
     font-weight: bold;
   }
   
+  p.emailRow__time {
+      margin-top: 15px;
+      margin-bottom: 1rem;
+  }
   .emailRow__description {
     font-weight: 400;
     color: gray;
