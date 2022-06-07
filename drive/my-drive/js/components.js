@@ -96,8 +96,9 @@ function video(title , link , key , date , share, size){
     <div class="card mr-4 ${key}" size="${size}" date="${date}" share=${share} style="width: 28%; height: 14rem" id="${key}" title="${title}" key="${key}" link="${btoa(link)}" onclick="dropDown(this)" >
         <video class="card-img-top" poster="https://drive.google.com/thumbnail?id=${id}" src="${btoa(link)}" controls></video>
         <div class="card-body">
-        <h5 class="card-title mb-0 file" data-id="${key}"><i class="fas fa-image mr-4"></i>${title}</h5> 
-        <button class='btn btn-primary action_btn' href='${link2}' class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View Video</i></button><br>
+        <h5 class="card-title mb-0 file" data-id="${key}"><i class="fas fa-image mr-4"></i>${title}</h5>
+        <hr>
+        <button class='btn btn-primary action_btn' href='${btoa(link)}' style="left: 0.1rem; border-radius: 100px" class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View Video</i></button><br>
     </div>
     `
     if(folder == null){
