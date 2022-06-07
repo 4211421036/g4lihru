@@ -66,6 +66,11 @@ jNotify.error('Error', 'Something went wrong while loading a file',{
 }
 function zipfile(title , link ,  key , date , share , size){
     var html;
+
+    var link2 = link.replace('https://drive.google.com/uc?export=download&id=', "")
+    link2 = link2.replace(/\s/g, '')
+    link2 = `https://drive.google.com/thumbnail?id=`+link2;
+
     try{ html = `
     <div class="card mr-4 ${key}" size="${size}" date="${date}" share=${share} style="width:28%; height: 6rem" id="${key}" title="${title}" key="${key}" link="${btoa(link)}"  onclick="dropDown(this)">
         <div class="card-body">
@@ -90,9 +95,10 @@ function video(title , link , key , date , share, size){
     var html;
     try{ html = `
     <div class="card mr-4 ${key}" size="${size}" date="${date}" share=${share} style="width: 28%; height: 14rem" id="${key}" title="${title}" key="${key}" link="${btoa(link)}" onclick="dropDown(this)" >
-    <video class="card-img-top" poster="https://drive.google.com/thumbnail?id=${id}" src="${btoa(link)}" controls></video>
-    <div class="card-body">
-    <h5 class="card-title mb-0 file" data-id="${key}"><i class="fas fa-image mr-4"></i>${title}</h5>                           
+        <video class="card-img-top" poster="https://drive.google.com/thumbnail?id=${id}" src="${btoa(link)}" controls></video>
+        <div class="card-body">
+        <h5 class="card-title mb-0 file" data-id="${key}"><i class="fas fa-image mr-4"></i>${title}</h5> 
+        <button class='btn btn-primary action_btn' href='${link2}' class='image_Preview fancybox' data-fancybox='gallery1'><i class='fas fa-eye'>View Video</i></button><br>
     </div>
     `
     if(folder == null){
