@@ -117,7 +117,10 @@ function currentPage(title){
 }
 function addPage(title){
 var html 
-html = `<li class="breadcrumb-item"><a href="#">${title}</a></li>`
+html = `
+<li class="breadcrumb-item">
+    <a style="color: black;" href="/">${title}</a>
+</li>`
 get('.breadcrumb').innerHTML += html 
 }
 function folderClick($){
