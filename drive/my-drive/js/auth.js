@@ -73,7 +73,6 @@ auth.onAuthStateChanged(function(user){
         console.log('User LoggedIn')
        uid = user.uid;
        localStorage.setItem("uid",uid);
-       var info = data.val();
        if (user.photoUrl) {
 	       $('.user-info img').show();
                $('.user-info img').attr('src', user.photoUrl);
