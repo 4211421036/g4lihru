@@ -72,11 +72,25 @@ auth.onAuthStateChanged(function(user){
     if(user){
         console.log('User LoggedIn')
        uid = user.uid;
-       localStorage.setItem("uid",uid); 
+       localStorage.setItem("uid",uid);
+       usersRef.child(user.uid).once('value').then(function(data) {
+                var info = data.val();
+                if (user.photoUrl) {
+                    $('.user-info img').show();
+                    $('.user-info img').attr('src', user.photoUrl);
+                    $('.user-info .user-name').hide();
+                } else if (user.username) {
+                    $('.user-info img').hide();
+                    $('.user-info').append('<span class="user-name">' + user.username + '</span>');
+                } else if (info.username) {
+                    $('.user-info img').hide();
+                    $('.user-info').append('<span class="user-name">' + info.username + '</span>');
+                }
+            });
+       contactsRef.child(user.uid).on('child_added', onChildAdd);
        window.setInterval(function(){
         window.location.replace("https://g4lihru.me/drive/my-drive/");
        },2000)
-    
     }else{
         console.log("No Active User");
         //no user is signed in
