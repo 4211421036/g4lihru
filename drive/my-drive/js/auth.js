@@ -71,18 +71,15 @@ auth.onAuthStateChanged(function(user){
 		
     if(user){
         console.log('User LoggedIn')
-       uid = user.uid;
-       localStorage.setItem("uid",uid);
-       if (user.photoUrl) {
-	       $('.user-info img').show();
-               $('.user-info img').attr('src', user.photoUrl);
-               $('.user-info .user-name').hide();
-       } else if (user.username) {
-	       $('.user-info img').hide();
-	       $('.user-info').append('<span class="user-name">' + user.username + '</span>');
-       } else if (info.username) {
-	       $('.user-info img').hide();
-	       $('.user-info').append('<span class="user-name">' + info.username + '</span>');
+	$('.user-info img').show();
+	$('.user-info img').attr('src', user.photoUrl);
+	$('.user-info .user-name').hide();
+	uid = user.uid;
+        localStorage.setItem("uid",uid);
+	$('.user-info img').hide();
+	$('.user-info').append('<span class="user-name">' + user.username + '</span>');
+	$('.user-info img').hide();
+	$('.user-info').append('<span class="user-name">' + info.username + '</span>');
        }
         
        window.setInterval(function(){
