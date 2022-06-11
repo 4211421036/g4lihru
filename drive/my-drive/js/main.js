@@ -16,7 +16,7 @@ auth.onAuthStateChanged(function(user){
         $('.user-info img').hide();
 	$('.user-info').append('<span class="user-name">' + user.username + '</span>');
 	$('.user-info img').hide();
-	$('.user-info').append('<span class="user-name">' + info.username + '</span>');
+	$('.user-info').append('<span class="user-name">' + user.username + '</span>');
       
     }else{
         console.log("No Active User");
