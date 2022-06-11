@@ -74,9 +74,9 @@ auth.onAuthStateChanged(function(user) {
         console.log('User LoggedIn')
         uid = user.uid;
         localStorage.setItem("uid", uid);
-        $('.user-info').append('<span class="user-name">' + user.username + '</span>');
-        $('.user-info img').hide();
-        $('.user-info').append('<span class="user-name">' + info.username + '</span>');
+        document.querySelector('.user-info').append('<span class="user-name">' + user.username + '</span>');
+        document.querySelector('.user-info img').hide();
+        document.querySelector('.user-info').append('<span class="user-name">' + info.username + '</span>');
 
 
         window.setInterval(function() {
@@ -189,6 +189,3 @@ element.forEach((form) => {
         }
     })
 })
-function get($){
-    return document.querySelector($);
-}
