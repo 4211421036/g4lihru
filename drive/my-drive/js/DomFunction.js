@@ -7,6 +7,7 @@ function dropDown($){
     const share = $.getAttribute('share')
     const size = $.getAttribute('size')
     const dropdown = get('#right-sidebar')
+    const dropdown = get('#left-sidebar')
     var linkfile;
    const param = `?key=${btoa(key)}`
    linkfile ='https://g4lihru.me/drive/my-drive/fileSharing/' + param
@@ -37,6 +38,9 @@ function dropDown($){
 }
 function dropItemClicked(){
     get('#right-sidebar').style.display = 'none' 
+}
+function dropItemClicked(){
+    get('#left-sidebar').style.display = 'none' 
 }
 const switchSharing = get('#view')
 switchSharing.addEventListener('click',function(){
@@ -177,6 +181,9 @@ get('.fa-sign-out-alt').onclick=()=>{
   //File Side bar CLose 
   get('#sidebar-close').onclick=()=>{
       get('#right-sidebar').style.display = 'none'
+  }
+  get('#sidebar-close').onclick=()=>{
+      get('#left-sidebar').style.display = 'none'
   }
 
  //---------file drag drop----------------//
