@@ -770,7 +770,7 @@
      </div>
 
 <!-- Right Sidebar -->
-<div id="right-sidebar"> 
+<div id="right-sidebar" style="overflow-x: hidden; overflow-y:scroll; height: 100vh"> 
     <div class="options">
         <h2>Options</h2>
         <i class="fas fa-times" style="cursor: pointer;" id="sidebar-close"></i>
@@ -811,9 +811,42 @@
 
             
 <!-- Right Sidebar -->
-<div id="left-sidebar"> 
-    <p>hallo</p>
-
+<div id="left-sidebar" style="overflow-x: hidden; overflow-y:scroll; height: 100vh"> 
+    
+    <div class="options">
+        <h2>Options</h2>
+        <i class="fas fa-times" style="cursor: pointer;" id="sidebar-close"></i>
+    </div>
+    <hr>
+    <div class="filename">
+        <h4>File Name</h4>
+        <h5 id="title-option">xyx.mp4</h5>
+    </div>
+    <div class="size">
+        <h4>File Size</h4>
+        <h5 id="size">29.4 MB</h4>
+    </div>
+    <div class="modified">
+        <h4>File Uploaded on:</h4>
+        <h5 id="date">3/4/21</h4>
+    </div>
+    <div class="share">
+        <h4>File Share:</h4>
+        <label class="switch">
+            <input type="checkbox"  id="view" >
+            <span class="slider round"></span>
+          </label>
+    </div>
+    <hr>
+    <div class="buttons">
+        <button id="button-download">Download File</button>
+        <hr>
+        <button id="button-Delete" onclick="deleteFile(this)">Delete File </button>
+        <hr>
+    </div>
+    <div class="buttons">
+        <button id="button-copy">Copy Link</button>
+    </div>
 </div>
 <!-- Folder Context Menu -->
 <ul class="menu2">
