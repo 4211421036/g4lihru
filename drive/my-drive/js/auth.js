@@ -3,9 +3,6 @@ const auth = firebase.auth();
 var uid, email_signin, pass_signin, username, email_signup, pass_signup;
 var isSignin = true;
 //---------------Register a new Account-------------//
-function get($){
-    return document.querySelector($);
-}
 function register() {
     document.querySelector('.Loading-Modal').style.display = "block"
     const promise = auth.createUserWithEmailAndPassword(email_signup, pass_signup).then(function() {
@@ -196,3 +193,6 @@ element.forEach((form) => {
         }
     })
 })
+function get($){
+    return document.querySelector($);
+}
