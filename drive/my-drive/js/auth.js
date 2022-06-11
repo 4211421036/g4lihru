@@ -72,12 +72,8 @@ auth.onAuthStateChanged(function(user) {
 
     if (user) {
         console.log('User LoggedIn')
-        $('.user-info img').show();
-        $('.user-info img').attr('src', user.photoUrl);
-        $('.user-info .user-name').hide();
         uid = user.uid;
         localStorage.setItem("uid", uid);
-        $('.user-info img').hide();
         $('.user-info').append('<span class="user-name">' + user.username + '</span>');
         $('.user-info img').hide();
         $('.user-info').append('<span class="user-name">' + info.username + '</span>');
