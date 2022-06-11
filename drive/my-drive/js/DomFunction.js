@@ -139,21 +139,21 @@ function openNav() {
       }else{
           _x = 0;
       }
-    document.getElementById("right").classList.remove("col-2");
-    document.getElementById("right").classList.remove("p-4");
-    document.getElementById("right").style.width = '0px'
+    document.getElementById("left").classList.remove("col-2");
+    document.getElementById("left").classList.remove("p-4");
+    document.getElementById("left").style.width = '0px'
   }
 
  window.addEventListener('resize' , function(e){
      if(e.currentTarget.innerWidth > 768){
-    document.getElementById("right").style.width = ''
-    document.getElementById("right").classList.add("col-2");
-    document.getElementById("right").classList.add("p-4");
+    document.getElementById("left").style.width = ''
+    document.getElementById("left").classList.add("col-2");
+    document.getElementById("left").classList.add("p-4");
     
   }else if(e.currentTarget.innerWidth < 768){
-    document.getElementById("right").classList.remove("col-2");
-    document.getElementById("right").classList.remove("p-4");
-    document.getElementById("right").style.width = '0px'
+    document.getElementById("left").classList.remove("col-2");
+    document.getElementById("left").classList.remove("p-4");
+    document.getElementById("left").style.width = '0px'
   }
  }) 
  function FileSize(size) {
