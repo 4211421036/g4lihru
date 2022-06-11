@@ -177,10 +177,6 @@ nav {
 a:hover{
     text-decoration: none;
 }
-#right{
-  overflow-y: scroll;
-  height: 84vh;
-}
 .profile-img{
     border-radius: 50%;
     width: 2rem;
