@@ -20,18 +20,12 @@
     <style>
                 /* width */
         ::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-          border-radius: 5px;
-          box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); 
+          width: 15px;
         }
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-          border-radius: 5px;
+          border-radius: 15px;
           background-color: #11101D; 
         }
 
@@ -726,7 +720,7 @@
                           
                         </ol>
                       </nav>
-                    <div class="quick-access ml-2 mb-5" id="main">
+                    <div class="quick-access ml-2 mb-5" id="main" style="overflow-y: scroll; height: 70vh">
                         <div>
                             <p class="mb-3">Home</p>
                         </div>
@@ -738,7 +732,7 @@
 
                    </div>
 
-                   <div class="quick-access ml-2 mb-5" style="display: none;" id="folder">
+                   <div class="quick-access ml-2 mb-5" style="overflow-y: scroll; height: 70vh" id="folder">
 
                     <div>
                         <p class="mb-3">Files</p>
