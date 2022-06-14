@@ -20,7 +20,7 @@ const UISVG = `
       <vaii-text x="27" y="56" class="vaii-gl-fps">00 FPS</vaii-text>
       <vaii-text x="30" y="8" class="vaii-gl-mem"></vaii-text>
       <rect x="0" y="14" rx="4" ry="4" width="60" height="32"></rect>
-      <polyline class="gl-chart"></polyline>
+      <polyline class="vaii-gl-chart"></polyline>
     </svg>
     <svg viewBox="0 0 14 60" class="gl-cpu-svg">
       <vaii-line x1="7" y1="38" x2="7" y2="11" class="vaii-opacity"/>
@@ -164,7 +164,7 @@ class GLBench {
             const id = (circularId + j + 1) % len;
             if (chart[id] !== undefined) points = points + ' ' + (60 * j / (len - 1)).toFixed(1) + ',' + (45 - chart[id] * 0.5 / this.detected).toFixed(1);
           }
-          nodes['gl-chart'][i].setAttribute('points', points);
+          nodes['vaii-gl-chart'][i].setAttribute('points', points);
           logger(this.names[i], chart, circularId);
         };
       })(this.chartLogger, this.dom);
