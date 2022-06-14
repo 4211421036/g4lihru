@@ -30,7 +30,7 @@ human.draw.options.lineHeight = 20;
 const dom = { // grab instances of dom objects so we dont have to look them up later
   video: document.getElementById('video') as HTMLVideoElement,
   canvas: document.getElementById('canvas') as HTMLCanvasElement,
-  log: document.getElementById('log') as HTMLPreElement,
+  log: document.getElementById('vaii-log') as HTMLPreElement,
   fps: document.getElementById('status') as HTMLPreElement,
   perf: document.getElementById('performance') as HTMLDivElement,
 };
