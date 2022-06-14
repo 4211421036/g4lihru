@@ -57,7 +57,7 @@ class GLBench {
     this.chart = new Array(this.chartLen);
     this.now = () => ((performance && performance.now) ? performance.now() : Date.now());
     this.updateUI = () => {
-      [].forEach.call(this.nodes['gl-gpu-svg'], (node) => node.style.display = this.trackGPU ? 'inline' : 'none');
+      [].forEach.call(this.nodes['vaii-gl-gpu-svg'], (node) => node.style.display = this.trackGPU ? 'inline' : 'none');
     };
 
     Object.assign(this, settings);
