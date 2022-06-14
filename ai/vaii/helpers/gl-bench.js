@@ -20,7 +20,7 @@ const UICSS = `
   `;
 
 const UISVG = `
-  <vaii-gl-notif>
+  <vaii-gl-notif id="vaii-gl-notif">
     <a href="#">
       <vaii-menu-notif id="vaii-gl-notif-renderer">
         <svg viewBox="0 0 16 16" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" stroke="none" stroke-width="0.5" fill="white">
