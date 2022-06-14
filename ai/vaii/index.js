@@ -464,7 +464,7 @@ function runHumanDetect(input, canvas, timestamp) {
   if (ui.useWorker && human.env.offscreen) {
     // get image data from video as we cannot send html objects to webworker
     if (!ui.transferCanvas || ui.transferCanvas.width !== canvas.width || ui.transferCanvas.height || canvas.height) {
-      ui.transferCanvas = document.createElement('vaii-canvas');
+      ui.transferCanvas = document.createElement('canvas');
       ui.transferCanvas.width = canvas.width;
       ui.transferCanvas.height = canvas.height;
     }
