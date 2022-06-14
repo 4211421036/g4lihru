@@ -133,7 +133,7 @@ class GLBench {
       const elm = document.createElement('vaii-bench');
       elm.id = 'gl-bench';
       this.dom.appendChild(elm);
-      this.dom.insertAdjacentHTML('afterbegin', '<style id="gl-bench-style">' + this.css + '</style>');
+      this.dom.insertAdjacentHTML('afterbegin', '<style id="vaii-gl-bench-style">' + this.css + '</style>');
       this.dom = elm;
       this.dom.addEventListener('click', () => {
         this.trackGPU = !this.trackGPU;
@@ -141,22 +141,22 @@ class GLBench {
       });
 
       this.paramLogger = ((logger, dom, names) => {
-        const classes = ['gl-cpu', 'gl-gpu', 'gl-mem', 'gl-fps', 'gl-gpu-svg', 'gl-chart'];
+        const classes = ['vaii-gl-cpu', 'vaii-gl-gpu', 'vaii-gl-mem', 'vaii-gl-fps', 'vaii-gl-gpu-svg', 'vaii-gl-chart'];
         const nodes = { ...classes };
         classes.forEach((c) => nodes[c] = dom.getElementsByClassName(c));
         this.nodes = nodes;
         return (i, cpu, gpu, mem, fps, totalTime, frameId) => {
-          nodes['gl-cpu'][i].style.strokeDasharray = (cpu * 0.27).toFixed(0) + ' 100';
-          nodes['gl-gpu'][i].style.strokeDasharray = (gpu * 0.27).toFixed(0) + ' 100';
+          nodes['vaii-gl-cpu'][i].style.strokeDasharray = (cpu * 0.27).toFixed(0) + ' 100';
+          nodes['vaii-gl-gpu'][i].style.strokeDasharray = (gpu * 0.27).toFixed(0) + ' 100';
           // eslint-disable-next-line no-nested-ternary
-          nodes['gl-mem'][i].innerHTML = names[i] ? names[i] : (mem ? 'mem: ' + mem.toFixed(0) + 'mb' : '');
-          nodes['gl-fps'][i].innerHTML = 'FPS: ' + fps.toFixed(1);
+          nodes['vaii-gl-mem'][i].innerHTML = names[i] ? names[i] : (mem ? 'mem: ' + mem.toFixed(0) + 'mb' : '');
+          nodes['vaii-gl-fps'][i].innerHTML = 'FPS: ' + fps.toFixed(1);
           logger(names[i], cpu, gpu, mem, fps, totalTime, frameId);
         };
       })(this.paramLogger, this.dom, this.names);
 
       this.chartLogger = ((logger, dom) => {
-        const nodes = { 'gl-chart': dom.getElementsByClassName('gl-chart') };
+        const nodes = { 'vaii-gl-chart': dom.getElementsByClassName('vaii-gl-chart') };
         return (i, chart, circularId) => {
           let points = '';
           const len = chart.length;
