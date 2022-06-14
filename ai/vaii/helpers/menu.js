@@ -95,8 +95,8 @@ class Menu {
       if (position.right) this.menu.style.right = `${position.right}`;
     }
 
-    this.container = document.createElement('div');
-    this.container.id = `menu-container-${instance}`;
+    this.container = document.createElement('vaii-menu-contain');
+    this.container.id = `vaii-menu-container-${instance}`;
     this.container.className = 'vaii-menu-container vaii-menu-container-fadein';
 
     // set menu title with pulldown arrow
