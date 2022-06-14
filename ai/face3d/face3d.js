@@ -151,7 +151,7 @@ async function setupCamera() {
   const gpuData = (engineData.backendInstance && engineData.backendInstance.numBytesInGPU > 0) ? `gpu: ${(engineData.backendInstance.numBytesInGPU ? engineData.backendInstance.numBytesInGPU : 0).toLocaleString()} bytes` : '';
   const cameraData = { name: track.label?.toLowerCase(), width: settings.width, height: settings.height, facing: settings.facingMode === 'user' ? 'front' : 'back' };
   const memoryData = `system: ${engineData.state.numBytes.toLocaleString()} bytes ${gpuData} | tensors: ${engineData.state.numTensors.toLocaleString()}`;
-  document.getElementById('log').innerHTML = `
+  document.getElementById('vaii-log').innerHTML = `
   video: ${cameraData.name} | facing: ${cameraData.facing} | screen: ${window.innerWidth} x ${window.innerHeight} camera: ${cameraData.width} x ${cameraData.height}<br>
   backend: ${human.tf.getBackend()} | ${memoryData}<br>
   `;
