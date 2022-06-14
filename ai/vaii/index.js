@@ -300,7 +300,7 @@ let initialCameraAccess = true;
 async function setupCamera() {
   if (ui.busy) return null;
   ui.busy = true;
-  const video = document.getElementById('vaii-video');
+  const video = document.getElementById('video');
   const canvas = document.getElementById('canvas');
   const output = document.getElementById('vaii-log');
   if (ui.useWebRTC) {
