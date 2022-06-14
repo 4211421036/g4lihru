@@ -15,7 +15,7 @@ const UICSS = `
   `;
 
 const UISVG = `
-  <vaii-gl class="gl-box">
+  <vaii-gl class="vaii-gl-box">
     <svg viewBox="0 0 60 60">
       <vaii-text x="27" y="56" class="vaii-gl-fps">00 FPS</vaii-text>
       <vaii-text x="30" y="8" class="vaii-gl-mem"></vaii-text>
