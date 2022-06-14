@@ -269,7 +269,7 @@ async function drawResults(input) {
   const backend = result.backend || human.tf.getBackend();
   const gpu = engine.backendInstance ? `gpu: ${(engine.backendInstance.numBytesInGPU ? engine.backendInstance.numBytesInGPU : 0).toLocaleString()} bytes` : '';
   const memory = result.tensors ? `tensors: ${result.tensors.toLocaleString()} in worker` : `system: ${engine.state.numBytes.toLocaleString()} bytes ${gpu} | tensors: ${engine.state.numTensors.toLocaleString()}`;
-  document.getElementById('log').innerHTML = `
+  document.getElementById('vaii-log').innerHTML = `
     video: ${ui.camera.name} | facing: ${ui.camera.facing} | screen: ${window.innerWidth} x ${window.innerHeight} camera: ${ui.camera.width} x ${ui.camera.height} ${processing}<br>
     backend: ${backend} | ${memory}<br>
     performance: ${str(interpolated.performance)}ms ${fps}<br>
@@ -496,7 +496,7 @@ function runHumanDetect(input, canvas, timestamp) {
       if (document.getElementById('vaii-gl-bench')) document.getElementById('vaii-gl-bench').style.display = ui.bench ? 'block' : 'none';
       if (result.error) {
         log(result.error);
-        document.getElementById('log').innerText += `\nHuman error: ${result.error}`;
+        document.getElementById('vaii-log').innerText += `\nHuman error: ${result.error}`;
       } else {
         lastDetectedResult = result;
         if (!ui.drawThread) drawResults(input);
@@ -542,7 +542,7 @@ async function processImage(input, title) {
         // zoom in/out on click
         if (evt.target.style.width === `${stdWidth}px`) {
           evt.target.style.width = '';
-          evt.target.style.height = `${document.getElementById('log').offsetTop - document.getElementById('media').offsetTop}px`;
+          evt.target.style.height = `${document.getElementById('vaii-log').offsetTop - document.getElementById('media').offsetTop}px`;
         } else {
           evt.target.style.width = `${stdWidth}px`;
           evt.target.style.height = '';
@@ -908,7 +908,7 @@ async function main() {
       const msg = evt.reason.message || evt.reason || evt;
       // eslint-disable-next-line no-console
       console.error(msg);
-      document.getElementById('log').innerHTML = msg;
+      document.getElementById('vaii-log').innerHTML = msg;
       status(`exception: ${msg}`);
       evt.preventDefault();
     });
@@ -983,7 +983,7 @@ async function main() {
   // setup main menu
   await setupMenu();
   await resize();
-  document.getElementById('log').innerText = `Human: version ${human.version}`;
+  document.getElementById('vaii-log').innerText = `Human: version ${human.version}`;
 
   // preload models
   if (ui.modelsPreload && !ui.useWorker) {
