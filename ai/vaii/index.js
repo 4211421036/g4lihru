@@ -1,4 +1,4 @@
-import Human from '../dist/human.esm.js'; // equivalent of @vladmandic/human
+import Human from '../dist/human.esm.js'; 
 import Menu from './helpers/menu.js';
 import GLBench from './helpers/gl-bench.js';
 import webRTC from './helpers/webrtc.js';
@@ -6,36 +6,10 @@ import jsonView from './helpers/jsonview.js';
 
 let human;
 
-let userConfig = {
-  // face: { enabled: false },
-  // body: { enabled: false },
-  // hand: { enabled: false },
-  /*
-  warmup: 'none',
-  backend: 'humangl',
-  debug: true,
-  wasmPath: 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@3.9.0/dist/',
-  async: false,
-  cacheSensitivity: 0.75,
-  filter: { enabled: false, flip: false },
-  face: { enabled: false,
-    detector: { return: false, rotation: true },
-    mesh: { enabled: false },
-    iris: { enabled: false },
-    description: { enabled: false },
-    emotion: { enabled: false },
-  },
-  object: { enabled: false },
-  gesture: { enabled: true },
-  hand: { enabled: true, maxDetected: 1, minConfidence: 0.5, detector: { modelPath: 'handtrack.json' } },
-  body: { enabled: false },
-  // body: { enabled: true, modelPath: 'movenet-multipose.json' },
-  segmentation: { enabled: false },
-  */
-};
+let userConfig = {};
 
 const drawOptions = {
-  bufferedOutput: true, // makes draw functions interpolate results between each detection for smoother movement
+  bufferedOutput: true,
   drawBoxes: true,
   drawGaze: true,
   drawLabels: true,
@@ -98,7 +72,7 @@ const ui = {
 
 const pwa = {
   enabled: true,
-  cacheName: 'Human',
+  cacheName: 'VAII',
   scriptFile: 'index-pwa.js',
   cacheModels: true,
   cacheWASM: true,
@@ -229,15 +203,15 @@ async function drawResults(input) {
   // draw fps chart
   await menu.process.updateChart('FPS', ui.detectFPS);
 
-  document.getElementById('segmentation-container').style.display = userConfig.segmentation.enabled ? 'block' : 'none';
+  document.getElementById('vaii-segmentation-container').style.display = userConfig.segmentation.enabled ? 'block' : 'none';
   if (userConfig.segmentation.enabled && ui.buffered) { // refresh segmentation if using buffered output
     const seg = await human.segmentation(input, ui.background);
     if (seg.alpha) {
-      const canvasSegMask = document.getElementById('segmentation-mask');
+      const canvasSegMask = document.getElementById('vaii-segmentation-mask');
       const ctxSegMask = canvasSegMask.getContext('2d');
       ctxSegMask.clearRect(0, 0, canvasSegMask.width, canvasSegMask.height); // need to clear as seg.alpha is alpha based canvas so it adds
       ctxSegMask.drawImage(seg.alpha, 0, 0, seg.alpha.width, seg.alpha.height, 0, 0, canvasSegMask.width, canvasSegMask.height);
-      const canvasSegCanvas = document.getElementById('segmentation-canvas');
+      const canvasSegCanvas = document.getElementById('vaii-segmentation-canvas');
       const ctxSegCanvas = canvasSegCanvas.getContext('2d');
       ctxSegCanvas.clearRect(0, 0, canvasSegCanvas.width, canvasSegCanvas.height); // need to clear as seg.alpha is alpha based canvas so it adds
       ctxSegCanvas.drawImage(seg.canvas, 0, 0, seg.alpha.width, seg.alpha.height, 0, 0, canvasSegCanvas.width, canvasSegCanvas.height);
@@ -326,9 +300,9 @@ let initialCameraAccess = true;
 async function setupCamera() {
   if (ui.busy) return null;
   ui.busy = true;
-  const video = document.getElementById('video');
+  const video = document.getElementById('vaii-video');
   const canvas = document.getElementById('canvas');
-  const output = document.getElementById('log');
+  const output = document.getElementById('vaii-log');
   if (ui.useWebRTC) {
     status('setting up webrtc connection');
     try {
@@ -443,7 +417,7 @@ function webWorker(input, image, canvas, timestamp) {
         if (!bench) initPerfMonitor();
         bench.nextFrame(timestamp);
       }
-      if (document.getElementById('gl-bench')) document.getElementById('gl-bench').style.display = ui.bench ? 'block' : 'none';
+      if (document.getElementById('vaii-gl-bench')) document.getElementById('vaii-gl-bench').style.display = ui.bench ? 'block' : 'none';
       lastDetectedResult = msg.data.result;
 
       if (msg.data.image) { // we dont really need canvas since we draw from video
@@ -490,7 +464,7 @@ function runHumanDetect(input, canvas, timestamp) {
   if (ui.useWorker && human.env.offscreen) {
     // get image data from video as we cannot send html objects to webworker
     if (!ui.transferCanvas || ui.transferCanvas.width !== canvas.width || ui.transferCanvas.height || canvas.height) {
-      ui.transferCanvas = document.createElement('canvas');
+      ui.transferCanvas = document.createElement('vaii-canvas');
       ui.transferCanvas.width = canvas.width;
       ui.transferCanvas.height = canvas.height;
     }
@@ -519,7 +493,7 @@ function runHumanDetect(input, canvas, timestamp) {
         if (!bench) initPerfMonitor();
         bench.nextFrame(timestamp);
       }
-      if (document.getElementById('gl-bench')) document.getElementById('gl-bench').style.display = ui.bench ? 'block' : 'none';
+      if (document.getElementById('vaii-gl-bench')) document.getElementById('vaii-gl-bench').style.display = ui.bench ? 'block' : 'none';
       if (result.error) {
         log(result.error);
         document.getElementById('log').innerText += `\nHuman error: ${result.error}`;
@@ -605,7 +579,7 @@ async function processImage(input, title) {
 
 async function processVideo(input, title) {
   status(`processing video: ${title}`);
-  const video = document.createElement('video');
+  const video = document.createElement('vaii-video');
   const canvas = document.getElementById('canvas');
   video.id = 'video-file';
   video.controls = true;
@@ -786,7 +760,7 @@ async function resize() {
   }
   const x = [`${document.getElementById('btnDisplay').offsetLeft}px`, `${document.getElementById('btnImage').offsetLeft}px`, `${document.getElementById('btnProcess').offsetLeft}px`, `${document.getElementById('btnModel').offsetLeft}px`];
 
-  const top = `${document.getElementById('menubar').clientHeight - 3}px`;
+  const top = `${document.getElementById('vaii-bar').clientHeight - 3}px`;
 
   menu.display.menu.style.top = top;
   menu.image.menu.style.top = top;
@@ -878,7 +852,7 @@ async function dragAndDrop() {
 }
 
 async function drawHints() {
-  const hint = document.getElementById('hint');
+  const hint = document.getElementById('vaii-hint');
   ui.hintsThread = setInterval(() => {
     const rnd = Math.trunc(Math.random() * hints.length);
     hint.innerText = 'hint: ' + hints[rnd];
