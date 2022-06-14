@@ -130,10 +130,10 @@ class GLBench {
     // init ui and ui loggers
     if (!this.withoutUI) {
       if (!this.dom) this.dom = document.body;
-      const elm = document.createElement('div');
-      elm.id = 'gl-bench';
+      const elm = document.createElement('vaii-gl');
+      elm.id = 'vaii-gl-bench';
       this.dom.appendChild(elm);
-      this.dom.insertAdjacentHTML('afterbegin', '<style id="gl-bench-style">' + this.css + '</style>');
+      this.dom.insertAdjacentHTML('afterbegin', '<style id="vaii-gl-bench-style">' + this.css + '</style>');
       this.dom = elm;
       this.dom.addEventListener('click', () => {
         this.trackGPU = !this.trackGPU;
