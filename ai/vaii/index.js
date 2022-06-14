@@ -634,7 +634,7 @@ async function detectSampleImages() {
 function setupMenu() {
   const x = [`${document.getElementById('btnDisplay').offsetLeft}px`, `${document.getElementById('btnImage').offsetLeft}px`, `${document.getElementById('btnProcess').offsetLeft}px`, `${document.getElementById('btnModel').offsetLeft}px`];
 
-  const top = `${document.getElementById('menubar').clientHeight}px`;
+  const top = `${document.getElementById('vaii-bar').clientHeight}px`;
 
   menu.display = new Menu(document.body, '', { top, left: x[0] });
   menu.display.addBool('results tree', ui, 'results', (val) => {
