@@ -15,6 +15,8 @@ const UICSS = `
   #vaii-gl-notif-renderer { position: absolute; right: 1rem; top: 1rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
   #vaii-gl-notif-renderer svg { height: 60px; margin: 0 0px 0px 4px; }
   #vaii-gl-notif-renderer vaii-menu-notif {.vaii-menu {position: absolute; top: 0rem; right: 1rem; min-width: 180px; width: max-content; padding: 0.2rem 0.8rem 0 0.8rem; line-height: 1.8rem; z-index: 10; background: #303030; border: none;}
+  vaii-menu-notif .tooltip { position: absolute; top: -20px; left: calc(100% + 15px); z-index: 3; background: #000; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); padding: 6px 12px; border-radius: 4px; font-size: 15px; font-weight: 400; opacity: 0; white-space: nowrap; pointer-events: none; transition: 0s;}
+  vaii-menu-notif:hover .tooltip { opacity: 1; pointer-events: auto; transition: all 0.4s ease; top: 50%; transform: translateY(-50%);}
   `;
 
 const UISVG = `
