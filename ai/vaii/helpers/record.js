@@ -214,7 +214,7 @@ class OneDialog extends HTMLElement {
   }
 }
 
-customElements.define('vaii-menu-notifer', OneDialog);
+customElements.define('vaii-media-record', OneDialog);
 
 const button = document.getElementById('notifer');
 button.addEventListener('click', () => {
