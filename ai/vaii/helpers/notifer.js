@@ -131,7 +131,7 @@ class OneDialog extends HTMLElement {
 
 customElements.define('vaii-menu-notifer', OneDialog);
 
-const button = document.getElementById('launch-dialog');
+const button = document.getElementById('notifer');
 button.addEventListener('click', () => {
-  document.querySelector('notifer').open = true;
+  document.querySelector('vaii-menu-notifer').open = true;
 })
