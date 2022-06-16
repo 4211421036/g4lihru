@@ -19,160 +19,408 @@ class OneDialog extends HTMLElement {
   
   connectedCallback() {
     const { shadowRoot } = this;
-    shadowRoot.innerHTML = `<style>
-      .wrapper {
-        opacity: 0;
-        transition: visibility 0s, opacity 0.25s ease-in;
-      }
-      .wrapper:not(.open) {
-        visibility: hidden;
-      }
-      .wrapper.open {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        height: 100vh;
+    shadowRoot.innerHTML = `<style>        
+    .sidebar {
         position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-        opacity: 1;
-        visibility: visible;
-      }
-      .overlay {
-        background: rgba(0, 0, 0, 0.8);
+        left: 0;
+        top: 0;
         height: 100%;
-        position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-        width: 100%;
-      }
-      .dialog {
-        background: #ffffff;
-        max-width: 600px;
-        padding: 1rem;
-        position: fixed;
-      }
-      button {
-        all: unset;
-        cursor: pointer;
-        font-size: 1.25rem;
+        width: 78px;
+        background: #11101D;
+        padding: 6px 14px;
+        z-index: 99;
+        transition: all 0.5s ease;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .logo-details {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .sidebar .logo-details .icon {
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .sidebar .logo-details .logo_name {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .sidebar.open .logo-details .icon,
+    .sidebar.open .logo-details .logo_name {
+        opacity: 1;
+    }
+
+    .sidebar .logo-details #btn {
         position: absolute;
-          top: 1rem;
-          right: 1rem;
-      }
-      button:focus {
-        border: 2px solid blue;
-      }
-              .modal:before {
-            content: '';
-            display: inline-block;
-            height: 100%;
-            vertical-align: middle;
-        }
-        
-        .modal-dialog {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        
-        .modal .modal-content {
-            padding: 20px 20px 20px 20px;
-            -webkit-animation-name: modal-animation;
-            -webkit-animation-duration: 0.5s;
-            animation-name: modal-animation;
-            animation-duration: 0.5s;
-        }
-        
-        @-webkit-keyframes modal-animation {
-            from {
-                top: -100px;
-                opacity: 0;
-            }
-            to {
-                top: 0px;
-                opacity: 1;
-            }
-        }
-        
-        @keyframes modal-animation {
-            from {
-                top: -100px;
-                opacity: 0;
-            }
-            to {
-                top: 0px;
-                opacity: 1;
-            }
-        }
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        font-size: 22px;
+        transition: all 0.4s ease;
+        font-size: 23px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    .sidebar.open .logo-details #btn {
+        text-align: right;
+    }
+
+    .sidebar i {
+        color: #fff;
+        height: 60px;
+        min-width: 50px;
+        font-size: 28px;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    .sidebar .nav-list {
+        margin-top: 20px;
+        height: 100%;
+    }
+
+    .sidebar li {
+        position: relative;
+        margin: 8px 0;
+        list-style: none;
+    }
+
+    .sidebar li .tooltip {
+        position: absolute;
+        top: -20px;
+        left: calc(100% + 15px);
+        z-index: 3;
+        background: #000;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: 400;
+        opacity: 0;
+        white-space: nowrap;
+        pointer-events: none;
+        transition: 0s;
+    }
+
+    .sidebar li:hover .tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        transition: all 0.4s ease;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .sidebar.open li .tooltip {
+        display: none;
+    }
+
+    .sidebar input {
+        font-size: 15px;
+        color: #FFF;
+        font-weight: 400;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        width: 50px;
+        border: none;
+        border-radius: 12px;
+        transition: all 0.5s ease;
+        background: #1d1b31;
+    }
+
+    .sidebar.open input {
+        padding: 0 20px 0 50px;
+        width: 100%;
+    }
+
+    .sidebar .bx-search {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        font-size: 22px;
+        background: #1d1b31;
+        color: #FFF;
+    }
+
+    .sidebar.open .bx-search:hover {
+        background: #1d1b31;
+        color: #FFF;
+    }
+
+    .sidebar .bx-search:hover {
+        background: #FFF;
+        color: #11101d;
+    }
+
+    .sidebar li a {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        border-radius: 12px;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        background: #11101D;
+    }
+
+    .sidebar li a:hover {
+        background: #FFF;
+    }
+
+    .sidebar li a .links_name {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.4s;
+    }
+
+    .sidebar.open li a .links_name {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar li a:hover .links_name,
+    .sidebar li a:hover i {
+        transition: all 0.5s ease;
+        color: #11101D;
+    }
+
+    .sidebar li button {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        border-radius: 12px;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        background: #11101D;
+    }
+
+    .sidebar li button:hover {
+        background: #FFF;
+    }
+
+    .sidebar li button .links_name {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.4s;
+    }
+
+    .sidebar.open li a .links_name {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar li button:hover .links_name,
+    .sidebar li button:hover i {
+        transition: all 0.5s ease;
+        color: #11101D;
+    }
+
+    .sidebar li i {
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    .sidebar li.profile {
+        position: fixed;
+        height: 60px;
+        width: 78px;
+        left: 0;
+        bottom: -8px;
+        padding: 10px 14px;
+        background: #1d1b31;
+        transition: all 0.5s ease;
+        overflow: hidden;
+    }
+
+    .sidebar.open li.profile {
+        width: 250px;
+    }
+
+    .sidebar li .profile-details {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .sidebar li img {
+        height: 45px;
+        width: 45px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-right: 10px;
+    }
+
+    .sidebar li.profile .name,
+    .sidebar li.profile .job {
+        font-size: 15px;
+        font-weight: 400;
+        color: #fff;
+        white-space: nowrap;
+    }
+
+    .sidebar li.profile .job {
+        font-size: 12px;
+    }
+
+    .sidebar .profile #log_out {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: #1d1b31;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 0px;
+        transition: all 0.5s ease;
+    }
+
+    .sidebar.open .profile #log_out {
+        width: 50px;
+        background: none;
+    }
+
+    .home-section {
+        position: relative;
+        background: #E4E9F7;
+        min-height: 100vh;
+        top: 0;
+        left: 78px;
+        width: calc(100% - 78px);
+        transition: all 0.5s ease;
+        z-index: 2;
+    }
+
+    .sidebar.open~.home-section {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    .home-section .text {
+        display: inline-block;
+        color: #11101d;
+        font-size: 25px;
+        font-weight: 500;
+        margin: 18px
+    }
     </style>
-    <div class="wrapper">
-    <div class="overlay"></div>
-      <div class="dialog" role="dialog" aria-labelledby="title" aria-describedby="content">
-        <button class="close" aria-label="Close">✖</button>
-            <div id="myModal" class="modal" align="center">
-                <!-- Modal content -->
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <header class="modal-header">
-                            <div class="mx-auto">
-                                <div align="center" class="py-4">
-                                    <h1 align="center" style="font-size: 42px; color: black;">Record VAII</h1>
-                                </div>
-                            </div>
-                        </header>
-                        <main class="modal-body overflow-hidden">
-                            <div class="container mx-auto py-8 px-4">
-                                <h2 class="text-xl font-light mb-4">
-                                    Record
-                                </h2>
+    <vaii-side class="sidebar" id="sidebar">
+        <div class="logo-details">
+            <div class="logo_name" align="center">AI VAII</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul>
+            <li>
+                <i class='bx bx-search'></i>
+                <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+        </ul>
+        <br>
+        <ul class="nav-list" id="myUL">
+            <li>
+                <a href="//g4lihru.me/drive/">
+                    <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
+                    <span class="links_name">Drive Saya</span>
+                </a>
+                <span class="tooltip">Drive Saya</span>
+            </li>
 
-                                <video src="" autplay class="video-feedback w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
-
-                                <div class="flex flex-wrap -mx-4 mb-8">
-                                    <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
-                                                        Record Screen VAII
-                                                      </button>
-                                    <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                                                        Stop Recording
-                                                      </button>
-                                </div>
-
-                                <div class="recorded-video-wrap hidden">
-                                    <h2 class="text-xl text-gray-500 uppercase font-light mb-4">
-                                        Hasil Record VAII
-                                    </h2>
-
-                                    <video src="" class="recorded-video w-full h-auto col-xs-12 col-sm-6 col-md-8 col-xs-6 col-md-4"></video>
-                                    <div class="flex flex-wrap -mx-4">
-                                        <a class="download-video text-center mx-4 flex-1 bg-gradient-to-br from-purple-500 to to-pink-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
-                                                          Download
-                                                        </a>
-                                        <button type="button " class="btn btn-success" onclick="upload()">Upload</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </main>
-                        <script src="https://g4lihru.me/meet/dist/main.js"></script>
+            <li>
+                <a href="//g4lihru.me/ai/vaii/">
+                    <i class='bx bxs-videos bx-tada'></i>
+                    <span class="links_name">VAII</span>
+                </a>
+                <span class="tooltip">VAII</span>
+            </li>
+            <li>
+                <a href="#" id="btnDisplay">
+                    <i class='bx bx-desktop bx-tada'></i>
+                    <span class="links_name">Display</span>
+                </a>
+                <span class="tooltip">Display</span>
+            </li>
+            <li>
+                <a href="#" id="btnImage">
+                    <i class='bx bxs-brush-alt bx-tada'></i>
+                    <span class="links_name">Input</span>
+                </a>
+                <span class="tooltip">Input</span>
+            </li>
+            <li>
+                <a href="#" id="btnProcess">
+                    <i class='bx bx-stats bx-tada'></i>
+                    <span class="links_name">Option</span>
+                </a>
+                <span class="tooltip">Input</span>
+            </li>
+            <li>
+                <a href="#" id="btnModel">
+                    <i class='bx bxs-game bx-tada'></i>
+                    <span class="links_name">Model</span>
+                </a>
+                <span class="tooltip">Model</span>
+            </li>
+            <li>
+                <a href="#" id="myBtn" data-toggle="modal">
+                    <i class="bx bxs-video-recording bx-flashing"></i>
+                    <span class="links_name">Record</span>
+                </a>
+                <span class="tooltip">Record</span>
+            </li>
+            <li>
+                <a href="//instagram.com/galih_ridho_utomo">
+                    <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
+                    <span class="links_name">Instagram</span>
+                </a>
+                <span class="tooltip">Instagram</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="https://g4lihru.me/345677.png" alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">Galih Ridho Utomo</div>
+                        <div class="job">Mahasiswa UNNES</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>`;
+            </li>
+        </ul>
+    </vaii-side>`;
     
     
-    shadowRoot.querySelector('button').addEventListener('click', this.close);
-    shadowRoot.querySelector('.overlay').addEventListener('click', this.close);
+    shadowRoot.querySelector('sidebar').addEventListener('click', this.close);
+    shadowRoot.querySelector('.sidebar').addEventListener('click', this.close);
     this.open = this.open;
   }
   
   disconnectedCallback() {
-    this.shadowRoot.querySelector('button').removeEventListener('click', this.close);
-    this.shadowRoot.querySelector('.overlay').removeEventListener('click', this.close);
+    this.shadowRoot.querySelector('sidebar').removeEventListener('click', this.close);
+    this.shadowRoot.querySelector('.sidebar').removeEventListener('click', this.close);
   }
   
   get open() {
@@ -182,8 +430,8 @@ class OneDialog extends HTMLElement {
   
   set open(isOpen) {
     const { shadowRoot } = this;
-    shadowRoot.querySelector('.wrapper').classList.toggle('open', isOpen);
-    shadowRoot.querySelector('.wrapper').setAttribute('aria-hidden', !isOpen);
+    shadowRoot.querySelector('.sidebar').classList.toggle('open', isOpen);
+    shadowRoot.querySelector('.sidebar').setAttribute('aria-hidden', !isOpen);
     if (isOpen) {
       this._wasFocused = document.activeElement;
       this.setAttribute('open', '');
@@ -203,7 +451,7 @@ class OneDialog extends HTMLElement {
     if (this.open !== false) {
       this.open = false;
     }
-    const closeEvent = new CustomEvent('notifer-closed');
+    const closeEvent = new CustomEvent('sidebar-closed');
     this.dispatchEvent(closeEvent);
   }
   
@@ -214,9 +462,9 @@ class OneDialog extends HTMLElement {
   }
 }
 
-customElements.define('vaii-media-record', OneDialog);
+customElements.define('vaii-side', OneDialog);
 
-const a = document.getElementById('myBtn');
+const a = document.getElementById('sidebar');
 a.addEventListener('click', () => {
-  document.querySelector('vaii-menu-notifer').open = true;
+  document.querySelector('vaii-side').open = true;
 })
