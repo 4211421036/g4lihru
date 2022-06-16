@@ -516,7 +516,21 @@
             background: white ;
             visibility: hidden ;
             z-index: 2 ;
-
+        }
+        
+        vaii-sidebar > div {
+            box-sizing: content-box ;
+            position: absolute ;
+            top: 2px ; left: 5px ;
+            width: 200px;
+            list-style: none ;
+            border: 1px solid #ccc ;
+            padding: 0 ;
+            opacity: 0 ;
+            transition: all 0.2s ease-in-out ;
+            background: white ;
+            visibility: hidden ;
+            z-index: 2 ;
         }
 
         vaii-sidebar.show  > ul {
@@ -556,7 +570,7 @@
     </style>
 
     <body>
-        <vaii-sidebar><output></output>
+        <vaii-sidebar class="sidebar"><output class="sidebar"></output>
             <div class="logo-details">
                 <div class="logo_name" align="center">AI VAII</div>
                 <i class='bx bx-menu' id="btn"></i>
