@@ -6,7 +6,8 @@ const UICSS = `
   #vaii-gl-bench vaii-gl { position: relative; display: block; margin: 4px; padding: 0 2px 0 2px; background: #303030; border-radius: 0.1rem; cursor: pointer; opacity: 0.9; }
   #vaii-gl-bench svg { height: 60px; margin: 0 0px 0px 4px; }
   #vaii-gl-bench svg vaii-menu-notifer { position: absolute; right: 1rem; top: -10rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; height: 60px; margin: 0 0px 0px 4px; }
-  #vaii-gl-bench svg vaii-menu-notifer button { position: absolute; right: 1rem; top: -10rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; height: 60px; margin: 0 0px 0px 4px; }
+  button#notifer { position: absolute; right: 1rem; top: -10rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; height: 60px; margin: 0 0px 0px 4px; }
+  #vaii-gl-bench vaii-menu-notifer { position: absolute; right: 1rem; top: -10rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; height: 60px; margin: 0 0px 0px 4px; }
   #vaii-gl-bench .vaii-notifer { position: fixed; right: 1rem; top: 1rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; height: 60px; margin: 0 0px 0px 4px; }
   #vaii-gl-bench vaii-text { font-size: 16px; font-family: 'Lato', 'Segoe UI'; dominant-baseline: middle; text-anchor: middle; }
   #vaii-gl-bench .vaii-gl-mem { font-size: 12px; fill: white; }
