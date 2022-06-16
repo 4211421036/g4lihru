@@ -236,7 +236,7 @@
         disconnectedCallback() { this.removeEventListener("keyup", this.validate.bind(this)) }
         validate() { this.value ? this.style.border = "" : this.style.border = "2px solid red" }
     }
-    class Oe extends HTMLElement {  
+    class Ce extends HTMLElement {  
         constructor() { super(); this.attachShadow({ mode: 'open' }); this.close = this.close.bind(this);}
         attributeChangedCallback(attrName, oldValue, newValue) {
             if (oldValue !== newValue) {
@@ -356,6 +356,6 @@ const button = document.getElementById('notifer');
 button.addEventListener('click', () => {
   document.querySelector('vaii-menu-notifer').open = true;
 })
-    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), window.customElements.define("vaii-media-router", F), window.customElements.define("vaii-media-home", B), window.customElements.define("vaii-media-about", Ie), window.customElements.define("vaii-media-room", he), window.customElements.define("vaii-media-room-video", be),  window.customElements.define("vaii-room-chat", Pe),  window.customElements.define('vaii-menu-notifer', Oe);, window.customElements.define("text-input", Te, { extends: "input" })
+    firebase.initializeApp({ apiKey: "AIzaSyCgTQkGRQBqmvCY4u6wuJ1MTVQ7YPViUig", authDomain: "web-components-webrtc.firebaseapp.com", databaseURL: "https://web-components-webrtc.firebaseio.com", projectId: "web-components-webrtc", storageBucket: "web-components-webrtc.appspot.com", messagingSenderId: "57628399273", appId: "1:57628399273:web:c01bfb9b6cf5d164007bb8" }), window.customElements.define("vaii-media-router", F), window.customElements.define("vaii-media-home", B), window.customElements.define("vaii-media-about", Ie), window.customElements.define("vaii-media-room", he), window.customElements.define("vaii-media-room-video", be),  window.customElements.define("vaii-room-chat", Pe),  window.customElements.define('vaii-menu-notifer', Ce);, window.customElements.define("text-input", Te, { extends: "input" })
 })();
 //# sourceMappingURL=main.bundle.js.map
