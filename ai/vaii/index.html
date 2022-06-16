@@ -362,6 +362,42 @@
             color: #11101D;
         }
         
+        .sidebar li button {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: #11101D;
+        }
+        
+        .sidebar li button:hover {
+            background: #FFF;
+        }
+        
+        .sidebar li button .links_name {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+        }
+        
+        .sidebar.open li a .links_name {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .sidebar li button:hover .links_name,
+        .sidebar li button:hover i {
+            transition: all 0.5s ease;
+            color: #11101D;
+        }
+        
         .sidebar li i {
             height: 50px;
             line-height: 50px;
@@ -601,10 +637,10 @@
                     <span class="tooltip">VAII</span>
                 </li>
                 <li>
-                    <a href="#" id="btnDisplay">
+                    <button href="#" id="btnDisplay">
                         <i class='bx bx-desktop bx-tada'></i>
                         <span class="links_name">Display</span>
-                    </a>
+                    </button>
                     <span class="tooltip">Display</span>
                 </li>
                 <li>
