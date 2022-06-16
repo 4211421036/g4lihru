@@ -21,4 +21,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 1rem;
+  position: absolute;
 }
