@@ -478,9 +478,154 @@
          ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+        vaii-sidebar  {
+            position: absolute ;
+            cursor: pointer ;
+            display: inline-block ;
+            left: 0rem;
+            top: 0rem;
+        }
+
+        vaii-sidebar > output {
+            border: 1px solid #ccc ;
+            padding: 2px 5px ;
+        }
+
+        vaii-sidebar > ul {
+            box-sizing: content-box ;
+            position: absolute ;
+            top: 2px ; left: 5px ;
+            width: 200px;
+            list-style: none ;
+            border: 1px solid #ccc ;
+            padding: 0 ;
+            opacity: 0 ;
+            transition: all 0.2s ease-in-out ;
+            background: white ;
+            visibility: hidden ;
+            z-index: 2 ;
+
+        }
+
+        vaii-sidebar.show  > ul {
+            opacity: 1 ;
+            visibility: visible ;
+        }
+
+        vaii-sidebar > ul > li {
+            overflow: hidden ;
+            transition: font 0.2s ease-in-out ;
+            padding: 2px 5px ;
+            background-color: #e7e7e7;
+        }
+
+        vaii-sidebar:hover {
+            cursor: pointer;
+            background-color: #f2f2f2;
+        }
+
+        vaii-sidebar  ul li:hover {
+            background-color: #e0e0e0;
+        }
+
+        vaii-sidebar ul li span {
+            float: right;
+            color: #f9f9f9;
+            background-color: #f03861;
+            padding: 2px 5px;
+            border-radius: 3px;
+            text-align: center;
+            font-size: .8rem;
+        }
+
+        vaii-sidebar ul li:hover span {
+            background-color: #ee204e;
+        }
     </style>
 
     <body>
+        <vaii-sidebar><output></output>
+            <div class="logo-details">
+                <div class="logo_name" align="center">AI VAII</div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul>
+                <li>
+                    <i class='bx bx-search'></i>
+                    <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+            </ul>
+            <br>
+            <ul class="nav-list" id="myUL">
+                <li>
+                    <a href="//g4lihru.me/drive/">
+                        <i class='bx bxs-hdd bx-tada bx-rotate-90'></i>
+                        <span class="links_name">Drive Saya</span>
+                    </a>
+                    <span class="tooltip">Drive Saya</span>
+                </li>
+
+                <li>
+                    <a href="//g4lihru.me/ai/vaii/">
+                        <i class='bx bxs-videos bx-tada'></i>
+                        <span class="links_name">VAII</span>
+                    </a>
+                    <span class="tooltip">VAII</span>
+                </li>
+                <li>
+                    <a href="#" id="btnDisplay">
+                        <i class='bx bx-desktop bx-tada'></i>
+                        <span class="links_name">Display</span>
+                    </a>
+                    <span class="tooltip">Display</span>
+                </li>
+                <li>
+                    <a href="#" id="btnImage">
+                        <i class='bx bxs-brush-alt bx-tada'></i>
+                        <span class="links_name">Input</span>
+                    </a>
+                    <span class="tooltip">Input</span>
+                </li>
+                <li>
+                    <a href="#" id="btnProcess">
+                        <i class='bx bx-stats bx-tada'></i>
+                        <span class="links_name">Option</span>
+                    </a>
+                    <span class="tooltip">Input</span>
+                </li>
+                <li>
+                    <a href="#" id="btnModel">
+                        <i class='bx bxs-game bx-tada'></i>
+                        <span class="links_name">Model</span>
+                    </a>
+                    <span class="tooltip">Model</span>
+                </li>
+                <li>
+                    <a href="#" id="myBtn" data-toggle="modal">
+                        <i class="bx bxs-video-recording bx-flashing"></i>
+                        <span class="links_name">Record</span>
+                    </a>
+                    <span class="tooltip">Record</span>
+                </li>
+                <li>
+                    <a href="//instagram.com/galih_ridho_utomo">
+                        <i href="//instagram.com/galih_ridho_utomo" class='bx bxl-instagram-alt bx-tada bx-rotate-90' id="log_out"></i>
+                        <span class="links_name">Instagram</span>
+                    </a>
+                    <span class="tooltip">Instagram</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <img src="https://g4lihru.me/345677.png" alt="profileImg">
+                        <div class="name_job">
+                            <div class="name">Galih Ridho Utomo</div>
+                            <div class="job">Mahasiswa UNNES</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </vaii-sidebar>
         <vaii-side class="sidebar">
             <div class="logo-details">
                 <div class="logo_name" align="center">AI VAII</div>
