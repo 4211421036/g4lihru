@@ -217,6 +217,6 @@ class OneDialog extends HTMLElement {
 customElements.define('vaii-media-record', OneDialog);
 
 const a = document.getElementById('myBtn');
-button.addEventListener('click', () => {
+a.addEventListener('click', () => {
   document.querySelector('vaii-menu-notifer').open = true;
 })
