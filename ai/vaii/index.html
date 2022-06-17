@@ -511,7 +511,15 @@
             flex-wrap: nowrap;
         }
 
-        vaii-side li img {
+        vaii-side.show li img {
+            height: 45px;
+            width: 45px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+        
+        vaii-side.sidebar li img {
             height: 45px;
             width: 45px;
             object-fit: cover;
@@ -519,8 +527,16 @@
             margin-right: 10px;
         }
 
-        vaii-side li.profile div.name,
-        vaii-side li.profile div.job {
+        vaii-side.show li.profile div.name,
+        vaii-side.show li.profile div.job {
+            font-size: 15px;
+            font-weight: 400;
+            color: #fff;
+            white-space: nowrap;
+        }
+        
+        vaii-side.sidebar li.profile div.name,
+        vaii-side.sidebar li.profile div.job {
             font-size: 15px;
             font-weight: 400;
             color: #fff;
