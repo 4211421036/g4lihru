@@ -1,0 +1,16 @@
+<p id="copy-text"> Hey, there! </p>
+<button>
+        Copy Text
+</button>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+  let copyButton = document.getElementsByTagName('button');
+      copyButton.addEventListener('click', function () {
+          navigator.clipboard
+              .writeText(document.getElementById('copy-text').innerText)
+              .then(
+                  success => console.log("text copied"), err => console.log("error copying text")
+              );
+      });
+});
+</script>
