@@ -34,77 +34,31 @@
     <style>
         @font-face { font-family: 'Lato'; font-display: swap; font-style: normal; font-weight: 100; src: local('Lato'), url('../assets/lato-light.woff2')}
         
-        html {
-            font-family: 'Lato', 'Segoe UI';
-            font-size: 16px;
-            font-variant: small-caps;
-        }
+        html { font-family: 'Lato', 'Segoe UI'; font-size: 16px; font-variant: small-caps;}
         
-        body {
-            margin: 0;
-            background: black;
-            color: white;
-            overflow-x: hidden;
-            width: 100vw;
-            height: 100vh;
-        }
+        body { margin: 0; background: black; color: white; overflow-x: hidden; width: 100vw; height: 100vh;}
         
-        body::-webkit-scrollbar {
-            display: none;
-        }
+        body::-webkit-scrollbar { display: none;}
         
-        hr {
-            width: 100%;
-        }
+        hr { width: 100%;}
         
-        .play {
-            position: absolute;
-            width: 256px;
-            height: 256px;
-            z-index: 9;
-            bottom: 35%;
-            left: 50%;
-            margin-left: -125px;
-            display: none;
-            filter: grayscale(1);
-        }
-        .button{
-            width: 100%;
-            height: 75px;
-        }
-        .left{
-            float: left;
-            display: block;
-        }
-        .right{
-            float: right;
-            display: block;
-        }
-        .button ul a{
-            padding: 10px;
-            background: rgb(116, 181, 12);
-            color: white;
-        }
+        .play { position: absolute; width: 256px; height: 256px; z-index: 9; bottom: 35%; left: 50%; margin-left: -125px; display: none; filter: grayscale(1);}
         
-        .play:hover {
-            filter: grayscale(0);
-        }
+        .button{ width: 100%; height: 75px;}
         
-        .btn-background {
-            fill: grey;
-            cursor: pointer;
-            opacity: 0.6;
-        }
+        .left{ float: left; display: block;}
         
-        .btn-background:hover {
-            opacity: 1;
-        }
+        .right{ float: right; display: block;}
         
-        .btn-foreground {
-            fill: white;
-            cursor: pointer;
-            opacity: 0.8;
-        }
+        .button ul a{ padding: 10px; background: rgb(116, 181, 12); color: white;}
+        
+        .play:hover { filter: grayscale(0);}
+        
+        .btn-background { fill: grey; cursor: pointer; opacity: 0.6;}
+        
+        .btn-background:hover { opacity: 1;}
+        
+        .btn-foreground { fill: white; cursor: pointer; opacity: 0.8;}
         
         .btn-foreground:hover {
             opacity: 1;
@@ -1148,7 +1102,7 @@
                 </div>
                 <video id="video" playsinline class="video" style='position:absolute; left:0rem; top:0rem; width: 100%; height:100%;'></video>
                 <vaii-media-container class="page-container" id="PageContainer">
-                    <vaii-media-router></vaii-media-router>
+                    <vaii-media-router id="vaiimedia"></vaii-media-router>
                 </vaii-media-container>
             </vaii-media>
             <vaii-compare-container id="compare-container" class="compare-image">
@@ -1246,16 +1200,16 @@
           });
         </script>
         <script>
-            remoteVideo.onmousedown = function(event) {
-                remoteVideo.style.position = 'absolute';
-                remoteVideo.style.zIndex = 1000;
-                document.body.appendChild(remoteVideo);
+            vaiimedia.onmousedown = function(event) {
+                vaiimedia.style.position = 'absolute';
+                vaiimedia.style.zIndex = 1000;
+                document.body.appendChild(vaiimedia);
 
                 moveAt(event.pageX, event.pageY);
 
                 function moveAt(pageX, pageY) {
-                    remoteVideo.style.left = pageX - remoteVideo.offsetWidth / 2 + 'px';
-                    remoteVideo.style.top = pageY - remoteVideo.offsetHeight / 2 + 'px';
+                    vaiimedia.style.left = pageX - vaiimedia.offsetWidth / 2 + 'px';
+                    vaiimedia.style.top = pageY - vaiimedia.offsetHeight / 2 + 'px';
                 }
 
                 function onMouseMove(event) {
@@ -1264,50 +1218,19 @@
 
                 document.addEventListener('mousemove', onMouseMove);
 
-                remoteVideo.onmouseup = function() {
+                vaiimedia.onmouseup = function() {
                     document.removeEventListener('mousemove', onMouseMove);
-                    remoteVideo.onmouseup = null;
+                    vaiimedia.onmouseup = null;
                 };
 
             };
 
 
-            remoteVideo.ondragstart = function() {
+            vaiimedia.ondragstart = function() {
                 return false;
             };
         </script>
     
-        <script>
-            vaiiVideo.onmousedown = function(event) {
-                vaiiVideo.style.position = 'absolute';
-                vaiiVideo.style.zIndex = 1000;
-                document.body.appendChild(vaiiVideo);
-
-                moveAt(event.pageX, event.pageY);
-
-                function moveAt(pageX, pageY) {
-                    myvaii.style.left = pageX - vaiiVideo.offsetWidth / 2 + 'px';
-                    myvaii.style.top = pageY - vaiiVideo.offsetHeight / 2 + 'px';
-                }
-
-                function onMouseMove(event) {
-                    moveAt(event.pageX, event.pageY);
-                }
-
-                document.addEventListener('mousemove', onMouseMove);
-
-                vaiiVideo.onmouseup = function() {
-                    document.removeEventListener('mousemove', onMouseMove);
-                    vaiiVideo.onmouseup = null;
-                };
-
-            };
-
-
-            vaiiVideo.ondragstart = function() {
-                return false;
-            };
-        </script>
     </body>
 
 </html>
