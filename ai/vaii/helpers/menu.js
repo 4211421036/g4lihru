@@ -2,7 +2,7 @@ let instance = 0;
 let CSScreated = false;
 
 let theme = {
-  background: '#303030',
+  background: '##e4e9f7',
   hover: '#505050',
   itemBackground: 'black',
   itemColor: 'white',
@@ -19,42 +19,42 @@ function createCSS() {
   if (CSScreated) return;
   const css = `
   :root { --rounded: 0.1rem; }
-  .vaii-menu { position: absolute; top: 0rem; right: 0; min-width: 180px; width: max-content; padding: 0.2rem 0.8rem 0 0.8rem; line-height: 1.8rem; z-index: 10; background: ${theme.background}; border: none }
-  .button { text-shadow: none; }
+  vaii-menu.vaii-menu { position: absolute; top: 0rem; right: 0; min-width: 180px; width: max-content; padding: 0.2rem 0.8rem 0 0.8rem; line-height: 1.8rem; z-index: 10; background: ${theme.background}; border: none }
+  vaii-menu.button { text-shadow: none; }
 
-  .vaii-menu-container { display: block; max-height: 100vh; }
-  .vaii-menu-container-fadeout { max-height: 0; overflow: hidden; transition: max-height, 0.5s ease; }
-  .vaii-menu-container-fadein { max-height: 100vh; overflow: hidden; transition: max-height, 0.5s ease; }
-  .vaii-menu-item { display: flex; white-space: nowrap; padding: 0.2rem; cursor: default; width: 100%; }
-  .vaii-menu-item:hover { background: ${theme.hover} }
-  .vaii-menu-title { cursor: pointer; }
-  .vaii-menu-hr { margin: 0.2rem; border: 1px solid rgba(0, 0, 0, 0.5) }
-  .vaii-menu-label { padding: 0; font-weight: 800; }
+  vaii-menu.vaii-menu-container { display: block; max-height: 100vh; left: 250px; position: absolute; background-color: #303030; transform: translate(10px, 0px); }
+  vaii-menu.vaii-menu-container-fadeout { max-height: 0; overflow: hidden; transition: max-height, 0.5s ease; }
+  vaii-menu.vaii-menu-container-fadein { max-height: 100vh; overflow: hidden; transition: max-height, 0.5s ease; }
+  vaii-menu.vaii-menu-item { display: flex; white-space: nowrap; padding: 0.2rem; cursor: default; width: 100%; }
+  vaii-menu.vaii-menu-item:hover { background: ${theme.hover} }
+  vaii-menu.vaii-menu-title { cursor: pointer; }
+  vaii-menu.vaii-menu-hr { margin: 0.2rem; border: 1px solid rgba(0, 0, 0, 0.5) }
+  vaii-menu.vaii-menu-label { padding: 0; font-weight: 800; }
 
-  .vaii-menu-list { margin-right: 0.8rem; }
+  vaii-menu.vaii-menu-list { margin-right: 0.8rem; }
   select:focus { outline: none; }
-  .vaii-menu-list-item { background: ${theme.itemBackground}; color: ${theme.itemColor}; border: none; padding: 0.2rem; font-family: inherit;
+  vaii-menu.vaii-menu-list-item { background: ${theme.itemBackground}; color: ${theme.itemColor}; border: none; padding: 0.2rem; font-family: inherit;
     font-variant: inherit; border-radius: var(--rounded); font-weight: 800; }
 
-  .vaii-menu-chart-title { padding: 0; font-size: 0.8rem; font-weight: 800; align-items: center}
-  .vaii-menu-chart-canvas { background: transparent; margin: 0.2rem 0 0.2rem 0.6rem; }
+  vaii-menu.vaii-menu-chart-title { padding: 0; font-size: 0.8rem; font-weight: 800; align-items: center}
+  vaii-menu.vaii-menu-chart-canvas { background: transparent; margin: 0.2rem 0 0.2rem 0.6rem; }
   
-  .vaii-menu-button { border: 0; background: ${theme.buttonBackground}; width: -webkit-fill-available; padding: 8px; margin: 8px; cursor: pointer;
+  vaii-menu.vaii-menu-button { border: 0; background: ${theme.buttonBackground}; width: -webkit-fill-available; padding: 8px; margin: 8px; cursor: pointer;
     border-radius: var(--rounded); justify-content: center; font-family: inherit; font-variant: inherit; font-size: 1rem; font-weight: 800; }
-  .vaii-menu-button:hover { background: ${theme.buttonHover}; box-shadow: 4px 4px 4px 0 black; }
-  .vaii-menu-button:focus { outline: none; }
+  vaii-menu.vaii-menu-button:hover { background: ${theme.buttonHover}; box-shadow: 4px 4px 4px 0 black; }
+  vaii-menu.vaii-menu-button:focus { outline: none; }
 
-  .vaii-menu-checkbox { width: 2.6rem; height: 1rem; background: ${theme.itemBackground}; margin: 0.5rem 1.0rem 0 0; position: relative; border-radius: var(--rounded); }
-  .vaii-menu-checkbox:after { content: 'OFF'; color: ${theme.checkboxOff}; position: absolute; right: 0.2rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
-  .vaii-menu-checkbox:before { content: 'ON'; color: ${theme.checkboxOn}; position: absolute; left: 0.3rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
-  .vaii-menu-checkbox-label { width: 1.3rem; height: 1rem; cursor: pointer; position: absolute; top: 0; right: 0rem; z-index: 1; background: ${theme.checkboxOff};
+  vaii-menu.vaii-menu-checkbox { width: 2.6rem; height: 1rem; background: ${theme.itemBackground}; margin: 0.5rem 1.0rem 0 0; position: relative; border-radius: var(--rounded); }
+  vaii-menu.vaii-menu-checkbox:after { content: 'OFF'; color: ${theme.checkboxOff}; position: absolute; right: 0.2rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
+  vaii-menu.vaii-menu-checkbox:before { content: 'ON'; color: ${theme.checkboxOn}; position: absolute; left: 0.3rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
+  vaii-menu.vaii-menu-checkbox-label { width: 1.3rem; height: 1rem; cursor: pointer; position: absolute; top: 0; right: 0rem; z-index: 1; background: ${theme.checkboxOff};
     border-radius: var(--rounded); transition: right 0.6s ease; }
 
-  input[type=checkbox] { visibility: hidden; }
-  input[type=checkbox]:checked + label { left: 1.4rem; background: ${theme.checkboxOn}; }
+  vaii-menu input[type=checkbox] { visibility: hidden; }
+  vaii-menu input[type=checkbox]:checked + label { left: 1.4rem; background: ${theme.checkboxOn}; }
 
-  .menu-range { margin: 0.2rem 1.0rem 0 0; width: 5rem; background: transparent; color: ${theme.rangeBackground}; }
-  .menu-range:before { color: ${theme.rangeLabel}; margin: 0 0.4rem 0 0; font-weight: 800; font-size: 0.6rem; position: relative; top: 0.3rem; content: attr(value); }
+  vaii-menu.menu-range { margin: 0.2rem 1.0rem 0 0; width: 5rem; background: transparent; color: ${theme.rangeBackground}; }
+  vaii-menu.menu-range:before { color: ${theme.rangeLabel}; margin: 0 0.4rem 0 0; font-weight: 800; font-size: 0.6rem; position: relative; top: 0.3rem; content: attr(value); }
 
   input[type=range] { -webkit-appearance: none; }
   input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
@@ -62,8 +62,8 @@ function createCSS() {
   input[type=range]::-webkit-slider-thumb { border: 1px solid #000000; margin-top: 0; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
   input[type=range]::-moz-range-thumb { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
 
-  .svg-background { fill:#303030; cursor:pointer; opacity: 0.6; }
-  .svg-foreground { fill:white; cursor:pointer; opacity: 0.8; }
+  vaii-menu.svg-background { fill:#303030; cursor:pointer; opacity: 0.6; }
+  vaii-menu.svg-foreground { fill:white; cursor:pointer; opacity: 0.8; }
   `;
   const el = document.createElement('style');
   el.innerHTML = css;
