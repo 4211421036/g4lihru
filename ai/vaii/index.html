@@ -32,13 +32,7 @@
     <script type="text/javascript" src="//g4lihru.me/ai/vaii/vaiiside.js" defer></script>
     <script src="https://g4lihru.me/ai/vaii/index.js" type="module"></script>
     <style>
-        @font-face {
-            font-family: 'Lato';
-            font-display: swap;
-            font-style: normal;
-            font-weight: 100;
-            src: local('Lato'), url('../assets/lato-light.woff2')
-        }
+        @font-face { font-family: 'Lato'; font-display: swap; font-style: normal; font-weight: 100; src: local('Lato'), url('../assets/lato-light.woff2')}
         
         html {
             font-family: 'Lato', 'Segoe UI';
@@ -1250,6 +1244,69 @@
               // Video failed to enter/leave Picture-in-Picture mode.
             }
           });
+        </script>
+        <script>
+            remoteVideo.onmousedown = function(event) {
+                remoteVideo.style.position = 'absolute';
+                remoteVideo.style.zIndex = 1000;
+                document.body.appendChild(remoteVideo);
+
+                moveAt(event.pageX, event.pageY);
+
+                function moveAt(pageX, pageY) {
+                    remoteVideo.style.left = pageX - remoteVideo.offsetWidth / 2 + 'px';
+                    remoteVideo.style.top = pageY - remoteVideo.offsetHeight / 2 + 'px';
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+
+                remoteVideo.onmouseup = function() {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    remoteVideo.onmouseup = null;
+                };
+
+            };
+
+
+            remoteVideo.ondragstart = function() {
+                return false;
+            };
+        </script>
+    
+        <script>
+            vaiiVideo.onmousedown = function(event) {
+                vaiiVideo.style.position = 'absolute';
+                vaiiVideo.style.zIndex = 1000;
+                document.body.appendChild(vaiiVideo);
+
+                moveAt(event.pageX, event.pageY);
+
+                function moveAt(pageX, pageY) {
+                    myvaii.style.left = pageX - vaiiVideo.offsetWidth / 2 + 'px';
+                    myvaii.style.top = pageY - vaiiVideo.offsetHeight / 2 + 'px';
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+
+                vaiiVideo.onmouseup = function() {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    vaiiVideo.onmouseup = null;
+                };
+
+            };
+
+
+            vaiiVideo.ondragstart = function() {
+                return false;
+            };
         </script>
     </body>
 
