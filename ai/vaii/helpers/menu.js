@@ -2,7 +2,7 @@ let instance = 0;
 let CSScreated = false;
 
 let theme = {
-  background: transparent,
+  background: 'transparent',
   hover: '#505050',
   itemBackground: 'black',
   itemColor: 'white',
