@@ -111,12 +111,12 @@
         vaii-side.show .bx-search::after  { content:"\eb54"; top:2.5rem; position:absolute; left:1rem; background:0 0}
         vaii-side .bx-search::before  { content:"\eb54"; display:none}
         vaii-side .bxs-video-recording::before  { content:"\ee44"; top:1.4rem; position:absolute; left:.8rem}
-        vaii-side div.logo-details  { height:60px; display:flex; align-items:center; position:relative}
-        vaii-side div.logo-details .icon  { opacity:0; transition:all .5s ease}
-        vaii-side div.logo-details div.logo_name  { color:#fff; font-size:20px; font-weight:600; opacity:0; transition:all .5s ease}
+        vaii-side vaii-logo.logo-details  { height:60px; display:flex; align-items:center; position:relative}
+        vaii-side vaii-logo.logo-details .icon  { opacity:0; transition:all .5s ease}
+        vaii-side vaii-logo.logo-details vaii-text.logo_name  { color:#fff; font-size:20px; font-weight:600; opacity:0; transition:all .5s ease}
         vaii-side.show .logo-details .icon,vaii-side.show .logo-details .logo_name  { opacity:1}
-        vaii-side div.logo-details i#btn  { position:absolute; top:78%; right:0; transform:translateY(-50%); font-size:22px; transition:all .4s ease; font-size:23px; text-align:center; cursor:pointer; transition:all .5s ease}
-        vaii-side.show div.logo-details i#btn  { text-align:right}
+        vaii-side vaii-logo.logo-details i#btn  { position:absolute; top:78%; right:0; transform:translateY(-50%); font-size:22px; transition:all .4s ease; font-size:23px; text-align:center; cursor:pointer; transition:all .5s ease}
+        vaii-side.show vaii-logo.logo-details i#btn  { text-align:right}
         vaii-side i  { color:#fff; height:60px; min-width:50px; font-size:28px; text-align:center; line-height:60px}
         vaii-side ul.nav-list  { margin-top:20px; height:25rem; overflow-y:scroll}
         vaii-side li  { position:relative; margin:8px 0; list-style:none}
@@ -140,10 +140,20 @@
         vaii-side li a:hover i, vaii-side li a:hover span.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none}
         vaii-side li button  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d}
         vaii-side li button:hover  { background:#fff}
-        vaii-side li button span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s}vaii-side.show li a span.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
-        vaii-side li button:hover i,vaii-side li button:hover span.links_name  { transition:all .5s ease; color:#11101d}vaii-side li i  { height:50px; line-height:50px; font-size:18px; border-radius:12px}
+        vaii-side li button span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s}
+        vaii-side.show li a span.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
+        vaii-side li button:hover i,vaii-side li button:hover span.links_name  { transition:all .5s ease; color:#11101d}
+        vaii-side li i  { height:50px; line-height:50px; font-size:18px; border-radius:12px}
         vaii-side li.profile  { position:fixed; height:60px; width:78px; left:0; bottom:-8px; padding:10px 14px; background:#1d1b31; transition:all .5s ease; overflow:hidden}
-        vaii-side.show li.profile  { width:250px}vaii-side.shpw ul li.profile-details  { display:flex; align-items:center; flex-wrap:nowrap}vaii-side.show li img  { height:45px; width:45px; object-fit:cover; border-radius:6px; margin-right:10px}vaii-side.sidebar li img  { height:45px; width:45px; object-fit:cover; border-radius:6px; margin-right:10px}vaii-side li.profile i#log_out  { position:absolute; top:50%; right:0; transform:translateY(-50%); background:#1d1b31; width:100%; height:60px; line-height:60px; border-radius:0; transition:all .5s ease}vaii-side.show li.profile i#log_out  { width:50px; background:0 0}section.home-section  { position:relative; background:#e4e9f7; min-height:100vh; top:0; left:78px; width:calc(100% - 78px); transition:all .5s ease; z-index:2}vaii-side.show~section.home-section  { left:250px; width:calc(100% - 250px)}section.home-section vaii-text.text  { display:inline-block; color:#11101d; font-size:25px; font-weight:500; margin:18px}
+        vaii-side.show li.profile  { width:250px}
+        vaii-side.show ul li.profile-details  { display:flex; align-items:center; flex-wrap:nowrap}
+        vaii-side.show li img  { height:45px; width:45px; object-fit:cover; border-radius:6px; margin-right:10px}
+        vaii-side.sidebar li img  { height:45px; width:45px; object-fit:cover; border-radius:6px; margin-right:10px}
+        vaii-side li.profile i#log_out  { position:absolute; top:50%; right:0; transform:translateY(-50%); background:#1d1b31; width:100%; height:60px; line-height:60px; border-radius:0; transition:all .5s ease}
+        vaii-side.show li.profile i#log_out  { width:50px; background:0 0}
+        vaii-sec.home-section  { display: block; position:relative; background:#e4e9f7; min-height:100vh; top:0; left:78px; width:calc(100% - 78px); transition:all .5s ease; z-index:2}
+        vaii-side.show~vaii-sec.home-section  { left:250px; width:calc(100% - 250px)}
+        vaii-sec.home-section vaii-text.text  { display:inline-block; color:#11101d; font-size:25px; font-weight:500; margin:18px}
         @media (max-width:420px)  { .sidebar li .tooltip  { display:none}}::-webkit-scrollbar  { width:10px}
         @media (min-width:320px)  { vaii-side ul.nav-list  { margin-top:20px; height:34rem; overflow-y:scroll}}
         @media (min-width:480px)  { vaii-side ul.nav-list  { margin-top:20px; height:34rem; overflow-y:scroll}}
@@ -155,16 +165,16 @@
 
     <body>
         <vaii-side class="sidebar">
-            <div class="logo-details">
-                <div class="logo_name" align="center">AI VAII</div>
+            <vaii-logo class="logo-details">
+                <vaii-text class="logo_name" align="center">AI VAII</vaii-text>
                 <i class='bx bx-menu' id="btn"></i>
-            </div>
+            </vaii-logo>
             <ul>
                 <li>
                     <i class='bx bx-search'></i>
                     <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search...">
                     <span class="tooltip">Search</span>
-                </li>
+                </ul>
             </ul>
             <br>
             <ul class="nav-list" id="myUL">
@@ -233,7 +243,7 @@
             </ul>
         </vaii-side>
         <!-- Shady: CSS Root Open -->
-        <section class="home-section">
+        <vaii-sec class="home-section">
             <vaii-text class="text">VAII</vaii-text>
             <vaii-play disabled id="play" class="play icon-play"></vaii-play>
             <vaii-ground id="background" class="background">
@@ -330,7 +340,7 @@
             <vaii-log id="vaii-log" class="log"></vaii-log>
             <vaii-results id="results" class="results"></vaii-results>
             <vaii-transcript id="transcript"></vaii-transcript>
-        </section>
+        </vaii-sec>
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
         <script src="main.bundle.js"></script>
