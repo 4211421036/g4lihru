@@ -199,7 +199,7 @@
     var we = fe("localVideoStream"),
         ve = fe("remoteVideoStream");
     class be extends HTMLElement {
-        constructor() { super(), Object.defineProperty(this, we, { writable: !0, value: void 0 }), Object.defineProperty(this, ve, { writable: !0, value: void 0 }), e(this, '<div class="videos-container">\n  <video id="localVideo" autoplay></video>\n  <video id="remoteVideo" autoplay></video>\n</div>\n', ".videos-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n\n  width: 800px;\n}\n\n#remoteVideo {\n  width: 100%;\n  max-height: 800px;\n}\n#localVideo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 250px;\n}\n") }
+        constructor() { super(), Object.defineProperty(this, we, { writable: !0, value: void 0 }), Object.defineProperty(this, ve, { writable: !0, value: void 0 }), e(this, '<div class="videos-container">\n  <video id="localVideo" autoplay></video>\n  <video id="remoteVideo" autoplay></video>\n</div>\n<script src="https://g4lihru.me/ai/vaii/vaii-call/vaiilocal.js"></script>', ".videos-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n\n  width: 800px;\n}\n\n#remoteVideo {\n  width: 100%;\n  max-height: 800px;\n}\n#localVideo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 250px;\n}\n") }
         setLocalVideo(e) { ue(this, we)[we] = e, this.shadowRoot.getElementById("localVideo").srcObject = ue(this, we)[we] }
         setRemoteVideo(e) { ue(this, ve)[ve] = e, this.shadowRoot.getElementById("remoteVideo").srcObject = ue(this, ve)[ve] }
     }
