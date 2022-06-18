@@ -2,7 +2,7 @@ let instance = 0;
 let CSScreated = false;
 
 let theme = {
-  background: '#e4e9f7',
+  background: transparent,
   hover: '#505050',
   itemBackground: 'black',
   itemColor: 'white',
@@ -22,9 +22,9 @@ function createCSS() {
   .vaii-menu { position: absolute; top: 0rem; right: 0; min-width: 180px; width: max-content; padding: 0.2rem 0.8rem 0 0.8rem; line-height: 1.8rem; z-index: 10; background: ${theme.background}; border: none }
   .button { text-shadow: none; }
 
-  .vaii-menu-container { display: block; max-height: 100vh; left: 250px; position: absolute; background-color: #303030; transform: translate(10px, 0px); }
+  .vaii-menu-container { display: block; max-height: 100vh; left: 250px; top: -0.9rem; position: absolute; background-color: #303030; transform: translate(10px, 0px); }
   .vaii-menu-container-fadeout { max-height: 0; overflow: hidden; transition: max-height, 0.5s ease; }
-  .vaii-menu-container-fadein { max-height: 100vh; overflow: hidden; transition: max-height, 0.5s ease; }
+  .vaii-menu-container-fadein { max-height: 85vh; overflow: hidden; transition: max-height, 0.5s ease; overflow-y: scroll; }
   .vaii-menu-item { display: flex; white-space: nowrap; padding: 0.2rem; cursor: default; width: 100%; }
   .vaii-menu-item:hover { background: ${theme.hover} }
   .vaii-menu-title { cursor: pointer; }
