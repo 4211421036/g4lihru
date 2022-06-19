@@ -98,6 +98,8 @@
         .menu  { padding:0}
         .modal:before  { content:''; display:inline-block; height:100%; vertical-align:middle}
         .modal-dialog  { display:inline-block; vertical-align:middle}
+        .modal-dialog::-webkit-scrollbar-thumb  { background-color: #626262;}
+        .modal-dialog::-webkit-scrollbar-track  { box-shadow: none;}
         .modal .modal-content  { padding:20px 20px 20px 20px; -webkit-animation-name:modal-animation; -webkit-animation-duration:.5s; animation-name:modal-animation; animation-duration:.5s}
         @-webkit-keyframes modal-animation  { from  { top:-100px; opacity:0}to  { top:0; opacity:1}}
         @keyframes modal-animation  { from  { top:-100px; opacity:0}to  { top:0; opacity:1}}
