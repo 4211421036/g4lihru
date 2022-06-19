@@ -25,6 +25,7 @@ function createCSS() {
   .vaii-menu-container { display: block; max-height: 100vh; left: 250px; top: -0.9rem; position: absolute; background-color: #303030; transform: translate(10px, 0px); }
   .vaii-menu-container-fadeout { max-height: 0; overflow: hidden; transition: max-height, 0.5s ease; }
   .vaii-menu-container-fadein { max-height: 85vh; overflow: hidden; transition: max-height, 0.5s ease; overflow-y: scroll; }
+  .vaii-menu-container-fadein::-webkit-scrollbar-thumb { background-color: #626262; border-radius: 10px; }
   .vaii-menu-item { display: flex; white-space: nowrap; padding: 0.2rem; cursor: default; width: 100%; }
   .vaii-menu-item:hover { background: ${theme.hover} }
   .vaii-menu-title { cursor: pointer; }
