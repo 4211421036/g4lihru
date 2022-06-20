@@ -422,13 +422,7 @@
             }); 
         </script>
         <script>
-            // JS Nuggets: Notifications API
-
-            //Notification.requestPermission();
-
-            //new Notification("Subscribe to JS Nuggets!");
-
-            function notifyMe() {
+            function VAIINotif() {
                 if (!("Notification" in window)) {
                     alert("This browser does not support system notifications");
                 } else if (Notification.permission === "granted") {
@@ -442,23 +436,23 @@
                 }
 
                 function notify() {
-                    var notification = new Notification('Hallo', {
+                    var notification = new Notification('Kabar Terbaru!', {
                         icon: 'https://g4lihru.me/345677.png',
-                        body: 'Sirap tanamanmu',
+                        body: 'Kecelakaan!',
                         image: "https://g4lihru.me/345677.png",
                         badge: "https://g4lihru.me/345677.png",
                         vibrate: [200, 100, 200],
-                        tag: "hal",
+                        tag: "Patuhi Rambu-rambu lalu lintas!",
                     });
 
                     notification.onclick = function() {
-                        window.open("https://g4lihru.me");
+                        window.open("https://g4lihru.me/ai/vaii/");
                     };
                     setTimeout(notification.close.bind(notification), 7000);
                 }
 
             }
-            notifyMe();
+            VAIINotif();
         </script>
     </body>
 
