@@ -1,28 +1,4 @@
-/**
- * Human demo for browsers
- *
- * @description Main demo app that exposes all Human functionality
- *
- * @params Optional URL parameters:
- * image=<imagePath:string>: perform detection on specific image and finish
- * worker=<true|false>: use WebWorkers
- * backend=<webgl|wasm|cpu>: use specific TF backend for operations
- * preload=<true|false>: pre-load all configured models
- * warmup=<true|false>: warmup all configured models
- *
- * @example <https://wyse:10031/?backend=wasm&worker=true&image="/assets/sample-me.jpg">
- *
- * @configuration
- * userConfig={}: contains all model configuration used by human
- * drawOptions={}: contains all draw variables used by human.draw
- * ui={}: contains all variables exposed in the UI
- */
-
-// test url <https://human.local/?worker=false&async=false&bench=false&draw=true&warmup=full&backend=humangl>
-
-// @ts-nocheck // typescript checks disabled as this is pure javascript
-
-import Human from '../dist/human.esm.js'; // equivalent of @vladmandic/human
+import Human from '../dist/human.esm.js'; 
 import Menu from './helpers/menu.js';
 import GLBench from './helpers/gl-bench.js';
 import webRTC from './helpers/webrtc.js';
@@ -30,36 +6,10 @@ import jsonView from './helpers/jsonview.js';
 
 let human;
 
-let userConfig = {
-  // face: { enabled: false },
-  // body: { enabled: false },
-  // hand: { enabled: false },
-  /*
-  warmup: 'none',
-  backend: 'humangl',
-  debug: true,
-  wasmPath: 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@3.9.0/dist/',
-  async: false,
-  cacheSensitivity: 0.75,
-  filter: { enabled: false, flip: false },
-  face: { enabled: false,
-    detector: { return: false, rotation: true },
-    mesh: { enabled: false },
-    iris: { enabled: false },
-    description: { enabled: false },
-    emotion: { enabled: false },
-  },
-  object: { enabled: false },
-  gesture: { enabled: true },
-  hand: { enabled: true, maxDetected: 1, minConfidence: 0.5, detector: { modelPath: 'handtrack.json' } },
-  body: { enabled: false },
-  // body: { enabled: true, modelPath: 'movenet-multipose.json' },
-  segmentation: { enabled: false },
-  */
-};
+let userConfig = {};
 
 const drawOptions = {
-  bufferedOutput: true, // makes draw functions interpolate results between each detection for smoother movement
+  bufferedOutput: true,
   drawBoxes: true,
   drawGaze: true,
   drawLabels: true,
@@ -122,7 +72,7 @@ const ui = {
 
 const pwa = {
   enabled: true,
-  cacheName: 'Human',
+  cacheName: 'VAII',
   scriptFile: 'index-pwa.js',
   cacheModels: true,
   cacheWASM: true,
@@ -187,9 +137,9 @@ function status(msg) {
   }
 }
 
-async function videoPlay(videoElement = document.getElementById('video')) {
+async function videoPlay() {
   document.getElementById('btnStartText').innerHTML = 'pause video';
-  await videoElement.play();
+  await document.getElementById('video').play();
   // status();
 }
 
@@ -253,15 +203,15 @@ async function drawResults(input) {
   // draw fps chart
   await menu.process.updateChart('FPS', ui.detectFPS);
 
-  document.getElementById('segmentation-container').style.display = userConfig.segmentation.enabled ? 'block' : 'none';
+  document.getElementById('vaii-segmentation-container').style.display = userConfig.segmentation.enabled ? 'block' : 'none';
   if (userConfig.segmentation.enabled && ui.buffered) { // refresh segmentation if using buffered output
     const seg = await human.segmentation(input, ui.background);
     if (seg.alpha) {
-      const canvasSegMask = document.getElementById('segmentation-mask');
+      const canvasSegMask = document.getElementById('vaii-segmentation-mask');
       const ctxSegMask = canvasSegMask.getContext('2d');
       ctxSegMask.clearRect(0, 0, canvasSegMask.width, canvasSegMask.height); // need to clear as seg.alpha is alpha based canvas so it adds
       ctxSegMask.drawImage(seg.alpha, 0, 0, seg.alpha.width, seg.alpha.height, 0, 0, canvasSegMask.width, canvasSegMask.height);
-      const canvasSegCanvas = document.getElementById('segmentation-canvas');
+      const canvasSegCanvas = document.getElementById('vaii-segmentation-canvas');
       const ctxSegCanvas = canvasSegCanvas.getContext('2d');
       ctxSegCanvas.clearRect(0, 0, canvasSegCanvas.width, canvasSegCanvas.height); // need to clear as seg.alpha is alpha based canvas so it adds
       ctxSegCanvas.drawImage(seg.canvas, 0, 0, seg.alpha.width, seg.alpha.height, 0, 0, canvasSegCanvas.width, canvasSegCanvas.height);
@@ -319,7 +269,7 @@ async function drawResults(input) {
   const backend = result.backend || human.tf.getBackend();
   const gpu = engine.backendInstance ? `gpu: ${(engine.backendInstance.numBytesInGPU ? engine.backendInstance.numBytesInGPU : 0).toLocaleString()} bytes` : '';
   const memory = result.tensors ? `tensors: ${result.tensors.toLocaleString()} in worker` : `system: ${engine.state.numBytes.toLocaleString()} bytes ${gpu} | tensors: ${engine.state.numTensors.toLocaleString()}`;
-  document.getElementById('log').innerHTML = `
+  document.getElementById('vaii-log').innerHTML = `
     video: ${ui.camera.name} | facing: ${ui.camera.facing} | screen: ${window.innerWidth} x ${window.innerHeight} camera: ${ui.camera.width} x ${ui.camera.height} ${processing}<br>
     backend: ${backend} | ${memory}<br>
     performance: ${str(interpolated.performance)}ms ${fps}<br>
@@ -352,7 +302,7 @@ async function setupCamera() {
   ui.busy = true;
   const video = document.getElementById('video');
   const canvas = document.getElementById('canvas');
-  const output = document.getElementById('log');
+  const output = document.getElementById('vaii-log');
   if (ui.useWebRTC) {
     status('setting up webrtc connection');
     try {
@@ -390,11 +340,10 @@ async function setupCamera() {
     },
   };
   // enumerate devices for diag purposes
-  const devices = await navigator.mediaDevices.enumerateDevices();
-  if (initialCameraAccess) log('enumerated input devices:', devices);
-  // to select specific camera add deviceid from enumerated devices to camera constraints
-  // constraints.video.deviceId = '6794499e046cf4aebf41cfeb7d1ef48a17bd65f72bafb55f3c0b06405d3d487b';
-  if (initialCameraAccess) log('camera constraints', constraints);
+  if (initialCameraAccess) {
+    navigator.mediaDevices.enumerateDevices().then((devices) => log('enumerated input devices:', devices));
+    log('camera constraints', constraints);
+  }
   try {
     stream = await navigator.mediaDevices.getUserMedia(constraints);
   } catch (err) {
@@ -468,7 +417,7 @@ function webWorker(input, image, canvas, timestamp) {
         if (!bench) initPerfMonitor();
         bench.nextFrame(timestamp);
       }
-      if (document.getElementById('gl-bench')) document.getElementById('gl-bench').style.display = ui.bench ? 'block' : 'none';
+      if (document.getElementById('vaii-gl-bench')) document.getElementById('vaii-gl-bench').style.display = ui.bench ? 'block' : 'none';
       lastDetectedResult = msg.data.result;
 
       if (msg.data.image) { // we dont really need canvas since we draw from video
@@ -544,10 +493,10 @@ function runHumanDetect(input, canvas, timestamp) {
         if (!bench) initPerfMonitor();
         bench.nextFrame(timestamp);
       }
-      if (document.getElementById('gl-bench')) document.getElementById('gl-bench').style.display = ui.bench ? 'block' : 'none';
+      if (document.getElementById('vaii-gl-bench')) document.getElementById('vaii-gl-bench').style.display = ui.bench ? 'block' : 'none';
       if (result.error) {
         log(result.error);
-        document.getElementById('log').innerText += `\nHuman error: ${result.error}`;
+        document.getElementById('vaii-log').innerText += `\nHuman error: ${result.error}`;
       } else {
         lastDetectedResult = result;
         if (!ui.drawThread) drawResults(input);
@@ -593,7 +542,7 @@ async function processImage(input, title) {
         // zoom in/out on click
         if (evt.target.style.width === `${stdWidth}px`) {
           evt.target.style.width = '';
-          evt.target.style.height = `${document.getElementById('log').offsetTop - document.getElementById('media').offsetTop}px`;
+          evt.target.style.height = `${document.getElementById('vaii-log').offsetTop - document.getElementById('media').offsetTop}px`;
         } else {
           evt.target.style.width = `${stdWidth}px`;
           evt.target.style.height = '';
@@ -630,14 +579,12 @@ async function processImage(input, title) {
 
 async function processVideo(input, title) {
   status(`processing video: ${title}`);
-  // const video = document.getElementById('video-file') || document.createElement('video');
-  const video = document.getElementById('video');
+  const video = document.createElement('vaii-video');
   const canvas = document.getElementById('canvas');
-  // video.id = 'video-file';
-  // video.controls = true;
-  // video.loop = true;
-  // video.style.display = 'none';
-  // document.body.appendChild(video);
+  video.id = 'video-file';
+  video.controls = true;
+  video.loop = true;
+  // video.onerror = async () => status(`video loading error: ${video.error.message}`);
   video.addEventListener('error', () => status(`video loading error: ${video.error.message}`));
   video.addEventListener('canplay', async () => {
     for (const m of Object.values(menu)) m.hide();
@@ -646,7 +593,6 @@ async function processVideo(input, title) {
     await videoPlay();
     if (!ui.detectThread) runHumanDetect(video, canvas);
   });
-  video.srcObject = null;
   video.src = input;
 }
 
@@ -688,7 +634,7 @@ async function detectSampleImages() {
 function setupMenu() {
   const x = [`${document.getElementById('btnDisplay').offsetLeft}px`, `${document.getElementById('btnImage').offsetLeft}px`, `${document.getElementById('btnProcess').offsetLeft}px`, `${document.getElementById('btnModel').offsetLeft}px`];
 
-  const top = `${document.getElementById('menubar').clientHeight}px`;
+  const top = `${document.getElementById('vaii-bar').clientHeight}px`;
 
   menu.display = new Menu(document.body, '', { top, left: x[0] });
   menu.display.addBool('results tree', ui, 'results', (val) => {
@@ -814,7 +760,7 @@ async function resize() {
   }
   const x = [`${document.getElementById('btnDisplay').offsetLeft}px`, `${document.getElementById('btnImage').offsetLeft}px`, `${document.getElementById('btnProcess').offsetLeft}px`, `${document.getElementById('btnModel').offsetLeft}px`];
 
-  const top = `${document.getElementById('menubar').clientHeight - 3}px`;
+  const top = `${document.getElementById('vaii-bar').clientHeight - 3}px`;
 
   menu.display.menu.style.top = top;
   menu.image.menu.style.top = top;
@@ -906,7 +852,7 @@ async function dragAndDrop() {
 }
 
 async function drawHints() {
-  const hint = document.getElementById('hint');
+  const hint = document.getElementById('vaii-hint');
   ui.hintsThread = setInterval(() => {
     const rnd = Math.trunc(Math.random() * hints.length);
     hint.innerText = 'hint: ' + hints[rnd];
@@ -962,7 +908,7 @@ async function main() {
       const msg = evt.reason.message || evt.reason || evt;
       // eslint-disable-next-line no-console
       console.error(msg);
-      document.getElementById('log').innerHTML = msg;
+      document.getElementById('vaii-log').innerHTML = msg;
       status(`exception: ${msg}`);
       evt.preventDefault();
     });
@@ -1037,7 +983,7 @@ async function main() {
   // setup main menu
   await setupMenu();
   await resize();
-  document.getElementById('log').innerText = `Human: version ${human.version}`;
+  document.getElementById('vaii-log').innerText = `Human: version ${human.version}`;
 
   // preload models
   if (ui.modelsPreload && !ui.useWorker) {
