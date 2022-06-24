@@ -2,7 +2,7 @@ let instance = 0;
 let CSScreated = false;
 
 let theme = {
-  background: '#303030',
+  background: 'transparent',
   hover: '#505050',
   itemBackground: 'black',
   itemColor: 'white',
@@ -19,36 +19,38 @@ function createCSS() {
   if (CSScreated) return;
   const css = `
   :root { --rounded: 0.1rem; }
-  .menu { position: absolute; top: 0rem; right: 0; min-width: 180px; width: max-content; padding: 0.2rem 0.8rem 0 0.8rem; line-height: 1.8rem; z-index: 10; background: ${theme.background}; border: none }
+  .vaii-menu { position: absolute; top: 0rem; right: 0; min-width: 180px; width: max-content; padding: 0.2rem 0.8rem 0 0.8rem; line-height: 1.8rem; z-index: 10; background: ${theme.background}; border: none }
   .button { text-shadow: none; }
 
-  .menu-container { display: block; max-height: 100vh; }
-  .menu-container-fadeout { max-height: 0; overflow: hidden; transition: max-height, 0.5s ease; }
-  .menu-container-fadein { max-height: 100vh; overflow: hidden; transition: max-height, 0.5s ease; }
-  .menu-item { display: flex; white-space: nowrap; padding: 0.2rem; cursor: default; width: 100%; }
-  .menu-item:hover { background: ${theme.hover} }
-  .menu-title { cursor: pointer; }
-  .menu-hr { margin: 0.2rem; border: 1px solid rgba(0, 0, 0, 0.5) }
-  .menu-label { padding: 0; font-weight: 800; }
+  .vaii-menu-container { display: block; max-height: 100vh; left: 250px; top: -0.9rem; position: absolute; background-color: #303030; transform: translate(10px, 0px); }
+  .vaii-menu-container-fadeout { max-height: 0; overflow: hidden; transition: max-height, 0.5s ease; }
+  .vaii-menu-container-fadein { max-height: 85vh; overflow: hidden; transition: max-height, 0.5s ease; overflow-y: scroll; }
+  .vaii-menu-container-fadein::-webkit-scrollbar-thumb { background-color: #626262; border-radius: 10px; }
+  .vaii-menu-container-fadein::-webkit-scrollbar-track { box-shadow: none; }
+  .vaii-menu-item { display: flex; white-space: nowrap; padding: 0.2rem; cursor: default; width: 100%; }
+  .vaii-menu-item:hover { background: ${theme.hover} }
+  .vaii-menu-title { cursor: pointer; }
+  .vaii-menu-hr { margin: 0.2rem; border: 1px solid rgba(0, 0, 0, 0.5) }
+  .vaii-menu-label { padding: 0; font-weight: 800; }
 
-  .menu-list { margin-right: 0.8rem; }
+  .vaii-menu-list { margin-right: 0.8rem; }
   select:focus { outline: none; }
-  .menu-list-item { background: ${theme.itemBackground}; color: ${theme.itemColor}; border: none; padding: 0.2rem; font-family: inherit;
+  .vaii-menu-list-item { background: ${theme.itemBackground}; color: ${theme.itemColor}; border: none; padding: 0.2rem; font-family: inherit;
     font-variant: inherit; border-radius: var(--rounded); font-weight: 800; }
 
-  .menu-chart-title { padding: 0; font-size: 0.8rem; font-weight: 800; align-items: center}
-  .menu-chart-canvas { background: transparent; margin: 0.2rem 0 0.2rem 0.6rem; }
+  .vaii-menu-chart-title { padding: 0; font-size: 0.8rem; font-weight: 800; align-items: center}
+  .vaii-menu-chart-canvas { background: transparent; margin: 0.2rem 0 0.2rem 0.6rem; }
   
-  .menu-button { border: 0; background: ${theme.buttonBackground}; width: -webkit-fill-available; padding: 8px; margin: 8px; cursor: pointer;
+  .vaii-menu-button { border: 0; background: ${theme.buttonBackground}; width: -webkit-fill-available; padding: 8px; margin: 8px; cursor: pointer;
     border-radius: var(--rounded); justify-content: center; font-family: inherit; font-variant: inherit; font-size: 1rem; font-weight: 800; }
-  .menu-button:hover { background: ${theme.buttonHover}; box-shadow: 4px 4px 4px 0 black; }
-  .menu-button:focus { outline: none; }
+  .vaii-menu-button:hover { background: ${theme.buttonHover}; box-shadow: 4px 4px 4px 0 black; }
+  .vaii-menu-button:focus { outline: none; }
 
-  .menu-checkbox { width: 2.6rem; height: 1rem; background: ${theme.itemBackground}; margin: 0.5rem 1.0rem 0 0; position: relative; border-radius: var(--rounded); }
-  .menu-checkbox:after { content: 'OFF'; color: ${theme.checkboxOff}; position: absolute; right: 0.2rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
-  .menu-checkbox:before { content: 'ON'; color: ${theme.checkboxOn}; position: absolute; left: 0.3rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
-  .menu-checkbox-label { width: 1.3rem; height: 1rem; cursor: pointer; position: absolute; top: 0; left: 0rem; z-index: 1; background: ${theme.checkboxOff};
-    border-radius: var(--rounded); transition: left 0.6s ease; }
+  .vaii-menu-checkbox { width: 2.6rem; height: 1rem; background: ${theme.itemBackground}; margin: 0.5rem 1.0rem 0 0; position: relative; border-radius: var(--rounded); }
+  .vaii-menu-checkbox:after { content: 'OFF'; color: ${theme.checkboxOff}; position: absolute; right: 0.2rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
+  .vaii-menu-checkbox:before { content: 'ON'; color: ${theme.checkboxOn}; position: absolute; left: 0.3rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
+  .vaii-menu-checkbox-label { width: 1.3rem; height: 1rem; cursor: pointer; position: absolute; top: 0; right: 0rem; z-index: 1; background: ${theme.checkboxOff};
+    border-radius: var(--rounded); transition: right 0.6s ease; }
 
   input[type=checkbox] { visibility: hidden; }
   input[type=checkbox]:checked + label { left: 1.4rem; background: ${theme.checkboxOn}; }
@@ -85,9 +87,9 @@ class Menu {
 
   createMenu(parent, title = '', position = { top: null, left: null, bottom: null, right: null }) {
     /** @type {HTMLDivElement} */
-    this.menu = document.createElement('div');
+    this.menu = document.createElement('vaii-menu');
     this.menu.id = `menu-${instance}`;
-    this.menu.className = 'menu';
+    this.menu.className = 'vaii-menu';
     if (position) {
       if (position.top) this.menu.style.top = `${position.top}`;
       if (position.bottom) this.menu.style.bottom = `${position.bottom}`;
@@ -95,13 +97,13 @@ class Menu {
       if (position.right) this.menu.style.right = `${position.right}`;
     }
 
-    this.container = document.createElement('div');
-    this.container.id = `menu-container-${instance}`;
-    this.container.className = 'menu-container menu-container-fadein';
+    this.container = document.createElement('vaii-menu-contain');
+    this.container.id = `vaii-menu-container-${instance}`;
+    this.container.className = 'vaii-menu-container vaii-menu-container-fadein';
 
     // set menu title with pulldown arrow
-    const elTitle = document.createElement('div');
-    elTitle.className = 'menu-title';
+    const elTitle = document.createElement('vaii-menu-title');
+    elTitle.className = 'vaii-menu-title';
     elTitle.id = `menu-title-${instance}`;
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 2rem; height: 2rem; vertical-align: top;">
         <path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48zm-51.37 182.31L232.06 348.16a10.38 10.38 0 0 1-16.12 0L99.37 214.31C92.17 206 97.28 192 107.43 192h233.14c10.15 0 15.26 14 8.06 22.31z" class="svg-background"/>
@@ -111,8 +113,8 @@ class Menu {
     this.menu.appendChild(elTitle);
     elTitle.addEventListener('click', () => {
       if (this.container && this.menu) {
-        this.container.classList.toggle('menu-container-fadeout');
-        this.container.classList.toggle('menu-container-fadein');
+        this.container.classList.toggle('vaii-menu-container-fadeout');
+        this.container.classList.toggle('vaii-menu-container-fadein');
         // this.menu.style.borderStyle = this.container.classList.contains('menu-container-fadeout') ? 'none' : 'solid';
       }
     });
@@ -141,20 +143,20 @@ class Menu {
   }
 
   hide() {
-    if (this.container && this.container.classList.contains('menu-container-fadein')) {
-      this.container.classList.toggle('menu-container-fadeout');
-      this.container.classList.toggle('menu-container-fadein');
+    if (this.container && this.container.classList.contains('vaii-menu-container-fadein')) {
+      this.container.classList.toggle('vaii-menu-container-fadeout');
+      this.container.classList.toggle('vaii-menu-container-fadein');
     }
   }
 
   visible() {
-    return (this.container ? this.container.classList.contains('menu-container-fadein') : false);
+    return (this.container ? this.container.classList.contains('vaii-menu-container-fadein') : false);
   }
 
   toggle(evt) {
     if (this.container && this.menu) {
-      this.container.classList.toggle('menu-container-fadeout');
-      this.container.classList.toggle('menu-container-fadein');
+      this.container.classList.toggle('vaii-menu-container-fadeout');
+      this.container.classList.toggle('vaii-menu-container-fadein');
       /*
       if (this.container.classList.contains('menu-container-fadein') && evt) {
         const x = evt.x || (evt.touches && evt.touches[0] ? evt.touches[0].pageX : null);
@@ -175,14 +177,14 @@ class Menu {
   }
 
   addTitle(title) {
-    const el = document.createElement('div');
-    el.className = 'menu-title';
+    const el = document.createElement('vaii-menu-title');
+    el.className = 'vaii-menu-title';
     el.id = this.newID;
     el.innerHTML = title;
     if (this.menu) this.menu.appendChild(el);
     el.addEventListener('click', () => {
       this.hidden = !this.hidden;
-      const all = document.getElementsByClassName('menu');
+      const all = document.getElementsByClassName('vaii-menu');
       for (const item of all) {
         // @ts-ignore
         item.style.display = this.hidden ? 'none' : 'block';
@@ -192,8 +194,8 @@ class Menu {
   }
 
   addLabel(title) {
-    const el = document.createElement('div');
-    el.className = 'menu-item menu-label';
+    const el = document.createElement('vaii-menu-item');
+    el.className = 'vaii-menu-item vaii-menu-label';
     el.id = this.newID;
     el.innerHTML = title;
     if (this.container) this.container.appendChild(el);
@@ -201,9 +203,9 @@ class Menu {
   }
 
   addBool(title, object, variable, callback) {
-    const el = document.createElement('div');
-    el.className = 'menu-item';
-    el.innerHTML = `<div class="menu-checkbox"><input class="menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}"></label></div>${title}`;
+    const el = document.createElement('vaii-menu-item');
+    el.className = 'vaii-menu-item';
+    el.innerHTML = `<vaii-menu-checkbox class="vaii-menu-checkbox"><input class="vaii-menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}"></label></vaii-menu-checkbox>${title}`;
     if (this.container) this.container.appendChild(el);
     el.addEventListener('change', (evt) => {
       if (evt.target) {
@@ -215,14 +217,14 @@ class Menu {
   }
 
   async addList(title, items, selected, callback) {
-    const el = document.createElement('div');
-    el.className = 'menu-item';
+    const el = document.createElement('vaii-menu-item');
+    el.className = 'vaii-menu-item';
     let options = '';
     for (const item of items) {
       const def = item === selected ? 'selected' : '';
       options += `<option value="${item}" ${def}>${item}</option>`;
     }
-    el.innerHTML = `<div class="menu-list"><select name="${this.ID}" title="${title}" class="menu-list-item">${options}</select><label for="${this.ID}"></label></div>${title}`;
+    el.innerHTML = `<vaii-menu-list class="vaii-menu-list"><select name="${this.ID}" title="${title}" class="vaii-menu-list-item">${options}</select><label for="${this.ID}"></label></vaii-menu-list>${title}`;
     el.style.fontFamily = document.body.style.fontFamily;
     el.style.fontSize = document.body.style.fontSize;
     el.style.fontVariant = document.body.style.fontVariant;
@@ -234,8 +236,8 @@ class Menu {
   }
 
   addRange(title, object, variable, min, max, step, callback) {
-    const el = document.createElement('div');
-    el.className = 'menu-item';
+    const el = document.createElement('vaii-menu-item');
+    el.className = 'vaii-menu-item';
     el.innerHTML = `<input class="menu-range" type="range" title="${title}" id="${this.newID}" min="${min}" max="${max}" step="${step}" value="${object[variable]}">${title}`;
     if (this.container) this.container.appendChild(el);
     el.addEventListener('change', (evt) => {
@@ -251,8 +253,8 @@ class Menu {
   }
 
   addHTML(html) {
-    const el = document.createElement('div');
-    el.className = 'menu-item';
+    const el = document.createElement('vaii-menu-item');
+    el.className = 'vaii-menu-item';
     el.id = this.newID;
     if (html) el.innerHTML = html;
     if (this.container) this.container.appendChild(el);
@@ -261,7 +263,7 @@ class Menu {
 
   addButton(titleOn, titleOff, callback) {
     const el = document.createElement('button');
-    el.className = 'menu-item menu-button';
+    el.className = 'vaii-menu-item vaii-menu-button';
     el.style.fontFamily = document.body.style.fontFamily;
     el.style.fontSize = document.body.style.fontSize;
     el.style.fontVariant = document.body.style.fontVariant;
@@ -278,8 +280,8 @@ class Menu {
   }
 
   addValue(title, val, suffix = '') {
-    const el = document.createElement('div');
-    el.className = 'menu-item';
+    const el = document.createElement('vaii-menu-item');
+    el.className = 'vaii-menu-item';
     el.id = `menu-val-${title}`;
     el.innerText = `${title}: ${val}${suffix}`;
     if (this.container) this.container.appendChild(el);
@@ -295,8 +297,8 @@ class Menu {
 
   addChart(title, id, width = 150, height = 40, color) {
     if (color) theme.chartColor = color;
-    const el = document.createElement('div');
-    el.className = 'menu-item menu-chart-title';
+    const el = document.createElement('vaii-menu-item');
+    el.className = 'vaii-menu-item vaii-menu-chart-title';
     el.id = this.newID;
     el.innerHTML = `<font color=${theme.chartColor}>${title}</font><canvas id="menu-canvas-${id}" class="menu-chart-canvas" width="${width}px" height="${height}px"></canvas>`;
     if (this.container) this.container.appendChild(el);
