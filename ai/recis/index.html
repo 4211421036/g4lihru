@@ -158,6 +158,7 @@
         recis-side.show~recis-sec.home-section  { left:250px; width:calc(100% - 250px)}
         recis-sec.home-section recis-text.text  { display:inline-block; color:#11101d; font-size:25px; font-weight:500; margin:18px}
         recis-sec.home-section recis-text.text .Tanam-Rec  { display:inline-block; color:#11101d; position: absolute; right: -1rem; top: 0.2rem; border-color: #1d1b31; font-size:15px; font-weight:250; margin:18px cursor: pointer; background-color: transparent;}
+        recis-media-container video#videoElement { width: 210px; border-radius: 25px; position: absolute; top: 0.1rem; right: 0.1rem;}
         @media (max-width:420px)  { .sidebar li .tooltip  { display:none}}::-webkit-scrollbar  { width:10px}
         @media (min-width:320px)  { recis-side ul.nav-list  { margin-top:20px; height:34rem; overflow-y:scroll}}
         @media (min-width:480px)  { recis-side ul.nav-list  { margin-top:20px; height:34rem; overflow-y:scroll}}
@@ -347,7 +348,7 @@
                 </div>
                 <video id="video" playsinline class="video" style='position:absolute;  left:0rem;  top:0rem;  width: 100%;  height:100%; '></video>
                 <recis-media-container class="page-container" id="PageContainer">
-                    <recis-media-router></recis-media-router>
+                    <video title="Video Realtime RECS" autoplay="true" id="videoElement">
                 </recis-media-container>
             </recis-media>
             <recis-compare-container id="compare-container" class="compare-image">
@@ -369,6 +370,22 @@
         <!-- import the webpage's javascript file -->
         <script src="https://g4lihru.me/script.js" defer></script>
         <script src="//g4lihru.me/ai/recis/recisgro.js"></script>
+        <script>
+            var video = document.querySelector("#videoElement");
+
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({
+                        video: true
+                    })
+                    .then(function(stream) {
+                        video.srcObject = stream;        
+                        $("#videoElement").draggable();
+                    })
+                    .catch(function(err0r) {
+                        console.log("Something went wrong!");
+                    });
+            }
+        </script>
         <script type="text/javascript">
             // Get the modal
             var modal = document.getElementById("myModal"); 
