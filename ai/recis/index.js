@@ -72,7 +72,7 @@ const ui = {
 
 const pwa = {
   enabled: true,
-  cacheName: 'VAII',
+  cacheName: 'RECIS',
   scriptFile: 'index-pwa.js',
   cacheModels: true,
   cacheWASM: true,
@@ -203,15 +203,15 @@ async function drawResults(input) {
   // draw fps chart
   await menu.process.updateChart('FPS', ui.detectFPS);
 
-  document.getElementById('vaii-segmentation-container').style.display = userConfig.segmentation.enabled ? 'block' : 'none';
+  document.getElementById('recis-segmentation-container').style.display = userConfig.segmentation.enabled ? 'block' : 'none';
   if (userConfig.segmentation.enabled && ui.buffered) { // refresh segmentation if using buffered output
     const seg = await human.segmentation(input, ui.background);
     if (seg.alpha) {
-      const canvasSegMask = document.getElementById('vaii-segmentation-mask');
+      const canvasSegMask = document.getElementById('recis-segmentation-mask');
       const ctxSegMask = canvasSegMask.getContext('2d');
       ctxSegMask.clearRect(0, 0, canvasSegMask.width, canvasSegMask.height); // need to clear as seg.alpha is alpha based canvas so it adds
       ctxSegMask.drawImage(seg.alpha, 0, 0, seg.alpha.width, seg.alpha.height, 0, 0, canvasSegMask.width, canvasSegMask.height);
-      const canvasSegCanvas = document.getElementById('vaii-segmentation-canvas');
+      const canvasSegCanvas = document.getElementById('recis-segmentation-canvas');
       const ctxSegCanvas = canvasSegCanvas.getContext('2d');
       ctxSegCanvas.clearRect(0, 0, canvasSegCanvas.width, canvasSegCanvas.height); // need to clear as seg.alpha is alpha based canvas so it adds
       ctxSegCanvas.drawImage(seg.canvas, 0, 0, seg.alpha.width, seg.alpha.height, 0, 0, canvasSegCanvas.width, canvasSegCanvas.height);
@@ -269,7 +269,7 @@ async function drawResults(input) {
   const backend = result.backend || human.tf.getBackend();
   const gpu = engine.backendInstance ? `gpu: ${(engine.backendInstance.numBytesInGPU ? engine.backendInstance.numBytesInGPU : 0).toLocaleString()} bytes` : '';
   const memory = result.tensors ? `tensors: ${result.tensors.toLocaleString()} in worker` : `system: ${engine.state.numBytes.toLocaleString()} bytes ${gpu} | tensors: ${engine.state.numTensors.toLocaleString()}`;
-  document.getElementById('vaii-log').innerHTML = `
+  document.getElementById('recis-log').innerHTML = `
     video: ${ui.camera.name} | facing: ${ui.camera.facing} | screen: ${window.innerWidth} x ${window.innerHeight} camera: ${ui.camera.width} x ${ui.camera.height} ${processing}<br>
     backend: ${backend} | ${memory}<br>
     performance: ${str(interpolated.performance)}ms ${fps}<br>
@@ -302,7 +302,7 @@ async function setupCamera() {
   ui.busy = true;
   const video = document.getElementById('video');
   const canvas = document.getElementById('canvas');
-  const output = document.getElementById('vaii-log');
+  const output = document.getElementById('recis-log');
   if (ui.useWebRTC) {
     status('setting up webrtc connection');
     try {
@@ -417,7 +417,7 @@ function webWorker(input, image, canvas, timestamp) {
         if (!bench) initPerfMonitor();
         bench.nextFrame(timestamp);
       }
-      if (document.getElementById('vaii-gl-bench')) document.getElementById('vaii-gl-bench').style.display = ui.bench ? 'block' : 'none';
+      if (document.getElementById('recis-gl-bench')) document.getElementById('recis-gl-bench').style.display = ui.bench ? 'block' : 'none';
       lastDetectedResult = msg.data.result;
 
       if (msg.data.image) { // we dont really need canvas since we draw from video
@@ -493,10 +493,10 @@ function runHumanDetect(input, canvas, timestamp) {
         if (!bench) initPerfMonitor();
         bench.nextFrame(timestamp);
       }
-      if (document.getElementById('vaii-gl-bench')) document.getElementById('vaii-gl-bench').style.display = ui.bench ? 'block' : 'none';
+      if (document.getElementById('recis-gl-bench')) document.getElementById('recis-gl-bench').style.display = ui.bench ? 'block' : 'none';
       if (result.error) {
         log(result.error);
-        document.getElementById('vaii-log').innerText += `\nHuman error: ${result.error}`;
+        document.getElementById('recis-log').innerText += `\nHuman error: ${result.error}`;
       } else {
         lastDetectedResult = result;
         if (!ui.drawThread) drawResults(input);
@@ -542,7 +542,7 @@ async function processImage(input, title) {
         // zoom in/out on click
         if (evt.target.style.width === `${stdWidth}px`) {
           evt.target.style.width = '';
-          evt.target.style.height = `${document.getElementById('vaii-log').offsetTop - document.getElementById('media').offsetTop}px`;
+          evt.target.style.height = `${document.getElementById('recis-log').offsetTop - document.getElementById('media').offsetTop}px`;
         } else {
           evt.target.style.width = `${stdWidth}px`;
           evt.target.style.height = '';
@@ -579,7 +579,7 @@ async function processImage(input, title) {
 
 async function processVideo(input, title) {
   status(`processing video: ${title}`);
-  const video = document.createElement('vaii-video');
+  const video = document.createElement('recis-video');
   const canvas = document.getElementById('canvas');
   video.id = 'video-file';
   video.controls = true;
@@ -634,7 +634,7 @@ async function detectSampleImages() {
 function setupMenu() {
   const x = [`${document.getElementById('btnDisplay').offsetLeft}px`, `${document.getElementById('btnImage').offsetLeft}px`, `${document.getElementById('btnProcess').offsetLeft}px`, `${document.getElementById('btnModel').offsetLeft}px`];
 
-  const top = `${document.getElementById('vaii-bar').clientHeight}px`;
+  const top = `${document.getElementById('recis-bar').clientHeight}px`;
 
   menu.display = new Menu(document.body, '', { top, left: x[0] });
   menu.display.addBool('results tree', ui, 'results', (val) => {
@@ -760,7 +760,7 @@ async function resize() {
   }
   const x = [`${document.getElementById('btnDisplay').offsetLeft}px`, `${document.getElementById('btnImage').offsetLeft}px`, `${document.getElementById('btnProcess').offsetLeft}px`, `${document.getElementById('btnModel').offsetLeft}px`];
 
-  const top = `${document.getElementById('vaii-bar').clientHeight - 3}px`;
+  const top = `${document.getElementById('recis-bar').clientHeight - 3}px`;
 
   menu.display.menu.style.top = top;
   menu.image.menu.style.top = top;
@@ -852,7 +852,7 @@ async function dragAndDrop() {
 }
 
 async function drawHints() {
-  const hint = document.getElementById('vaii-hint');
+  const hint = document.getElementById('recis-hint');
   ui.hintsThread = setInterval(() => {
     const rnd = Math.trunc(Math.random() * hints.length);
     hint.innerText = 'hint: ' + hints[rnd];
@@ -908,7 +908,7 @@ async function main() {
       const msg = evt.reason.message || evt.reason || evt;
       // eslint-disable-next-line no-console
       console.error(msg);
-      document.getElementById('vaii-log').innerHTML = msg;
+      document.getElementById('recis-log').innerHTML = msg;
       status(`exception: ${msg}`);
       evt.preventDefault();
     });
@@ -983,7 +983,7 @@ async function main() {
   // setup main menu
   await setupMenu();
   await resize();
-  document.getElementById('vaii-log').innerText = `Human: version ${human.version}`;
+  document.getElementById('recis-log').innerText = `Human: version ${human.version}`;
 
   // preload models
   if (ui.modelsPreload && !ui.useWorker) {
@@ -1004,7 +1004,7 @@ async function main() {
   }
 
   // ready
-  status('human: ready');
+  status('Plant: ready');
   document.getElementById('loader').style.display = 'none';
   document.getElementById('play').style.display = 'block';
   document.getElementById('results').style.display = 'none';
