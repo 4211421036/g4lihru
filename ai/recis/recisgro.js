@@ -98,7 +98,7 @@ template.innerHTML = `
         font-size: 0.9rem;
     }
     
-    vaii-bar {
+    recis-bar {
         width: 100%;
         background: #303030;
         display: flex;
@@ -218,9 +218,9 @@ template.innerHTML = `
     }
     
     </style>
-    <vaii-ground-wave-one class='wave one'></vaii-ground-wave-one>
-    <vaii-ground-wave-two class='wave two'></vaii-ground-wave-two>
-    <vaii-ground-wave-three class='wave three'></vaii-ground-wave-three>`;
+    <recis-ground-wave-one class='wave one'></recis-ground-wave-one>
+    <recis-ground-wave-two class='wave two'></recis-ground-wave-two>
+    <recis-ground-wave-three class='wave three'></recis-ground-wave-three>`;
 
 class ground extends HTMLElement {
     constructor() {
@@ -231,4 +231,4 @@ class ground extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
-window.customElements.define('vaii-ground', ground);
+window.customElements.define('recis-ground', ground);
