@@ -157,6 +157,7 @@
         recis-sec.home-section  { display: block; position:relative; background:#e4e9f7; min-height:100vh; top:0; left:78px; width:calc(100% - 78px); transition:all .5s ease; z-index:2}
         recis-side.show~recis-sec.home-section  { left:250px; width:calc(100% - 250px)}
         recis-sec.home-section recis-text.text  { display:inline-block; color:#11101d; font-size:25px; font-weight:500; margin:18px}
+        recis-sec.home-section recis-text.text .Tanam-Rec  { display:inline-block; color:#11101d; position: absolute; right: -1rem; font-size:25px; font-weight:500; margin:18px}
         @media (max-width:420px)  { .sidebar li .tooltip  { display:none}}::-webkit-scrollbar  { width:10px}
         @media (min-width:320px)  { recis-side ul.nav-list  { margin-top:20px; height:34rem; overflow-y:scroll}}
         @media (min-width:480px)  { recis-side ul.nav-list  { margin-top:20px; height:34rem; overflow-y:scroll}}
@@ -248,7 +249,9 @@
         </recis-side>
         <!-- Shady: CSS Root Open -->
         <recis-sec class="home-section">
-            <recis-text class="text">recis</recis-text>
+            <recis-text class="text">recis
+                <button class="Tanam-Rec">Penanaman</button>
+            </recis-text>
             <recis-play disabled id="play" class="play icon-play"></recis-play>
             <recis-ground id="background" class="background">
             </recis-ground>
@@ -482,11 +485,11 @@
                 function notify() {
                     var notification = new Notification('Notifikasi RECIS', {
                         icon: 'https://g4lihru.me/345677.png',
-                        body: 'Terima kasih telah mengikuti perkembangan RECS.\n Terus jaga tanaman anda, sebab dengan menjaga tanaman anda untuk tumbuh, maka anda ikut mewujudkan SDGs 2030!',
+                        body: 'Terima kasih telah mengikuti perkembangan RECS.\n Terus mewujudkan SDGs 2030 dengan cara menjaga tanaman anda!',
                         image: "https://g4lihru.me/345677.png",
                         badge: "https://g4lihru.me/345677.png",
                         vibrate: [200, 100, 200],
-                        tag: "Patuhi Rambu-rambu lalu lintas!",
+                        tag: "Jaga dan Rawat Tanaman anda!",
                     });
 
                     notification.onclick = function() {
