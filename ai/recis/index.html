@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#3367D6">
     <meta property="og:title" content="G4lihru Website's" />
     <meta property="og:type" content="video.movie" />
-    <meta property="og:url" content="https://www.g4lihru.me/" />
+    <meta property="og:url" content="https://www.g4lihru.me/ai/recis" />
     <meta property="og:image" content="https://g4lihru.me/345677.png" />
     <meta name="keywords" content="recis">
     <meta name="application-name" content="recis">
@@ -423,7 +423,7 @@
             }); 
         </script>
         <script>
-            function RECSNotif() {
+            function RECISNotif() {
                 if (!("Notification" in window)) {
                     alert("This browser does not support system notifications");
                 } else if (Notification.permission === "granted") {
@@ -437,7 +437,7 @@
                 }
 
                 function notify() {
-                    var notification = new Notification('Notifikasi RECS', {
+                    var notification = new Notification('Notifikasi RECIS', {
                         icon: 'https://g4lihru.me/345677.png',
                         body: 'Terima kasih telah mengikuti perkembangan RECS.\n Terus jaga tanaman anda, sebab dengan menjaga tanaman anda untuk tumbuh, maka anda ikut mewujudkan SDGs 2030!',
                         image: "https://g4lihru.me/345677.png",
@@ -448,13 +448,13 @@
 
                     notification.onclick = function() {
                         event.preventDefault(); // prevent the browser from focusing the Notification's tab
-                        window.open("https://g4lihru.me/ai/recs", '_blank');
+                        window.open("https://g4lihru.me/ai/recis", '_blank');
                     };
                     setTimeout(notification.close.bind(notification), 7000);
                 }
 
             }
-            recisNotif();
+            RECISNotif();
         </script>
     </body>
 
