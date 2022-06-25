@@ -109,11 +109,6 @@
         ::-webkit-scrollbar-track  { border-radius:5px; box-shadow:inset 0 0 10px rgba(0,0,0,.25)}
         ::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d}
         ::-webkit-scrollbar-thumb:hover  { background:#555}recis-side  { position:fixed; left:0; top:0; height:100%; width:78px; background:#11101d; padding:6px 14px; z-index:99; transition:all .5s ease}
-        .modal-plant-cont { position: absolute; width: 100%; height: 100%; left: 0; top: 0; visibility: hidden;}
-        .modals-plant-cont.modal-plant-cont-active { visibility: visible;}
-        .modals-plant-cont modal-plant-map { background-color: white; height: 200px; position: absolute; top: 10px; width: 94%; margin-left: 3%; margin-right: 3%; opacity: 0; /* hide all modals that are not active by default */ transition: opacity 300ms;}
-        /* only show the modals with the active class applied. */
-        .modals-plant-cont modal-plant-map.modal-active { opacity: 1; z-index: 1;}
         recis-side.show  { width:250px}
         recis-side.bx-menu::before  { content:"\eac1"}
         recis-side.show .bx-menu::after  { content:"\eac3";  transition:all .20s ease}
@@ -245,9 +240,8 @@
                     <span class="tooltip">Record</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="open">
                         <i class='bx bx-map bx-tada' title="Maps Project RECIS"></i>
-                        <button class="show-btn">Show Modal</button>
                         <span class="links_name">map RECIS</span>
                     </a>
                     <span class="tooltip">map RECIS</span>
@@ -337,7 +331,9 @@
                         </div>
                     </div>
                 </div>
-                <modal-plant-map class="modals-plant-cont"></modal-plant-map>
+                <modal-plant-map title="Important!">
+                    <p>This is some really important stuff</p>
+                </modal-plant-map>
                 <video id="video" playsinline class="video" style='position:absolute;  left:0rem;  top:0rem;  width: 100%;  height:100%; '></video>
                 <recis-media-container class="page-container" id="PageContainer">
                     <recis-media-container-plant title="Penanaman RECIS">
@@ -463,29 +459,157 @@
         <script src="//g4lihru.me/ai/recis/recisgro.js"></script>
         <script src="./dist/modal.js"></script>
         <script>
-            // build your modal content
-            var modalEl = document.createElement('modal-plant-map');
-            modalEl.innerHTML = '<p>The world\'s simplest modal is showing!</p><button class="close-btn">Close Modal</button>';
-            var closeButton = modalEl.getElementsByClassName('close-btn')[0];
-            var showButton = document.getElementsByClassName('show-btn')[0];
-
-            // start your modal instance
-            var modal = new Modal.default(modalEl, {
-                containerEl: document.getElementsByClassName('modal-plant-cont')[0],
-                activeClass: 'modal-active'
+            modal = document.querySelector("modal-plant-map");
+            modal.addEventListener("cancel", function () {
+              console.log("cancel event raised");
+            });
+            modal.addEventListener("ok", function () {
+              console.log("ok event raised");
             });
 
-            // when the show button is clicked, show modal.
-            showButton.addEventListener('click', function () {
-                modal.show();
-            });
+            open = document.querySelector(".open");
+            open.addEventListener("click", function () {
+              modal.visible = true;
+            })
+          </script>
 
-            // when the close button is clicked, hide modal.
-            closeButton.addEventListener('click', function () {
-                modal.hide();
-            });
+          <script>
+            class Modal extends HTMLElement {
+              get visible() {
+                return this.hasAttribute("visible");
+              }
 
-        </script>
+              set visible(value) {
+                if (value) {
+                  this.setAttribute("visible", "");
+                } else {
+                  this.removeAttribute("visible");
+                }
+              }
+
+              get title() {
+                return this.getAttribute('title');
+              }
+
+              set title(value) {
+                this.setAttribute('title', value);
+              }
+
+              constructor() {
+                super();
+              }
+
+              connectedCallback() {
+                this._render();
+                this._attachEventHandlers();
+              }
+              static get observedAttributes() {
+                return ["visible", "title"];
+              }
+              attributeChangedCallback(name, oldValue, newValue) {
+                if (name === "title" && this.shadowRoot) {
+                  this.shadowRoot.querySelector(".title").textContent = newValue;
+                }
+                if (name === "visible" && this.shadowRoot) {
+                  if (newValue === null) {
+                    this.shadowRoot.querySelector(".wrapper").classList.remove("visible");
+                    this.dispatchEvent(new CustomEvent("close"));
+                  } else {
+                    this.shadowRoot.querySelector(".wrapper").classList.add("visible");
+                    this.dispatchEvent(new CustomEvent("open"))
+                  }
+                }
+              }
+
+              _render() {
+                const wrapperClass = this.visible ? "wrapper visible" : "wrapper";
+                const container = document.createElement("div");
+                container.innerHTML = `
+                  <style>
+                    .wrapper {
+                      position: fixed;
+                      left: 0;
+                      top: 0;
+                      width: 100%;
+                      height: 100%;
+                      background-color: gray;
+                      opacity: 0.5;
+                      visibility: hidden;
+                      transform: scale(1.1);
+                      transition: visibility 0s linear .25s,opacity .25s 0s,transform .25s;
+                      z-index: 1;
+                    }
+                    .visible {
+                      opacity: 1;
+                      visibility: visible;
+                      transform: scale(1);
+                      transition: visibility 0s linear 0s,opacity .25s 0s,transform .25s;
+                    }
+                    .modal {
+                      font-family: Helvetica;
+                      font-size: 14px;
+                      padding: 10px 10px 5px 10px;
+                      background-color: #fff;
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%,-50%);
+                      border-radius: 2px;
+                      min-width: 300px;
+                    }
+                    .title {
+                      font-size: 18px;
+                    }
+                    .button-container {
+                      text-align: right;
+                    }
+                    button {
+                      min-width: 80px;
+                      background-color: #848e97;
+                      border-color: #848e97;
+                      border-style: solid;
+                      border-radius: 2px;
+                      padding: 3px;
+                      color:white;
+                      cursor: pointer;
+                    }
+                    button:hover {
+                      background-color: #6c757d;
+                      border-color: #6c757d;
+                    }
+                  </style>
+                  <div class='${wrapperClass}'>
+                    <div class='modal'>
+                      <span class='title'>${this.title}</span>
+                      <div class='content'>
+                        <slot></slot>
+                      </div>
+                      <div class='button-container'>
+                        <button class='cancel'>Cancel</button>
+                        <button class='ok'>Okay</button>
+                      </div>
+                    </div>
+                  </div>`;
+
+                const shadowRoot = this.attachShadow({ mode: 'open' });
+                shadowRoot.appendChild(container);
+              }
+
+              _attachEventHandlers() {
+                const cancelButton = this.shadowRoot.querySelector(".cancel");
+                cancelButton.addEventListener('click', e => {
+                  this.dispatchEvent(new CustomEvent("cancel"))
+                  this.removeAttribute("visible");
+                });
+                const okButton = this.shadowRoot.querySelector(".ok");
+                okButton.addEventListener('click', e => {
+                  this.dispatchEvent(new CustomEvent("ok"))
+                  this.removeAttribute("visible");
+                });
+              }
+            }
+            window.customElements.define('modal-plant-map', Modal);
+          </script>
         <script>
             var video = document.querySelector("#videoElement");
 
