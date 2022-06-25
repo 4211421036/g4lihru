@@ -48,7 +48,7 @@ export default class Modal extends Module {
             onShow: null,
             onClickOutside: null,
             activeClass: 'modal-active',
-            containerActiveClass: 'modal-container-active'
+            containerActiveClass: 'modals-plant-cont-active'
         }, options);
 
         el = setupEl(el);
