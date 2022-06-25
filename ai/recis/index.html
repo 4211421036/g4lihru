@@ -109,6 +109,11 @@
         ::-webkit-scrollbar-track  { border-radius:5px; box-shadow:inset 0 0 10px rgba(0,0,0,.25)}
         ::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d}
         ::-webkit-scrollbar-thumb:hover  { background:#555}recis-side  { position:fixed; left:0; top:0; height:100%; width:78px; background:#11101d; padding:6px 14px; z-index:99; transition:all .5s ease}
+        .modal-plant-cont { position: absolute; width: 100%; height: 100%; left: 0; top: 0; visibility: hidden;}
+        .modals-plant-cont.modal-plant-cont-active { visibility: visible;}
+        .modals-plant-cont modal-plant-map { background-color: white; height: 200px; position: absolute; top: 10px; width: 94%; margin-left: 3%; margin-right: 3%; opacity: 0; /* hide all modals that are not active by default */ transition: opacity 300ms;}
+        /* only show the modals with the active class applied. */
+        .modals-plant-cont modal-plant-map.modal-active { opacity: 1; z-index: 1;}
         recis-side.show  { width:250px}
         recis-side.bx-menu::before  { content:"\eac1"}
         recis-side.show .bx-menu::after  { content:"\eac3";  transition:all .20s ease}
@@ -240,8 +245,9 @@
                     <span class="tooltip">Record</span>
                 </li>
                 <li>
-                    <a href="#" id="myRECIS" data-toggle="modal-recis">
+                    <a href="#">
                         <i class='bx bx-map bx-tada' title="Maps Project RECIS"></i>
+                        <button class="show-btn">Show Modal</button>
                         <span class="links_name">map RECIS</span>
                     </a>
                     <span class="tooltip">map RECIS</span>
@@ -331,24 +337,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="myRECIS" class="modal" align="center">
-                    <!-- Modal content -->
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <header class="modal-header">
-                                <div class="mx-auto">
-                                    <div align="center" class="py-4">
-                                        <h1 align="center" style="font-size: 42px;" >Record recis</h1>
-                                    </div>  
-                                </div>
-                            </header>
-                            <main class="modal-body overflow-hidden">
-                                <iframe src="https://explorer.land/x/projects" title="RECIS Project"></iframe>
-                            </main>
-                        </div>
-                    </div>
-                </div>
+                <modal-plant-map class="modals-plant-cont"></modal-plant-map>
                 <video id="video" playsinline class="video" style='position:absolute;  left:0rem;  top:0rem;  width: 100%;  height:100%; '></video>
                 <recis-media-container class="page-container" id="PageContainer">
                     <recis-media-container-plant title="Penanaman RECIS">
@@ -472,6 +461,31 @@
         <!-- import the webpage's javascript file -->
         <script src="https://g4lihru.me/script.js" defer></script>
         <script src="//g4lihru.me/ai/recis/recisgro.js"></script>
+        <script src="../dist/modal.js"></script>
+        <script>
+            // build your modal content
+            var modalEl = document.createElement('div');
+            modalEl.innerHTML = '<p>The world\'s simplest modal is showing!</p><button class="close-btn">Close Modal</button>';
+            var closeButton = modalEl.getElementsByClassName('close-btn')[0];
+            var showButton = document.getElementsByClassName('show-btn')[0];
+
+            // start your modal instance
+            var modal = new Modal.default(modalEl, {
+                containerEl: document.getElementsByClassName('modals-container')[0],
+                activeClass: 'modal-active'
+            });
+
+            // when the show button is clicked, show modal.
+            showButton.addEventListener('click', function () {
+                modal.show();
+            });
+
+            // when the close button is clicked, hide modal.
+            closeButton.addEventListener('click', function () {
+                modal.hide();
+            });
+
+        </script>
         <script>
             var video = document.querySelector("#videoElement");
 
