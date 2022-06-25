@@ -464,14 +464,14 @@
         <script src="../dist/modal.js"></script>
         <script>
             // build your modal content
-            var modalEl = document.createElement('div');
+            var modalEl = document.createElement('modal-plant-map');
             modalEl.innerHTML = '<p>The world\'s simplest modal is showing!</p><button class="close-btn">Close Modal</button>';
             var closeButton = modalEl.getElementsByClassName('close-btn')[0];
             var showButton = document.getElementsByClassName('show-btn')[0];
 
             // start your modal instance
             var modal = new Modal.default(modalEl, {
-                containerEl: document.getElementsByClassName('modals-container')[0],
+                containerEl: document.getElementsByClassName('modal-plant-cont')[0],
                 activeClass: 'modal-active'
             });
 
