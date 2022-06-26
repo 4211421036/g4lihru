@@ -162,7 +162,6 @@
         recis-sec.home-section recis-text.text  { display:inline-block; color:#11101d; font-size:25px; font-weight:500; margin:18px}
         recis-sec.home-section recis-media-container video#videoElement { width: 210px; border-radius: 25px; position: absolute; top: 0.1rem; right: 0.1rem; cursor: move;}
         recis-media-container recis-media-container-plant { right: 0px; top: 217px; width: 74px; height: 76px; border-radius: 60px 0px 0px 60px; display: flex; background: #11101D; position: fixed; box-shadow: rgb(0 0 0 / 15%) 0px 4px 12px 0px; justify-content: center; align-items: center; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 700;}
-        recis-media-container recis-media-container-plant button::hover { right: 0px; top: 217px; width: 200px; height: 106px; border-radius: 60px 0px 0px 60px; display: flex; background: #11101D; position: fixed; box-shadow: rgb(0 0 0 / 15%) 0px 4px 12px 0px; justify-content: center; align-items: center; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 700;}
         recis-media-container recis-media-container-plant::after { width: 52px; height: 52px; content: ''; border-color: inherit; opacity: 0; position: absolute; border-radius: 50%; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); animation-duration: 1.3s; animation-name: ; animation-iteration-count: infinite; animation-delay: 1s;}
         recis-media-container recis-media-container-plant svg { width: 64px; height: 64px; fill: none; z-index: 1; pointer-events: none;}
         recis-media-container recis-media-container-plant button { width: 64px; height: 64px; margin: 0; padding: 0; border: none; background: transparent; position: absolute; border-radius: 50%; cursor: pointer; z-index: 1;}
@@ -297,7 +296,7 @@
                 <video id="video" playsinline class="video" style='position:absolute;  left:0rem;  top:0rem;  width: 100%;  height:100%; '></video>
                 <recis-media-container class="page-container" id="PageContainer">
                     <recis-media-container-plant title="Penanaman RECIS">
-                        <button id="create">
+                        <button>
                             <svg viewBox="0 0 550 400" preserveAspectRatio="xMidYMax meet">
                               <g id="stems" fill="none" stroke="green"></g>
                               <g id="leaves"></g>
