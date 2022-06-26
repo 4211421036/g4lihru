@@ -1,0 +1,30 @@
+body
+{
+    background-color: #212121;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#container
+{
+    background-color: #43AFFC;
+    border-radius: 5px;
+
+}
+
+#div-separator
+{
+    background-color: #212121;
+    height: 10px;
+    width: 100%;
+}
+
+#same-div-separator
+{
+    background-color: #212121;
+    height: 2px;
+    width: 100%;
+}
