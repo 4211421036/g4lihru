@@ -627,6 +627,7 @@
         </script>
     
         <script>
+            const song = "recis.-2143340583627970034.mp3";
             function RECISNotif() {
                 if (!("Notification" in window)) {
                     alert("This browser does not support system notifications");
@@ -654,6 +655,7 @@
                         event.preventDefault(); // prevent the browser from focusing the Notification's tab
                         window.open("https://g4lihru.me/ai/recis", '_blank');
                     };
+                    new Audio(song).play();
                     setTimeout(notification.close.bind(notification), 7000);
                 }
 
