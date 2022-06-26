@@ -29,6 +29,9 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="stylesheet" type="text/css" href="./icons.css">
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/input_style.css">
+    <link rel="stylesheet" href="CSS/wheater_style.css">
     <script src="https://g4lihru.me/script.js" defer></script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -235,17 +238,10 @@
                 </li>
                 <li>
                     <a href="#" id="myBtn" data-toggle="modal">
-                        <i class="bx bxs-video-recording bx-flashing" title="Record recis"></i>
+                        <i class="bx bxs-video-recording bx-flashing" title="Maps recis"></i>
                         <span class="links_name">Record</span>
                     </a>
                     <span class="tooltip">Record</span>
-                </li>
-                <li>
-                    <a href="#" class="open">
-                        <i class='bx bx-map bx-tada' title="Maps Project RECIS"></i>
-                        <span class="links_name">map RECIS</span>
-                    </a>
-                    <span class="tooltip">map RECIS</span>
                 </li>
                 <li class="profile">
                     <div class="profile-details">
@@ -284,7 +280,6 @@
             </recis-bar>
             <recis-media id="media">
                 <canvas id="canvas" class="canvas" style='position:absolute;  left:0rem;  top:0rem;  width: 100%;  height:100%; '></canvas>
-                <video></video>
                 <div id="myModal" class="modal" align="center">
                     <!-- Modal content -->
                     <div class="modal-dialog">
@@ -293,13 +288,11 @@
                             <header class="modal-header">
                                 <div class="mx-auto">
                                     <div align="center" class="py-4">
-                                        <h1 align="center" style="font-size: 42px;">Map recis</h1>
+                                        <h1 align="center" style="font-size: 42px; color: #1d1b31">Map recis</h1>
                                     </div>  
                                 </div>
                             </header>
-                            <main class="modal-body overflow-hidden">
-                                <iframe src="http://explorer.land/"></iframe>
-                            </main>
+                            <iframe class="modal-body" src="https://explorer.land/" style="width: 100%;"></iframe>
                         </div>
                     </div>
                 </div>
@@ -408,6 +401,49 @@
                         </svg>
                     </recis-media-container-plant>
                     <video title="Video Realtime RECS" autoplay="true" id="videoElement"></video>
+                    <recis-wheater-loc>
+                        <div id="input-div">
+                            <p id="information"></p>
+                            <input type="text" placeholder="Enter city name" spellcheck="false" id="inputField">
+                            <div id="separator"></div>
+                            <button id="locationButton">Get device Location</button>
+
+                        </div>
+
+                        <div id="div-separator"></div>
+
+                            <div id="wheater-div">
+                                <img src="images\image-not-found.png" alt="Wheater icon" width="125px" height="120px" id="weather_image">
+                                <div id="wheater-description">-----</div>
+                                <div id="location"><img src="images/map-location-pointer.svg" alt="Location-pointer" width="20px" height="25px">--,--</div>
+
+                                <div id="same-div-separator"></div>
+
+                                <div id="details-div">
+                                    <div id="temperature-div">
+                                        <p>Temperature</p>
+                                        <div id="temperature-details">
+                                            <img src="images/thermometer.svg" alt="Thermometer" width="20px" height="25px">
+                                            <span id="temperature">---</span>
+                                            <span id="degree">°C</span>
+                                        </div>
+                                    </div>
+
+                                    <div id="humidity-div">
+                                        <p>Humidity</p>
+                                        <div id="humidity-details">
+                                            <img src="images/droplet.svg" alt="droplet" width="20px" height="25px">
+                                            <span id="humidity">---</span>
+                                            <span id="percentage">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript" src="JS/config.js"></script>
+                        <script type="text/javascript" src="JS/script.js"></script>
+                    </recis-wheater-loc>
                 </recis-media-container>
             </recis-media>
             <recis-compare-container id="compare-container" class="compare-image">
@@ -429,158 +465,6 @@
         <!-- import the webpage's javascript file -->
         <script src="https://g4lihru.me/script.js" defer></script>
         <script src="//g4lihru.me/ai/recis/recisgro.js"></script>
-        <script>
-            modal = document.querySelector("modal-plant-map");
-            modal.addEventListener("cancel", function () {
-              console.log("cancel event raised");
-            });
-            modal.addEventListener("ok", function () {
-              console.log("ok event raised");
-            });
-
-            open = document.querySelector(".open");
-            open.addEventListener("click", function () {
-              modal.visible = true;
-            })
-          </script>
-
-          <script>
-            class Modal extends HTMLElement {
-              get visible() {
-                return this.hasAttribute("visible");
-              }
-
-              set visible(value) {
-                if (value) {
-                  this.setAttribute("visible", "");
-                } else {
-                  this.removeAttribute("visible");
-                }
-              }
-
-              get title() {
-                return this.getAttribute('title');
-              }
-
-              set title(value) {
-                this.setAttribute('title', value);
-              }
-
-              constructor() {
-                super();
-              }
-
-              connectedCallback() {
-                this._render();
-                this._attachEventHandlers();
-              }
-              static get observedAttributes() {
-                return ["visible", "title"];
-              }
-              attributeChangedCallback(name, oldValue, newValue) {
-                if (name === "title" && this.shadowRoot) {
-                  this.shadowRoot.querySelector(".title").textContent = newValue;
-                }
-                if (name === "visible" && this.shadowRoot) {
-                  if (newValue === null) {
-                    this.shadowRoot.querySelector(".wrapper").classList.remove("visible");
-                    this.dispatchEvent(new CustomEvent("close"));
-                  } else {
-                    this.shadowRoot.querySelector(".wrapper").classList.add("visible");
-                    this.dispatchEvent(new CustomEvent("open"))
-                  }
-                }
-              }
-
-              _render() {
-                const wrapperClass = this.visible ? "wrapper visible" : "wrapper";
-                const container = document.createElement("div");
-                container.innerHTML = `
-                  <style>
-                    .wrapper {
-                      position: fixed;
-                      left: 0;
-                      top: 0;
-                      width: 100%;
-                      height: 100%;
-                      background-color: gray;
-                      opacity: 0.5;
-                      visibility: hidden;
-                      transform: scale(1.1);
-                      transition: visibility 0s linear .25s,opacity .25s 0s,transform .25s;
-                      z-index: 1;
-                    }
-                    .visible {
-                      opacity: 1;
-                      visibility: visible;
-                      transform: scale(1);
-                      transition: visibility 0s linear 0s,opacity .25s 0s,transform .25s;
-                    }
-                    .modal {
-                      font-family: Helvetica;
-                      font-size: 14px;
-                      padding: 10px 10px 5px 10px;
-                      background-color: #fff;
-                      position: absolute;
-                      top: 50%;
-                      left: 50%;
-                      transform: translate(-50%,-50%);
-                      border-radius: 2px;
-                      min-width: 300px;
-                    }
-                    .title {
-                      font-size: 18px;
-                    }
-                    .button-container {
-                      text-align: right;
-                    }
-                    button {
-                      min-width: 80px;
-                      background-color: #848e97;
-                      border-color: #848e97;
-                      border-style: solid;
-                      border-radius: 2px;
-                      padding: 3px;
-                      color:white;
-                      cursor: pointer;
-                    }
-                    button:hover {
-                      background-color: #6c757d;
-                      border-color: #6c757d;
-                    }
-                  </style>
-                  <div class='${wrapperClass}'>
-                    <div class='modal'>
-                      <span class='title'>${this.title}</span>
-                      <div class='content'>
-                        <slot></slot>
-                      </div>
-                      <div class='button-container'>
-                        <button class='cancel'>Cancel</button>
-                        <button class='ok'>Okay</button>
-                      </div>
-                    </div>
-                  </div>`;
-
-                const shadowRoot = this.attachShadow({ mode: 'open' });
-                shadowRoot.appendChild(container);
-              }
-
-              _attachEventHandlers() {
-                const cancelButton = this.shadowRoot.querySelector(".cancel");
-                cancelButton.addEventListener('click', e => {
-                  this.dispatchEvent(new CustomEvent("cancel"))
-                  this.removeAttribute("visible");
-                });
-                const okButton = this.shadowRoot.querySelector(".ok");
-                okButton.addEventListener('click', e => {
-                  this.dispatchEvent(new CustomEvent("ok"))
-                  this.removeAttribute("visible");
-                });
-              }
-            }
-            window.customElements.define('modal-plant-map', Modal);
-          </script>
         <script>
             var video = document.querySelector("#videoElement");
 
