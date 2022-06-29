@@ -434,7 +434,7 @@
                             <circle class="eplantEntranceCircleProgressBar-DS-EntryPoint1-1" id="circleProgressBar" cx="32" cy="32" r="28.5" stroke-width="5" stroke="url(#gradientBubbleProgressBar)" style="stroke-dasharray: 10.5, 175; transform: rotate(0deg); transform-origin: 50% 50%;"></circle>
                         </svg>
                     </recis-media-container-plant>
-                    <video title="Video Realtime RECS" autoplay="true" id="videoElement"></video>
+                    <video title="Video Realtime RECIS" autoplay="true" id="videoRECIS"></video>
                 </recis-media-container>
             </recis-media>
             <recis-compare-container id="compare-container" class="compare-image">
@@ -457,7 +457,7 @@
         <script src="https://g4lihru.me/script.js" defer></script>
         <script src="//g4lihru.me/ai/recis/recisgro.js"></script>
         <script>
-            var video = document.querySelector("#videoElement");
+            var video = document.querySelector("#videoRECIS");
 
             if (navigator.mediaDevices.getUserMedia) {
                 navigator.mediaDevices.getUserMedia({
