@@ -33,7 +33,7 @@ function createExpandedElement(node) {
   if (node.key === null) lineChildren = [caretElem, typeElem, sizeElem];
   else if (node.parent.type === 'array') lineChildren = [caretElem, indexElem, sizeElem];
   else lineChildren = [caretElem, keyElem, sizeElem];
-  const lineElem = createElement('div', { className: 'json-line', children: lineChildren });
+  const lineElem = createElement('recis-line', { className: 'json-line', children: lineChildren });
   if (node.depth > 0) lineElem.style = `margin-left: ${node.depth * 24}px;`;
   return lineElem;
 }
