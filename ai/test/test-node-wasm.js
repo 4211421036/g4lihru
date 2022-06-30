@@ -11,7 +11,7 @@ Human.env.Image = Image; // requires monkey-patch as wasm does not have tf.brows
 
 const config = {
   cacheSensitivity: 0,
-  modelBasePath: 'https://vladmandic.github.io/human/models/',
+  modelBasePath: '//g4lihru.me/ai/models/',
   // modelBasePath: 'http://localhost:10030/models/',
   backend: 'wasm',
   wasmPath: 'node_modules/@tensorflow/tfjs-backend-wasm/dist/',
