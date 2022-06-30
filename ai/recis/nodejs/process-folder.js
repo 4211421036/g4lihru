@@ -14,7 +14,7 @@ const config = { // just enable all and leave default settings
   object: { enabled: true },
   gesture: { enabled: true },
   hand: { enabled: true },
-  body: { enabled: true, modelPath: 'https://vladmandic.github.io/human-models/models/movenet-multipose.json' },
+  body: { enabled: true, modelPath: '//g4lihru.me/ai/models/movenet-multipose.json' },
 };
 
 async function main() {
