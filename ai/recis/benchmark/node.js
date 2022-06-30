@@ -9,7 +9,7 @@ const loop = 20;
 
 const myConfig = {
   backend: 'tensorflow',
-  modelBasePath: 'https://vladmandic.github.io/human/models',
+  modelBasePath: '//g4lihru.me/ai/models/',
   // wasmPath: 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@3.18.0/dist/',
   debug: true,
   async: true,
