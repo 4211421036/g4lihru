@@ -1,9 +1,9 @@
 /**
  * Human main module
  * @default Human Library
- * @summary <https://github.com/vladmandic/human>
- * @author <https://github.com/vladmandic>
- * @copyright <https://github.com/vladmandic>
+ * @summary <https://g4lihru.me/ai/vaii>
+ * @author <https://g4lihru.me/>
+ * @copyright <https://g4lihru.me/>
  * @license MIT
  */
 
@@ -134,7 +134,7 @@ export class Human {
   constructor(userConfig?: Partial<Config>) {
     this.env = env;
     defaults.wasmPath = tf.version_core.includes('-') // custom build or official build
-      ? 'https://vladmandic.github.io/tfjs/dist/'
+      ? 'https://g4lihru.me/ai/tfjs/dist/'
       : `https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@${tf.version_core}/dist/`;
     defaults.modelBasePath = env.browser ? '../models/' : 'file://models/';
     defaults.backend = env.browser ? 'humangl' : 'tensorflow';
