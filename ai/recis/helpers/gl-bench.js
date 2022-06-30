@@ -3,14 +3,14 @@
 
 const UICSS = `
   #vaii-gl-bench { position: absolute; right: 1rem; bottom: 1rem; z-index:1000; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
-  #vaii-gl-bench vaii-gl { position: relative; display: block; margin: 4px; padding: 0 2px 0 2px; background: #303030; border-radius: 0.1rem; cursor: pointer; opacity: 0.9; }
+  #vaii-gl-bench vaii-gl { position: relative; display: block; margin: 4px; padding: 0 2px 0 2px; background: #11101d; border-radius: 0.1rem; cursor: pointer; opacity: 0.9; }
   #vaii-gl-bench svg { height: 60px; margin: 0 0px 0px 4px; }
   #vaii-gl-bench vaii-text { font-size: 16px; font-family: 'Lato', 'Segoe UI'; dominant-baseline: middle; text-anchor: middle; }
   #vaii-gl-bench .vaii-gl-mem { font-size: 12px; fill: white; }
   #vaii-gl-bench .vaii-gl-fps { font-size: 13px; fill: white; }
   #vaii-gl-bench vaii-line { stroke-width: 5; stroke: white; stroke-linecap: round; }
   #vaii-gl-bench polyline { fill: none; stroke: white; stroke-linecap: round; stroke-linejoin: round; stroke-width: 3.5; }
-  #vaii-gl-bench rect { fill: black; }
+  #vaii-gl-bench rect { fill: #1d1b31; }
   #vaii-gl-bench .vaii-opacity { stroke: black; }
   `;
 
