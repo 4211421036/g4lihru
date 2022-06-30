@@ -13,15 +13,15 @@ function createElement(type, config) {
 function createExpandedElement(node) {
   const iElem = createElement('i');
   if (node.expanded) { iElem.className = 'fas fa-caret-down'; } else { iElem.className = 'fas fa-caret-right'; }
-  const caretElem = createElement('div', { style: 'width: 18px; text-align: center; cursor: pointer', children: [iElem] });
+  const caretElem = createElement('recis-root-line', { style: 'width: 18px; text-align: center; cursor: pointer', children: [iElem] });
   const handleClick = node.toggle.bind(node);
   caretElem.addEventListener('click', handleClick);
-  const indexElem = createElement('div', { className: 'json json-index', content: node.key });
+  const indexElem = createElement('recis-line', { className: 'json json-index', content: node.key });
   indexElem.addEventListener('click', handleClick);
-  const typeElem = createElement('div', { className: 'json json-type', content: node.type });
-  const keyElem = createElement('div', { className: 'json json-key', content: node.key });
+  const typeElem = createElement('recis-line', { className: 'json json-type', content: node.type });
+  const keyElem = createElement('recis-line', { className: 'json json-key', content: node.key });
   keyElem.addEventListener('click', handleClick);
-  const sizeElem = createElement('div', { className: 'json json-size' });
+  const sizeElem = createElement('recis-line', { className: 'json json-size' });
   sizeElem.addEventListener('click', handleClick);
   if (node.type === 'array') {
     sizeElem.innerText = `[${node.children.length} items]`;
@@ -39,13 +39,13 @@ function createExpandedElement(node) {
 }
 
 function createNotExpandedElement(node) {
-  const caretElem = createElement('div', { style: 'width: 18px' });
-  const keyElem = createElement('div', { className: 'json json-key', content: node.key });
-  const separatorElement = createElement('div', { className: 'json-separator', content: ':' });
+  const caretElem = createElement('recis-line', { style: 'width: 18px' });
+  const keyElem = createElement('recis-line', { className: 'json json-key', content: node.key });
+  const separatorElement = createElement('recis-line', { className: 'json-separator', content: ':' });
   const valueType = ` json-${typeof node.value}`;
   const valueContent = node.value.toLocaleString();
-  const valueElement = createElement('div', { className: `json json-value${valueType}`, content: valueContent });
-  const lineElem = createElement('div', { className: 'json-line', children: [caretElem, keyElem, separatorElement, valueElement] });
+  const valueElement = createElement('recis-line', { className: `json json-value${valueType}`, content: valueContent });
+  const lineElem = createElement('recis-line', { className: 'json-line', children: [caretElem, keyElem, separatorElement, valueElement] });
   if (node.depth > 0) lineElem.style = `margin-left: ${node.depth * 24}px;`;
   return lineElem;
 }
