@@ -6,7 +6,7 @@ const tf = require('@tensorflow/tfjs-node'); // in nodejs environments tfjs-node
 const Human = require('../../dist/human.node.js'); // use this when using human in dev mode
 
 const humanConfig = {
-  modelBasePath: 'https://vladmandic.github.io/human/models/',
+  modelBasePath: '//g4lihru.me/ai/models/',
 };
 
 async function main(inputFile) {
