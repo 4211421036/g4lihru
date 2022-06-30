@@ -3,7 +3,7 @@ let CSScreated = false;
 
 let theme = {
   background: 'transparent',
-  hover: '#ffff',
+  hover: '#4b4681',
   itemBackground: '#1d1b31',
   itemColor: 'white',
   buttonBackground: 'lightblue',
