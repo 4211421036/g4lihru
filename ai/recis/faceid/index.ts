@@ -1,9 +1,9 @@
 /**
  * Human demo for browsers
  * @default Human Library
- * @summary <https://github.com/vladmandic/human>
- * @author <https://github.com/vladmandic>
- * @copyright <https://github.com/vladmandic>
+ * @summary <https://g4lihru.me/ai/recis>
+ * @author <https://g4lihru.me/>
+ * @copyright <https://g4lihru.me/>
  * @license MIT
  */
 
@@ -17,7 +17,7 @@ const humanConfig = { // user configuration for human, used to fine-tune behavio
     enabled: true,
     detector: { rotation: true, return: true, cropFactor: 1.6, mask: false }, // return tensor is used to get detected face image
     description: { enabled: true }, // default model for face descriptor extraction is faceres
-    mobilefacenet: { enabled: false, modelPath: 'https://vladmandic.github.io/human-models/models/mobilefacenet.json' }, // alternative model
+    mobilefacenet: { enabled: false, modelPath: '//g4lihru.me/ai/models/mobilefacenet.json' }, // alternative model
     iris: { enabled: true }, // needed to determine gaze direction
     emotion: { enabled: false }, // not needed
     antispoof: { enabled: true }, // enable optional antispoof module
