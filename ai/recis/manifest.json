@@ -36,8 +36,35 @@
     }
   ],
   "start_url": "https://g4lihru.me/ai/recis/recis",
-  "background_color": "#11101d",
+  "background_color": "#f0f6fc",
+  "author"     : [
+        "GALIH RIDHO UTOMO",
+        {
+            "type"       : "Person",
+            "name"       : "GALIH RIDHO UTOMO",
+            "id"         : "https://g4lihru.me/ai/recis"
+            "identifier" : "42011421036",
+        },
+        {
+            "type"       : "Person",
+            "name"       : "Ana Maulida",
+            "id"         : "https://g4lihru.me/ai/recis"
+            "identifier" : "4201421016",
+        }
+    ],
+    "editor"    : [
+        "GALIH RIDHO UTOMO",
+        {
+            "type" : "Person",
+            "name" : "GALIH RIDHO UTOMO",
+        }
+    ],
+    "publisher" : {
+        "type" : "Organization",
+        "name" : "RECIS (Recycle Tree Community Intellagance Systems)",
+        "id"   : "https://g4lihru.me/ai/recis"
+    }
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#11101d"
+  "theme_color": "#f0f6fc"
 }
