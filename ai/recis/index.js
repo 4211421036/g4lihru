@@ -651,7 +651,7 @@ function setupMenu() {
     ui.facing = val;
     setupCamera();
   });
-  menu.display.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.display.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.display.addBool('use depth', drawOptions, 'useDepth');
   menu.display.addBool('use curves', drawOptions, 'useCurves');
   menu.display.addBool('print labels', drawOptions, 'drawLabels');
@@ -665,7 +665,7 @@ function setupMenu() {
   menu.image.addBool('histogram equalization', userConfig.filter, 'equalization', (val) => userConfig.filter.equalization = val);
   ui.menuWidth = menu.image.addRange('image width', userConfig.filter, 'width', 0, 3840, 10, (val) => userConfig.filter.width = parseInt(val));
   ui.menuHeight = menu.image.addRange('image height', userConfig.filter, 'height', 0, 2160, 10, (val) => userConfig.filter.height = parseInt(val));
-  menu.image.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.image.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.image.addRange('brightness', userConfig.filter, 'brightness', -1.0, 1.0, 0.05, (val) => userConfig.filter.brightness = parseFloat(val));
   menu.image.addRange('contrast', userConfig.filter, 'contrast', -1.0, 1.0, 0.05, (val) => userConfig.filter.contrast = parseFloat(val));
   menu.image.addRange('sharpness', userConfig.filter, 'sharpness', 0, 1.0, 0.05, (val) => userConfig.filter.sharpness = parseFloat(val));
@@ -673,7 +673,7 @@ function setupMenu() {
   menu.image.addRange('saturation', userConfig.filter, 'saturation', -1.0, 1.0, 0.05, (val) => userConfig.filter.saturation = parseFloat(val));
   menu.image.addRange('hue', userConfig.filter, 'hue', 0, 360, 5, (val) => userConfig.filter.hue = parseInt(val));
   menu.image.addRange('pixelate', userConfig.filter, 'pixelate', 0, 32, 1, (val) => userConfig.filter.pixelate = parseInt(val));
-  menu.image.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.image.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.image.addBool('negative', userConfig.filter, 'negative', (val) => userConfig.filter.negative = val);
   menu.image.addBool('sepia', userConfig.filter, 'sepia', (val) => userConfig.filter.sepia = val);
   menu.image.addBool('vintage', userConfig.filter, 'vintage', (val) => userConfig.filter.vintage = val);
@@ -687,7 +687,7 @@ function setupMenu() {
   menu.process.addList('backend', ['cpu', 'webgl', 'wasm', 'humangl'], userConfig.backend, (val) => userConfig.backend = val);
   menu.process.addBool('async operations', userConfig, 'async', (val) => userConfig.async = val);
   menu.process.addBool('use web worker', ui, 'useWorker');
-  menu.process.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.process.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.process.addLabel('model parameters');
   menu.process.addRange('max objects', userConfig.face.detector, 'maxDetected', 1, 50, 1, (val) => {
     userConfig.face.detector.maxDetected = parseInt(val);
@@ -712,7 +712,7 @@ function setupMenu() {
     userConfig.face.detector.rotation = val;
     userConfig.hand.rotation = val;
   });
-  menu.process.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.process.addHTML('<hr style="border-style: dashed; border-color: white">');
   // menu.process.addButton('process sample images', 'process images', () => detectSampleImages());
   // menu.process.addHTML('<hr style="border-style: inset; border-color: dimgray">');
   menu.process.addChart('FPS', 'FPS');
@@ -723,16 +723,16 @@ function setupMenu() {
   menu.models.addBool('face iris', userConfig.face.iris, 'enabled', (val) => userConfig.face.iris.enabled = val);
   menu.models.addBool('face description', userConfig.face.description, 'enabled', (val) => userConfig.face.description.enabled = val);
   menu.models.addBool('face emotion', userConfig.face.emotion, 'enabled', (val) => userConfig.face.emotion.enabled = val);
-  menu.models.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.models.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.models.addBool('body pose', userConfig.body, 'enabled', (val) => userConfig.body.enabled = val);
   menu.models.addBool('hand pose', userConfig.hand, 'enabled', (val) => userConfig.hand.enabled = val);
-  menu.models.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.models.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.models.addBool('gestures', userConfig.gesture, 'enabled', (val) => userConfig.gesture.enabled = val);
-  menu.models.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.models.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.models.addBool('body segmentation', userConfig.segmentation, 'enabled', (val) => userConfig.segmentation.enabled = val);
-  menu.models.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.models.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.models.addBool('object detection', userConfig.object, 'enabled', (val) => userConfig.object.enabled = val);
-  menu.models.addHTML('<hr style="border-style: inset; border-color: dimgray">');
+  menu.models.addHTML('<hr style="border-style: dashed; border-color: white">');
   menu.models.addBool('face compare', compare, 'enabled', (val) => {
     compare.enabled = val;
     compare.original = null;
