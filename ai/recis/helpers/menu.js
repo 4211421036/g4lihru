@@ -58,11 +58,19 @@ function createCSS() {
   .menu-range { margin: 0.2rem 1.0rem 0 0; width: 5rem; background: transparent; color: ${theme.rangeBackground}; }
   .menu-range:before { color: ${theme.rangeLabel}; margin: 0 0.4rem 0 0; font-weight: 800; font-size: 0.6rem; position: relative; top: 0.3rem; content: attr(value); }
 
-  input[type=range] recis-input-cont { -webkit-appearance: none; }
-  input[type=range] recis-input-slider-track::-webkit-slider-runnable-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
-  input[type=range] recis-input-slider-track::-moz-range-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
-  input[type=range] recis-input-slider-tumb::-webkit-slider-thumb { border: 1px solid #000000; margin-top: 0; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
-  input[type=range] recis-input-slider-tumb::-moz-range-thumb { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
+
+  recis-input-cont::-webkit-slider-runnable-container { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  recis-input-slider-track::-webkit-slider-runnable-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  recis-input-slider-track::-moz-range-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  recis-input-slider-tumb::-webkit-slider-thumb { border: 1px solid #000000; margin-top: 0; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
+  recis-input-slider-tumb::-moz-range-thumb { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
+
+  input[type=range] { -webkit-appearance: none; }
+  input[type=range]::-webkit-slider-runnable-container { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  input[type=range]::-moz-range-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  input[type=range]::-webkit-slider-thumb { border: 1px solid #000000; margin-top: 0; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
+  input[type=range]::-moz-range-thumb { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: pointer; -webkit-appearance: none; }
 
   .svg-background { fill:#303030; cursor:pointer; opacity: 0.6; }
   .svg-foreground { fill:white; cursor:pointer; opacity: 0.8; }
