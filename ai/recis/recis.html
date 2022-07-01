@@ -157,6 +157,18 @@
                 width: 100%;
                 height: 500px;
             }
+            .svg-ren {
+                display: flex;
+                position: relative;
+                width: 40%;
+                bottom: -5rem;
+                left: 7rem;
+                right: 7rem;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                flex-direction: row-reverse;
+            }
             /* Slideshow container */
             .slideshow-container {
                 max-width: 50rem;
@@ -228,6 +240,18 @@
                 width: 100%;
                 height: 680px;
             }
+            .svg-ren {
+                display: flex;
+                position: relative;
+                width: 30%;
+                bottom: -5rem;
+                left: 10rem;
+                right: 7rem;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                flex-direction: row-reverse;
+            }
             /* Slideshow container */
             .slideshow-container {
                 max-width: 50rem;
@@ -298,6 +322,18 @@
                 vertical-align: middle;
                 width: 100%;
                 height: 500px;
+            }
+            .svg-ren {
+                display: flex;
+                position: relative;
+                width: 45%;
+                bottom: -5rem;
+                left: 7rem;
+                right: 7rem;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                flex-direction: row-reverse;
             }
             /* Slideshow container */
             .slideshow-container {
@@ -455,30 +491,30 @@
 </head>
 
 <body>
-    <div class="slideshow-container">
+    <recis-slide-cont class="slideshow-container">
 
-        <div class="mySlides fade">
-            <div class="text">one tree will save people</div>
-            <div class="numbertext">1 / 3</div>
+        <recis-slide class="mySlides fade">
+            <recis-text class="text">one tree will save people</recis-text>
+            <recis-number class="numbertext">1 / 3</recis-number>
             <svg viewBox="0 0 550 400" preserveAspectRatio="xMidYMax meet">
                 <g id="stems" fill="none" stroke="green"></g>
                 <g id="leaves"></g>
             </svg>
-        </div>
+        </recis-slide>
 
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <div class="text">Take care and take care of your plants by watering them every day.</div>
+        <recis-slide class="mySlides fade">
+            <recis-number class="numbertext">2 / 3</recis-number>
+            <recis-text class="text">Take care and take care of your plants by watering them every day.</recis-text>
             <svg viewBox="0 0 550 400" preserveAspectRatio="xMidYMax meet">
                 <g id="batang" fill="none" stroke="brown"></g>
                 <g id="oksigen"></g>
             </svg>
-        </div>
+        </recis-slide>
 
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
+        <recis-slide class="mySlides fade">
+            <recis-number class="numbertext">3 / 3</recis-number>
             <a href="//g4lihru.me/ai/recis">Paham & Tutup</a>
-            <div class="text">Take care of the Earth and love the Earth</div>
+            <recis-text class="text">Take care of the Earth and love the Earth</recis-text>
             <svg class="svg-ren" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="727px" height="713px" viewBox="0 0 727 713" version="1.1">
                 <title>Bumi dengan RECIS</title>
                 <desc>Konservasi RECIS.</desc>
@@ -748,18 +784,18 @@
                     </g>
                 </g>
             </svg>
-        </div>
+        </recis-slide>
 
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
 
-    </div>
+    </recis-slide-cont>
 
-    <div class="yr" style="text-align:center">
+    <recis-poin class="yr" style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
+    </recis-poin>
 
     <script>
         let slideIndex = 1;
