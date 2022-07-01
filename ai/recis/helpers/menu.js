@@ -78,11 +78,11 @@ function createCSS() {
   input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
   input[type=range]::-moz-range-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
   input[type=range]::-webkit-slider-thumb { border: 1px solid #000000; margin-top: 0; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grab; -webkit-appearance: none; }
-  input[type=range]::-webkit-slider-runnable-tumb:hover { width: 100%; height: 1rem; cursor: grabbing; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  input[type=range]:hover::-webkit-slider-runnable-tumb { width: 100%; height: 1rem; cursor: grabbing; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
   input[type=range]::-moz-range-thumb { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grab; -webkit-appearance: none; }
-  input[type=range]::-moz-range-thumb:hover { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grabbing; -webkit-appearance: none; }
+  input[type=range]:hover::-moz-range-thumb { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grabbing; -webkit-appearance: none; }
 
-  input[type=file]::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; background-color: #11101d; color: white; border-radius: 25px; border: 3px solid #f0f6fc; }
+  input[type=file]::-webkit-file-upload-button { -webkit-appearance: button; cursor: pointer; font: inherit; background-color: #11101d; color: white; border-radius: 25px; border: 3px solid #f0f6fc; }
 
   recis-input-slider-container[type=range]::-webkit-slider-runnable-container { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
   recis-input-slider-container[type=range]::-moz-range-container { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
