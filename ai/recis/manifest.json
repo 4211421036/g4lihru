@@ -52,19 +52,19 @@
             "identifier" : "4201421016",
         }
     ],
-    "editor"    : [
-        "GALIH RIDHO UTOMO",
-        {
-            "type" : "Person",
-            "name" : "GALIH RIDHO UTOMO",
-        }
-    ],
-    "publisher" : {
-        "type" : "Organization",
-        "name" : "RECIS (Recycle Tree Community Intellagance Systems)",
-        "id"   : "https://g4lihru.me/ai/recis"
-    }
+  "editor"    : [
+      "GALIH RIDHO UTOMO",
+      {
+          "type" : "Person",
+          "name" : "GALIH RIDHO UTOMO",
+      }
+  ],
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#f0f6fc"
+  "theme_color": "#f0f6fc",
+    "publisher" : {
+      "type" : "Organization",
+      "name" : "RECIS (Recycle Tree Community Intellagance Systems)",
+      "id"   : "https://g4lihru.me/ai/recis"
+  }
 }
