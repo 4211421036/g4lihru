@@ -205,7 +205,7 @@ class Menu {
     addBool(title, object, variable, callback) {
         const el = document.createElement('recis-menu-item');
         el.className = 'menu-item';
-        el.innerHTML = `<div class="menu-checkbox"><input class="menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}"></label></div>${title}`;
+        el.innerHTML = `<recis-menu-check class="menu-checkbox"><input class="menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}"></label></recis-menu-check>${title}`;
         if (this.container) this.container.appendChild(el);
         el.addEventListener('change', (evt) => {
             if (evt.target) {
