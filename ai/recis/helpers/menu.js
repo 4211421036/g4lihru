@@ -232,7 +232,7 @@ class Menu {
     addBool(title, object, variable, callback) {
         const el = document.createElement('recis-menu-item');
         el.className = 'menu-item';
-        el.innerHTML = `<recis-menu-check class="menu-checkbox"><input class="menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}"></label></recis-menu-check>${title}`;
+        el.innerHTML = `<recis-menu-check class="menu-checkbox"><input class="menu-checkbox" type="checkbox" id="${this.newID}" ${object[variable] ? 'checked' : ''}/><label class="menu-checkbox-label" for="${this.ID}" title="Status"></label></recis-menu-check>${title}`;
         if (this.container) this.container.appendChild(el);
         el.addEventListener('change', (evt) => {
             if (evt.target) {
@@ -251,7 +251,7 @@ class Menu {
             const def = item === selected ? 'selected' : '';
             options += `<option value="${item}" ${def}>${item}</option>`;
         }
-        el.innerHTML = `<div class="menu-list"><select name="${this.ID}" title="${title}" class="menu-list-item">${options}</select><label for="${this.ID}"></label></div>${title}`;
+        el.innerHTML = `<div class="menu-list"><select name="${this.ID}" title="${title}" class="menu-list-item">${options}</select><label for="${this.ID}" title="Status"></label></div>${title}`;
         el.style.fontFamily = document.body.style.fontFamily;
         el.style.fontSize = document.body.style.fontSize;
         el.style.fontVariant = document.body.style.fontVariant;
