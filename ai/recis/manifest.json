@@ -2,6 +2,11 @@
   "short_name": "RECIS",
   "name": "RECIS App",
   "description": "Mahasiswa Penelitian UNNES untuk WC KOSMIK 2022",
+  "publisher" : {
+      "type" : "Organization",
+      "name" : "RECIS (Recycle Tree Community Intellagance Systems)",
+      "id"   : "https://g4lihru.me/ai/recis"
+  }
   "icons": [
     {
       "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.48x48.png",
@@ -61,10 +66,5 @@
   ],
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#f0f6fc",
-    "publisher" : {
-      "type" : "Organization",
-      "name" : "RECIS (Recycle Tree Community Intellagance Systems)",
-      "id"   : "https://g4lihru.me/ai/recis"
-  }
+  "theme_color": "#f0f6fc"
 }
