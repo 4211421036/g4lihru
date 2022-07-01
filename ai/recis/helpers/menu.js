@@ -56,7 +56,7 @@ function createCSS() {
   input[type=checkbox]:checked + label { left: 1.4rem; background: ${theme.checkboxOn}; }
 
   .menu-range { margin: 0.2rem 1.0rem 0 0; width: 5rem; background: transparent; color: ${theme.rangeBackground}; }
-  .menu-range:before { color: ${theme.rangeLabel}; margin: 0 0.4rem 0 0; font-weight: 800; font-size: 0.6rem; position: relative; top: 0.3rem; content: attr(value); }
+  .menu-range:before { color: ${theme.rangeLabel}; margin: 0 0.4rem 0 0; font-weight: 800; font-size: 0.9rem; position: relative; top: 0.1rem; content: attr(value); }
 
 
   recis-input-cont::-webkit-slider-runnable-container { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
@@ -78,9 +78,9 @@ function createCSS() {
   input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
   input[type=range]::-moz-range-track { width: 100%; height: 1rem; cursor: pointer; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
   input[type=range]::-webkit-slider-thumb { border: 1px solid #000000; margin-top: 0; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grab; -webkit-appearance: none; }
-  input[type=range]::-webkit-slider-runnable-tumb::active { width: 100%; height: 1rem; cursor: grabbing; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
+  input[type=range]::-webkit-slider-runnable-tumb:active { width: 100%; height: 1rem; cursor: grabbing; background: ${theme.itemBackground}; border-radius: var(--rounded); border: 1px; }
   input[type=range]::-moz-range-thumb { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grab; -webkit-appearance: none; }
-  input[type=range]::-moz-range-thumb::active { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grabbing; -webkit-appearance: none; }
+  input[type=range]::-moz-range-thumb:active { border: 1px solid #000000; margin-top: 0rem; height: 1rem; width: 0.6rem; border-radius: var(--rounded); background: ${theme.rangeBackground}; cursor: grabbing; -webkit-appearance: none; }
 
   input[type=file]::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; background-color: #11101d; color: white; border-radius: 25px; border: 3px solid #f0f6fc; }
 
