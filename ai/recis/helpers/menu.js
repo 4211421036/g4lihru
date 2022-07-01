@@ -53,7 +53,7 @@ function createCSS() {
     border-radius: var(--rounded); transition: right 0.6s ease; }
 
   input[type=checkbox] { visibility: hidden; }
-  input[type=checkbox]:checked + label { left: 1.4rem; background: ${theme.checkboxOn}; }
+  input[type=checkbox]:checked + label { left: 0; background: ${theme.checkboxOn}; }
 
   .menu-range { margin: 0.2rem 1.0rem 0 0; width: 5rem; background: transparent; color: ${theme.rangeBackground}; }
   .menu-range:before { color: ${theme.rangeLabel}; margin: 0 0.4rem 0 0; font-weight: 800; font-size: 0.9rem; position: relative; top: 0.1rem; content: attr(value); }
