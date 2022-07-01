@@ -8,6 +8,7 @@ let theme = {
   itemColor: 'white',
   buttonBackground: 'lightblue',
   buttonHover: 'lightgreen',
+  checkboxSt: 'transparent',
   checkboxOn: 'lightgreen',
   checkboxOff: 'lightcoral',
   rangeBackground: 'lightblue',
@@ -49,11 +50,11 @@ function createCSS() {
   .menu-checkbox { width: 2.6rem; height: 1rem; background: ${theme.itemBackground}; margin: 0.5rem 1.0rem 0 0; position: relative; border-radius: var(--rounded); }
   .menu-checkbox:after { content: 'OFF'; color: ${theme.checkboxOff}; position: absolute; right: 0.2rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
   .menu-checkbox:before { content: 'ON'; color: ${theme.checkboxOn}; position: absolute; left: 0.3rem; top: -0.4rem; font-weight: 800; font-size: 0.5rem; }
-  .menu-checkbox-label { width: 1.3rem; height: 1rem; cursor: pointer; position: absolute; top: 0; right: 0rem; z-index: 1; background: ${theme.checkboxOff};
+  .menu-checkbox-label { width: 1.3rem; height: 1rem; cursor: pointer; position: absolute; top: 0; right: 0rem; z-index: 1; background: ${theme.checkboxSt}; border: 1px solid ${theme.checkboxOff};
     border-radius: var(--rounded); transition: right 0.6s ease; }
 
   input[type=checkbox] { visibility: hidden; }
-  input[type=checkbox]:checked + label { left: 0; background: ${theme.checkboxOn}; }
+  input[type=checkbox]:checked + label { left: 0; background: ${theme.checkboxSt}; border: 1px solid ${theme.checkboxOn} }
 
   .menu-range { margin: 0.2rem 1.0rem 0 0; width: 5rem; background: transparent; color: ${theme.rangeBackground}; }
   .menu-range:before { color: ${theme.rangeLabel}; margin: 0 0.4rem 0 0; font-weight: 800; font-size: 0.9rem; position: relative; top: 0.1rem; content: attr(value); }
