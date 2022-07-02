@@ -67,7 +67,7 @@
             "label": "Side 3 Homescreen of Awesome RECIS App"
         }
     ],
-        "shortcuts" : [
+    "shortcuts" : [
           {
             "short_name": "File RECIS App",
             "name": "Research Files",
