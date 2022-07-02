@@ -37,9 +37,9 @@
             "type": "image/png"
         }
     ],
-    "manifest_version": 2.5,
-    "minimum_chrome_version": "28",
-    "version": "2.5.2",
+    "manifest_version": 3,
+    "minimum_chrome_version": "100",
+    "version": "3",
     "permissions": [
             "notifications",
             "unlimitedStorage"
