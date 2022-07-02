@@ -84,7 +84,7 @@
           {
             "short_name": "Instagram KOSMIK",
             "name": "Profile Organisasi KOSMIK",
-            "url": "//instagram.com/kosmikunnes",
+            "url": "ai/recis/ig/kosmik/",
             "description": "Organisasi Penelitian Falkutas MIPA UNNES",
             "icons": [
                 {
@@ -97,7 +97,7 @@
           {
             "short_name": "Profile Peneliti 1",
             "name": "Profile Peneliti 1",
-            "url": "//instagram.com/galih_ridho_utomo/",
+            "url": "ai/recis/ig/peneliti/1/",
             "description": "Ketua Peneliti RECIS Untuk Kosmik 2022",
             "icons": [
                 {
@@ -110,7 +110,7 @@
           {
             "short_name": "Profile Peneliti 2",  
             "name": "Profile Peneliti 2",
-            "url": "//instagram.com/anma1505/",
+            "url": "ai/recis/ig/peneliti/2/",
             "description": "Anggota Peneliti RECIS Untuk Kosmik 2022",
             "icons": [
                 {
