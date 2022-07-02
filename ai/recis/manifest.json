@@ -40,6 +40,7 @@
     "background_color": "#f0f6fc",
     "author": "GALIH RIDHO UTOMO",
     "editor": "GALIH RIDHO UTOMO",
+    "orientation": "portrait"
     "display": "standalone",
     "scope": "/",
     "theme_color": "#f0f6fc"
