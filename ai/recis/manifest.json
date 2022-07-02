@@ -67,11 +67,18 @@
             "label": "Side 3 Homescreen of Awesome RECIS App"
         }
     ],
+    "prefer_related_applications": true,
+    "start_url": "recis.html",
+    "background_color": "#f0f6fc",
+    "author": "GALIH RIDHO UTOMO",
+    "editor": "GALIH RIDHO UTOMO",
+    "orientation": "portrait",
+    "display": "standalone",
     "shortcuts" : [
           {
             "short_name": "File RECIS App",
             "name": "Research Files",
-            "url": "https://g4lihru.me/ai/recis/ai/recis/file/penelitian/WC KOSMIK 2022_FINAL_GALIH RIDHO UTOMO_Kelompok 9_RECIS Recycle Tree.pdf",
+            "url": "file/penelitian/WC KOSMIK 2022_FINAL_GALIH RIDHO UTOMO_Kelompok 9_RECIS Recycle Tree.pdf",
             "description": "RECIS (Recycle Tree Community Intellagance Systems) Sebagai Solusi Dalam Penghijauan Kembali Untuk Mewujudkan SDGs 2030",
             "icons": [
                 {
@@ -84,7 +91,7 @@
           {
             "short_name": "Profile Peneliti 1",
             "name": "Profile Peneliti 1",
-            "url": "https://g4lihru.me/ai/recis/ai/recis/ig/peneliti/1/",
+            "url": "ig/peneliti/1/",
             "description": "Ketua Peneliti RECIS Untuk Kosmik 2022",
             "icons": [
                 {
@@ -97,7 +104,7 @@
           {
             "short_name": "Profile Peneliti 2",  
             "name": "Profile Peneliti 2",
-            "url": "https://g4lihru.me/ai/recis/ai/recis/ig/peneliti/2/",
+            "url": "ig/peneliti/2/",
             "description": "Anggota Peneliti RECIS Untuk Kosmik 2022",
             "icons": [
                 {
@@ -110,7 +117,7 @@
           {
             "short_name": "Instagram KOSMIK",
             "name": "Profile Organisasi KOSMIK",
-            "url": "https://g4lihru.me/ai/recis/ai/recis/ig/kosmik/",
+            "url": "ig/kosmik/",
             "description": "Organisasi Penelitian Falkutas MIPA UNNES",
             "icons": [
                 {
@@ -121,13 +128,6 @@
             ]
           }
     ],
-    "prefer_related_applications": true,
-    "start_url": "https://g4lihru.me/ai/recis/recis",
-    "background_color": "#f0f6fc",
-    "author": "GALIH RIDHO UTOMO",
-    "editor": "GALIH RIDHO UTOMO",
-    "orientation": "portrait",
-    "display": "standalone",
-    "scope": "/",
+    "scope": "/ai/recis/",
     "theme_color": "#f0f6fc"
 }
