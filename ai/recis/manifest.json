@@ -4,6 +4,29 @@
     "description": "Mahasiswa Penelitian UNNES untuk WC KOSMIK 2022",
     "lang": "id-ID",
     "publisher": "RECIS",
+    "categories": ["Research", "education", "organization"],
+    "shortcuts" : [
+          {
+            "name": "Research Files",
+            "url": "https://firebasestorage.googleapis.com/v0/b/fileg4lihru.appspot.com/o/file%2FWC%20KOSMIK%202022_FINAL_GALIH%20RIDHO%20UTOMO_Kelompok%209_RECIS%20Recycle%20Tree.pdf?alt=media&token=b69954b3-6510-4fb2-a2ff-70ca04ea17be",,
+            "description": "RECIS (Recycle Tree Community Intellagance Systems) Sebagai Solusi Dalam Penghijauan Kembali Untuk Mewujudkan SDGs 2030"
+          },
+          {
+            "name": "Profile Organisasi KOSMIK",
+            "url": "https://www.instagram.com/kosmikunnes/",
+            "description": "Organisasi Penelitian Falkutas MIPA UNNES"
+          },
+          {
+            "name": "Profile Peneliti 1",
+            "url": "https://www.instagram.com/galih_ridho_utomo/",
+            "description": "Ketua Peneliti RECIS Untuk Kosmik 2022"
+          },
+          {
+            "name": "Profile Peneliti 2",
+            "url": "https://www.instagram.com/anma1505/",
+            "description": "Anggota Peneliti RECIS Untuk Kosmik 2022"
+          }
+    ],
     "icons": [{
             "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.48x48.png",
             "sizes": "48x48",
@@ -36,6 +59,30 @@
             "type": "image/png"
         }
     ],
+    "screenshots" : [
+        {
+            "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.laman.side1.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "platform": "wide",
+            "label": "Side Homescreen of Awesome RECIS App"
+        },
+        {
+            "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.laman.side2.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "platform": "wide",
+            "label": "Side 2 Homescreen of Awesome RECIS App"
+        },
+        {
+            "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.laman.side3.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "platform": "wide",
+            "label": "Side 2 Homescreen of Awesome RECIS App"
+        }
+    ],
+    "prefer_related_applications": true,
     "start_url": "https://g4lihru.me/ai/recis/recis",
     "background_color": "#f0f6fc",
     "author": "GALIH RIDHO UTOMO",
