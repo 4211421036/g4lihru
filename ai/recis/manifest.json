@@ -46,17 +46,24 @@
     ],
     "screenshots" : [
         {
+            "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.laman.mobile.screen.splashdesain.webp",
+            "sizes": "885x720",
+            "type": "image/webp",
+            "platform": "wide",
+            "label": "Side Splash Desain UI/UX Mobile of Awesome RECIS App"
+        },
+        {
             "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.laman.mobile.screen.side1.webp",
             "sizes": "640x720",
             "type": "image/webp",
-            "platform": "play",
+            "platform": "wide",
             "label": "Side Homescreen Mobile of Awesome RECIS App"
         },
         {
             "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.laman.mobile.screen.side2.webp",
             "sizes": "640x720",
             "type": "image/webp",
-            "platform": "play",
+            "platform": "wide",
             "label": "Side 2 Homescreen Mobile of Awesome RECIS App"
         },
         {
