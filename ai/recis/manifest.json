@@ -59,6 +59,14 @@
             "type": "image/png"
         }
     ],
+    "manifest_version": 2.5,
+    "minimum_chrome_version": "28",
+    "version": "2.5.2",
+    "permissions": [
+        {
+            "notifications",
+            "unlimitedStorage"
+    ],
     "screenshots" : [
         {
             "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.laman.side1.webp",
