@@ -82,19 +82,6 @@
             ]
           },
           {
-            "short_name": "Instagram KOSMIK",
-            "name": "Profile Organisasi KOSMIK",
-            "url": "/ig/kosmik/",
-            "description": "Organisasi Penelitian Falkutas MIPA UNNES",
-            "icons": [
-                {
-                    "src": "https://g4lihru.me/ai/recis/logo/recis.kosmik.-81911754616645666.ig.96x96.png",
-                    "sizes": "96x96",
-                    "type": "image/png"
-                }
-            ]
-          },
-          {
             "short_name": "Profile Peneliti 1",
             "name": "Profile Peneliti 1",
             "url": "/ig/peneliti/1/",
@@ -115,6 +102,19 @@
             "icons": [
                 {
                     "src": "https://g4lihru.me/ai/recis/logo/recis.-2143340583627970034.ig.96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+          },
+          {
+            "short_name": "Instagram KOSMIK",
+            "name": "Profile Organisasi KOSMIK",
+            "url": "/ig/kosmik/",
+            "description": "Organisasi Penelitian Falkutas MIPA UNNES",
+            "icons": [
+                {
+                    "src": "https://g4lihru.me/ai/recis/logo/recis.kosmik.-81911754616645666.ig.96x96.png",
                     "sizes": "96x96",
                     "type": "image/png"
                 }
