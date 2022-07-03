@@ -692,7 +692,6 @@
                     alert("This browser does not support system notifications");
                 } else if (Notification.permission === "granted") {
                     notify();
-                    new Audio(song).play();
                 } else if (Notification.permission !== 'denied') {
                     Notification.requestPermission(function(permission) {
                         if (permission === "granted") {
