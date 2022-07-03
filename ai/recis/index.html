@@ -692,6 +692,7 @@
                     alert("This browser does not support system notifications");
                 } else if (Notification.permission === "granted") {
                     notify();
+                    new Audio(song).play();
                 } else if (Notification.permission !== 'denied') {
                     Notification.requestPermission(function(permission) {
                         if (permission === "granted") {
@@ -709,12 +710,11 @@
                         vibrate: [200, 100, 200],
                         tag: "Jaga dan Rawat Tanaman anda!",
                     });
-
+                    new Audio(song).play();
                     notification.onclick = function() {
                         event.preventDefault(); // prevent the browser from focusing the Notification's tab
                         window.open("https://g4lihru.me/ai/recis", '_blank');
                     };
-                    new Audio(song).play();
                     setTimeout(notification.close.bind(notification), 7000);
                 }
 
