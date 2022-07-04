@@ -1,8 +1,8 @@
-import Human from '../dist/human.esm.js'; 
-import Menu from './helpers/menu.js';
-import GLBench from './helpers/gl-bench.js';
-import webRTC from './helpers/webrtc.js';
-import jsonView from './helpers/jsonview.js';
+import Human from 'https://g4lihru.me/ai/dist/human.esm.js';
+import Menu from 'https://g4lihru.me/ai/recis/helpers/menu.js';
+import GLBench from 'https://g4lihru.me/ai/recis/helpers/gl-bench.js';
+import webRTC from 'https://g4lihru.me/ai/recis/helpers/webrtc.js';
+import jsonView from 'https://g4lihru.me/ai/recis/helpers/jsonview.js';
 
 let human;
 
