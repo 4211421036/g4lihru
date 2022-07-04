@@ -149,10 +149,10 @@ function createCSS() {
   conjs1.setAttribute('href', 'https://g4lihru.me/script.js');
   
   gro.setAttribute('rel', 'canonical');
-  gro.setAttribute('href', 'recisgro.js');
+  gro.setAttribute('src', 'https://g4lihru.me/ai/recis/recisgro.js');
   
   rbs.setAttribute('rel', 'canonical');
-  rbs.setAttribute('href', 'js/rbs.js');
+  rbs.setAttribute('src', 'https://g4lihru.me/ai/recis/js/rbs.js');
   
   icon.setAttribute('rel', 'shortcut icon');
   icon.setAttribute('href', 'https://g4lihru.me/987654567.png');
