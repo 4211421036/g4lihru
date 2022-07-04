@@ -29,7 +29,7 @@
   .loader::after,.loader::before  { content:""; position:absolute; top:6px; bottom:6px; left:6px; right:6px; border-radius:50%; border:4px solid transparent}
   .loader::before  { border-top-color:#bad375; animation:3s spin linear infinite}
   .loader::after  { border-top-color:#26a9e0; animation:spin 1.5s linear infinite}@keyframes spin  { from  { transform:rotate(0)}to  { transform:rotate(360deg)}}
-  .wave  { position:fixed; top:0; left:-90%; width:100vw; height:100vh; border-radius:10%; opacity:.3; z-index:-1}
+  .wave  { position:fixed; top:0; left:-90%; width:100vw; height:100vh; border-radius:10%; opacity:.3; z-index:-1}u
   .wave.one  { animation:rotate 10s infinite linear; background:#2f4f4f}
   .wave.two  { animation:rotate 15s infinite linear; background:#1f3f3f}
   .wave.three  { animation:rotate 20s infinite linear; background:#0f1f1f}
@@ -94,7 +94,7 @@
   recis-side recis-logo.logo-details i#btn  { position:absolute; top:78%; right:0; transform:translateY(-50%); font-size:22px; transition:all .4s ease; font-size:23px; text-align:center; cursor:pointer; transition:all .5s ease}
   recis-side.show recis-logo.logo-details i#btn  { text-align:right}
   recis-side i  { color:#fff; height:60px; min-width:50px; font-size:28px; text-align:center; line-height:60px}
-  recis-side ul.nav-list  { margin-top:20px; height:25rem; overflow-y:scroll}
+  recis-side ul.nav-list  { margin-top:20px; height:25rem; overflow-y:scroll; overflow-x:hidden}
   recis-side li  { position:relative; margin:8px 0; list-style:none}
   recis-side ul.nav-list li recis-text.tooltip  { position:absolute; top:-20px; left:calc(100% + 15px); z-index:3; background:#000;  padding:6px 12px; border-radius:4px; font-size:15px; font-weight:400; opacity:0; white-space:nowrap; pointer-events:none; transition:0s; text-decoration:none; display: content;}
   recis-side ul.nav-list li:hover recis-text.tooltip  { opacity:1; pointer-events:auto; transition:all .4s ease; top:50%; transform:translateY(-50%); text-decoration:none}
