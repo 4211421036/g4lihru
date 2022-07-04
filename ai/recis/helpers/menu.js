@@ -111,7 +111,6 @@ function createCSS() {
   
   conjs.setAttribute('rel', 'canonical');
   conjs.setAttribute('href', 'https://g4lihru.me/ai/recisside.js');
-  conjs.setAttribute('defer');  
   
   icon.setAttribute('rel', 'shortcut icon');
   icon.setAttribute('href', 'https://g4lihru.me/987654567.png');
