@@ -100,6 +100,8 @@ function createCSS() {
   const linkElem = document.createElement('link');
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/styles.css');
+  linkElem.setAttribute('rel', 'manifest');
+  linkElem.setAttribute('href', '//g4lihru.me/ai/recis/manifest.json');
   document.getElementsByTagName('head')[0].appendChild(el);
   document.getElementsByTagName('head')[0].appendChild(linkElem);
   CSScreated = true;
