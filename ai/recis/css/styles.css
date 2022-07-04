@@ -3,9 +3,8 @@
   body  { margin:0; background:#000; color:#fff; overflow-x:hidden; width:100vw; height:100vh}
   body::-webkit-scrollbar  { display:none}
   hr  { width:100%}
-  recis-text.links_name {
-      display: contents;
-  }
+  recis-text.links_name { display: contents;}
+  recis-text.tooltip { display: contents; color: ghostwhite; size: 3px; font-synthesis-style: unset; align-items: center; flex-flow: column; font-style: initial}
   .play  { position:absolute; width:256px; height:256px; z-index:9; bottom:35%; left:50%; margin-left:-125px; display:none; filter:grayscale(1)}
   .button  { width:100%; height:75px}
   .left  { float:left; display:block}
