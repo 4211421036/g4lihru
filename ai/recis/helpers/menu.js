@@ -140,7 +140,7 @@ function createCSS() {
   mtcss.setAttribute('href', 'https://g4lihru.me/ai/recis/icons.css');
 
   linkmani.setAttribute('rel', 'manifest');
-  linkmani.setAttribute('href', 'https//g4lihru.me/ai/recis/manifest.json');
+  linkmani.setAttribute('href', 'manifest.json');
   
   conjs.setAttribute('rel', 'canonical');
   conjs.setAttribute('src', 'https://g4lihru.me/ai/recis/recisside.js');
