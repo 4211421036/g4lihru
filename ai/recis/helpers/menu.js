@@ -120,8 +120,6 @@ function createCSS() {
 
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
-  linkElem.setAttribute('integrity', 'sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u');
-  linkElem.setAttribute('crossorigin', 'anonymous');
   
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css');
@@ -138,10 +136,10 @@ function createCSS() {
   conjs.setAttribute('src', '//code.jquery.com/ui/1.11.2/jquery-ui.js');
 
   conjs.setAttribute('rel', 'canonical');
-  conjs.setAttribute('src', '////code.jquery.com/jquery-1.10.2.js');
+  conjs.setAttribute('src', '//code.jquery.com/jquery-1.10.2.js');
 
   conjs.setAttribute('rel', 'canonical');
-  conjs.setAttribute('href', 'https://g4lihru.me/ai/recisside.js');
+  conjs.setAttribute('src', 'https://g4lihru.me/ai/recisside.js');
   conjs.setAttribute('defer', 'defer');
   
   conjs.setAttribute('rel', 'canonical');
