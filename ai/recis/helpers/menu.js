@@ -99,12 +99,111 @@ function createCSS() {
   el.innerHTML = css;
   const linkmani = document.createElement('link');
   const linkElem = document.createElement('link');
+  const icon = document.createElement('link');
+  const lang = document.createElement('link');
+  const conjs = document.createElement('script');
+  
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/styles.css');
+  
   linkmani.setAttribute('rel', 'manifest');
   linkmani.setAttribute('href', '//g4lihru.me/ai/recis/manifest.json');
+  
+  icon.setAttribute('rel', 'canonical');
+  icon.setAttribute('href', 'https://g4lihru.me/ai/recisside.js');
+  icon.setAttribute('defer');  
+  
+  icon.setAttribute('rel', 'shortcut icon');
+  icon.setAttribute('href', 'https://g4lihru.me/987654567.png');
+  icon.setAttribute('type', 'image/x-icon');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=en');
+  lang.setAttribute('hreflang', 'en');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=fr');
+  lang.setAttribute('hreflang', 'fr');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=it');
+  lang.setAttribute('hreflang', 'it');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=es');
+  lang.setAttribute('hreflang', 'es');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=zh-cn');
+  lang.setAttribute('hreflang', 'zh-cn');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=zh-tw');
+  lang.setAttribute('hreflang', 'zh-tw');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=ja');
+  lang.setAttribute('hreflang', 'ja');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=ko');
+  lang.setAttribute('hreflang', 'ko');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=pt');
+  lang.setAttribute('hreflang', 'pt');
+
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=pt-br');
+  lang.setAttribute('hreflang', 'pt-br');
+
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=cs');
+  lang.setAttribute('hreflang', 'cs');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=da');
+  lang.setAttribute('hreflang', 'da');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=el');
+  lang.setAttribute('hreflang', 'el');  
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=fi');
+  lang.setAttribute('hreflang', 'fi');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=hr');
+  lang.setAttribute('hreflang', 'hr');  
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=hu');
+  lang.setAttribute('hreflang', 'hu');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=id');
+  lang.setAttribute('hreflang', 'id');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=ms');
+  lang.setAttribute('hreflang', 'ms');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=om-et');
+  lang.setAttribute('hreflang', 'om-et');
+  
+  lang.setAttribute('rel', 'alternate');
+  lang.setAttribute('href', 'https://g4lihru.me/ai/recis/?hl=am-et');
+  lang.setAttribute('hreflang', 'am-et');  
+  
   document.getElementsByTagName('head')[0].appendChild(el);
   document.getElementsByTagName('head')[0].appendChild(linkElem);
+  document.getElementsByTagName('head')[0].appendChild(linkmani);
+  document.getElementsByTagName('head')[0].appendChild(icon);
+  document.getElementsByTagName('head')[0].appendChild(lang);
+  document.getElementsByTagName('head')[0].appendChild(conjs);
+  
   CSScreated = true;
 }
 
