@@ -108,6 +108,9 @@ function createCSS() {
   const iconku = document.createElement('link');
   const lang = document.createElement('link');
   const conjs = document.createElement('script');
+  const conjs1 = document.createElement('script');
+  const conjs2 = document.createElement('script');
+  const conjs3 = document.createElement('script');
   
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/styles.css');
@@ -138,19 +141,17 @@ function createCSS() {
   linkmani.setAttribute('rel', 'manifest');
   linkmani.setAttribute('href', '//g4lihru.me/ai/recis/manifest.json');
   
-  conjs.setAttribute('rel', 'canonical');
-  conjs.setAttribute('src', '//code.jquery.com/ui/1.11.2/jquery-ui.js');
+  conjs1.setAttribute('rel', 'canonical');
+  conjs1.setAttribute('src', '//code.jquery.com/ui/1.11.2/jquery-ui.js');
 
-  conjs.setAttribute('rel', 'canonical');
-  conjs.setAttribute('src', '//code.jquery.com/jquery-1.10.2.js');
+  conjs2.setAttribute('rel', 'canonical');
+  conjs2.setAttribute('src', '//code.jquery.com/jquery-1.10.2.js');
 
   conjs.setAttribute('rel', 'canonical');
   conjs.setAttribute('src', 'https://g4lihru.me/ai/recis/recisside.js');
-  conjs.setAttribute('defer', 'defer');
   
-  conjs.setAttribute('rel', 'canonical');
-  conjs.setAttribute('href', 'https://g4lihru.me/script.js');
-  conjs.setAttribute('defer', 'defer');
+  conjs3.setAttribute('rel', 'canonical');
+  conjs3.setAttribute('href', 'https://g4lihru.me/script.js');
   
   icon.setAttribute('rel', 'shortcut icon');
   icon.setAttribute('href', 'https://g4lihru.me/987654567.png');
@@ -249,6 +250,9 @@ function createCSS() {
   document.getElementsByTagName('head')[0].appendChild(iconku);
   document.getElementsByTagName('head')[0].appendChild(lang);
   document.getElementsByTagName('head')[0].appendChild(conjs);
+  document.getElementsByTagName('head')[0].appendChild(conjs1);
+  document.getElementsByTagName('head')[0].appendChild(conjs2);
+  document.getElementsByTagName('head')[0].appendChild(conjs3);
   document.getElementsByTagName('head')[0].appendChild(mtcss);
   document.getElementsByTagName('head')[0].appendChild(googcss);
   document.getElementsByTagName('head')[0].appendChild(googcss2);
