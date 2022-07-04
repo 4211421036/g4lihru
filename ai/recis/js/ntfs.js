@@ -1,4 +1,3 @@
-const song = "recis.-2143340583627970034.mp3";
 function RECISNotif() {
     if (!("Notification" in window)) {
         alert("This browser does not support system notifications");
@@ -21,7 +20,6 @@ function RECISNotif() {
             vibrate: [200, 100, 200],
             tag: "Jaga dan Rawat Tanaman anda!",
         });
-        new Audio(song).play();
         notification.onclick = function() {
             event.preventDefault(); // prevent the browser from focusing the Notification's tab
             window.open("https://g4lihru.me/ai/recis", '_blank');
