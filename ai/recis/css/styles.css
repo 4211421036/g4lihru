@@ -76,7 +76,7 @@
   ::-webkit-scrollbar-track  { border-radius:5px; box-shadow:inset 0 0 10px rgba(0,0,0,.25)}
   ::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d}
   ::-webkit-scrollbar-thumb:hover  { background:#555; cursor: grab;}
-  recis-side  { position:fixed; left:0; top:0; height:100%; width:78px; background:#11101d; padding:6px 14px; z-index:99; transition:all .5s ease}
+  recis-side  { position:fixed; left:0; top:0; height:100%; width:90px; background:#11101d; padding:6px 14px; z-index:99; transition:all .5s ease}
   recis-side.show  { width:250px}
   recis-side.bx-menu::before  { content:"\eac1"}
   recis-side.show .bx-menu::after  { content:"\eac3";  transition:all .20s ease}
@@ -106,16 +106,16 @@
   recis-side i.bxs-game  { top:0; margin-top:1.8rem; left:0; transform:translateY(-50%); font-size:22px; background-size:2.4rem; color:#fff}
   recis-side .bxs-video-recording  { top:0; margin-top:1.8rem; left:0; transform:translateY(-50%); font-size:22px; background-size:2.4rem; color:#fff}
   recis-side i.bxl-instagram-alt  { top:0; margin-top:1.8rem; left:0; transform:translateY(-50%); font-size:22px; background-size:2.4rem; color:#fff}
-  recis-side li a recis-bar-btn  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d; cursor: pointer;}
+  recis-side li a  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d; cursor: pointer;}
   recis-side li a:hover  { background:#fff; text-decoration:none}
-  recis-side li a recis-bar-btn span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s; text-decoration:none}
+  recis-side li a span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s; text-decoration:none}
+  recis-side.show li a span.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
+  recis-side li a:hover i, recis-side li a:hover span.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none}
+  recis-side li recis-bar-btn  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d}
+  recis-side li recis-bar-btn:hover  { background:#fff}
+  recis-side li recis-bar-btn span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s}
   recis-side.show li a recis-bar-btn span.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
-  recis-side li a:hover recis-bar-btn recis-bar-btn:hover i, recis-side li a a:hover span.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none}
-  recis-side li button  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d}
-  recis-side li button:hover  { background:#fff}
-  recis-side li button span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s}
-  recis-side.show li a recis-bar-btn span.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
-  recis-side li button:hover i,recis-side li button:hover span.links_name  { transition:all .5s ease; color:#11101d}
+  recis-side li recis-bar-btn:hover i,recis-side li recis-bar-btn:hover span.links_name  { transition:all .5s ease; color:#11101d}
   recis-side li i  { height:50px; line-height:50px; font-size:18px; border-radius:12px}
   recis-side li.profile  { position:fixed; height:60px; width:78px; left:0; bottom:-8px; padding:10px 14px; background:#1d1b31; transition:all .5s ease; overflow:hidden}
   recis-side.show li.profile  { width:250px}
