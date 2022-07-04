@@ -93,7 +93,7 @@
   recis-side i  { color:#fff; height:60px; min-width:50px; font-size:28px; text-align:center; line-height:60px}
   recis-side ul.nav-list  { margin-top:20px; height:25rem; overflow-y:scroll}
   recis-side li  { position:relative; margin:8px 0; list-style:none}
-  recis-side ul.nav-list li label.tooltip  { position:absolute; top:-20px; left:calc(100% + 15px); z-index:3; background:#000; box-shadow:0 5px 10px rgba(0,0,0,.3); padding:6px 12px; border-radius:4px; font-size:15px; font-weight:400; opacity:0; white-space:nowrap; pointer-events:none; transition:0s; text-decoration:none; display: content;}
+  recis-side ul.nav-list li label.tooltip  { position:absolute; top:-20px; left:calc(100% + 15px); z-index:3; background:#000;  padding:6px 12px; border-radius:4px; font-size:15px; font-weight:400; opacity:0; white-space:nowrap; pointer-events:none; transition:0s; text-decoration:none; display: content;}
   recis-side ul.nav-list li:hover label.tooltip  { opacity:1; pointer-events:auto; transition:all .4s ease; top:50%; transform:translateY(-50%); text-decoration:none}
   recis-side.show ul li .tooltip  { display:none}
   recis-side input  { font-size:15px; color:#fff; font-weight:400; outline:0; height:50px; width:100%; width:50px; border:none; border-radius:12px; transition:all .5s ease; background:#1d1b31; top:0; position:absolute; left:0}
@@ -109,11 +109,11 @@
   recis-side li a  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d; cursor: pointer;}
   recis-side li a:hover  { background:#fff; text-decoration:none}
   recis-side li a label.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s; text-decoration:none; display: content;}
-  recis-side.show li a label.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
-  recis-side li a:hover i, recis-side li a:hover label.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none}
+  recis-side.show li a label.links_name  { opacity:1; pointer-events:auto; text-decoration:none; display: content; color: white}
+  recis-side li a:hover i, recis-side li a:hover label.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none display: content;}
   recis-side li recis-bar-btn  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d; cursor: pointer;}
   recis-side li recis-bar-btn:hover  { background:#fff}
-  recis-side li recis-bar-btn label.links_name  { color:#ffff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s}
+  recis-side li recis-bar-btn label.links_name  { color:#ffff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s display: content;}
   recis-side.show li a recis-bar-btn label.links_name  { opacity:1; pointer-events:auto; text-decoration:none; display: content;}
   recis-side li recis-bar-btn:hover i,recis-side li recis-bar-btn:hover label.links_name  { transition:all .5s ease; color:#11101d}
   recis-side li i  { height:50px; line-height:50px; font-size:18px; border-radius:12px}
