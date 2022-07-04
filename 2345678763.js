@@ -1,32 +1,8 @@
-/**
- * Human demo for browsers
- *
- * @description Main demo app that exposes all Human functionality
- *
- * @params Optional URL parameters:
- * image=<imagePath:string>: perform detection on specific image and finish
- * worker=<true|false>: use WebWorkers
- * backend=<webgl|wasm|cpu>: use specific TF backend for operations
- * preload=<true|false>: pre-load all configured models
- * warmup=<true|false>: warmup all configured models
- *
- * @example <https://wyse:10031/?backend=wasm&worker=true&image="/assets/sample-me.jpg">
- *
- * @configuration
- * userConfig={}: contains all model configuration used by human
- * drawOptions={}: contains all draw variables used by human.draw
- * ui={}: contains all variables exposed in the UI
- */
-
-// test url <https://human.local/?worker=false&async=false&bench=false&draw=true&warmup=full&backend=humangl>
-
-// @ts-nocheck // typescript checks disabled as this is pure javascript
-
-import Human from 'https://vladmandic.github.io/human/dist/human.esm.js'; // equivalent of @vladmandic/human
-import Menu from 'https://vladmandic.github.io/human/demo/helpers/menu.js';
-import GLBench from 'https://vladmandic.github.io/human/demo/helpers/gl-bench.js';
-import webRTC from 'https://vladmandic.github.io/human/demo/helpers/webrtc.js';
-import jsonView from 'https://vladmandic.github.io/human/demo/helpers/jsonview.js';
+import Human from 'https://g4lihru.me/ai/dist/human.esm.js'; // equivalent of @vladmandic/human
+import Menu from 'https://g4lihru.me/ai/recis/helpers/menu.js';
+import GLBench from 'https://g4lihru.me/ai/recis/helpers/gl-bench.js';
+import webRTC from 'https://g4lihru.me/ai/recis/helpers/webrtc.js';
+import jsonView from 'https://g4lihru.me/ai/recis/helpers/jsonview.js';
 
 let human;
 
