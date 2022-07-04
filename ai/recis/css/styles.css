@@ -111,9 +111,9 @@
   recis-side li a span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s; text-decoration:none}
   recis-side.show li a span.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
   recis-side li a:hover i, recis-side li a:hover span.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none}
-  recis-side li recis-bar-btn  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d}
+  recis-side li recis-bar-btn  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d; cursor: pointer;}
   recis-side li recis-bar-btn:hover  { background:#fff}
-  recis-side li recis-bar-btn span.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s}
+  recis-side li recis-bar-btn span.links_name  { color:#ffff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s}
   recis-side.show li a recis-bar-btn span.links_name  { opacity:1; pointer-events:auto; text-decoration:none}
   recis-side li recis-bar-btn:hover i,recis-side li recis-bar-btn:hover span.links_name  { transition:all .5s ease; color:#11101d}
   recis-side li i  { height:50px; line-height:50px; font-size:18px; border-radius:12px}
