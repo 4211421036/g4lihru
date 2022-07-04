@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Shady: CSS, JS, and Ico Root Append -->
 </head>
-<body translate="yes">
+<body>
     <recis-side class="sidebar">
         <recis-logo class="logo-details">
             <recis-text class="logo_name" align="center" title="Beranda Logo recis">AI recis</recis-text>
@@ -104,7 +104,7 @@
         <recis-ground id="background" class="background">
         </recis-ground>
         <recis-load id="loader" class="loader"></recis-load>
-        <recis-status translate="yes" id="status" class="status"></recis-status>
+        <recis-status id="status" class="status"></recis-status>
         <recis-bar id="recis-bar" class="recis-bar">
             <recis-bar-btn id="btnDisplay" class="icon">
                 <recis-bar-icon class="icon-binoculars"></recis-bar-icon>display
@@ -285,17 +285,17 @@
         </recis-media>
         <recis-compare-container id="compare-container" class="compare-image">
             <canvas id="compare-canvas" width="256" height="256"></canvas>
-            <recis-sim id="similarity" translate="yes"></recis-sim>
+            <recis-sim id="similarity"></recis-sim>
         </recis-compare-container>
         <recis-segmen-container id="recis-segmentation-container" class="compare-image">
             <canvas id="recis-segmentation-mask" width="256" height="256" style="width: 256px;  height: 256px; "></canvas>
             <canvas id="recis-segmentation-canvas" width="256" height="256 " style="width: 256px;  height: 256px; "></canvas>
         </recis-segmen-container>
         <recis-samp-container id="samples-container" class="samples-container"></recis-samp-container>
-        <recis-hint translate="yes" id="recis-hint" class="hint"></recis-hint>
+        <recis-hint id="recis-hint" class="hint"></recis-hint>
         <recis-log id="recis-log" class="log"></recis-log>
-        <recis-results id="results" translate="yes" class="results"></recis-results>
-        <recis-transcript id="transcript" translate="yes"></recis-transcript>
+        <recis-results id="results" class="results"></recis-results>
+        <recis-transcript id="transcript"></recis-transcript>
     </recis-sec>
     <script type="application/ld+json">
     {
