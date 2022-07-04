@@ -17,7 +17,7 @@
   .thumbnail  { margin:8px; box-shadow:0 0 4px 4px #696969}
   .thumbnail:hover  { box-shadow:0 0 8px 8px #696969; filter:grayscale(1)}
   .log  { position:absolute; left:0; bottom:0; margin:.4rem .4rem 0 .4rem; width:100%; font-size:.9rem; color: #11101d}
-  recis-bar  { width:100%; background:#303030; display:flex; justify-content:space-evenly; text-align:center; padding:8px; cursor:pointer}
+  recis-bar  { width:100%; background:#303030; display:flex; justify-content:space-evenly; text-align:center; padding:8px; cursor:pointer; color: white;}
   .samples-container  { display:flex; flex-wrap:wrap}.video  { display:none}
   .canvas  { margin:0 auto}.bench  { position:absolute; right:0; bottom:0}
   .compare-image  { width:256px; position:absolute; top:150px; left:30px; box-shadow:0 0 2px 2px #000; background:#11101d; opacity: 0.88; display:none}
