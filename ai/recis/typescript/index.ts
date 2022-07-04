@@ -1,18 +1,6 @@
-/**
- * Human demo for browsers
- * @default Human Library
- * @summary <https://github.com/vladmandic/human>
- * @author <https://github.com/vladmandic>
- * @copyright <https://github.com/vladmandic>
- * @license MIT
- */
-
 import { Human, Config } from '../../dist/human.esm.js'; // equivalent of @vladmandic/Human
 
 const humanConfig: Partial<Config> = { // user configuration for human, used to fine-tune behavior
-  // backend: 'webgpu' as const,
-  // wasmPath: 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@3.18.0/dist/',
-  // cacheSensitivity: 0,
   async: true,
   modelBasePath: '../../models',
   filter: { enabled: true, equalization: false, flip: false },
