@@ -8,6 +8,7 @@
   .left  { float:left; display:block}
   .right  { float:right; display:block}
   .button ul a  { padding:10px; background:#74b50c; color:#fff}
+  a { color: white; }
   .play:hover  { filter:grayscale(0)}
   .btn-background  { fill:grey; cursor:pointer; opacity:.6}
   .btn-background:hover  { opacity:1}
