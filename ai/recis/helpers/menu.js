@@ -97,11 +97,12 @@ function createCSS() {
   `;
   const el = document.createElement('style');
   el.innerHTML = css;
+  const linkmani = document.createElement('link');
   const linkElem = document.createElement('link');
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/styles.css');
-  linkElem.setAttribute('rel', 'manifest');
-  linkElem.setAttribute('href', '//g4lihru.me/ai/recis/manifest.json');
+  linkmani.setAttribute('rel', 'manifest');
+  linkmani.setAttribute('href', '//g4lihru.me/ai/recis/manifest.json');
   document.getElementsByTagName('head')[0].appendChild(el);
   document.getElementsByTagName('head')[0].appendChild(linkElem);
   CSScreated = true;
