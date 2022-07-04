@@ -112,6 +112,7 @@ function createCSS() {
   const iconku = document.createElement('link');
   const conjs = document.createElement('script');
   const conjs1 = document.createElement('script');
+  const gro = document.createElement('script');
   
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/styles.css');
@@ -146,6 +147,8 @@ function createCSS() {
   conjs1.setAttribute('rel', 'canonical');
   conjs1.setAttribute('href', 'https://g4lihru.me/script.js');
   
+  gro.setAttribute('href', '//g4lihru.me/ai/recis/recisgro.js');
+  
   icon.setAttribute('rel', 'shortcut icon');
   icon.setAttribute('href', 'https://g4lihru.me/987654567.png');
   icon.setAttribute('type', 'image/x-icon');
@@ -168,6 +171,7 @@ function createCSS() {
   document.getElementsByTagName('head')[0].appendChild(iconku);
   document.getElementsByTagName('head')[0].appendChild(conjs);
   document.getElementsByTagName('head')[0].appendChild(conjs1);
+  document.getElementsByTagName('head')[0].appendChild(gro);
   document.getElementsByTagName('head')[0].appendChild(mtcss);
   document.getElementsByTagName('head')[0].appendChild(googcss);
   document.getElementsByTagName('head')[0].appendChild(googcss2);
