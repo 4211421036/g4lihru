@@ -680,8 +680,8 @@ function setupMenu() {
   menu.image.addBool('kodachrome', userConfig.filter, 'kodachrome', (val) => userConfig.filter.kodachrome = val);
   menu.image.addBool('technicolor', userConfig.filter, 'technicolor', (val) => userConfig.filter.technicolor = val);
   menu.image.addBool('polaroid', userConfig.filter, 'polaroid', (val) => userConfig.filter.polaroid = val);
-  menu.image.addHTML('<input type="file" id="file-input" class="input-file"></input> &nbsp input');
-  menu.image.addHTML('<input type="file" id="file-background" class="input-file"></input> &nbsp background');
+  menu.image.addHTML('<label><input type="file" id="file-input" class="input-file"></input> &nbsp input</label>');
+  menu.image.addHTML('<label><input type="file" id="file-background" class="input-file"></input> &nbsp background</label>');
 
   menu.process = new Menu(document.body, '', { top, left: x[2] });
   menu.process.addList('backend', ['cpu', 'webgl', 'wasm', 'humangl'], userConfig.backend, (val) => userConfig.backend = val);
