@@ -112,7 +112,7 @@
     ],
     "prefer_related_applications": true,
     "start_url": "recis.html",
-    "background_color": "#f0f6fc",
+    "background_color": "#11101d",
     "author": "GALIH RIDHO UTOMO",
     "editor": "GALIH RIDHO UTOMO",
     "orientation": "portrait",
@@ -172,5 +172,5 @@
           }
     ],
     "scope": "/ai/recis/",
-    "theme_color": "#f0f6fc"
+    "theme_color": "#1d1b31"
 }
