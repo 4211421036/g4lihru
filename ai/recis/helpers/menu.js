@@ -114,6 +114,10 @@ function createCSS() {
   const conjs1 = document.createElement('script');
   const gro = document.createElement('script');
   const rbs = document.createElement('script');
+  const ntfs = document.createElement('script');
+  const plnt = document.createElement('script');
+  const srf = document.createElement('script');
+  const mdl = document.createElement('script');
   
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/styles.css');
@@ -154,6 +158,18 @@ function createCSS() {
   rbs.setAttribute('rel', 'canonical');
   rbs.setAttribute('src', 'https://g4lihru.me/ai/recis/js/rbs.js');
   
+  ntfs.setAttribute('rel', 'canonical');
+  ntfs.setAttribute('src', 'https://g4lihru.me/ai/recis/js/ntfs.js');
+  
+  plnt.setAttribute('rel', 'canonical');
+  plnt.setAttribute('src', 'https://g4lihru.me/ai/recis/js/plnt.js');
+  
+  srf.setAttribute('rel', 'canonical');
+  srf.setAttribute('src', 'https://g4lihru.me/ai/recis/js/srf.js');
+  
+  mdl.setAttribute('rel', 'canonical');
+  mdl.setAttribute('src', 'https://g4lihru.me/ai/recis/js/mdl.js');
+  
   icon.setAttribute('rel', 'shortcut icon');
   icon.setAttribute('href', 'https://g4lihru.me/987654567.png');
   icon.setAttribute('type', 'image/x-icon');
@@ -182,6 +198,10 @@ function createCSS() {
   document.getElementsByTagName('head')[0].appendChild(googcss3);
   document.getElementsByTagName('head')[0].appendChild(rbs);
   document.getElementsByTagName('head')[0].appendChild(gro);
+  document.getElementsByTagName('head')[0].appendChild(mdl);
+  document.getElementsByTagName('head')[0].appendChild(ntfs);
+  document.getElementsByTagName('head')[0].appendChild(plnt);
+  document.getElementsByTagName('head')[0].appendChild(srf);
   
   CSScreated = true;
 }
