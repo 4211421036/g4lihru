@@ -301,24 +301,7 @@
         <recis-results id="results" translate="yes" class="results"></recis-results>
         <recis-transcript id="transcript" translate="yes"></recis-transcript>
     </recis-sec>
-    <!-- import the webpage's javascript file -->
-    <script src="//g4lihru.me/ai/recis/recisgro.js"></script>
-    <script>
-        var video = document.querySelector("#videoRECIS");
-
-        if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({
-                    video: true
-                })
-                .then(function(stream) {
-                    video.srcObject = stream;        
-                    $("#videoRECIS").draggable();
-                })
-                .catch(function(err0r) {
-                    console.log("Something went wrong!");
-                });
-        }
-    </script>
+    <!-- Shady Root Script Append -->
     <script type="text/javascript">
         // Get the modal
         var modal = document.getElementById("myModal"); 
