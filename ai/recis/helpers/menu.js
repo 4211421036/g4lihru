@@ -138,7 +138,6 @@ function createCSS() {
   linkElem3.setAttribute('href', 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css');
   
   mtcss.setAttribute('rel', 'stylesheet');
-  mtcss.setAttribute('type', 'text/css');
   mtcss.setAttribute('href', 'https://g4lihru.me/ai/recis/icons.css');
 
 
