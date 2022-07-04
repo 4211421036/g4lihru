@@ -110,10 +110,10 @@
   recis-side li a:hover  { background:#fff; text-decoration:none}
   recis-side li a recis-text.links_name  { color:#fff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s; text-decoration:none; display: content;}
   recis-side.show li a recis-text.links_name  { opacity:1; pointer-events:auto; text-decoration:none; display: content; color: white}
-  recis-side li a:hover i, recis-side li a:hover recis-text.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none display: content;}
+  recis-side li a:hover i, recis-side li a:hover recis-text.links_name  { transition:all .5s ease; color:#11101d; text-decoration:none; display: content;}
   recis-side li recis-bar-btn  { display:flex; height:100%; width:100%; border-radius:12px; align-items:center; text-decoration:none; transition:all .4s ease; background:#11101d; cursor: pointer;}
   recis-side li recis-bar-btn:hover  { background:#fff}
-  recis-side li recis-bar-btn recis-text.links_name  { color:#ffff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s display: content;}
+  recis-side li recis-bar-btn recis-text.links_name  { color:#ffff; font-size:15px; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:.4s; display: content;}
   recis-side.show li a recis-bar-btn recis-text.links_name  { opacity:1; pointer-events:auto; text-decoration:none; display: content;}
   recis-side li recis-bar-btn:hover i,recis-side li recis-bar-btn:hover recis-text.links_name  { transition:all .5s ease; color:#11101d}
   recis-side li i  { height:50px; line-height:50px; font-size:18px; border-radius:12px}
