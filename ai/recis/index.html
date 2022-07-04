@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id">
 
@@ -57,39 +58,31 @@
                 <span class="tooltip">recis</span>
             </li>
             <li>
-                <recis-bar id="recis-bar" class="recis-bar">
-                    <recis-bar-btn id="btnDisplay" class="icon">
-                        <i class='bx bx-desktop bx-tada' title="Setting Display recis"></i>
-                        <span class="links_name">Display</span>
-                    </recis-bar-btn>
-                </recis-bar>
+                <recis-bar-btn href="#" id="btnDisplay">
+                    <i class='bx bx-desktop bx-tada' title="Setting Display recis"></i>
+                    <span class="links_name">Display</span>
+                </recis-bar-btn>
                 <span class="tooltip">Display</span>
             </li>
             <li>
-                <recis-bar id="recis-bar" class="recis-bar">
-                    <recis-bar-btn id="btnImage" class="icon">
-                        <i class='bx bxs-brush-alt bx-tada' title="Setting Input recis"></i>
-                        <span class="links_name">Input</span>
-                    </recis-bar-btn>
-                <recis-bar id="recis-bar" class="recis-bar">
+                <recis-bar-btn href="#" id="btnImage">
+                    <i class='bx bxs-brush-alt bx-tada' title="Setting Input recis"></i>
+                    <span class="links_name">Input</span>
+                </recis-bar-btn>
                 <span class="tooltip">Input</span>
             </li>
             <li>
-                <recis-bar id="recis-bar" class="recis-bar">
-                    <recis-bar-btn id="btnProcess" class="icon">
-                        <i class='bx bx-stats bx-tada' title="Setting Option recis"></i>
-                        <span class="links_name">Option</span>
-                    </recis-bar-btn>
-                <recis-bar id="recis-bar" class="recis-bar">
+                <recis-bar-btn href="#" id="btnProcess">
+                    <i class='bx bx-stats bx-tada' title="Setting Option recis"></i>
+                    <span class="links_name">Option</span>
+                </recis-bar-btn>
                 <span class="tooltip">Input</span>
             </li>
             <li>
-                <recis-bar id="recis-bar" class="recis-bar">
-                    <recis-bar-btn id="btnModel" class="icon">
-                        <i class='bx bxs-game bx-tada' title="Setting Model recis"></i>
-                        <span class="links_name">Model</span>
-                    </recis-bar-btn>
-                <recis-bar id="recis-bar" class="recis-bar">
+                <recis-bar-btn href="#" id="btnModel">
+                    <i class='bx bxs-game bx-tada' title="Setting Model recis"></i>
+                    <span class="links_name">Model</span>
+                </recis-bar-btn>
                 <span class="tooltip">Model</span>
             </li>
             <li>
@@ -114,6 +107,26 @@
         </recis-ground>
         <recis-load id="loader" class="loader"></recis-load>
         <recis-status translate="yes" id="status" class="status"></recis-status>
+        <recis-bar id="recis-bar" class="recis-bar">
+            <recis-bar-btn id="btnDisplay" class="icon">
+                <recis-bar-icon class="icon-binoculars"></recis-bar-icon>display
+            </recis-bar-btn>
+            <recis-bar-btn id="btnImage" class="icon">
+                <recis-bar-icon class="icon-brush"></recis-bar-icon>input
+            </recis-bar-btn>
+            <recis-bar-btn id="btnProcess" class="icon">
+                <recis-bar-icon class="icon-stats"></recis-bar-icon>options
+            </recis-bar-btn>
+            <recis-bar-btn id="btnModel" class="icon">
+                <recis-bar-icon class="icon-games"></recis-bar-icon>models
+            </recis-bar-btn>
+            <recis-bar-btn id="chatrecis" class="icon">
+                <recis-bar-icon id="myBtn" class="icon-record"></recis-bar-icon>Start
+            </recis-bar-btn>
+            <recis-bar-btn id="btnStart" class="icon">
+                <recis-bar-icon class="icon-webcam"></recis-bar-icon><span id="btnStartText">start video</span>
+            </recis-bar-btn>
+        </recis-bar>
         <recis-media id="media">
             <canvas id="canvas" class="canvas" style='position:absolute;  left:0rem;  top:0rem;  width: 100%;  height:100%; '></canvas>
             <div id="myModal" class="modal" align="center">
