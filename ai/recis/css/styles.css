@@ -132,7 +132,7 @@
   recis-media-container recis-media-container-plant svg { width: 64px; height: 64px; fill: none; z-index: 1; pointer-events: none;}
   recis-media-container recis-media-container-plant button { width: 64px; height: 64px; margin: 0; padding: 0; border: none; background: transparent; position: absolute; border-radius: 50%; cursor: pointer; z-index: 1;}
   @media (max-width:420px)  { .sidebar li .tooltip  { display:none}}::-webkit-scrollbar  { width:10px}
-  @media only screen and (min-device-width: 425px) and (max-device-width: 767px) and (orientation:portrait){ recis-side ul.nav-list{margin-top:2rem;height:30rem;overflow-y:scroll;overflow-x:hidden}}
+  @media only screen and (min-device-width: 425px) and (max-device-width: 767px) and (orientation:portrait){ recis-side ul.nav-list{margin-top:2rem;height:28rem;overflow-y:scroll;overflow-x:hidden}}
   @media only screen and (min-device-width: 768px){ recis-side ul.nav-list{margin-top: 2rem;height:23rem;overflow-y:scroll;overflow-x:hidden}}
   @media only screen and (min-device-width: 375px) and (max-device-width: 424px) and (orientation:portrait){ recis-side ul.nav-list{margin-top:2rem;height:50rem;overflow-y:scroll;overflow-x:hidden}}
   @media only screen and (min-device-width: 320px) and (max-device-width: 374px) and (orientation:portrait){recis-side ul.nav-list{margin-top:2rem;height:28rem;overflow-y:scroll;overflow-x:hidden}}
