@@ -109,9 +109,9 @@ function createCSS() {
   linkmani.setAttribute('rel', 'manifest');
   linkmani.setAttribute('href', '//g4lihru.me/ai/recis/manifest.json');
   
-  icon.setAttribute('rel', 'canonical');
-  icon.setAttribute('href', 'https://g4lihru.me/ai/recisside.js');
-  icon.setAttribute('defer');  
+  conjs.setAttribute('rel', 'canonical');
+  conjs.setAttribute('href', 'https://g4lihru.me/ai/recisside.js');
+  conjs.setAttribute('defer');  
   
   icon.setAttribute('rel', 'shortcut icon');
   icon.setAttribute('href', 'https://g4lihru.me/987654567.png');
