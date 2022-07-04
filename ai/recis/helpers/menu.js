@@ -99,8 +99,9 @@ function createCSS() {
   el.innerHTML = css;
   const linkElem = document.createElement('link');
   linkElem.setAttribute('rel', 'stylesheet');
-  linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/style.css');
-  document.getElementsByTagName('head')[0].appendChild(el, linkElem);
+  linkElem.setAttribute('href', '//g4lihru.me/ai/recis/css/styles.css');
+  document.getElementsByTagName('head')[0].appendChild(el);
+  document.getElementsByTagName('head')[0].appendChild(linkElem);
   CSScreated = true;
 }
 
