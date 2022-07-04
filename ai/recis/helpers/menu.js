@@ -99,6 +99,7 @@ function createCSS() {
   el.innerHTML = css;
   const linkmani = document.createElement('link');
   const linkElem = document.createElement('link');
+  const linkElem1 = document.createElement('link');
   const linkElem2 = document.createElement('link');
   const linkElem3 = document.createElement('link');
   const mtcss = document.createElement('link');
@@ -127,8 +128,8 @@ function createCSS() {
   googcss3.setAttribute('rel', 'stylesheet');
   googcss3.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-  linkElem.setAttribute('rel', 'stylesheet');
-  linkElem.setAttribute('href', 'https://g4lihru.me/meet/dist/tailwind.css');
+  linkElem1.setAttribute('rel', 'stylesheet');
+  linkElem1.setAttribute('href', 'https://g4lihru.me/meet/dist/tailwind.css');
 
   linkElem2.setAttribute('rel', 'stylesheet');
   linkElem2.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
@@ -248,6 +249,7 @@ function createCSS() {
   
   document.getElementsByTagName('head')[0].appendChild(el);
   document.getElementsByTagName('head')[0].appendChild(linkElem);
+  document.getElementsByTagName('head')[0].appendChild(linkElem1);
   document.getElementsByTagName('head')[0].appendChild(linkElem2);
   document.getElementsByTagName('head')[0].appendChild(linkElem3);
   document.getElementsByTagName('head')[0].appendChild(linkmani);
