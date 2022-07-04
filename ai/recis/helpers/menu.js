@@ -126,7 +126,7 @@ function createCSS() {
   
   linkElem.setAttribute('rel', 'stylesheet');
   linkElem.setAttribute('type', 'text/css');
-  linkElem.setAttribute('href', '//g4lihru.me/ai/recis/icons.css');
+  linkElem.setAttribute('href', 'https://g4lihru.me/ai/recis/icons.css');
 
 
   linkmani.setAttribute('rel', 'manifest');
@@ -139,7 +139,7 @@ function createCSS() {
   conjs.setAttribute('src', '//code.jquery.com/jquery-1.10.2.js');
 
   conjs.setAttribute('rel', 'canonical');
-  conjs.setAttribute('src', 'https://g4lihru.me/ai/recisside.js');
+  conjs.setAttribute('src', 'https://g4lihru.me/ai/recis/recisside.js');
   conjs.setAttribute('defer', 'defer');
   
   conjs.setAttribute('rel', 'canonical');
