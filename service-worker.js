@@ -1,5 +1,5 @@
 const CACHE_NAME = 'Home';
-const OFFLINE_URL = 'index.html';
+const OFFLINE_URL = 'ai/recis/';
 
 self.addEventListener('install', function(event) {
   console.log('[ServiceWorker] Install');
