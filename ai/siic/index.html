@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Trafflytic | Automated Traffic Analytics Platform</title>
+<meta content="Trafflytic is Pakistan&rsquo;s 1st automated traffic monitoring platform and traffic analytics solution for any entity that requires general traffic information for any purpose." name="descriptison">
+<meta content="Traffic surveys, Traffic monitoring solution, Traffic classified count, traffic directional count" name="keywords">
+
+<link href="favicons/img-trafflytic-favicon.png" rel="icon">
+<link href="favicons/img-trafflytic-favicon.png" rel="apple-touch-icon">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CPoppins:300,400,500,700" rel="stylesheet">
+
+<link href="css/css-bootstrap.min.css" rel="stylesheet">
+<link href="css/css-font-awesome.min.css" rel="stylesheet">
+<link href="css/css-boxicons.min.css" rel="stylesheet">
+<link href="css/assets-owl.carousel.min.css" rel="stylesheet">
+<link href="css/venobox-venobox.css" rel="stylesheet">
+<link href="css/aos-aos.css" rel="stylesheet">
+
+<link href="css/css-style.css" rel="stylesheet">
+<script src="js/jquery-jquery.min.js"></script>
+
+
+<script>
+
+        var captchaQuestion;
+        var captchaId;
+
+        function captchaGenerator() {
+            $.ajax({
+                type: "GET",
+                url: "https://devapi.adlytic.ai/captcha",
+                async: false,
+                success: function (response) {
+                    captchaQuestion = response.data.question;
+                    captchaId = response.data.id;
+                }
+            });
+        }
+        captchaGenerator();
+
+    </script>
+</head>
+<body>
+
+<header id="header" class="header-transparent">
+<div class="container">
+<div id="logo" class="pull-left">
+<a href="index.html"><img src="images/img-Trafflytic-Logo-web.png" alt="" width="160px"></a>
+
+
+</div>
+<nav id="nav-menu-container">
+<ul class="nav-menu">
+<li class="menu-active"><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Features</a></li>
+<li><a href="#facts">Why Trafflytic</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section id="hero">
+<div class="d-none d-sm-block">
+<div id="particles-js"></div>
+
+<div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+<div class="row mx-5">
+
+
+<div class="container w-50 mt-5 d-flex align-items-center h-75">
+<div class="row ml-lg-5 ml-md-5">
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-left">
+<h1 class="text-light">Automated Traffic Analytics Platform</h1>
+<p class="text-light text-size">Trafflytic is an AI based traffic monitoring platform
+and traffic analytics solution for any entity that requires general traffic
+information for any purpose.</p>
+<div class="col-lg-8 px-0 cta-btn-container">
+<button class="btn-demo align-middle" href="#contact" onclick="scrollToDiv()">Request Demo</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-6 mt-5">
+<img src="images/img-trafflytic-main-dye.png" alt="" class="img-fluid float-right mt-5">
+</div>
+</div>
+
+</div>
+</div>
+<div class="d-block d-sm-none align-items-center py-5" style="height: 280px!important;">
+<div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+
+
+<div class="container">
+<div class="row">
+<div class="col-12 text-left">
+<h1 class="text-light">Automated Traffic Analytics Platform</h1>
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<main id="main">
+
+<section id="about">
+<div class="container" data-aos="fade-up">
+<div class="row about-container">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-xs-0 order-lg-1 order-1">
+<h2 class="title">About Us</h2>
+<p style="color:white">
+Trafflytic is an AI based traffic monitoring platform and traffic analytics solution for any
+entity that requires general traffic information for any purpose.
+</p>
+<p style="color:white">Trafflytic is designed and developed with the notion to provide ease of
+use and effective traffic analysis for our customers; ensuring very high accuracy in less
+time and lower cost, as compared to other systems of traffic monitoring and counting.</p>
+</div>
+<div class="col-lg-6 background order-lg-2 order-2" data-aos="fade-left" data-aos-delay="100"></div>
+</div>
+</div>
+</section>
+
+<section id="services" class="footfall-wise-stepin">
+<div class="container w-75 mx-0 mx-md-auto" data-aos="fade-up">
+<div class="section-header">
+<h3 class="section-title">Features</h3>
+</div>
+<div class="row" data-aos="fade-right">
+<div class="col-md-6 my-3 my-md-5"> 
+<h4 class="title">Classified Vehicle Count</h4>
+<p class="description">
+Every different type of vehicle will be classified separately. Pedestrians can also be
+classified. Categories included are:
+</p>
+<div class="row vehicle-list">
+<div class="col-6">
+<ul class="list-group">
+<li class="list-group-item">
+Bicycle
+</li>
+<li class="list-group-item">
+Animal Driven Cart
+</li>
+<li class="list-group-item">
+Motorcycle/Scooter
+</li>
+<li class="list-group-item">
+Rickshaw
+</li>
+<li class="list-group-item">
+Qingqi
+</li>
+<li class="list-group-item">
+Car/Taxi
+</li>
+<li class="list-group-item">
+Hiace Wagon
+</li>
+<li class="list-group-item">
+Bus/Speedo
+</li>
+</ul>
+</div>
+<div class="col-6">
+<ul class="list-group">
+<li class="list-group-item">
+Loader Pickup
+</li>
+<li class="list-group-item">
+Tractor/Trolley: 2-Axle
+</li>
+<li class="list-group-item">
+Tractor/Trolley: 3-Axle
+</li>
+<li class="list-group-item">
+Truck: 2-Axle
+</li>
+<li class="list-group-item">
+Truck: 3-Axle
+</li>
+<li class="list-group-item">
+Truck: 4-Axle
+</li>
+<li class="list-group-item">
+Truck: 5-Axle and above
+</li>
+<li class="list-group-item">
+Pedestrian
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-6 mt-3 mt-md-0 my-md-5 my-lg-5 text-center">
+<img src="images/img-vehicle-count.png" alt="" class="img-fluid d-flex mx-auto float-md-right my-md-5 my-lg-5" width="500">
+</div>
+</div>
+<div class="row" data-aos="fade-left">
+<div class="col-md-6 d-sm-block">
+<img src="images/img-directional-count.png" alt="" class="img-fluid" width="500">
+</div>
+<div class="col-md-6 mt-3 mt-md-5">
+<h4 class="title">Directional Vehicle Count</h4>
+<p class="description text-left">Vehicles will be tracked and counted according to which
+direction they are going in. For example: Assuming a typical 4-way junction, for every
+traffic stop, classified vehicle counts for every direction (straight, left, right, u-turn)
+will be shown separately.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="call-to-action">
+<div class="container">
+<div class="row" data-aos="zoom-in">
+<div class="col-lg-9 text-center text-lg-left">
+<h3 class="cta-title">Request Demo</h3>
+<p class="cta-text">Fill out the form and we'll schedule a demo of Trafflytic for you.</p>
+</div>
+<div class="col-lg-3 cta-btn-container text-center">
+<button class="btn-demo align-middle" href="#contact" onclick=" scrollToDiv()">Request Demo</button>
+</div>
+</div>
+</div>
+</section>
+<section id="facts">
+<div class="container" data-aos="fade-up">
+<div class="section-header">
+<h3 class="section-title">How We Do It?</h3>
+<p class="section-description"></p>
+</div>
+<div class="row counters">
+<div class="col-lg-4 col-md-4 col-sm-12 text-center">
+<span>Record</span>
+<p class="text-alignment">Use a camera to record the traffic video at the desired location</p>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 mybox text-center">
+<span>Process</span>
+<p class="text-alignment">System processes the video and obtains the required analysis</p>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 mybox text-center">
+<span>Visualize</span>
+<p class="text-alignment">All generated analytics will be shown in excel sheet format or on our
+user-friendly dashboard</p>
+</div>
+</div>
+</div>
+</section>
+<section id="facts" style="background: #201D33;">
+<div class="container" data-aos="fade-up">
+<div class="section-header">
+<h3 class="section-title">Why Trafflytic?</h3>
+</div>
+<div class="row pt-5">
+<div class="col-lg-4 col-md-6" data-aos="zoom-in">
+<div class="box">
+<div class="icon"><a href="www.trafflytic.html"><i class="fa fa-check"></i></a></div>
+<h4 class="title_service">
+</h4><p class="heading">Accurate Data</p>
+
+<p class="description">Data is the building block to every traffic monitoring project and
+highly accurate data provides the best foundations. Manual methods for data collection
+are not practical due to the obvious human error. Automating the entire process has
+enabled Trafflytic to have an unrivalled accuracy of above 90%.</p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6" data-aos="zoom-in">
+<div class="box">
+<div class="icon"><a href="www.trafflytic.html"><i class="fa fa-clock-o"></i></a></div>
+<h4 class="title_service">
+</h4><p class="heading">Time Efficient</p>
+
+<p class="description">The current manual method for conducting traffic surveys involves
+data collection, data coding and analysis, which requires many days or sometimes even
+weeks, as all this is done by humans. Trafflytic automates this method entirely and
+hence reduces the time taken, for a survey, from days/weeks to hours!</p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6" data-aos="zoom-in">
+<div class="box">
+<div class="icon"><a href="www.trafflytic.html"><i class="fa fa-usd"></i></a></div>
+<h4 class="title_service">
+</h4><p class="heading">Cost Efficient</p>
+
+<p class="description">Time = Money! Our ability to exponentially reduce the time for a
+traffic survey means that the cost for a survey is also dramatically reduced! The
+introduction of technology in traffic monitoring has eliminated the need of human
+surveyors and hence, completely cut operational costs of manual traffic monitoring.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="footfall-wise-stepin 	">
+<div class="container">
+<div class="section-header">
+<h3 class="section-title">Get in Touch</h3>
+
+</div>
+</div>
+<div class="container" style="margin-top:3rem">
+<div class="row justify-content-center">
+<div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+<div class="info d-flex justify-content-between">
+<div>
+<i class="fa fa-envelope fa-1x"></i>
+<p><a style="color:white" href="/cdn-cgi/l/email-protection#8ee7e0e8e1cee1e3e0e1a0efe7"><span class="__cf_email__" data-cfemail="177e79717857787a797839767e">[email&nbsp;protected]</span></a></p>
+</div>
+<div>
+<i class="fa fa-phone"></i>
+<p style="color:white">+92 321 4801995</p>
+</div>
+</div>
+</div>
+</div>
+<div class="row justify-content-center" id="contactSection">
+<div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+<div class="form">
+<form action="" method="post" role="form" id="email-form" class="php-email-form">
+<div class="form-group d-none">
+<input type="text" name="name" class="form-control" id="updatedCaptchID" readonly>
+<div class="validate"></div>
+</div>
+<div class="form-group">
+<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+<div class="validate"></div>
+</div>
+<div class="form-group">
+<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
+<div class="validate"></div>
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+<div class="validate"></div>
+</div>
+<div class="form-group">
+<textarea class="form-control" name="message" rows="5" id="message" data-rule="required" data-msg="Please write something for us" placeholder="Message" required></textarea>
+<div class="validate"></div>
+</div>
+<div class="form-group">
+<div>
+<span id="captcha_question"></span>
+<input type="number" id="answer" required style="width: 50px; border: 1px solid #ced4da">
+<span id="error-message" style="color:red ;"></span>
+<span id="sent-message" style="color:green">
+</span>
+</div>
+<div class="validate"></div>
+</div>
+<div class="text-center">
+<button type="submit" id="submitMessage">
+Send Message
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+</div>
+</div>
+<div class="container">
+<div class="copyright">
+&copy; Copyright <strong>Trafflytic</strong>. All Rights Reserved
+</div>
+</div>
+</footer>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<script data-cfasync="false" src="js/cloudflare-static-email-decode.min.js"></script><script src="js/js-bootstrap.bundle.min.js"></script>
+<script src="js/jquery.easing-jquery.easing.min.js"></script>
+<script src="js/php-email-form-validate.js"></script>
+<script src="js/counterup-counterup.min.js"></script>
+<script src="js/waypoints-jquery.waypoints.min.js"></script>
+<script src="js/isotope-layout-isotope.pkgd.min.js"></script>
+<script src="js/superfish-superfish.min.js"></script>
+<script src="js/hoverIntent-hoverIntent.js"></script>
+<script src="js/owl.carousel-owl.carousel.min.js"></script>
+<script src="js/venobox-venobox.min.js"></script>
+<script src="js/aos-aos.js"></script>
+
+<script src="js/js-main.js"></script>
+
+
+<script src="js/js-particles.js"></script>
+<script src="js/js-app.js"></script>
+<script>
+        document.getElementById("captcha_question").innerHTML = captchaQuestion;
+        document.getElementById("updatedCaptchID").value = captchaId;
+
+        $(document).ready(function () {
+            $("#submitMessage").click(function (e) {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var subject = document.getElementById("subject").value;
+                var message = document.getElementById("message").value;
+                var ans = document.getElementById("answer").value;
+                var key = document.getElementById("updatedCaptchID").value;
+                var dataString = {
+                    subject: subject,
+                    email: email,
+                    name: name,
+                    message: message,
+                    ans: ans,
+                    id: key,
+                };
+
+                $('#email-form :input[required="required"]').each(function () {
+                    if (!this.validity.valid) {
+                        $(this).focus().css({ "background-color": "none", "font-size": "105%", "outline": "none", "border": "1px solid #F0BC20" });
+                        // break
+                        return false;
+                    }
+
+                });
+                if ($("#email-form")[0].checkValidity()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "https://devapi.adlytic.ai/users/emailMessage",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        data: JSON.stringify(dataString),
+
+                        success: function (res) {
+                            document.getElementById("email-form").reset();
+                            document.getElementById("captcha_question").innerHTML = res.data.question;
+                            document.getElementById("updatedCaptchID").value = res.data.id;
+                            document.getElementById('sent-message').style.display = "block"
+                            document.getElementById("error-message").style.display = "none";
+                            document.getElementById('sent-message').innerHTML = "Email sent successfully. Thank you!";
+                        },
+                        error: function (res) {
+                            document.getElementById("captcha_question").innerHTML = res.responseJSON.data.question;
+                            document.getElementById("updatedCaptchID").value = res.responseJSON.data.id;
+                            document.getElementById('sent-message').style.display = "none"
+                            document.getElementById("error-message").style.display = "block";
+                            document.getElementById("error-message").innerHTML = res.responseJSON.message;
+                        },
+                    });
+                }
+                e.preventDefault();
+            });
+        });
+
+        function scrollToDiv() {
+            var elem = document.querySelector("#contactSection");
+            window.scroll({
+                top: elem.offsetTop,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+    </script>
+</body>
+</html>
