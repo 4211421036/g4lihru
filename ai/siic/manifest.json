@@ -79,34 +79,6 @@
             "type": "image/webp",
             "platform": "wide",
             "label": "Side Homescreen Mobile of Awesome RECIS App"
-        },
-        {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.side2.webp",
-            "sizes": "640x720",
-            "type": "image/webp",
-            "platform": "wide",
-            "label": "Side 2 Homescreen Mobile of Awesome RECIS App"
-        },
-        {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.side1.webp",
-            "sizes": "1280x720",
-            "type": "image/webp",
-            "platform": "wide",
-            "label": "Side Homescreen of Awesome RECIS App"
-        },
-        {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.side2.webp",
-            "sizes": "1280x720",
-            "type": "image/webp",
-            "platform": "wide",
-            "label": "Side 2 Homescreen of Awesome RECIS App"
-        },
-        {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.side3.webp",
-            "sizes": "1280x720",
-            "type": "image/webp",
-            "platform": "wide",
-            "label": "Side 3 Homescreen of Awesome RECIS App"
         }
     ],
     "prefer_related_applications": true,
