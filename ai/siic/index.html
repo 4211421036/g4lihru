@@ -40,6 +40,53 @@
             display: block;
         }
         
+        siic-text {
+            cursor: pointer;
+            float: left;
+            position: relative;
+            font-size: 18pt;
+            font-style: bold;
+            font-style: italic;
+            display: block;
+            top: 1px;
+            width: 45%;
+            border: none;
+            color: black;
+        }
+        
+        siic-more {
+            float: right;
+            cursor: pointer;
+            position: relative;
+            font-size: 18pt;
+            display: block;
+            top: 1px;
+            width: 25%;
+            border: none;
+            color: black;
+        }
+        
+        text {
+            cursor: pointer;
+            position: relative;
+            font-size: 18pt;
+            font-style: bold;
+            display: block;
+            top: 1px;
+            left: 1rem;
+        }
+        
+        text-more {
+            float: right;
+            cursor: pointer;
+            position: relative;
+            font-size: 18pt;
+            font-style: bold;
+            display: block;
+            top: 1px;
+            right: 1rem;
+        }
+        
         body {
             margin: 0;
             padding: 0;
@@ -80,6 +127,23 @@
             height: 2%;
         }
         
+        .promo {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #0C9;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+        }
+        
+        .my-promo {
+            margin-top: 22px;
+        }
+        
         .siicin {
             position: absolute;
             background-color: aliceblue;
@@ -96,7 +160,7 @@
             background-color: white;
             top: 8%;
             width: 100%;
-            height: 20vh;
+            height: 70vh;
             opacity: 0.7;
         }
         
@@ -229,35 +293,59 @@
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
-        <div id="siicui">
-            <div id="siicfin">
+        <siic-ground id="siicui">
+            <siic-search id="siicfin">
                 <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search..." title="Search">
-            </div>
+            </siic-search>
             <div class="siic">
-                <img src="g" title="hallo">
+                <siic-text>
+                    <text>
+                        Temukan hal yang baru di SIIC Apps
+                    </text>
+                    <div class="promo">
+                        <i class="fa fa-plus my-promo"></i>
+                    </div>
+                </siic-text>
+                <siic-more>
+                    <text-more>Lihat Selengkapnya</text-more>
+                </siic-more>
             </div>
-        </div>
+            &nbsp; &nbsp;
+            <div class="siic">
+                <siic-text>
+                    <text>
+                        Temukan hal yang baru di SIIC Apps
+                    </text>
+                    <div class="promo">
+                        <i class="fa fa-plus my-promo"></i>
+                    </div>
+                </siic-text>
+                <siic-more>
+                    <text-more>Lihat Selengkapnya</text-more>
+                </siic-more>
+            </div>
+        </siic-ground>
     </siic-app>
-    
+
     <!-- leaflet js  -->
     <script src="lef.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
 
 
     <script>
-            // Map initialization 
-            var map = L.map('map').setView([-6.229728, 106.6894283], 8);
+        // Map initialization 
+        var map = L.map('map').setView([-6.229728, 106.6894283], 8);
 
-            //osm layer
-            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://g4lihru.me">G4lihru Maps</a> contributors'
-            });
-            osm.addTo(map);
+        //osm layer
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://g4lihru.me">G4lihru Maps</a> contributors'
+        });
+        osm.addTo(map);
 
 
 
-            L.control.locate().addTo(map);
-   </script>
+        L.control.locate().addTo(map);
+    </script>
 </body>
 
 </html>
