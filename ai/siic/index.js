@@ -1,20 +1,33 @@
-const butInstall = document.getElementById('butInstall');
+const staticDevCoffee = "SIIC"
+const assets = [
+  "/",
+  "/ai/siic/index.html",
+  "/ai/siic/css/leaflet.css",
+  "/987654567.png",
+  "/ai/siic/css/css-font-awesome.min.css",
+  "/ai/siic/css/assets-owl.carousel.min.css",
+  "/ai/siic/css/venobox-venobox.css",
+  "/ai/siic/css/aos-aos.css",
+  "/ai/siic/css/css-style.css",
+  "/ai/siic/lef.js",
+  "/ai/siic/fonts-boxicons.eot",
+  "/ai/siic/fonts-boxicons.svg",
+  "/ai/siic/fonts-boxicons.ttf",
+  "/ai/siic/fonts-boxicons.woff",
+  "/ai/siic/fonts-boxicons.woff2",
+  "/ai/siic/fonts-fontawesome-webfont.eot",
+  "/ai/siic/fonts-fontawesome-webfont.svg",
+  "/ai/siic/fonts-fontawesome-webfont.ttf",
+  "/ai/siic/fonts-fontawesome-webfont.woff",
+  "/ai/siic/fonts-fontawesome-webfont.woff2",
+  "/ai/siic/img-preloader.svg",
+  "/ai/siic/index.js",
+]
 
-/* Put code here */
-/* Only register a service worker if it's supported */
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js');
-}
-
-/**
- * Warn the page must be served over HTTPS
- * The `beforeinstallprompt` event won't fire if the page is served over HTTP.
- * Installability requires a service worker with a fetch event handler, and
- * if the page isn't served over HTTPS, the service worker won't load.
- */
-if (window.location.protocol === 'http:') {
-  const requireHTTPS = document.getElementById('requireHTTPS');
-  const link = requireHTTPS.querySelector('a');
-  link.href = window.location.href.replace('http://', 'https://');
-  requireHTTPS.classList.remove('hidden');
-}
+self.addEventListener("install", installEvent => {
+  installEvent.waitUntil(
+    caches.open(staticDevCoffee).then(cache => {
+      cache.addAll(assets)
+    })
+  )
+})
