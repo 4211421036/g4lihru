@@ -805,13 +805,17 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .weekday-weather-icon,
     .week-forecast-weather-icon {
         position: absolute;
-        right: -0.1px;
+        right: 30px;
         top: -0.2rem;
         width: 35px;
         height: 35px;
     }
     .description {
-        display: none;
+        position: absolute;
+        top: 1.4rem;
+        right: 66%;
+        font-size: 6.2pt;
+        color: rgb(254, 245, 245);
     }
     .weekday-temperature,
     .weekday-temperature-celcius {
@@ -825,7 +829,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .weekday-temperature-description {
         position: absolute;
         top: 1.4rem;
-        right: 7px;
+        right: 35px;
         font-size: 6.2pt;
         color: rgb(254, 245, 245);
     }
