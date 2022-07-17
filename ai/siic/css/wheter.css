@@ -601,7 +601,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .weekday-weather-icon,
     .week-forecast-weather-icon {
         position: absolute;
-        right: 1.6rem;
+        right: 2rem;
         top: -0.2rem;
         width: 35px;
         height: 35px;
@@ -609,7 +609,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .weekday-temperature-description {
         position: absolute;
         top: 1.4rem;
-        right: 2rem;
+        right: 2.3rem;
         font-size: 6.2pt;
         color: rgb(254, 245, 245);
     }
@@ -658,7 +658,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
         background: #ffffff;
         box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
         display: grid;
-        gap: 8px;
+        gap: 6px;
         padding: 2px;
         z-index: 3;
     }
