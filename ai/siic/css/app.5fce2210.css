@@ -1,0 +1,90 @@
+.swipe-overflow-enter-active[data-v-51142bf6] {
+    transition: opacity .5s
+}
+
+.swipe-overflow-leave-active[data-v-51142bf6] {
+    transition: opacity .3s
+}
+
+.swipe-overflow-enter[data-v-51142bf6],
+.swipe-overflow-leave-to[data-v-51142bf6] {
+    opacity: 0
+}
+
+.swipe-modal__overflow[data-v-51142bf6] {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1000000;
+    opacity: 1
+}
+
+.swipe-modal__close-icon[data-v-51142bf6] {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    right: 0;
+    cursor: pointer;
+    z-index: 100
+}
+
+.swipe-modal__close-icon[data-v-51142bf6]:after {
+    display: inline-block;
+    content: "×"
+}
+
+.swipe-modal__swipe-line[data-v-51142bf6] {
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: #fff;
+    border-radius: 10px;
+    right: calc(50% - 25px);
+    top: -15px
+}
+
+.swipe-modal__wrap[data-v-51142bf6] {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000001;
+    width: 100%;
+    left: 0
+}
+
+.swipe-modal__content[data-v-51142bf6] {
+    position: relative;
+    background: transparent;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3)
+}
+
+.swipe-modal__content__body[data-v-51142bf6],
+.swipe-modal__content__footer[data-v-51142bf6],
+.swipe-modal__content__header[data-v-51142bf6] {
+    background: #fff;
+    padding: 10px
+}
+
+.swipe-modal__content__header[data-v-51142bf6] {
+    border-bottom: 1px solid #eee;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #fff
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px
+}
