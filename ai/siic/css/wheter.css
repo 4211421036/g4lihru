@@ -1,0 +1,1060 @@
+body {
+    overflow-x: hidden;
+}
+
+#current-weather-icon,
+.forecast-weather-icon,
+.weekday-weather-icon,
+.week-forecast-weather-icon {
+    position: absolute;
+    right: 1.9rem;
+    top: -0.2rem;
+    width: 35px;
+    height: 35px;
+}
+
+.description {
+    color: #11101d;
+    font-size: 10px;
+    position: absolute;
+    top: 0.2rem;
+    right: -0.1rem;
+}
+
+.weekday-temperature,
+.weekday-temperature-celcius {
+    position: relative;
+    color: #11101d;
+    top: 0.8rem;
+    right: 0.1/0.2rem;
+    font-weight: 500;
+    font-size: 11px;
+}
+
+.weekday-temperature-description {
+    position: absolute;
+    top: 1.4rem;
+    right: 2.2rem;
+    font-size: 6.2pt;
+    color: rgb(254, 245, 245);
+}
+
+siic-app {
+    display: block;
+}
+
+siic-map {
+    display: block;
+}
+
+siic-text {
+    cursor: pointer;
+    float: left;
+    position: relative;
+    font-size: 18pt;
+    font-style: bold;
+    font-style: italic;
+    display: block;
+    top: 1px;
+    width: 45%;
+    border: none;
+    color: black;
+}
+
+siic-more {
+    float: right;
+    cursor: pointer;
+    position: relative;
+    font-size: 18pt;
+    display: block;
+    top: 1px;
+    width: 25%;
+    border: none;
+    color: black;
+}
+
+text {
+    cursor: pointer;
+    position: relative;
+    font-size: 18pt;
+    font-style: bold;
+    display: block;
+    top: 1px;
+    left: 1rem;
+}
+
+text-more {
+    float: right;
+    cursor: pointer;
+    position: relative;
+    font-size: 18pt;
+    font-style: bold;
+    display: block;
+    top: 1px;
+    right: 1rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+#myInput {
+    position: absolute;
+    left: 2rem;
+    border: none;
+    top: 3px;
+    width: 95%;
+}
+
+.sidePanelPositioner-DS-EntryPoint1-1 {
+    top: 30px;
+    left: 2rem;
+    margin: 16px;
+    position: absolute;
+}
+
+.sidePanel-DS-EntryPoint1-1 {
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 15%);
+    max-height: calc(100vh - 119px - 32px);
+    margin: 0px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 12px;
+    z-index: 3;
+    height: unset;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+.sidePanelBody-DS-EntryPoint1-1 {
+    flex: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0 12px;
+}
+
+.sidePanel-DS-EntryPoint1-1>* {
+    flex: none;
+}
+
+.section-DS-EntryPoint1-2 {
+    margin-bottom: 16px;
+    width: calc(100% - 24px);
+    background: #11101d;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.headerContainer-DS-EntryPoint1-1 {
+    margin: 5px 0px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-DS-EntryPoint1-2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.listContainer-DS-EntryPoint1-1 {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+    grid-template-columns: 1fr;
+    margin: 0 0;
+    color: #2B2B2B;
+}
+
+.card-DS-EntryPoint1-4.card-DS-EntryPoint1-4.card-DS-EntryPoint1-4 {}
+
+.listContainer-DS-EntryPoint1-1>div {
+    border-radius: 10px;
+    background: #1d1b31;
+}
+
+.card-DS-EntryPoint1-4 {}
+
+.cardBase-DS-EntryPoint1-1 {}
+
+.card-DS-EntryPoint1-1 {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 1.6px 3.6px rgb(0 0 0 / 13%), 0px 0px 2.9px rgb(0 0 0 / 11%);
+}
+
+<style>.level_light-DS-EntryPoint1-1 {}
+
+.layout_collapsed-DS-EntryPoint1-1 {
+    grid-template-columns: auto fit-content;
+    padding: 12px 16px;
+}
+
+.clickable-DS-EntryPoint1-1 {
+    cursor: pointer;
+    box-shadow: 0px 1.6px 3.6px rgb(0 0 0 / 13%), 0px 0px 2.9px rgb(0 0 0 / 11%) !important;
+}
+
+.card-DS-EntryPoint1-3 {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    display: grid;
+    overflow: hidden;
+}
+
+.layout_collapsed-DS-EntryPoint1-1 .routeName-DS-EntryPoint1-1 {
+    grid-row: 1;
+    grid-column: 1 / span 1;
+    align-self: start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+}
+
+.routeName-DS-EntryPoint1-1 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    color: #2B2B2B;
+}
+
+.level_light-DS-EntryPoint1-1 .trafficTime-DS-EntryPoint1-1,
+.level_light-DS-EntryPoint1-1 .trafficDescription-DS-EntryPoint1-1 {
+    color: #c75300;
+}
+
+.layout_collapsed-DS-EntryPoint1-1 .trafficTime-DS-EntryPoint1-1 {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: end;
+    justify-self: end;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.trafficTime-DS-EntryPoint1-1 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.section-DS-EntryPoint1-2 {
+    margin-bottom: 16px;
+    width: calc(100% - 24px);
+    background: #11101d;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.headerContainer-DS-EntryPoint1-1 {
+    margin: 5px 0px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-DS-EntryPoint1-2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
+    margin: 0px;
+    color: white;
+    padding: 0px;
+}
+
+.carousel-DS-EntryPoint1-1 {
+    position: relative;
+}
+
+.cardListContainer-DS-EntryPoint1-1 {
+    overflow: hidden;
+}
+
+.cardList-DS-EntryPoint1-2 {
+    position: relative;
+    overflow: visible;
+}
+
+.cardPositioner-DS-EntryPoint1-1 {
+    position: absolute;
+    z-index: 1;
+}
+
+.card-DS-EntryPoint1-1 {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 1.6px 3.6px rgb(0 0 0 / 13%), 0px 0px 2.9px rgb(0 0 0 / 11%);
+}
+
+.contentCard-DS-EntryPoint1-3 {
+    border-radius: 6px !important;
+}
+
+.contentCard__1x_2y-DS-EntryPoint1-1 {}
+
+.contentCard-DS-EntryPoint1-2 {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentCard_positioningRegion-DS-EntryPoint1-1 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentCard_obscuredRegion-DS-EntryPoint1-1 {}
+
+.contentCard_imageRegion-DS-EntryPoint1-1 {
+    position: relative;
+    display: inline-flex;
+    align-self: flex-start;
+    background: #2B2B2B;
+}
+
+.contentCard_image-DS-EntryPoint1-1 {
+    opacity: 1;
+}
+
+.image-DS-EntryPoint1-1 {
+    display: block;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.contentCard_contentRegion-DS-EntryPoint1-2 {
+    padding-top: 6px !important;
+}
+
+.contentCard_contentRegion-DS-EntryPoint1-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 12px 16px 0;
+    max-height: calc(100% - 42px);
+}
+
+.contentCard_obscuredRegion-DS-EntryPoint1-1 {}
+
+.contentCard_heading-DS-EntryPoint1-1 {
+    display: block;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    width: 100%;
+}
+
+body,
+h3.contentCard_headingContent-DS-EntryPoint1-1 {
+    font-family: Segoe UI, Segoe WP, Arial, Sans-Serif !important;
+}
+
+.contentCard_headingContent-DS-EntryPoint1-2 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+<style>.contentCard_headingContent-DS-EntryPoint1-1 {
+    font-weight: 600;
+}
+
+.typography-DS-EntryPoint1-2 {
+    overflow: hidden;
+    box-sizing: content-box;
+    max-height: 60px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.typography__7-DS-EntryPoint1-1 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.typography-DS-EntryPoint1-1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: all 0.2s ease-in-out;
+    color: #2B2B2B;
+}
+
+.contentCard_attributionRegion-DS-EntryPoint1-1 {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    align-self: flex-end;
+    padding: 8px 16px 16px;
+    width: 100%;
+    max-height: 42px;
+}
+
+.contentCard_timestamp-DS-EntryPoint1-1 {
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    color: #767676;
+}
+
+#siicui {
+    position: absolute;
+    background-color: #21262d;
+    top: 70%;
+    display: block;
+    width: 100%;
+    height: 100rem;
+    border-radius: 9% 9% 0 0;
+}
+
+#siicfin {
+    position: relative;
+    background-color: aliceblue;
+    top: 17px;
+    left: 8rem;
+    display: block;
+    border-radius: 25px;
+    width: 84%;
+    height: 2%;
+}
+
+.promo {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #0C9;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.my-promo {
+    margin-top: 22px;
+}
+
+.control_horizontal-DS-EntryPoint1-23 {
+    top: 16px;
+    right: unset;
+    left: calc(16px * 2 + 332px);
+}
+
+.control_horizontal-DS-EntryPoint1-1 {
+    position: absolute;
+}
+
+.control_horizontal-DS-EntryPoint1-1 .control-DS-EntryPoint1-1 {
+    height: 38px;
+    width: unset;
+    grid-auto-flow: column;
+    max-width: fit-content;
+}
+
+.control-DS-EntryPoint1-1 {
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+    display: grid;
+    gap: 8px;
+    padding: 2px;
+    z-index: 3;
+}
+
+.layout_horizontal-DS-EntryPoint1-1 {}
+
+.container-DS-EntryPoint1-1 {
+    position: relative;
+}
+
+.isSelected-DS-EntryPoint1-1 {
+    background: #0078D4;
+}
+
+.button-DS-EntryPoint1-1 {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    min-width: unset;
+    background: #ffffff;
+}
+
+.button-DS-EntryPoint1-2 {
+    line-height: 1;
+    font-family: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+    max-width: 374px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.1s ease-in-out;
+    font-size: 14px;
+    min-width: 32px;
+    padding: 0 10px;
+    height: 32px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    color: #2B2B2B;
+    fill: #ffff;
+    background: #11101d;
+}
+
+.button_contentRegion-DS-EntryPoint1-1 {
+    position: relative;
+}
+
+.button_contentRegion-DS-EntryPoint1-1::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    right: ;
+}
+
+.inline-DS-EntryPoint1-1.inline-DS-EntryPoint1-1 {
+    width: auto;
+    height: auto;
+}
+
+.button_contentRegion-DS-EntryPoint1-1 svg {
+    width: 16px;
+    height: 16px;
+}
+
+.inline-DS-EntryPoint1-1 {}
+
+.siicin {
+    position: absolute;
+    background-color: aliceblue;
+    top: 7%;
+    left: 5rem;
+    display: block;
+    border-radius: 25px;
+    width: 10%;
+    height: 2%;
+}
+
+.siic {
+    position: relative;
+    background-color: white;
+    top: 8%;
+    width: 100%;
+    height: 70vh;
+    opacity: 0.7;
+}
+
+@media (max-width:420px) {
+    .sidebar li .tooltip {
+        display: none
+    }
+}
+
+ ::-webkit-scrollbar {
+    width: 10px
+}
+
+@media only screen and (min-device-width: 425px) and (max-device-width: 767px) and (orientation:portrait) {
+    .sidePanel-DS-EntryPoint1-1 {
+        display: none;
+    }
+    #current-weather-icon,
+    .forecast-weather-icon,
+    .weekday-weather-icon,
+    .week-forecast-weather-icon {
+        position: absolute;
+        right: 1.6rem;
+        top: -0.2rem;
+        width: 35px;
+        height: 35px;
+    }
+    .weekday-temperature-description {
+        position: absolute;
+        top: 1.4rem;
+        right: 2rem;
+        font-size: 6.2pt;
+        color: rgb(254, 245, 245);
+    }
+    #myInput {
+        position: absolute;
+        left: 2rem;
+        border: none;
+        top: 3px;
+        width: 85%;
+        background-color: transparent;
+    }
+    #siicui {
+        position: absolute;
+        background-color: #21262d;
+        top: 70%;
+        display: block;
+        width: 100%;
+        height: 100rem;
+        border-radius: 9% 9% 0 0;
+    }
+    #siicfin {
+        position: relative;
+        background-color: aliceblue;
+        top: 17px;
+        left: 2.2rem;
+        display: block;
+        border-radius: 25px;
+        height: 2%;
+    }
+    .control_horizontal-DS-EntryPoint1-23 {
+        top: 16px;
+        right: unset;
+        left: 7.6rem;
+    }
+    .control_horizontal-DS-EntryPoint1-1 {
+        position: absolute;
+    }
+    .control_horizontal-DS-EntryPoint1-1 .control-DS-EntryPoint1-1 {
+        height: 38px;
+        width: unset;
+        grid-auto-flow: column;
+        max-width: fit-content;
+    }
+    .control-DS-EntryPoint1-1 {
+        border-radius: 6px;
+        background: #ffffff;
+        box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+        display: grid;
+        gap: 8px;
+        padding: 2px;
+        z-index: 3;
+    }
+    .layout_horizontal-DS-EntryPoint1-1 {}
+    .container-DS-EntryPoint1-1 {
+        position: relative;
+    }
+    .isSelected-DS-EntryPoint1-1 {
+        background: #0078D4;
+    }
+    .button-DS-EntryPoint1-1 {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        min-width: unset;
+        background: #ffffff;
+    }
+    .button-DS-EntryPoint1-2 {
+        line-height: 1;
+        font-family: inherit;
+        cursor: pointer;
+        box-sizing: border-box;
+        max-width: 374px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.1s ease-in-out;
+        font-size: 14px;
+        min-width: 32px;
+        padding: 0 10px;
+        height: 32px;
+        border: 2px solid transparent;
+        border-radius: 2px;
+        color: #2B2B2B;
+        fill: #ffff;
+        background: #11101d;
+    }
+    .button_contentRegion-DS-EntryPoint1-1 {
+        position: relative;
+    }
+    .button_contentRegion-DS-EntryPoint1-1::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        right: ;
+    }
+    .inline-DS-EntryPoint1-1.inline-DS-EntryPoint1-1 {
+        width: auto;
+        height: auto;
+    }
+    .button_contentRegion-DS-EntryPoint1-1 svg {
+        width: 16px;
+        height: 16px;
+    }
+    .inline-DS-EntryPoint1-1 {}
+}
+
+@media only screen and (min-device-width: 768px) {
+    #myInput {
+        position: absolute;
+        left: 2rem;
+        border: none;
+        top: 3px;
+        width: 91%;
+        background-color: transparent;
+    }
+    #siicui {
+        position: absolute;
+        background-color: #21262d;
+        top: 70%;
+        display: block;
+        width: 100%;
+        height: 100rem;
+        border-radius: 9% 9% 0 0;
+    }
+    #siicfin {
+        position: relative;
+        background-color: aliceblue;
+        top: 17px;
+        left: 4rem;
+        display: block;
+        border-radius: 25px;
+        height: 2%;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) {
+    #siicui {
+        position: absolute;
+        background-color: #21262d;
+        top: 70%;
+        display: block;
+        width: 100%;
+        height: 100rem;
+        border-radius: 9% 9% 0 0;
+    }
+    #siicfin {
+        position: relative;
+        background-color: aliceblue;
+        top: 17px;
+        left: 5.2rem;
+        display: block;
+        border-radius: 25px;
+        height: 2%;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 424px) and (orientation:portrait) {
+    .sidePanel-DS-EntryPoint1-1 {
+        display: none;
+    }
+    #current-weather-icon,
+    .forecast-weather-icon,
+    .weekday-weather-icon,
+    .week-forecast-weather-icon {
+        position: absolute;
+        right: -0.1px;
+        top: -0.2rem;
+        width: 35px;
+        height: 35px;
+    }
+    .description {
+        display: none;
+    }
+    .weekday-temperature,
+    .weekday-temperature-celcius {
+        position: relative;
+        color: #11101d;
+        top: -0.1rem;
+        right: 0.1/0.2rem;
+        font-weight: 500;
+        font-size: 11px;
+    }
+    .weekday-temperature-description {
+        position: absolute;
+        top: 1.4rem;
+        right: 7px;
+        font-size: 6.2pt;
+        color: rgb(254, 245, 245);
+    }
+    #myInput {
+        position: absolute;
+        left: 2rem;
+        border: none;
+        top: 3px;
+        width: 85%;
+        background-color: transparent;
+    }
+    #siicui {
+        position: absolute;
+        background-color: #21262d;
+        top: 70%;
+        display: block;
+        width: 100%;
+        height: 100rem;
+        border-radius: 9% 9% 0 0;
+    }
+    #siicfin {
+        position: relative;
+        background-color: aliceblue;
+        top: 17px;
+        left: 25px;
+        display: block;
+        border-radius: 25px;
+        height: 2%;
+    }
+    .control_horizontal-DS-EntryPoint1-23 {
+        top: 16px;
+        right: unset;
+        left: 6rem;
+    }
+    .control_horizontal-DS-EntryPoint1-1 {
+        position: absolute;
+    }
+    .control_horizontal-DS-EntryPoint1-1 .control-DS-EntryPoint1-1 {
+        height: 38px;
+        width: unset;
+        grid-auto-flow: column;
+        max-width: fit-content;
+    }
+    .control-DS-EntryPoint1-1 {
+        border-radius: 6px;
+        background: #ffffff;
+        box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+        display: grid;
+        gap: 8px;
+        padding: 2px;
+        z-index: 3;
+    }
+    .layout_horizontal-DS-EntryPoint1-1 {}
+    .container-DS-EntryPoint1-1 {
+        position: relative;
+    }
+    .isSelected-DS-EntryPoint1-1 {
+        background: #0078D4;
+    }
+    .button-DS-EntryPoint1-1 {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        min-width: unset;
+        background: #ffffff;
+    }
+    .button-DS-EntryPoint1-2 {
+        line-height: 1;
+        font-family: inherit;
+        cursor: pointer;
+        box-sizing: border-box;
+        max-width: 374px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.1s ease-in-out;
+        font-size: 14px;
+        min-width: 32px;
+        padding: 0 10px;
+        height: 32px;
+        border: 2px solid transparent;
+        border-radius: 2px;
+        color: #2B2B2B;
+        fill: #ffff;
+        background: #11101d;
+    }
+    .button_contentRegion-DS-EntryPoint1-1 {
+        position: relative;
+    }
+    .button_contentRegion-DS-EntryPoint1-1::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        right: ;
+    }
+    .inline-DS-EntryPoint1-1.inline-DS-EntryPoint1-1 {
+        width: auto;
+        height: auto;
+    }
+    .button_contentRegion-DS-EntryPoint1-1 svg {
+        width: 16px;
+        height: 16px;
+    }
+    .inline-DS-EntryPoint1-1 {}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) and (orientation:portrait) {
+    .sidePanel-DS-EntryPoint1-1 {
+        display: none;
+    }
+    #current-weather-icon,
+    .forecast-weather-icon,
+    .weekday-weather-icon,
+    .week-forecast-weather-icon {
+        position: absolute;
+        right: -0.2rem;
+        top: -0.2rem;
+        width: 35px;
+        height: 35px;
+    }
+    .description {
+        display: none;
+    }
+    .weekday-temperature,
+    .weekday-temperature-celcius {
+        position: relative;
+        color: #11101d;
+        top: -0.1rem;
+        right: 0.1/0.2rem;
+        font-weight: 500;
+        font-size: 11px;
+    }
+    .weekday-temperature-description {
+        position: absolute;
+        top: 1.4rem;
+        right: 4px;
+        font-size: 6.2pt;
+        color: rgb(254, 245, 245);
+    }
+    #myInput {
+        position: absolute;
+        left: 2rem;
+        border: none;
+        top: 3px;
+        width: 80%;
+        background-color: transparent;
+    }
+    #siicui {
+        position: absolute;
+        background-color: #21262d;
+        top: 70%;
+        display: block;
+        width: 100%;
+        height: 100rem;
+        border-radius: 9% 9% 0 0;
+    }
+    #siicfin {
+        position: relative;
+        background-color: aliceblue;
+        top: 17px;
+        left: 25px;
+        display: block;
+        border-radius: 25px;
+        height: 2%;
+    }
+    .control_horizontal-DS-EntryPoint1-23 {
+        top: 16px;
+        right: unset;
+        left: 59px;
+    }
+    .control_horizontal-DS-EntryPoint1-1 {
+        position: absolute;
+    }
+    .control_horizontal-DS-EntryPoint1-1 .control-DS-EntryPoint1-1 {
+        height: 38px;
+        width: unset;
+        grid-auto-flow: column;
+        max-width: fit-content;
+    }
+    .control-DS-EntryPoint1-1 {
+        border-radius: 6px;
+        background: #ffffff;
+        box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+        display: grid;
+        gap: 5px;
+        padding: 2px;
+        z-index: 3;
+    }
+    .layout_horizontal-DS-EntryPoint1-1 {}
+    .container-DS-EntryPoint1-1 {
+        position: relative;
+    }
+    .isSelected-DS-EntryPoint1-1 {
+        background: #0078D4;
+    }
+    .button-DS-EntryPoint1-1 {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        min-width: unset;
+        background: #ffffff;
+    }
+    .button-DS-EntryPoint1-2 {
+        line-height: 1;
+        font-family: inherit;
+        cursor: pointer;
+        box-sizing: border-box;
+        max-width: 374px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.1s ease-in-out;
+        font-size: 14px;
+        min-width: 32px;
+        padding: 0 10px;
+        height: 32px;
+        border: 2px solid transparent;
+        border-radius: 2px;
+        color: #2B2B2B;
+        fill: #ffff;
+        background: #11101d;
+    }
+    .button_contentRegion-DS-EntryPoint1-1 {
+        position: relative;
+    }
+    .button_contentRegion-DS-EntryPoint1-1::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        right: ;
+    }
+    .inline-DS-EntryPoint1-1.inline-DS-EntryPoint1-1 {
+        width: auto;
+        height: auto;
+    }
+    .button_contentRegion-DS-EntryPoint1-1 svg {
+        width: 16px;
+        height: 16px;
+    }
+    .inline-DS-EntryPoint1-1 {}
+}
