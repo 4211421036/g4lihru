@@ -813,7 +813,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .description {
         position: absolute;
         top: 1.4rem;
-        right: 66%;
+        right: 55%;
         font-size: 6.2pt;
         color: rgb(254, 245, 245);
     }
@@ -829,9 +829,9 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .weekday-temperature-description {
         position: absolute;
         top: 1.4rem;
-        right: 35px;
+        right: 3px;
         font-size: 6.2pt;
-        color: rgb(254, 245, 245);
+        color: #1d1b31;
     }
     #myInput {
         position: absolute;
