@@ -38,7 +38,7 @@ class Weekday {
 
 class NetworkManager {
     static getCurrentWeather(cityname) {
-        let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=921e83b9da8a40a760ad74d5cedd6bbd`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=921e83b9da8a40a760ad74d5cedd6bbd`;
         return $.getJSON(url, function (data) {
             current_weather.changeProperties(data.name, getDate(),
                 parseInt(data.main.temp, 10), data.weather[0].main,
@@ -52,7 +52,7 @@ class NetworkManager {
     }
 
     static getForecast(cityname) {
-        let url = `http://api.openweathermap.org/data/2.5/forecast?q=${cityname}&units=metric&appid=921e83b9da8a40a760ad74d5cedd6bbd`;
+        let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityname}&units=metric&appid=921e83b9da8a40a760ad74d5cedd6bbd`;
 
         $.getJSON(url, function (data) {
             forecast = [];
@@ -102,7 +102,7 @@ function updateCurrentWeatherHTML() {
     $("#today-sunrise").html(current_weather.sunrise);
     $("#today-sunset").html(current_weather.sunset);
     $("#search-input").attr("placeholder", `${current_weather.city}, ${current_weather.country}`);
-    $("#current-weather-icon").attr("src", `http://openweathermap.org/img/wn/${current_weather.icon}@2x.png`);
+    $("#current-weather-icon").attr("src", `https://openweathermap.org/img/wn/${current_weather.icon}@2x.png`);
 }
 
 let time = document.getElementsByClassName('time');
@@ -115,7 +115,7 @@ let forecast_wind = document.getElementsByClassName('forecast-wind');
 function updateCurrentForecastHTML() {
     for (let i = 0; i < time.length; i++) {
         time[i].innerHTML = forecast[i].time;
-        forecast_icons[i].src = `http://openweathermap.org/img/wn/${forecast[i].icon}@2x.png`;
+        forecast_icons[i].src = `https://openweathermap.org/img/wn/${forecast[i].icon}@2x.png`;
         forecast_description[i].innerHTML = forecast[i].description;
         forecast_temp[i].innerHTML = forecast[i].temperature;
         forecast_templike[i].innerHTML = forecast[i].feelslike;
@@ -160,7 +160,7 @@ getCityByGeolocation();
 //----------------------------GEOLOCATION
 
 function getCityByGeolocation() {
-    $.get("http://ipinfo.io", function (response) {
+    $.get("https://ipinfo.io", function (response) {
         city_name = response.city;
         NetworkManager.getCurrentWeather(city_name);
         NetworkManager.getForecast(city_name);
@@ -269,7 +269,7 @@ function updateWeekdaysWeather() {
         $(this).text(`${weekdays[index].day} ${weekdays[index].month}`);
     });
     $(".weekday-weather-icon").each(function (index) {
-        $(this).attr("src", `http://openweathermap.org/img/wn/${weekdays[index].icon}@2x.png`);
+        $(this).attr("src", `https://openweathermap.org/img/wn/${weekdays[index].icon}@2x.png`);
     });
     $(".weekday-temperature").each(function (index) {
         $(this).text(parseInt(weekdays[index].temperature, 10));
@@ -284,7 +284,7 @@ function updateWeekdaysWeather() {
 function updateWeekdayForecast() {
     for (let i = 0; i < 6; i++) {
         week_time[i].innerHTML = weekdays[selected_weekday_index].forecast[i].time;
-        week_forecast_icons[i].src = `http://openweathermap.org/img/wn/${weekdays[selected_weekday_index].forecast[i].icon}@2x.png`;
+        week_forecast_icons[i].src = `https://openweathermap.org/img/wn/${weekdays[selected_weekday_index].forecast[i].icon}@2x.png`;
         week_forecast_description[i].innerHTML = weekdays[selected_weekday_index].forecast[i].description;
         week_forecast_temp[i].innerHTML = weekdays[selected_weekday_index].forecast[i].temperature;
         week_forecast_templike[i].innerHTML = weekdays[selected_weekday_index].forecast[i].feelslike;
