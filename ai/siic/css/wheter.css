@@ -108,6 +108,7 @@ body {
 #myInput {
     position: absolute;
     left: 2rem;
+    height: 1.5rem;
     border: none;
     top: 3px;
     width: 95%;
