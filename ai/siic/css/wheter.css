@@ -597,6 +597,17 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    siic-more {
+        float: right;
+        cursor: pointer;
+        position: relative;
+        font-size: 18pt;
+        display: block;
+        top: 1px;
+        width: 24%;
+        border: none;
+        color: black;
+    }
     #current-weather-icon,
     .forecast-weather-icon,
     .weekday-weather-icon,
@@ -777,6 +788,17 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
 @media only screen and (min-device-width: 375px) and (max-device-width: 424px) and (orientation:portrait) {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
+    }
+    siic-more {
+        float: right;
+        cursor: pointer;
+        position: relative;
+        font-size: 18pt;
+        display: block;
+        top: 1px;
+        width: 27%;
+        border: none;
+        color: black;
     }
     #current-weather-icon,
     .forecast-weather-icon,
@@ -974,7 +996,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
         background-color: #21262d;
         top: 70%;
         display: block;
-        width: 100%;
+        width: 101%;
         height: 100rem;
         border-radius: 9% 9% 0 0;
     }
