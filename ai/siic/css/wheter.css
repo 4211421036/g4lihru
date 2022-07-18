@@ -2,6 +2,93 @@ body {
     overflow-x: hidden;
 }
 
+#search-input {
+    position: relative;
+    top: 1rem;
+    right: calc(18rem + 20px - 470px);
+    width: 100px;
+    height: 20px;
+    padding: 6px;
+    border-radius: 20px;
+}
+
+#search-btn {
+    position: relative;
+    top: 1rem;
+    right: calc(18rem + 20px - 430px);
+    margin-left: -4px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgba(65, 105, 225, 0.7);
+    height: 40px;
+    font-size: 18px;
+    padding-bottom: 2px;
+}
+
+#search-btn:hover {
+    color: rgb(65, 105, 225);
+}
+
+.nav-tabs li:first-child {
+    width: 81px !important;
+    border-radius: 25px;
+}
+
+ul.nav-tabs {
+    position: relative;
+    top: 1rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-tabs li {
+    float: left;
+    font-size: 12pt;
+    width: 150px !important;
+    margin-left: 5px !important;
+    line-height: 50px;
+    height: 20px;
+    background-color: rgb(34, 32, 32);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-bottom: 3px solid rgb(34, 32, 32);
+    border-radius: 25px;
+}
+
+.nav-tabs a {
+    position: relative;
+    top: -1rem;
+    font-size: 10pt;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-tabs li:hover {
+    background-color: rgb(46, 46, 46);
+    text-decoration: none;
+}
+
+.nav-tabs .active {
+    border-bottom: 3px solid rgb(65, 105, 225);
+}
+
+.nav-tabs li .active {
+    border-bottom: none;
+}
+
+.nav-tabs a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.nav {
+    background-color: transparent;
+}
+
 #current-weather-icon,
 .forecast-weather-icon,
 .weekday-weather-icon,
