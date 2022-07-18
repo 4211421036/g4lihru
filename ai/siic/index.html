@@ -190,6 +190,23 @@
 
         L.control.locate().addTo(map);
     </script>
+        <script>
+        document.getElementsByTagName('body')[0].addEventListener('mouseover', function(event) {
+            addCSS = document.createElement('style');
+            addCSS.innerHTML = "::-webkit-scrollbar { display: block; width: 8px;} ::-webkit-scrollbar-track  { background: transparent; } ::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d; cursor: grab;} ::-webkit-scrollbar-thumb:hover  { background:#555; } ";
+            document.body.append(addCSS);
+
+
+        });
+
+        document.getElementsByTagName('body')[0].addEventListener('mouseleave', function(event) {
+            addCSS = document.createElement('style');
+            addCSS.innerHTML = "::-webkit-scrollbar { display: none; }";
+            document.body.append(addCSS);
+
+
+        });
+    </script>
     <script>
         function myFunction()   { 
             var input, filter, ul, li, a, i, txtValue; 
