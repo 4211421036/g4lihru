@@ -684,6 +684,17 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    #search-input {
+        display: none;
+    }
+
+    #search-btn {
+        display: none;
+    }
+
+    #search-btn:hover {
+        display: none;
+    }
     siic-more {
         float: right;
         cursor: pointer;
@@ -876,6 +887,18 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    #search-input {
+        display: none;
+    }
+
+    #search-btn {
+        display: none;
+    }
+
+    #search-btn:hover {
+        display: none;
+    }
+    
     siic-more {
         float: right;
         cursor: pointer;
@@ -1032,6 +1055,17 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 374px) and (orientation:portrait) {
     .sidePanel-DS-EntryPoint1-1 {
+        display: none;
+    }
+    #search-input {
+        display: none;
+    }
+
+    #search-btn {
+        display: none;
+    }
+
+    #search-btn:hover {
         display: none;
     }
     siic-more {
