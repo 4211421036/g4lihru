@@ -44,48 +44,9 @@
     <link href="js/app.ebc5d679.js" rel="preload" as="script">
     <link href="js/chunk-vendors.b9221680.js" rel="preload" as="script">
     <link href="css/app.5fce2210.css" rel="stylesheet">
-        <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .customized-scrollbar {
-            display: block;
-            width: 10em;
-            overflow: auto;
-            height: 2em;
-            margin: 10px;
-        }
-        
-         ::-webkit-scrollbar {
-            display: none;
-            position: fixed;
-            margin-right: -10px;
-        }
-        
-        .customized-scrollbar:hover::-webkit-scrollbar {
-            /* display: block; */
-            cursor: pointer;
-        }
-        /* Demonstrate a "mostly customized" scrollbar
-    * (won't be visible otherwise if width/height is specified) */
-        
-        .customized-scrollbar::-webkit-scrollbar {
-            width: 5px;
-            height: 50px;
-            /* background-color: #aaa; */
-            background-color: transparent;
-        }
-        /* Add a thumb */
-        
-        .customized-scrollbar::-webkit-scrollbar-thumb {
-            background: #000;
-            height: 100px;
-        }
-    </style>
 </head>
 
-<body class="customized-scrollbar hidden-scrollbar">
+<body>
     <siic-app>
         <siic-map id="map"></siic-map>
         <nav id="nav-menu-container">
@@ -228,23 +189,6 @@
 
 
         L.control.locate().addTo(map);
-    </script>
-        <script>
-        document.getElementsByTagName('body')[0].addEventListener('mouseover', function(event) {
-            addCSS = document.createElement('style');
-            addCSS.innerHTML = "::-webkit-scrollbar { display: block; width: 8px;} ::-webkit-scrollbar-track  { background: transparent; } ::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d; cursor: grab;} ::-webkit-scrollbar-thumb:hover  { background:#555; } ";
-            document.body.append(addCSS);
-
-
-        });
-
-        document.getElementsByTagName('body')[0].addEventListener('mouseleave', function(event) {
-            addCSS = document.createElement('style');
-            addCSS.innerHTML = "::-webkit-scrollbar { display: none; }";
-            document.body.append(addCSS);
-
-
-        });
     </script>
     <script>
         function myFunction()   { 
