@@ -676,7 +676,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     }
 }
 
-::-webkit-scrollbar  { background-color: transparent;}
+::-webkit-scrollbar  { background-color: transparent; width: 8px;}
 ::-webkit-scrollbar-track  { background: transparent; }
 ::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d; cursor: grab;}
 ::-webkit-scrollbar-thumb:hover  { background:#555; }
