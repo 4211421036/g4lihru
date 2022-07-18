@@ -262,15 +262,6 @@ let week_forecast_templike = document.getElementsByClassName('week-forecast-temp
 let week_forecast_wind = document.getElementsByClassName('week-forecast-wind');
 
 function updateWeekdaysWeather() {
-    $(".weekday").each(function (index) {
-        $(this).text(weekdays[index].name);
-    });
-    $(".weekday-date").each(function (index) {
-        $(this).text(`${weekdays[index].day} ${weekdays[index].month}`);
-    });
-    $(".weekday-weather-icon").each(function (index) {
-        $(this).attr("src", `https://openweathermap.org/img/wn/${weekdays[index].icon}@2x.png`);
-    });
     $(".weekday-temperature").each(function (index) {
         $(this).text(parseInt(weekdays[index].temperature, 10));
     });
@@ -283,8 +274,6 @@ function updateWeekdaysWeather() {
 
 function updateWeekdayForecast() {
     for (let i = 0; i < 6; i++) {
-        week_time[i].innerHTML = weekdays[selected_weekday_index].forecast[i].time;
-        week_forecast_icons[i].src = `https://openweathermap.org/img/wn/${weekdays[selected_weekday_index].forecast[i].icon}@2x.png`;
         week_forecast_description[i].innerHTML = weekdays[selected_weekday_index].forecast[i].description;
         week_forecast_temp[i].innerHTML = weekdays[selected_weekday_index].forecast[i].temperature;
         week_forecast_templike[i].innerHTML = weekdays[selected_weekday_index].forecast[i].feelslike;
