@@ -44,9 +44,48 @@
     <link href="js/app.ebc5d679.js" rel="preload" as="script">
     <link href="js/chunk-vendors.b9221680.js" rel="preload" as="script">
     <link href="css/app.5fce2210.css" rel="stylesheet">
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .customized-scrollbar {
+            display: block;
+            width: 10em;
+            overflow: auto;
+            height: 2em;
+            margin: 10px;
+        }
+        
+         ::-webkit-scrollbar {
+            display: none;
+            position: fixed;
+            margin-right: -10px;
+        }
+        
+        .customized-scrollbar:hover::-webkit-scrollbar {
+            /* display: block; */
+            cursor: pointer;
+        }
+        /* Demonstrate a "mostly customized" scrollbar
+    * (won't be visible otherwise if width/height is specified) */
+        
+        .customized-scrollbar::-webkit-scrollbar {
+            width: 5px;
+            height: 50px;
+            /* background-color: #aaa; */
+            background-color: transparent;
+        }
+        /* Add a thumb */
+        
+        .customized-scrollbar::-webkit-scrollbar-thumb {
+            background: #000;
+            height: 100px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="customized-scrollbar hidden-scrollbar">
     <siic-app>
         <siic-map id="map"></siic-map>
         <nav id="nav-menu-container">
