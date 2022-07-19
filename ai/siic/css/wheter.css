@@ -2,6 +2,13 @@ body {
     overflow-x: hidden;
 }
 
+.info-title-block {
+    /* background-color: rgba(238, 236, 236, 0.3); */
+    margin: 30px;
+    padding: 30px !important;
+    width: 90vw !important;
+}
+
 #search-input {
     position: relative;
     top: 1rem;
