@@ -121,7 +121,7 @@
             <recis-transcript id="transcript"></recis-transcript>
     </recis-sec>
     <script>
-        document.querySelector('recis-side').addEventListener('mouseover', function (event) {
+        document.querySelector('li').addEventListener('mouseover', function (event) {
                 addCSS = document.createElement('style');
                 addCSS.innerHTML = "::-webkit-scrollbar { display: block; }";
                 document.body.append(addCSS);
@@ -129,7 +129,7 @@
              
             });
 
-             document.querySelector('recis-side').addEventListener('mouseleave', function (event) {
+             document.querySelector('li').addEventListener('mouseleave', function (event) {
              addCSS = document.createElement('style');
              addCSS.innerHTML = "::-webkit-scrollbar { display: none; }";
              document.body.append(addCSS);
