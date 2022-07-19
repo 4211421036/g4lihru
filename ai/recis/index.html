@@ -137,6 +137,23 @@
             
              });
     </script>
+        <script>
+        document.querySelector('recis-menu-contain').addEventListener('mouseover', function (event) {
+                addCSS = document.createElement('style');
+                addCSS.innerHTML = "::-webkit-scrollbar { display: block; }";
+                document.body.append(addCSS);
+                
+             
+            });
+
+             document.querySelector('recis-menu-contain').addEventListener('mouseleave', function (event) {
+             addCSS = document.createElement('style');
+             addCSS.innerHTML = "::-webkit-scrollbar { display: none; }";
+             document.body.append(addCSS);
+
+            
+             });
+    </script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
