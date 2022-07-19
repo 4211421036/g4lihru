@@ -125,12 +125,12 @@
   recis-side.show li img  { height:45px; width:45px; object-fit:cover; border-radius:6px; margin-right:10px}
   recis-side.sidebar li img  { height:45px; width:45px; object-fit:cover; border-radius:6px; margin-right:10px}
   recis-side.show::hover::-webkit-scrollbar { cursor: pointer;}
-  recis-side.show::-webkit-scrollbar{ background-color: red;}
+  recis-side.show::-webkit-scrollbar{ background-color: transparent;}
   recis-side.show::-webkit-scrollbar-track  { border-radius:5px; box-shadow:inset 0 0 10px rgba(0,0,0,.25)}
-  recis-side.show::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d}
-  recis-menu-contain::-webkit-scrollbar{ background-color: red;}
+  recis-side.show::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#dadada}
+  recis-menu-contain::-webkit-scrollbar{ background-color: transparent;}
   recis-menu-contain::-webkit-scrollbar-track  { border-radius:5px; box-shadow:inset 0 0 10px rgba(0,0,0,.25)}
-  recis-menu-contain::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#11101d}
+  recis-menu-contain::-webkit-scrollbar-thumb  { border-radius:5px; background-color:#dadada}
   recis-side li.profile i#log_out  { position:absolute; top:50%; right:0; transform:translateY(-50%); background:#1d1b31; width:100%; height:60px; line-height:60px; border-radius:0; transition:all .5s ease}
   recis-side.show li.profile i#log_out  { width:50px; background:0 0}
   recis-sec.home-section  { display: block; position:relative; background:#e4e9f7; min-height:100vh; top:0; left:78px; width:calc(100% - 78px); transition:all .5s ease; z-index:2}
