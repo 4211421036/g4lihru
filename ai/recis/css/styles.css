@@ -82,7 +82,7 @@
   recis-side.show  { width:250px}
   recis-side.bx-menu::before  { content:"\eac1"}
   recis-side.show .bx-menu::after  { content:"\eac3";  transition:all .20s ease}
-  recis-side.show .bx-menu::before  { content:""\eb54""; display:none;  transition:all .20s ease}
+  recis-side.show .bx-menu::before  { content:"\eb54"; display:none;  transition:all .20s ease}
   recis-side.show .bx-search::after  { content:"\eb54"; top:2.5rem; position:absolute; left:1rem; background:0 0}
   recis-side .bx-search::before  { content:"\eb54"; display:none}
   recis-side .bxs-video-recording::before  { content:"\eab8"; top:1.4rem; position:absolute; left:.8rem}
