@@ -37,6 +37,32 @@ body {
     color: rgb(65, 105, 225);
 }
 
+.wek {
+    cursor: pointer;
+}
+
+.wek:hover+.hide {
+    position: fixed;
+    top: 10rem;
+    left: calc(20% + 2rem);
+    width: calc(24% - 10px);
+    background: #11101d;
+    border-radius: 10px;
+    padding: 12px;
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.halk {
+    float: left;
+    font-size: 12pt;
+    margin-left: 10px !important;
+    line-height: 50px;
+}
+
 .nav-tabs li:first-child {
     width: 81px !important;
     border-radius: 25px;
