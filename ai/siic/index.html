@@ -75,6 +75,17 @@
                     <label class="weekday-temperature"></label>
                     <label class="weekday-temperature-celcius">°C</label>
                     <p class="weekday-temperature-description">Clear</p>
+                    <script>
+                        function wheat() {
+                            var x = document.getElementById("cuaca");
+                            if (x.style.display === "none") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
                 </div>
             </div>
             <div class="notification-DS-EntryPoint1-1">No accidents, construction, or cameras in this area</div>
@@ -86,7 +97,116 @@
                     <a><label class="sunset" id="today-sunset"></label></a>
                 </li>
             </ul>
-
+                        <div id="cuaca" class="cuaca-lis title-DS-EntryPoint1-2">
+                <div class="cuaca col-sm">
+                    <p class="description-black week-time"></p>
+                    <div class="second-forecast-column">
+                        <img class="week-forecast-weather-icon" style="top: 2rem; left: 1rem;" />
+                    </div>
+                    <div class="description-forecast">
+                        <p class="week-forecast-description description-black"></p>
+                        <div>
+                            <label class="week-forecast-temp description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <div>
+                            <label class="week-forecast-templike description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <p class="week-forecast-wind description-black"></p>
+                    </div>
+                </div>
+                <div class="cuaca col-sm">
+                    <p class="description-black week-time"></p>
+                    <div class="second-forecast-column">
+                        <img class="week-forecast-weather-icon" style="top: 2rem; left: 1rem;" />
+                    </div>
+                    <div class="description-forecast">
+                        <p class="week-forecast-description description-black"></p>
+                        <div>
+                            <label class="week-forecast-temp description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <div>
+                            <label class="week-forecast-templike description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <p class="week-forecast-wind description-black"></p>
+                    </div>
+                </div>
+                <div class="cuaca col-sm">
+                    <p class="description-black week-time"></p>
+                    <div class="second-forecast-column">
+                        <img class="week-forecast-weather-icon" style="top: 2rem; left: 1rem;" />
+                    </div>
+                    <div class="description-forecast">
+                        <p class="week-forecast-description description-black"></p>
+                        <div>
+                            <label class="week-forecast-temp description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <div>
+                            <label class="week-forecast-templike description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <p class="week-forecast-wind description-black"></p>
+                    </div>
+                </div>
+                <div class="cuaca col-sm">
+                    <p class="description-black week-time"></p>
+                    <div class="second-forecast-column">
+                        <img class="week-forecast-weather-icon" style="top: 2rem; left: 1rem;" />
+                    </div>
+                    <div class="description-forecast">
+                        <p class="week-forecast-description description-black"></p>
+                        <div>
+                            <label class="week-forecast-temp description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <div>
+                            <label class="week-forecast-templike description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <p class="week-forecast-wind description-black"></p>
+                    </div>
+                </div>
+                <div class="cuaca col-sm">
+                    <p class="description-black week-time"></p>
+                    <div class="second-forecast-column">
+                        <img class="week-forecast-weather-icon" style="top: 2rem; left: 1rem;" />
+                    </div>
+                    <div class="description-forecast">
+                        <p class="week-forecast-description description-black"></p>
+                        <div>
+                            <label class="week-forecast-temp description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <div>
+                            <label class="week-forecast-templike description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <p class="week-forecast-wind description-black"></p>
+                    </div>
+                </div>
+                <div class="cuaca col-sm">
+                    <p class="description-black week-time"></p>
+                    <div class="second-forecast-column">
+                        <img class="week-forecast-weather-icon" style="top: 2rem; left: 1rem;" />
+                    </div>
+                    <div class="description-forecast">
+                        <p class="week-forecast-description description-black"></p>
+                        <div>
+                            <label class="week-forecast-temp description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <div>
+                            <label class="week-forecast-templike description-black"></label>
+                            <label>°</label>
+                        </div>
+                        <p class="week-forecast-wind description-black"></p>
+                    </div>
+                </div>
+            </div>
         </div>
         <input type="text" id="search-input">
         <button id="search-btn"><i class="fa fa-search"></i></button>
@@ -231,6 +351,7 @@
 
         L.control.locate().addTo(map);
     </script>
+    
     <script>
         function myFunction()   { 
             var input, filter, ul, li, a, i, txtValue; 
