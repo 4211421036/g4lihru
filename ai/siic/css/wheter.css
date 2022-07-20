@@ -428,6 +428,7 @@ body {
 .time {
     position: relative;
     left: 0.3rem;
+    font-size: 12px;
 }
 
 .routeName-DS-EntryPoint1-1 {
