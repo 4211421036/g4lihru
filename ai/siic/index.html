@@ -67,7 +67,7 @@
                 <div class="container-DS-EntryPoint1-1 layout_horizontal-DS-EntryPoint1-1"><button class="button-DS-EntryPoint1-2 button-DS-EntryPoint1-1 isSelected-DS-EntryPoint1-1" aria-label="Other Incidents"><span class="button_contentRegion-DS-EntryPoint1-1"><span aria-hidden="true" role="presentation"><svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="inline-DS-EntryPoint1-1"><path d="M15.0808 4.35063C16.3729 3.63497 17.9859 4.05082 18.7785 5.2705L18.8814 5.44177L28.5232 22.8493C28.7528 23.2639 28.8733 23.7301 28.8733 24.204C28.8733 25.6839 27.7236 26.8952 26.2687 26.9935L26.0773 27H6.7965C6.32266 27 5.85659 26.8796 5.44206 26.65C4.14989 25.9345 3.64657 24.3466 4.25989 23.0277L4.35047 22.8496L13.9895 5.44206C14.2437 4.98307 14.6219 4.60485 15.0808 4.35063ZM16.4378 20.7781C15.7524 20.7781 15.1968 21.3337 15.1968 22.0191C15.1968 22.7045 15.7524 23.2601 16.4378 23.2601C17.1232 23.2601 17.6788 22.7045 17.6788 22.0191C17.6788 21.3337 17.1232 20.7781 16.4378 20.7781ZM16.4351 10.8322C15.7978 10.8325 15.2727 11.3124 15.2012 11.9304L15.1929 12.0753L15.1951 18.2897L15.2035 18.4346C15.2755 19.0526 15.8009 19.5322 16.4382 19.5319C17.0755 19.5317 17.6006 19.0518 17.6721 18.4338L17.6804 18.2888L17.6782 12.0744L17.6698 11.9295C17.5978 11.3115 17.0724 10.832 16.4351 10.8322Z"></path></svg></span></span></button></div>
                 <div class="container-DS-EntryPoint1-1 layout_horizontal-DS-EntryPoint1-1" title="Based of VAII"><button class="button-DS-EntryPoint1-2 button-DS-EntryPoint1-1 isSelected-DS-EntryPoint1-1" aria-label="Cameras"><span class="button_contentRegion-DS-EntryPoint1-1"><span aria-hidden="true" role="presentation"><svg width="20" height="20" viewBox="0 0 16 10" xmlns="http://www.w3.org/2000/svg" class="inline-DS-EntryPoint1-1"><path d="M10.6667 7.83333V1.5C10.6667 1.30296 10.6278 1.10785 10.5524 0.925821C10.477 0.743789 10.3665 0.578401 10.2271 0.439104C10.0877 0.299808 9.9223 0.189332 9.74023 0.113989C9.55816 0.0386465 9.36304 -8.74247e-05 9.166 1.48162e-07H1.5C1.10218 1.48162e-07 0.720644 0.158036 0.43934 0.43934C0.158035 0.720645 0 1.10218 0 1.5L0 7.83333C0 8.23116 0.158035 8.61269 0.43934 8.89399C0.720644 9.1753 1.10218 9.33333 1.5 9.33333H9.16667C9.56449 9.33333 9.94602 9.1753 10.2273 8.89399C10.5086 8.61269 10.6667 8.23116 10.6667 7.83333Z" fill="#ffff"></path><path d="M14.5613 7.94731L12.5493 6.94131C12.3843 6.85877 12.2455 6.73192 12.1485 6.57497C12.0515 6.41802 12.0001 6.23716 12 6.05265V3.28064C11.9999 3.09601 12.0513 2.91502 12.1483 2.75794C12.2453 2.60086 12.3842 2.47391 12.5493 2.39131L14.5613 1.38531C14.7129 1.3095 14.8813 1.27369 15.0506 1.28131C15.22 1.28892 15.3845 1.33969 15.5287 1.42881C15.6728 1.51792 15.7918 1.64241 15.8743 1.79045C15.9568 1.93849 16.0001 2.10517 16 2.27465V7.05798C16.0001 7.22745 15.9568 7.39413 15.8743 7.54217C15.7918 7.69021 15.6728 7.8147 15.5287 7.90382C15.3845 7.99293 15.22 8.0437 15.0506 8.05132C14.8813 8.05893 14.7129 8.02313 14.5613 7.94731Z" fill="#ffff"></path></svg></span></span></button></div>
                 <div class="container-DS-EntryPoint1-1 layout_horizontal-DS-EntryPoint1-1">
-                    <button class="button-DS-EntryPoint1-2 button-DS-EntryPoint1-1 isSelected-DS-EntryPoint1-1" aria-label="Cameras">
+                    <button class="button-DS-EntryPoint1-2 button-DS-EntryPoint1-1 isSelected-DS-EntryPoint1-1" aria-label="Cuaca" onclick="wheat()">
                         <span class="button_contentRegion-DS-EntryPoint1-1"></span>
                         <img id="current-weather-icon" alt="SIIC Wheater Realtime" />
                     </button>
@@ -75,17 +75,6 @@
                     <label class="weekday-temperature"></label>
                     <label class="weekday-temperature-celcius">°C</label>
                     <p class="weekday-temperature-description">Clear</p>
-                    <script>
-                        function wheat() {
-                            var x = document.getElementById("cuaca");
-                            if (x.style.display === "none") {
-                                x.style.display = "block";
-                            } else {
-                                x.style.display = "none";
-                            }
-                        }
-                    </script>
-
                 </div>
             </div>
             <div class="notification-DS-EntryPoint1-1">No accidents, construction, or cameras in this area</div>
@@ -336,7 +325,16 @@
     <script src="lef.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
 
-
+    <script>
+        function wheat() {
+            var x = document.getElementById("cuaca");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
     <script>
         // Map initialization 
         var map = L.map('map').setView([-6.229728, 106.6894283], 8);
