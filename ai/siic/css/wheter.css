@@ -793,6 +793,15 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    
+    .feelli {
+        display: none;
+    }
+
+    .feelle {
+        display: none;
+    }
+    
     #search-input {
         display: none;
     }
@@ -996,6 +1005,14 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    
+    .feelli {
+        display: none;
+    }
+
+    .feelle {
+        display: none;
+    }
     #search-input {
         display: none;
     }
@@ -1164,6 +1181,13 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 374px) and (orientation:portrait) {
     .sidePanel-DS-EntryPoint1-1 {
+        display: none;
+    }
+    .feelli {
+        display: none;
+    }
+
+    .feelle {
         display: none;
     }
     #search-input {
