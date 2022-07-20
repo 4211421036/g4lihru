@@ -16,7 +16,7 @@ body {
 .avatar {
     position: relative;
     top: 3rem;
-    left: 40%;
+    left: 2%;
 }
 
 .wek {
@@ -802,7 +802,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .avatar {
         position: relative;
         top: 3rem;
-        left: 35%;
+        left: 3%;
     }
     .feelli {
         display: none;
@@ -1018,7 +1018,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .avatar {
         position: relative;
         top: 3rem;
-        left: 35%;
+        left: 5%;
     }
     
     .feelli {
@@ -1204,7 +1204,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .avatar {
         position: relative;
         top: 3rem;
-        left: 35%;
+        left: 5%;
     }
     .feelle {
         display: none;
