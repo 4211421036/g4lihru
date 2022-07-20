@@ -1041,7 +1041,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .weekday-weather-icon,
     .week-forecast-weather-icon {
         position: absolute;
-        right: 30px;
+        right: 3px;
         top: -0.2rem;
         width: 35px;
         height: 35px;
@@ -1049,7 +1049,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .description {
         position: absolute;
         top: 1.4rem;
-        right: 55%;
+        right: 20%;
         font-size: 6.2pt;
         color: rgb(254, 245, 245);
     }
