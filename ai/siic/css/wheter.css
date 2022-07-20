@@ -425,6 +425,11 @@ body {
     color: white;
 }
 
+.time {
+    position: relative;
+    left: 0.3rem;
+}
+
 .routeName-DS-EntryPoint1-1 {
     font-size: 14px;
     font-weight: 600;
@@ -434,7 +439,7 @@ body {
 
 .level_light-DS-EntryPoint1-1 .trafficTime-DS-EntryPoint1-1,
 .level_light-DS-EntryPoint1-1 .trafficDescription-DS-EntryPoint1-1 {
-    color: #c75300;
+    color: #03bc90;
 }
 
 .layout_collapsed-DS-EntryPoint1-1 .trafficTime-DS-EntryPoint1-1 {
