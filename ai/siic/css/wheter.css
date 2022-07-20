@@ -56,6 +56,9 @@ body {
     margin-left: 10px !important;
     line-height: 30px;
 }
+.cuaca-lis {
+    display: none;
+}
 
 #search-input {
     position: relative;
