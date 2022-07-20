@@ -39,6 +39,23 @@ body {
     margin-left: 10px !important;
     line-height: 50px;
 }
+.second-forecast-column {
+    float: left;
+    display: block;
+    line-height: 10px;
+}
+
+.cuaca {
+    float: left;
+    display: block;
+    border-radius: 15px;
+    background-color: black;
+    position: relative;
+    top: 2rem;
+    font-size: 12pt;
+    margin-left: 10px !important;
+    line-height: 30px;
+}
 
 #search-input {
     position: relative;
