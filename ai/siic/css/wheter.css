@@ -13,6 +13,12 @@ body {
     display: none;
 }
 
+.avatar {
+    position: relative;
+    top: 3rem;
+    left: 40%;
+}
+
 .wek {
     cursor: pointer;
 }
@@ -793,7 +799,11 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
-    
+    .avatar {
+        position: relative;
+        top: 3rem;
+        left: 35%;
+    }
     .feelli {
         display: none;
     }
@@ -1005,6 +1015,11 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    .avatar {
+        position: relative;
+        top: 3rem;
+        left: 35%;
+    }
     
     .feelli {
         display: none;
@@ -1186,7 +1201,11 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .feelli {
         display: none;
     }
-
+    .avatar {
+        position: relative;
+        top: 3rem;
+        left: 35%;
+    }
     .feelle {
         display: none;
     }
