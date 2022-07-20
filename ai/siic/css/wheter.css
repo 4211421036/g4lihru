@@ -94,6 +94,21 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
+.feelli {
+    position: relative;
+    top: 0.2rem;
+    color: #11101d;
+    font-size: 10px;
+}
+
+.feelle {
+    position: relative;
+    top: 1.2rem;
+    right: 2rem;
+    color: #11101d;
+    font-size: 10px;
+}
 #search-input {
     position: relative;
     top: 1rem;
