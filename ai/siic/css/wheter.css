@@ -53,6 +53,12 @@ body {
     background-color: #9db4c4
 }
 
+
+.linkhaf {
+    display: inline-block;
+    float: right;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
