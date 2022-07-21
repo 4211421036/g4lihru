@@ -53,6 +53,44 @@ body {
     background-color: #9db4c4
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2;
+}
+
+#myInput {
+    position: absolute;
+    left: 2rem;
+    border: none;
+    top: 3px;
+    height: 1.5rem;
+    width: 95%;
+}
+
+#myInput-modal {
+    position: absolute;
+    display: flex;
+    left: 4rem;
+    border: none;
+    top: 1.5rem;
+    height: 2.5rem;
+    border-radius: 25px;
+    width: 90%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.avatar-modal {
+    position: absolute;
+    display: flex;
+    float: right;
+    width: 5%;
+    height: 2.5rem;
+    top: 1.5rem;
+}
+
 .carousel::-webkit-scrollbar {
     display: none;
 }
@@ -125,9 +163,8 @@ p {
 /*# sourceMappingURL=style.css.map */
 
 .header {
-    background-color: #fbcbcd;
+    background-color: #11101d;
 }
-
 
 .app-menu-line {
     background-color: #fff;
@@ -146,7 +183,7 @@ p {
 }
 
 .header-top {
-    color: #fff;
+    color: #11101d;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -167,15 +204,14 @@ p {
     flex-wrap: nowrap;
 }
 
-
 .top {
-    background-color: black;
+    background-color: #11101d;
 }
 
 .top .top-overlay {
-    background: rgb(255, 255, 255) transparent;
+    background: #11101d transparent;
     background: rgba(255, 255, 255, 0.6);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
     padding: 51px;
 }
