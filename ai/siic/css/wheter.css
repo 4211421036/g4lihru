@@ -19,6 +19,113 @@ body {
     left: 2%;
 }
 
+ul.bar-tabs {
+    position: relative;
+    top: 5rem;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.bar-tabs li {
+    float: left;
+    font-size: 12pt;
+    width: 50px;
+    margin-left: 5px !important;
+    line-height: 50px;
+    height: 30px;
+    background: linear-gradient(#0fc11e, #35ffa1);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-bottom: 3px solid rgb(34, 32, 32);
+    border-radius: 25px;
+}
+
+.layoutToggle {
+    position: relative;
+    float: right;
+    background: none;
+    display: flex;
+    top: 5rem;
+}
+
+.dark {
+    border-color: rgb(22, 131, 216);
+    fill: rgb(22, 131, 216);
+}
+
+.iconContainer svg,
+.iconContainer path {
+    fill: inherit;
+    fill-opacity: inherit;
+    display: block;
+    margin: auto;
+}
+
+.iconContainer {
+    background: none;
+    border: 1px solid;
+    border-radius: 4px;
+    height: 31px;
+    padding: 0px;
+    width: 31px;
+}
+
+.linearFeedIcon {
+    margin-left: 6px;
+}
+
+.dark_unselected {
+    border-color: gray;
+    fill: white;
+}
+
+.unselected {
+    border-color: gray;
+    cursor: pointer;
+    fill: gray;
+}
+
+.colund {
+    position: relative;
+    width: 30px;
+    top: 0.8rem;
+}
+
+.bar-tabs a {
+    position: relative;
+    top: -1rem;
+    font-size: 10pt;
+    color: white;
+    text-decoration: none;
+}
+
+.bar-tabs li:hover {
+    background-color: rgb(46, 46, 46);
+    text-decoration: none;
+    border-bottom: 2px solid rgb(248, 160, 9);
+}
+
+.bar-tabs .active {
+    border-bottom: 3px solid rgb(65, 105, 225);
+}
+
+.bar-tabs li .active {
+    border-bottom: none;
+}
+
+.bar-tabs a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.bar {
+    background-color: transparent;
+}
+
 .wek {
     cursor: pointer;
 }
