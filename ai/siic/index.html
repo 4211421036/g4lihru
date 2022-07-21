@@ -394,7 +394,7 @@
         </div>
         <siic-ground id="siicui">
             <siic-search id="siicfin">
-                <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search..." title="Search">
+                <input type="text" onkeyup="myFunction()" placeholder="Search..." title="Search">
             </siic-search>
             <svg class="avatar" aria-hidden="true" class="c013" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="64" height="64">
                 <linearGradient id="g2" gradientUnits="userSpaceOnUse" x1="2.8318" y1="16.25" x2="17.1682" y2="16.25">
@@ -1062,25 +1062,6 @@
 
 
         L.control.locate().addTo(map);
-    </script>
-    
-    <script>
-        function myFunction()   { 
-            var input, filter, ul, li, a, i, txtValue; 
-            input = document.getElementById("myInput"); 
-            filter = input.value.toUpperCase(); 
-            ul = document.getElementById("myUL"); 
-            li = ul.getElementsByTagName("li"); 
-            for (i = 0;  i < li.length;  i++)   { 
-                a = li[i].getElementsByTagName("a")[0]; 
-                txtValue = a.textContent || a.innerText; 
-                if (txtValue.toUpperCase().indexOf(filter) > -1)   { 
-                    li[i].style.display = ""; 
-                } else   { 
-                    li[i].style.display = "none"; 
-                }
-            }
-        }
     </script>
     <script src="https://g4lihru.me/ai/siic/index.js" defer></script>    
     <script type="text/javascript" src="js/script.js"></script>
