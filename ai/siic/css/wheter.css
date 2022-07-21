@@ -968,6 +968,22 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    .carousel {
+        position: absolute;
+        scroll-snap-type: x mandatory;
+        display: flex;
+        width: 94%;
+        top: 6rem;
+        left: 0;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        -webkit-scrollbar: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        margin: 15px 0 3px 20px;
+        text-align: left;
+    }
     .avatar {
         position: relative;
         top: 3rem;
@@ -1184,6 +1200,22 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    .carousel {
+        position: absolute;
+        scroll-snap-type: x mandatory;
+        display: flex;
+        width: 93%;
+        top: 6rem;
+        left: 0;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        -webkit-scrollbar: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        margin: 15px 0 3px 20px;
+        text-align: left;
+    }
     .avatar {
         position: relative;
         top: 3rem;
@@ -1366,6 +1398,22 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
 @media only screen and (min-device-width: 320px) and (max-device-width: 374px) and (orientation:portrait) {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
+    }
+    .carousel {
+        position: absolute;
+        scroll-snap-type: x mandatory;
+        display: flex;
+        width: 93%;
+        top: 6rem;
+        left: 0;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        -webkit-scrollbar: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        margin: 15px 0 3px 20px;
+        text-align: left;
     }
     .feelli {
         display: none;
