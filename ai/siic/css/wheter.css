@@ -1364,6 +1364,28 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    #myInput-modal {
+        position: absolute;
+        display: flex;
+        left: 4rem;
+        border: none;
+        top: 1.5rem;
+        height: 2.5rem;
+        border-radius: 25px;
+        width: 80%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .avatar-modal {
+        position: absolute;
+        display: flex;
+        float: right;
+        width: 15%;
+        height: 2.5rem;
+        top: 1.5rem;
+    }
     .carousel {
         position: absolute;
         scroll-snap-type: x mandatory;
@@ -1596,6 +1618,28 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    #myInput-modal {
+        position: absolute;
+        display: flex;
+        left: 4rem;
+        border: none;
+        top: 1.5rem;
+        height: 2.5rem;
+        border-radius: 25px;
+        width: 80%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .avatar-modal {
+        position: absolute;
+        display: flex;
+        float: right;
+        width: 15%;
+        height: 2.5rem;
+        top: 1.5rem;
+    }
     .carousel {
         position: absolute;
         scroll-snap-type: x mandatory;
@@ -1795,6 +1839,29 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .sidePanel-DS-EntryPoint1-1 {
         display: none;
     }
+    #myInput-modal {
+        position: absolute;
+        display: flex;
+        left: 4rem;
+        border: none;
+        top: 1.5rem;
+        height: 2.5rem;
+        border-radius: 25px;
+        width: 75%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .avatar-modal {
+        position: absolute;
+        display: flex;
+        float: right;
+        width: 15%;
+        height: 2.5rem;
+        top: 1.5rem;
+    }
+    
     .carousel {
         position: absolute;
         scroll-snap-type: x mandatory;
