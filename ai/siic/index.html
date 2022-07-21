@@ -497,13 +497,39 @@
                 </li>
             </ul>
             <div id="layoutToggle" class="layoutToggle">
-                <button tabindex="0" aria-label="multicolumn feed" data-customhandled="true" class="iconContainer gridFeedIcon dark" data-t="{&quot;n&quot;:&quot;LayoutMultiColumn&quot;,&quot;c.hl&quot;:&quot;Toggle for MultiColumn&quot;}">
+                <button tabindex="0" data-link="" aria-label="multicolumn feed" data-customhandled="true" class="iconContainer gridFeedIcon dark" data-t="{&quot;n&quot;:&quot;LayoutMultiColumn&quot;,&quot;c.hl&quot;:&quot;Toggle for MultiColumn&quot;}">
                     <svg width="17" height="17" viewBox="0 0 16 16" fill="none"><path d="M5.5 9c.83 0 1.5.67 1.5 1.5v4c0 .83-.67 1.5-1.5 1.5h-4A1.5 1.5 0 0 1 0 14.5v-4C0 9.67.67 9 1.5 9h4Zm9 0c.83 0 1.5.67 1.5 1.5v4c0 .83-.67 1.5-1.5 1.5h-4A1.5 1.5 0 0 1 9 14.5v-4c0-.83.67-1.5 1.5-1.5h4Zm-9 1h-4a.5.5 0 0 0-.5.5v4c0 .28.22.5.5.5h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5Zm9 0h-4a.5.5 0 0 0-.5.5v4c0 .28.22.5.5.5h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5Zm-9-10C6.33 0 7 .67 7 1.5v4C7 6.33 6.33 7 5.5 7h-4A1.5 1.5 0 0 1 0 5.5v-4C0 .67.67 0 1.5 0h4Zm9 0c.83 0 1.5.67 1.5 1.5v4c0 .83-.67 1.5-1.5 1.5h-4A1.5 1.5 0 0 1 9 5.5v-4C9 .67 9.67 0 10.5 0h4Zm-9 1h-4a.5.5 0 0 0-.5.5v4c0 .28.22.5.5.5h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5Zm9 0h-4a.5.5 0 0 0-.5.5v4c0 .28.22.5.5.5h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5Z" fill="#000" fill-opacity=".55"></path></svg>
         
                 </button>
                 <button tabindex="0" aria-label="singlecolumn feed" data-customhandled="true" class="iconContainer linearFeedIcon dark unselected dark_unselected" data-t="{&quot;n&quot;:&quot;LayoutSingleColumn&quot;,&quot;c.hl&quot;:&quot;Toggle for SingleColumn&quot;}">
                     <svg width="16" height="16" viewBox="0 0 16 13" fill="none"><path d="M10.5 12a.5.5 0 0 1 .09 1H.5a.5.5 0 0 1-.09-1H10.5Zm5-6a.5.5 0 0 1 .09 1H.5a.5.5 0 0 1-.09-.98L.51 6H15.5Zm-4-6a.5.5 0 0 1 .09 1H.5a.5.5 0 0 1-.09-1H11.5Z" fill="#000" fill-opacity=".55"></path></svg>
                 </button>
+            </div>
+                        <div class="menu">
+                <div class="menu-background" style="cursor: pointer;"></div>
+                <div class="app-menu-container">
+                    <div class="app-menu">
+                        <div class="top">
+                            <div id="showScroll" class="top-overlay">
+                            </div>
+                        </div>
+                        <div id="bottom" class="bottom">
+                            <div class="list-item">Welcome</div>
+                            <div class="list-item">Fancy Time</div>
+                            <div class="list-item">Tea Time</div>
+                            <div class="list-item">Adventure Time</div>
+                            <div class="list-item">Puzzle Time</div>
+                            <div class="list-item">Sports Time</div>
+                            <div class="list-item">Star Wars Time</div>
+                            <div class="list-item">Internet Time</div>
+                            <div class="list-item">Sushi Time</div>
+                            <div class="list-item">Barbariska Time</div>
+                            <div class="list-item">Donuts Time</div>
+                            <div class="list-item">One Time</div>
+                            <div class="list-item">tewo Time</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="siic">
                 <siic-text>
@@ -566,6 +592,274 @@
         </siic-ground>
     </siic-app>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var trackableElement;
+            var counter = document.getElementById('bottom');
+            var menu = document.querySelector(".menu");
+            var appMenu = document.querySelector(".app-menu-container");
+            var overlay = document.querySelector(".menu-background");
+            var burger = document.querySelector(".gridFeedIcon");
+
+            var touchingElement = false;
+            var startTime;
+            var startY = 0,
+                startX = 0;
+            var currentY = 0,
+                currentX = 0;
+
+            var isOpen = false;
+            var isMoving = false;
+            var menuHeight = 0;
+            var lastY = 0;
+            var lastX = 0;
+            var moveY = 0; // where in the screen is the menu currently
+            var dragDirection = "";
+            var maxOpacity = 0.5; // in case if you want to change this, don"t forget to change the value of the opacity in the css class .menu--visible .menu-background
+
+            var init = function(element, start, move, end) {
+                trackableElement = element;
+
+                startTime = new Date().getTime(); // start time of the touch
+
+                addEventListeners();
+            }
+
+            var addEventListeners = function() {
+                trackableElement.addEventListener("touchstart", onTouchStart, false);
+                trackableElement.addEventListener("touchmove", onTouchMove, false);
+                trackableElement.addEventListener("touchend", onTouchEnd, false);
+
+
+                overlay.addEventListener("click", closeMenuOverlay, false); // I want to be able to click the overlay and immediately close the menu (in the space between the actual menu and the page behind it)
+                burger.addEventListener("click", clickOpenMenu, false); // I want to be able to click the burger and immediately open the menu
+            }
+
+
+            function onTouchStart(evt) {
+                startTime = new Date().getTime();
+                startY = evt.touches[0].pageY;
+                startX = evt.touches[0].pageX;
+                if (document.querySelector(".bottom").scrollTop <= 0) {
+                    touchingElement = true;
+                    touchStart(startY, startX)
+                }
+
+            }
+
+            function onTouchMove(evt) {
+                if (!touchingElement)
+                    return;
+
+                currentY = evt.touches[0].pageY;
+                currentX = evt.touches[0].pageX;
+                const translateY = currentY - startY; // distance moved in the x axis
+                const translateX = currentX - startX; // distance moved in the y axis
+
+                touchMove(evt, currentY, currentX, translateY, translateX)
+
+            }
+
+            function onTouchEnd(evt) {
+
+
+                if (!touchingElement)
+                    return;
+
+                touchingElement = false;
+                const translateY = currentY - startY; // distance moved in the x axis
+                const translateX = currentX - startX; // distance moved in the y axis
+
+                const timeTaken = (new Date().getTime() - startTime);
+
+                touchEnd(currentY, currentX, translateY, translateX, timeTaken)
+            }
+
+
+            function touchStart(startY, startX) {
+                var menuOpen = document.querySelector(".menu.menu--visible");
+
+                if (menuOpen !== null) {
+                    isOpen = true;
+                } else {
+                    isOpen = false;
+                }
+
+                menu.classList.add("no-transition");
+                appMenu.classList.add("no-transition");
+
+                isMoving = true;
+                menuHeight = document.querySelector(".app-menu").offsetWidth;
+                lastY = startY;
+                lastX = startX;
+
+                if (isOpen) {
+                    moveY = 0;
+                } else {
+                    moveY = -menuHeight;
+                }
+
+                dragDirection = "";
+                menu.classList.add("menu--background-visible");
+            }
+
+
+            function touchMove(evt, currentY, currentX, translateY, translateX) {
+                if (!dragDirection) {
+                    if (Math.abs(translateY) >= Math.abs(translateX)) {
+                        dragDirection = "vertical";
+                    } else {
+                        dragDirection = "horizontal";
+                    }
+
+                    requestAnimationFrame(updateUi); // this is what effectively does the animation (ﾉ◕ヮ◕)ﾉ*:・ﾟ✧
+                }
+                if (dragDirection === "horizontal") {
+                    lastY = currentY;
+                    lastX = currentX;
+                } else {
+                    if (moveY + (currentY - lastY) > 0 && moveY + (currentY - lastY) > -menuHeight && evt.cancelable) {
+                        moveY = moveY + (currentY - lastY);
+                        evt.preventDefault();
+                    } else if (moveY + (currentY - lastY) < 0 && moveY + (currentY - lastY) > -menuHeight) {
+                        evt.stopPropagation();
+                    }
+
+                    lastY = currentY;
+                    lastX = currentX;
+
+                    overlay.classList.add("no-transition");
+
+                    var percentageBeforeDif = (Math.abs(moveY) * 100) / menuHeight;
+                    var percentage = 100 - percentageBeforeDif;
+
+                    var newOpacity = (((maxOpacity) * percentage) / 100);
+
+                    if (overlay.style.opacity !== newOpacity.toFixed(2) && newOpacity.toFixed(1) % 1 !== 0) {
+                        overlay.style.opacity = newOpacity.toFixed(2);
+                    }
+
+                }
+
+            }
+
+            function touchEnd(currentY, currentX, translateY, translateX, timeTaken) {
+                isMoving = false;
+                var velocity = 0.3;
+
+                if (currentY === 0 && currentX === 0) {
+                    if (isOpen) {
+                        appMenu.classList.remove("no-transition");
+                        menu.classList.remove("no-transition");
+                    } else {
+                        menu.classList.remove("menu--background-visible");
+                        menu.classList.remove("no-transition");
+
+                    }
+                } else {
+                    if (isOpen) {
+                        if ((translateY < (-menuHeight) / 2) || (Math.abs(translateY) / timeTaken > velocity)) {
+                            closeMenu(translateY);
+                            isOpen = false;
+                        } else {
+                            openMenu();
+                            isOpen = true;
+                        }
+                    } else {
+                        if (translateY > menuHeight / 2 || (Math.abs(translateY) / timeTaken > velocity)) {
+                            openMenu();
+                            isOpen = true;
+                        } else {
+                            closeMenu(translateY);
+                            isOpen = false;
+                        }
+
+                    }
+                }
+
+                menu.classList.remove("no-transition");
+                appMenu.classList.remove("no-transition");
+
+                overlay.classList.remove("no-transition");
+
+                menu.classList.add("menu--animatable");
+            }
+
+            function updateUi() {
+
+                if (isMoving) {
+                    var element = document.querySelector(".app-menu-container");
+
+                    element.style.transform = "translateY(" + moveY + "px)";
+                    element.style.webkitTransform = "translateY(" + moveY + "px)";
+
+                    requestAnimationFrame(updateUi);
+                }
+            }
+
+            function closeMenu(translateY) {
+
+                function OnTransitionEnd() {
+                    overlay.style.opacity = "";
+                    overlay.style.display = "";
+
+                    menu.classList.remove("menu--background-visible");
+                    menu.classList.remove("menu--animatable");
+                    menu.removeEventListener("transitionend", OnTransitionEnd, false);
+                }
+
+                if (translateY > 0 || !isOpen) {
+                    appMenu.style.transform = "";
+                    appMenu.style.webkitTransform = "";
+
+                    menu.classList.remove("menu--background-visible");
+                    menu.classList.remove("menu--visible");
+
+                    menu.addEventListener("transitionend", OnTransitionEnd, false);
+                }
+            }
+
+            function openMenu() {
+
+                appMenu.style.transform = "";
+                appMenu.style.webkitTransform = "";
+
+                menu.classList.add("menu--visible");
+                menu.classList.add("menu--background-visible");
+
+                overlay.style.opacity = "";
+            }
+
+            function closeMenuOverlay() {
+                function OnTransitionEnd() {
+                    menu.classList.remove("menu--background-visible");
+                    menu.classList.remove("menu--animatable");
+                    overlay.style.display = "";
+
+                    menu.removeEventListener("transitionend", OnTransitionEnd);
+                }
+
+                menu.addEventListener("transitionend", OnTransitionEnd, false);
+
+                menu.classList.remove("menu--visible");
+            }
+
+            function clickOpenMenu() {
+
+                menu.classList.add("menu--background-visible");
+
+                requestAnimationFrame(function() {
+                    setTimeout(function() {
+                        menu.classList.add("menu--visible");
+                        menu.classList.add("menu--animatable");
+                    }, 1)
+                });
+            }
+
+            init(document.querySelector(".app-menu-container"));
+
+        });
+    </script>
     <!-- leaflet js  -->
     <script src="lef.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
