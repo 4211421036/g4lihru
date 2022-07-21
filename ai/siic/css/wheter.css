@@ -27,6 +27,7 @@ body {
     .carousel {
         display: grid;
         max-width: 90%;
+        left: 4rem;
         margin: 20px auto 3px auto;
         column-gap: 10px;
         overflow: auto;
