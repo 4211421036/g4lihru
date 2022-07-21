@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html prefix="og: https://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id">
 
@@ -26,28 +25,273 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
     <style>
-        * { overflow: hidden; bottom: 10rem; box-sizing: border-box; }
-        body { font-family: Verdana,sans-serif; margin: 0; background-color: #161b22; }
-        .mySlides { display: none; }
-        a { text-decoration: none; position: fixed; right: 1rem; top: 1rem; width: 140px; height: 40px; color: green; background-color: transparent; cursor: pointer; border-radius: 10px; } 
-        .yr { position: absolute; left: 0; right: 0; bottom: 2rem; }
-        svg{ vertical-align: middle; width: 100%; height: 580px; }
-        .svg-ren{ display: flex; position: relative; width: 45%; bottom: -5rem; left: 7rem; right: 7rem; justify-content: center; align-items: center; align-content: center; flex-direction: row-reverse; }
-        .slideshow-container { max-width: 50rem; position: relative; margin: auto; }
-        .text{ color: #c9d1d9; font-size: 115pt; size: 115pt; padding: 8px 12px; position: absolute; top: 14rem; width: 100%; text-align: center; }
-        .numbertext{ color: #c9d1d9; font-size: 12px; padding: 8px 12px; position: absolute; top: 0; }
-        .dot{ cursor: pointer; height: 15px; width: 15px; margin: 0 2px; background-color: #c9d1d9; border-radius: 50%; display: inline-block; transition: background-color .6s ease; }
-        .active, .dot:hover { background-color: #3fb950;}
-        @media only screen and (min-device-width :425px) and (max-device-width :767px) and (orientation:portrait){.mySlides{display:none}svg{vertical-align:middle;width:100%;height:500px}.svg-ren{display:flex;position:relative;width:40%;bottom:-5rem;left:7rem;right:7rem;justify-content:center;align-items:center;align-content:center;flex-direction:row-reverse}.slideshow-container{max-width:50rem;position:relative;margin:auto}.text{color:#c9d1d9;font-size:15px;padding:8px 12px;position:absolute;bottom:8px;width:100%;text-align:center}.numbertext{color:#c9d1d9;font-size:12px;padding:8px 12px;position:absolute;top:0}.dot{cursor:pointer;height:15px;width:15px;margin:0 2px;background-color:#c9d1d9;border-radius:50%;display:inline-block;transition:background-color .6s ease}}@media only screen and (min-device-width :768px){.mySlides{display:none}svg{vertical-align:middle;width:100%;height:680px}.svg-ren{display:flex;position:relative;width:30%;bottom:-8rem;left:10rem;right:7rem;justify-content:center;align-items:center;align-content:center;flex-direction:row-reverse}.slideshow-container{max-width:50rem;position:relative;margin:auto}.text{color:#c9d1d9;font-size:15px;padding:8px 12px;position:absolute;bottom:8px;width:100%;text-align:center}.numbertext{color:#c9d1d9;font-size:12px;padding:8px 12px;position:absolute;top:0}.dot{cursor:pointer;height:15px;width:15px;margin:0 2px;background-color:#c9d1d9;border-radius:50%;display:inline-block;transition:background-color .6s ease}}@media only screen and (min-device-width :375px) and (max-device-width :424px) and (orientation:portrait){.mySlides{display:none}svg{vertical-align:middle;width:100%;height:500px}.svg-ren{display:flex;position:relative;width:45%;bottom:-8rem;left:7rem;right:7rem;justify-content:center;align-items:center;align-content:center;flex-direction:row-reverse}.slideshow-container{max-width:50rem;position:relative;margin:auto}.text{color:#c9d1d9;font-size:15px;padding:8px 12px;position:absolute;bottom:8px;width:100%;text-align:center}.numbertext{color:#c9d1d9;font-size:12px;padding:8px 12px;position:absolute;top:0}.dot{cursor:pointer;height:15px;width:15px;margin:0 2px;background-color:#c9d1d9;border-radius:50%;display:inline-block;transition:background-color .6s ease}}@media only screen and (min-device-width :320px) and (max-device-width :374px) and (orientation:portrait){.mySlides{display:none}svg{vertical-align:middle;width:100%;height:500px}.slideshow-container{max-width:50rem;position:relative;margin:auto}.text{color:#c9d1d9;font-size:15px;padding:8px 12px;position:absolute;bottom:8px;width:100%;text-align:center}.numbertext{color:#c9d1d9;font-size:12px;padding:8px 12px;position:absolute;top:0}.dot{cursor:pointer;height:15px;width:15px;margin:0 2px;background-color:#c9d1d9;border-radius:50%;display:inline-block;transition:background-color .6s ease}}
+        * {
+            overflow: hidden;
+        }
+        
+        recis-slide-cont {
+            position: absolute;
+            width: 10vh;
+            height: 100%;
+        }
+        
+        recis-slide {
+            position: relative;
+            width: calc(10rem + 340px- 20px);
+            top: 0rem;
+            height: 100vh;
+        }
+        
+        recis-header {
+            position: fixed;
+            top: 0rem;
+            width: 10vh;
+            left: 0rem;
+            box-shadow: 10rem;
+        }
+        
+        .logoku {
+            position: fixed;
+            float: right;
+            width: 5rem;
+            height: 1rem;
+        }
+        
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            background-color: #161b22;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        svg {
+            position: relative;
+            left: 20%;
+            width: 65%;
+            top: 20%;
+        }
+        
+        a {
+            text-decoration: none;
+            position: fixed;
+            right: 1rem;
+            top: 1rem;
+            width: 140px;
+            height: 40px;
+            color: green;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        
+        .yr {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 2rem;
+        }
+        
+        .driver {
+            position: relative;
+            top: 8rem;
+            width: 42%;
+            left: 28%;
+        }
+        
+        .logh {
+            position: relative;
+            top: 12rem;
+            width: 40%;
+            left: 30%;
+        }
+        
+        .text {
+            color: #c9d1d9;
+            font-size: 115pt;
+            size: 115pt;
+            position: absolute;
+            top: 6rem;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .numbertext {
+            color: #c9d1d9;
+            font-size: 12px;
+            position: fixed;
+            top: 3rem;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #c9d1d9;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color .6s ease;
+        }
+        
+        .active,
+        .dot:hover {
+            background-color: #3fb950;
+        }
+        
+        @media only screen and (min-device-width :425px) and (max-device-width :767px) and (orientation:portrait) {
+            .mySlides {
+                display: none
+            }
+            .slideshow-container {
+                max-width: 50rem;
+                position: relative;
+                margin: auto
+            }
+            .text {
+                color: #c9d1d9;
+                font-size: 15px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center
+            }
+            .numbertext {
+                color: #c9d1d9;
+                font-size: 12px;
+                position: fixed;
+                top: 3rem;
+            }
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #c9d1d9;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color .6s ease
+            }
+        }
+        
+        @media only screen and (min-device-width :768px) {
+            .mySlides {
+                display: none
+            }
+            .slideshow-container {
+                max-width: 50rem;
+                position: relative;
+                margin: auto
+            }
+            .text {
+                color: #c9d1d9;
+                font-size: 15px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center
+            }
+            .numbertext {
+                color: #c9d1d9;
+                font-size: 12px;
+                position: fixed;
+                top: 3rem;
+            }
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #c9d1d9;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color .6s ease
+            }
+        }
+        
+        @media only screen and (min-device-width :375px) and (max-device-width :424px) and (orientation:portrait) {
+            .mySlides {
+                display: none
+            }
+            .slideshow-container {
+                max-width: 50rem;
+                position: relative;
+                margin: auto
+            }
+            .text {
+                color: #c9d1d9;
+                font-size: 15px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center
+            }
+            .numbertext {
+                color: #c9d1d9;
+                font-size: 12px;
+                position: fixed;
+                top: 3rem;
+            }
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #c9d1d9;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color .6s ease
+            }
+        }
+        
+        @media only screen and (min-device-width :320px) and (max-device-width :374px) and (orientation:portrait) {
+            .mySlides {
+                display: none
+            }
+            .slideshow-container {
+                max-width: 50rem;
+                position: relative;
+                margin: auto
+            }
+            .text {
+                color: #c9d1d9;
+                font-size: 15px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center
+            }
+            .numbertext {
+                color: #c9d1d9;
+                font-size: 12px;
+                position: fixed;
+                top: 3rem;
+            }
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #c9d1d9;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color .6s ease
+            }
+        }
     </style>
 </head>
 
 <body>
+    <recis-header>
+        <img class="logoku" src="SIICSA.png" alt="">
+    </recis-header>
     <recis-slide-cont class="slideshow-container">
 
         <recis-slide class="mySlides fade">
             <recis-text translate="yes" lang="en" class="text">one tree will save people</recis-text>
-            <recis-number class="numbertext">1 / 4/recis-number>
+            <recis-number class="numbertext">1 / 4</recis-number>
             <svg viewBox="0 0 550 400" preserveAspectRatio="xMidYMax meet">
                 <g id="stems" fill="none" stroke="green"></g>
                 <g id="leaves"></g>
@@ -55,26 +299,23 @@
         </recis-slide>
 
         <recis-slide class="mySlides fade">
-            <recis-number class="numbertext">2 / 4/recis-number>
+            <recis-number class="numbertext">2 / 4</recis-number>
             <recis-text translate="yes" lang="en" class="text">Take care and take care of your plants by watering them every day.</recis-text>
             <svg viewBox="0 0 550 400" preserveAspectRatio="xMidYMax meet">
                 <g id="batang" fill="none" stroke="brown"></g>
                 <g id="oksigen"></g>
             </svg>
         </recis-slide>
-
         <recis-slide class="mySlides fade">
-            <recis-number class="numbertext">3 / 4/recis-number>
-            <recis-text translate="yes" lang="en" class="text">Take care of the Earth and love the Earth</recis-text>
-            <img title="Driver" src="data/driver.svg" />
-
+            <recis-number class="numbertext">3 / 4</recis-number>
+            <recis-text translate="yes" lang="en" class="text">Take care and take care of your plants by watering them every day.</recis-text>
+            <img class="driver" src="driver.svg" alt="">
         </recis-slide>
         <recis-slide class="mySlides fade">
-            <recis-number class="numbertext">4  4/recis-number>
+            <recis-number class="numbertext">4 / 4</recis-number>
             <a translate="no" lang="id" href="//g4lihru.me/ai/recis">Paham & Tutup</a>
-            <recis-text translate="yes" lang="en" class="text">Take care of the Earth and love the Earth</recis-text>
-            <img title="Driver" src="data/kerja.sama.siic.webp" />
-
+            <recis-text translate="yes" lang="en" class="text">Take care and take care of your plants by watering them every day.</recis-text>
+            <img class="logh" src="kerja.sama.siic.webp" alt="">
         </recis-slide>
 
     </recis-slide-cont>
@@ -119,8 +360,6 @@
         }
     </script>
     <script>
-        // Based on the stem generator in Flash Math Creativity
-
         class EventManager {
 
             constructor() {
