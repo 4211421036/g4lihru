@@ -2,6 +2,68 @@ body {
     overflow-x: hidden;
 }
 
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel {
+    position: absolute;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    width: 100%;
+    top: 6rem;
+    left: 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -webkit-scrollbar: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    margin: 15px 0 3px 20px;
+    text-align: left;
+}
+
+@media (min-width: 63.375em) {
+    .carousel {
+        display: grid;
+        max-width: 90%;
+        margin: 20px auto 3px auto;
+        column-gap: 10px;
+        overflow: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.carousel section {
+    box-sizing: border-box;
+    padding: 0 16px 0 0;
+    margin: 0;
+    min-width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.carousel section img {
+    width: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+h2 {
+    font-size: 12px;
+    padding: 15px 0 0 0;
+    margin: 0;
+}
+
+p {
+    font-size: 12px;
+    padding: 5px 0;
+    margin: 0;
+}
+
+
+/*# sourceMappingURL=style.css.map */
+
 .info-title-block {
     /* background-color: rgba(238, 236, 236, 0.3); */
     margin: 30px;
