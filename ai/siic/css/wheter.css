@@ -1564,7 +1564,7 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .inline-DS-EntryPoint1-1 {}
 }
 
-@media screen (min-width: 324px) and (max-device-width: 425px) and (orientation:portrait)  {
+@media screen (min-width: 424px) and (max-device-width: 425px) and (orientation:portrait)  {
     #current-weather-icon, .forecast-weather-icon, .weekday-weather-icon, .week-forecast-weather-icon {
         position: absolute;
         right: 30px;
