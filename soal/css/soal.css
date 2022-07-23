@@ -111,6 +111,42 @@
     }
 }
 
+@media only screen and (device-width: 424px) {
+    soal-header {
+        position: fixed;
+        display: flex;
+        flex-flow: nowrap;
+        width: 100%;
+        height: 45px;
+        bottom: 0;
+        left: 0;
+        background-color: #1d1d1d;
+        border-radius: 25px 25px 0px 0px;
+    }
+    soal-home {
+        position: relative;
+        display: flex;
+        width: 100%;
+        left: var(--ico-left);
+        top: 0.7rem;
+    }
+    soal-home svg {
+        width: 100px;
+        fill: white;
+    }
+    soal-item {
+        display: flex;
+        position: relative;
+        width: 100%;
+        left: var(--ico-left);
+        top: 0.7rem;
+    }
+    soal-item svg {
+        width: 100px;
+        fill: white;
+    }
+}
+
 @media only screen and (device-width: 768px) {
     soal-header {
         position: fixed;
