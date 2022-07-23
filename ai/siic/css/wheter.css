@@ -1564,6 +1564,24 @@ h3.contentCard_headingContent-DS-EntryPoint1-1 {
     .inline-DS-EntryPoint1-1 {}
 }
 
+@media screen (min-width: 324px) and (max-device-width: 425px) and (orientation:portrait)  {
+    #current-weather-icon, .forecast-weather-icon, .weekday-weather-icon, .week-forecast-weather-icon {
+        position: absolute;
+        right: 30px;
+        top: -0.2rem;
+        width: 35px;
+        height: 35px;
+    }
+    .description {
+        position: absolute;
+        top: 1.4rem;
+        right: 55%;
+        font-size: 6.2pt;
+        color: rgb(254, 245, 245);
+    }
+}
+
+
 @media only screen and (min-device-width: 768px) {
     #myInput {
         position: absolute;
