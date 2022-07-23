@@ -3,7 +3,7 @@
     --left-des: 10rem;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (device-width: 320px) {
     soal-header {
         position: fixed;
         display: flex;
@@ -39,7 +39,7 @@
     }
 }
 
-@media only screen and (min-device-width: 375px) {
+@media only screen and (device-width: 375px) {
     soal-header {
         position: fixed;
         display: flex;
