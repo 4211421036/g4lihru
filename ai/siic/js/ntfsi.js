@@ -14,7 +14,7 @@ function SIICNotif() {
     function notify() {
         var notification = new Notification('Notifikasi SIIC', {
             icon: 'https://g4lihru.me/345677.png',
-            body: 'Perkembangan! Jalanan yang akan dilalui anda diprediksi macet. /n Anda bisa beralih ke transportasi umum!',
+            body: 'Perkembangan! Jalanan yang akan dilalui anda diprediksi macet. \nAnda bisa beralih ke transportasi umum!',
             image: "https://g4lihru.me/ai/recis/recis.-2143340583627970034.gif",
             badge: "https://g4lihru.me/345677.png",
             vibrate: [200, 100, 200],
