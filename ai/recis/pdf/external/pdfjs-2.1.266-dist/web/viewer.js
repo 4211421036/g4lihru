@@ -5132,7 +5132,7 @@ var defaultOptions = {
     kind: OptionKind.VIEWER
   },
   defaultUrl: {
-    value: 'compressed.tracemonkey-pldi-09.pdf',
+    value: 'WC KOSMIK 2022_FINAL_GALIH RIDHO UTOMO_Kelompok 9_RECIS Recycle Tree.pdf',
     kind: OptionKind.VIEWER
   },
   defaultZoomValue: {
