@@ -4204,10 +4204,10 @@ function moveToEndOfArray(arr, condition) {
 
 var pdfjsLib;
 
-if (typeof window !== 'undefined' && window['pdfjs-dist/build/pdf']) {
-  pdfjsLib = window['pdfjs-dist/build/pdf'];
+if (typeof window !== 'undefined' && window['pdf/external/build/pdf']) {
+  pdfjsLib = window['pdf/external/build/pdf'];
 } else {
-  pdfjsLib = require('../build/pdf.js');
+  pdfjsLib = require('../pdf/external/build/pdf.js');
 }
 
 module.exports = pdfjsLib;
@@ -5270,7 +5270,7 @@ var defaultOptions = {
     kind: OptionKind.WORKER
   },
   workerSrc: {
-    value: '../build/pdf.worker.js',
+    value: '../pdf/external/build/pdf.worker.js',
     kind: OptionKind.WORKER
   }
 };
