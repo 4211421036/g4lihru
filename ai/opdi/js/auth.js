@@ -76,7 +76,7 @@ auth.onAuthStateChanged(function(user) {
         localStorage.setItem("uid", uid);
 
         window.setInterval(function() {
-            window.location.replace("https://g4lihru.me/drive/my-drive/");
+            window.location.replace("https://g4lihru.me/ai/opdi");
         }, 2000)
     } else {
         console.log("No Active User");
