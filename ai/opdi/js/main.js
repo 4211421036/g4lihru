@@ -19,7 +19,7 @@ auth.onAuthStateChanged(function(user){
     }else{
         console.log("No Active User");
         //no user is signed in
-        window.location.replace("login.html");
+        window.location.replace("login");
     }
 });
 function get($){
