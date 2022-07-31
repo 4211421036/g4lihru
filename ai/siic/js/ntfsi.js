@@ -13,16 +13,16 @@ function SIICNotif() {
 
     function notify() {
         var notification = new Notification('Notifikasi SIIC', {
-            icon: 'https://g4lihru.me/345677.png',
-            body: 'Perkembangan! Jalanan yang akan dilalui anda diprediksi macet. \nAnda bisa beralih ke transportasi umum!',
-            image: "https://g4lihru.me/ai/recis/recis.-2143340583627970034.gif",
-            badge: "https://g4lihru.me/345677.png",
+            icon: 'https://g4lihru.me/ai/siic/data/siic.logos.192.png',
+            body: 'Perkembangan! Jalanan yang akan dilalui anda diprediksi macet.\nAnda bisa beralih ke transportasi umum!',
+            image: "https://g4lihru.me/ai/siic/data/fjkfifkd.jpeg",
+            badge: "https://g4lihru.me/ai/siic/data/siic.logos.192.png",
             vibrate: [200, 100, 200],
             tag: "Transportasi Umum, Murah dan Nyaman!",
         });
         notification.onclick = function() {
             event.preventDefault(); // prevent the browser from focusing the Notification's tab
-            window.open("https://g4lihru.me/ai/recis", '_blank');
+            window.open("https://g4lihru.me/ai/siic", '_blank');
         };
         setTimeout(notification.close.bind(notification), 7000);
     }
