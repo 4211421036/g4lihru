@@ -5132,7 +5132,7 @@ var defaultOptions = {
     kind: OptionKind.VIEWER
   },
   defaultUrl: {
-    value: 'compressed.tracemonkey-pldi-09.pdf',
+    value: 'SIIC (System Vehicle Intelligence Community) Sebagai Aktualisasi Mahasiswa dalam Mengatasi Kemacetan untuk Mewujudkan SDGs 2030.pdf',
     kind: OptionKind.VIEWER
   },
   defaultZoomValue: {
