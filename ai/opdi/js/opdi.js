@@ -9,12 +9,12 @@ let main = document.createElement("script")
 main.setAttribute('src', 'js/main.js');
 document.body.appendChild(main);
 
-let mani = document.createElemet("link")
+let mani = document.createElement("link")
 main.setAttribute('rel', 'manifest');
 main.setAttribute('href', 'manifest.json');
 document.head.appendChild(mani);
 
-let dex = document.createElemet("script")
+let dex = document.createElement("script")
 dex.setAttribute('src', 'index.js');
 dex.setAttribute('defer', '');
 document.head.appendChild(dex);
