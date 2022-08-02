@@ -1,0 +1,123 @@
+:root {
+    --colorNeutralForeground3BrandSelected: red;
+    --colorNeutralForeground3BrandSelected: red
+}
+
+body {
+    background-color: #070000;
+}
+
+opdi-app {
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+
+opdi-header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background-color: #355169;
+    border-radius: 25px 25px 0 0;
+    bottom: 0;
+    height: 2rem;
+    left: 0;
+}
+
+opdi-side {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background: linear-gradient(to bottom, #272731, #253545);
+    border-radius: 0 0 25px 25px;
+    top: 0;
+    height: 2rem;
+    left: 0;
+}
+
+opdi-header-home {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+opdi-header-info {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+opdi-layer {
+    position: relative;
+    top: 2rem;
+    background-color: #355169;
+    display: flex;
+    width: 100%;
+    height: 25vh;
+    border-radius: 25px;
+}
+
+opdi-news {
+    position: relative;
+    left: 2%;
+    top: 5%;
+    color: aliceblue;
+}
+
+#chat {
+    position: relative;
+}
+
+opdi-maps-title {
+    position: relative;
+    top: 1rem;
+    float: right;
+    margin: 0;
+    color: white;
+}
+
+#map {
+    position: relative;
+    top: 2rem;
+    width: 100%;
+    height: 55vh;
+}
+
+#chat-time {
+    position: relative;
+    left: 3rem;
+    top: 0.5rem;
+    color: aliceblue;
+}
+
+.all-home {
+    position: relative;
+    left: 50%;
+    top: 5%;
+}
+
+.img-profile {
+    position: relative;
+    left: 50%;
+    top: 5%;
+}
+
+.all-apps {
+    position: relative;
+    left: 0;
+    top: 20%;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.butapp {
+    position: relative;
+    left: 25%;
+    top: 0;
+    width: 50%;
+    background-color: transparent;
+    align-items: center;
+    border: none;
+}
