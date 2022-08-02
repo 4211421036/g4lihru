@@ -610,6 +610,19 @@ opdi-grid img {
     left: 25%;
 }
 
+opdi-notifly {
+    position: fixed;
+    right: 1rem;
+}
+
+input {
+    position: fixed;
+    border-radius: 25px;
+    right: 3rem;
+    top: 0.3rem;
+    border: none;
+}
+
 .list-grid {
     color: white;
     align-content: center;
