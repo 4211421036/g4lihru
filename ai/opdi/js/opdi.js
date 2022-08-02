@@ -35,6 +35,25 @@ class OpdiApp extends HTMLElement {
         icon.setAttribute('class', 'home');
         icon.setAttribute('tabindex', 0);
 
+        const shd = document.createElement('opdi-side')
+        shd.setAttribute('class', 'screen')
+
+        const prof = document.createElement('opdi-profile')
+        prof.setAttribute('class', 'profile')
+        shd.appendChild(prof)
+
+        let imgpUrl;
+        if (this.hasAttribute('img')) {
+            imgpUrl = this.getAttribute('img');
+        } else {
+            imgpUrl = 'profile.svg';
+        }
+
+        const imgp = document.createElement('img');
+        imgp.setAttribute('class', 'img-profile')
+        imgp.src = imgpUrl;
+        prof.appendChild(imgp);
+
         const info = document.createElement('opdi-header-info');
         info.setAttribute('class', 'app-all');
 
@@ -79,6 +98,7 @@ class OpdiApp extends HTMLElement {
         // Attach the created elements to the shadow dom
         shadow.appendChild(linkElem);
         shadow.appendChild(header);
+        shadow.appendChild(shd);
         header.appendChild(icon);
         header.appendChild(info);
         info.appendChild(butapp)
