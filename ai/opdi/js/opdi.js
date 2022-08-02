@@ -29,6 +29,23 @@ var dateTime = date + ' ' + time;
 
 document.getElementById('time').innerHTML = dateTime;
 
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("Input-Opdi");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("map-bar");
+    li = ul.getElementsByTagName("bar-side");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
 class OpdiApp extends HTMLElement {
     constructor() {
         // Always call super first in constructor
@@ -44,12 +61,41 @@ class OpdiApp extends HTMLElement {
         prof.setAttribute('class', 'profile')
         shd.appendChild(prof)
 
+        const nov = document.createElement('opdi-notifly')
+        nov.setAttribute('class', 'notifly')
+        shd.appendChild(nov)
+
+        const sea = document.createElement('opdi-search')
+        sea.setAttribute('class', 'search')
+        shd.appendChild(sea)
+
+        let imgpnoti;
+        if (this.hasAttribute('img')) {
+            imgpnoti = this.getAttribute('img');
+        } else {
+            imgpnoti = 'notifly.svg';
+        }
+
         let imgpUrl;
         if (this.hasAttribute('img')) {
             imgpUrl = this.getAttribute('img');
         } else {
             imgpUrl = 'profile.svg';
         }
+
+        const sean = document.createElement('input');
+        sean.setAttribute('class', 'img-search')
+        sean.type = 'text'
+        sean.onkeyup = 'myFunction()'
+        sean.placeholder = 'Search Menu'
+        sean.title = 'Search'
+        sean.setAttribute('id', 'Input-Opdi')
+        sea.appendChild(sean);
+
+        const imgn = document.createElement('img');
+        imgn.setAttribute('class', 'img-notifly')
+        imgn.src = imgpnoti;
+        nov.appendChild(imgn);
 
         const imgp = document.createElement('img');
         imgp.setAttribute('class', 'img-profile')
@@ -60,6 +106,7 @@ class OpdiApp extends HTMLElement {
         const mapbas = document.createElement('side-map')
 
         const mapli = document.createElement('map-bar')
+        mapli.setAttribute('id', 'map-bar')
         mapbas.appendChild(mapli)
 
         const mapa = document.createElement('a')
