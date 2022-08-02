@@ -1,19 +1,56 @@
-:root {
-    --colorNeutralForeground3BrandSelected: red;
+opdi-app {
+    background-color: blue;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
-.header {
+opdi-header {
     position: fixed;
+    display: flex;
+    width: 100%;
     background-color: black;
     border-radius: 25px 25px 0 0;
     bottom: 0;
-    width: 100%;
     height: 2rem;
     left: 0;
 }
 
+opdi-header-home {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+opdi-header-info {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
 .all-home {
     position: relative;
+    left: 50%;
+    top: 5%;
+}
+
+.all-apps {
+    position: relative;
+    left: 0;
+    top: 20%;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.butapp {
+    position: relative;
     left: 25%;
-    top: 0.3rem;
+    top: 0;
+    width: 50%;
+    background-color: transparent;
+    align-items: center;
+    border: none;
 }
