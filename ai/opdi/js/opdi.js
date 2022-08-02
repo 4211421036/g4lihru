@@ -1,11 +1,6 @@
 let hai = document.createElement("opdi-app")
 document.body.appendChild(hai);
 
-let css = {
-    primarycolor: 'red'
-}
-
-// Create a class for the element
 class OpdiApp extends HTMLElement {
     constructor() {
         // Always call super first in constructor
@@ -13,7 +8,6 @@ class OpdiApp extends HTMLElement {
 
         // Create a shadow root
         const shadow = this.attachShadow({ mode: 'open' });
-
 
         // Create header
         const header = document.createElement('opdi-header');
@@ -43,6 +37,21 @@ class OpdiApp extends HTMLElement {
         img.src = imgUrl;
         icon.appendChild(img);
 
+        let imgAUrl;
+        if (this.hasAttribute('img')) {
+            imgAUrl = this.getAttribute('img');
+        } else {
+            imgAUrl = 'app.svg';
+        }
+
+        const butapp = document.createElement('button')
+        butapp.setAttribute('data-link', '')
+        butapp.setAttribute('class', 'butapp')
+
+        const imgAll = document.createElement('img');
+        imgAll.setAttribute('class', 'all-apps')
+        imgAll.src = imgAUrl;
+        butapp.appendChild(imgAll);
 
         // Apply external styles to the shadow dom
         const linkElem = document.createElement('link');
@@ -54,6 +63,7 @@ class OpdiApp extends HTMLElement {
         shadow.appendChild(header);
         header.appendChild(icon);
         header.appendChild(info);
+        info.appendChild(butapp)
     }
 }
 
