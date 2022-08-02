@@ -1,8 +1,3 @@
-:root {
-    --colorNeutralForeground3BrandSelected: red;
-    --colorNeutralForeground3BrandSelected: red
-}
-
 body {
     background-color: #070000;
 }
@@ -12,6 +7,136 @@ opdi-app {
     height: 100vh;
     left: 0;
     top: 0;
+}
+
+opdi-bar {
+    position: fixed;
+    top: 2.5rem;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    left: 1rem;
+    padding-left: 0px;
+    text-align: center;
+    line-break: 25px;
+}
+
+opdi-bar>bar-side {
+    display: inline-block;
+    padding: 5px 20px;
+    float: left;
+    left: -10rem;
+    border-radius: 25px;
+    margin-left: 5px;
+    background-color: #1C2628;
+}
+
+opdi-bar>bar-side:hover {
+    background-color: #2779BF;
+}
+
+opdi-bar>bar-side>a {
+    color: white;
+    text-decoration: none;
+}
+
+side-map {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    left: 1rem;
+    padding-left: 0px;
+    text-align: center;
+}
+
+side-map>map-bar {
+    display: inline-block;
+    padding: 5px 20px;
+    float: left;
+    left: -10rem;
+    border-radius: 25px;
+    margin-left: 5px;
+    background-color: rgb(26, 81, 101);
+    color: antiquewhite;
+}
+
+side-map>map-bar:hover {
+    background-color: #2779BF;
+}
+
+side-map>map-bar>a {
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (device-width: 768px) {
+    side-map {
+        position: absolute;
+        top: 11%;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        left: 1rem;
+        padding-left: 0px;
+        text-align: center;
+    }
+    side-map>map-bar {
+        display: inline-block;
+        padding: 5px 20px;
+        float: left;
+        left: -10rem;
+        border-radius: 25px;
+        margin-left: 5px;
+        background-color: rgb(26, 81, 101);
+        color: antiquewhite;
+    }
+    side-map>map-bar:hover {
+        background-color: #2779BF;
+    }
+    side-map>map-bar>a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) {
+    side-map {
+        position: absolute;
+        top: 13.5%;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        left: 1rem;
+        padding-left: 0px;
+        text-align: center;
+    }
+    side-map>map-bar {
+        display: inline-block;
+        padding: 5px 20px;
+        float: left;
+        left: -10rem;
+        border-radius: 25px;
+        margin-left: 5px;
+        background-color: rgb(26, 81, 101);
+        color: antiquewhite;
+    }
+    side-map>map-bar:hover {
+        background-color: #2779BF;
+    }
+    side-map>map-bar>a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 opdi-header {
@@ -29,7 +154,7 @@ opdi-side {
     position: fixed;
     display: flex;
     width: 100%;
-    background: linear-gradient(to bottom, #272731, #253545);
+    background: linear-gradient(to bottom, #272634, #1C2628);
     border-radius: 0 0 25px 25px;
     top: 0;
     height: 2rem;
@@ -50,7 +175,7 @@ opdi-header-info {
 
 opdi-layer {
     position: relative;
-    top: 2rem;
+    top: 2.5rem;
     background-color: #355169;
     display: flex;
     width: 100%;
@@ -79,7 +204,7 @@ opdi-maps-title {
 
 #map {
     position: relative;
-    top: 2rem;
+    top: 2.5rem;
     width: 100%;
     height: 55vh;
 }
