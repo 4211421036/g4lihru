@@ -10,8 +10,8 @@ main.setAttribute('src', 'js/main.js');
 document.body.appendChild(main);
 
 let mani = document.createElement("link")
-mani.rel = 'manifest';
-mani.href = 'manifest.json';
+mani.setAttribute('rel', 'manifest');
+mani.setAttribute('href', 'manifest.json');
 document.getElementsByTagName('head')[0].appendChild(mani);
 
 let dex = document.createElement("script")
