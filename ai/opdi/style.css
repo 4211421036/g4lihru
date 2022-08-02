@@ -7,6 +7,17 @@ opdi-app {
     top: 0;
 }
 
+opdi-side {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background-color: black;
+    border-radius: 0 0 25px 25px;
+    top: 0;
+    height: 2rem;
+    left: 0;
+}
+
 opdi-header {
     position: fixed;
     display: flex;
@@ -30,6 +41,11 @@ opdi-header-info {
     width: 100%;
 }
 
+.img-profile {
+    position: relative;
+    left: 50%;
+    top: 5%;
+}
 .all-home {
     position: relative;
     left: 50%;
