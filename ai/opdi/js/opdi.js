@@ -14,11 +14,6 @@ mani.setAttribute('rel', 'manifest');
 mani.setAttribute('href', 'manifest.json');
 document.getElementsByTagName('head')[0].appendChild(mani);
 
-let dex = document.createElement("script")
-dex.href = 'index.js';
-dex.setAttribute('defer', '');
-document.getElementsByTagName('head')[0].appendChild(dex);
-
 var today = new Date();
 
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
