@@ -1,5 +1,26 @@
-let hai = document.createElement("opdi-app")
-document.body.appendChild(hai);
+let opdi = document.createElement("opdi-app")
+document.body.appendChild(opdi);
+
+let cfg = document.createElement("script")
+cfg.setAttribute('src', 'js/config.js');
+document.body.appendChild(cfg);
+
+let main = document.createElement("script")
+main.setAttribute('src', 'js/main.js');
+document.body.appendChild(main);
+
+//Firebase
+let firapp = document.createElement("script")
+firapp.setAttribute('src', 'https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js');
+document.body.appendChild(firapp);
+
+let firauth = document.createElement("script")
+firauth.setAttribute('src', 'https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js');
+document.body.appendChild(firauth);
+
+let firbase = document.createElement("script")
+firbase.setAttribute('src', 'https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js');
+document.body.appendChild(firbase);
 
 class OpdiApp extends HTMLElement {
     constructor() {
