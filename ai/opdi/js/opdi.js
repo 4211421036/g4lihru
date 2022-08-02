@@ -10,14 +10,14 @@ main.setAttribute('src', 'js/main.js');
 document.body.appendChild(main);
 
 let mani = document.createElement("link")
-main.setAttribute('rel', 'manifest');
-main.setAttribute('href', 'manifest.json');
-document.head.appendChild(mani);
+mani.rel = 'manifest';
+mani.href = 'manifest.json';
+document.getElementsByTagName('head')[0].appendChild(mani);
 
 let dex = document.createElement("script")
-dex.setAttribute('src', 'index.js');
+dex.href = 'index.js';
 dex.setAttribute('defer', '');
-document.head.appendChild(dex);
+document.getElementsByTagName('head')[0].appendChild(dex);
 
 class OpdiApp extends HTMLElement {
     constructor() {
