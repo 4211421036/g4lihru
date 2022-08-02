@@ -1,5 +1,9 @@
 const auth = firebase.auth();
 var rand = Math.floor((Math.random() * 99999999999) + 1);
+let dex = document.createElement("script")
+dex.href = 'index.js';
+dex.setAttribute('defer', '');
+document.getElementsByTagName('head')[0].appendChild(dex);
 //----------------user if loggined---------------------//
 auth.onAuthStateChanged(function(user){
 		
@@ -26,6 +30,11 @@ function get($){
 return document.querySelector($);
 }
 window.addEventListener('load',function(){
-    if(window.innerWidth < 768){}
+    if(window.innerWidth < 768){
+	let dex = document.createElement("script")
+	dex.href = 'index.js';
+	dex.setAttribute('defer', '');
+	document.getElementsByTagName('head')[0].appendChild(dex);
+    }
 })
 
