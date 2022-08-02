@@ -26,10 +26,6 @@ function get($){
 return document.querySelector($);
 }
 window.addEventListener('load',function(){
-    if(window.innerWidth < 768){
-        document.getElementById("left").classList.remove("col-2");
-        document.getElementById("left").classList.remove("p-4");
-        document.getElementById("left").style.width = '0px'
-    }
+    if(window.innerWidth < 768){}
 })
 
