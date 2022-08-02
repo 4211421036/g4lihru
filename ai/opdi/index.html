@@ -13,21 +13,86 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="./js/opdi.js" defer></script>
 </head>
 <body>
-     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
-     <!-- ------FIREBASE SDK---------- -->
+    <noscript><strong>We're sorry but Optrimetri Digital Team doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
+    <opdi-layer>
+        <opdi-chat id="chat">
+            <img class="img-profile" src="profile.svg">
+            <img class="img-profile" src="profile.svg">
+        </opdi-chat>
+        <opdi-chat id="chat-time">
+            <time id="time"></time>
+        </opdi-chat>
+    </opdi-layer>
+    <br>
+    <opdi-layer>
+        <opdi-news>Berita Terkini</opdi-news>
+    </opdi-layer>
+    <br>
+    <opdi-layer>
+        <opdi-pdf></opdi-pdf>
+    </opdi-layer>
+    <br>
+    <opdi-layer id="map">
+        <opdi-chat style="position:absolute;">
+            <img class="img-profile" src="profile.svg">
+            <img class="img-profile" src="profile.svg">
+            <time></time>
+        </opdi-chat>
+    </opdi-layer>
+    <br>
+    <br>
+    <opdi-layer>
+        <opdi-chat>
+            <img class="img-profile" src="profile.svg">
+            <img class="img-profile" src="profile.svg">
+            <time></time>
+        </opdi-chat>
+    </opdi-layer>
+    <br>
+    <opdi-layer>
+        <opdi-chat>
+            <img class="img-profile" src="profile.svg">
+            <img class="img-profile" src="profile.svg">
+            <time></time>
+        </opdi-chat>
+    </opdi-layer>
+    <br>
+    <script src="map.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
 
-     <!-- Extra Libs -->
+    <script>
+        // Map initialization 
+        var map = L.map('map').setView([-6.229728, 106.6894283], 8);
+
+        //osm layer
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://g4lihru.me">G4lihru Maps</a> contributors'
+        });
+        osm.addTo(map);
+
+        L.control.locate().addTo(map);
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+    <!-- ------FIREBASE SDK---------- -->
+
+    <!-- Extra Libs -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </body>
 </html>
