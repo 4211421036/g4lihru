@@ -140,9 +140,11 @@ class OpdiApp extends HTMLElement {
         shadow.appendChild(linkElem);
         shadow.appendChild(header);
         shadow.appendChild(shd);
+        shadow.appendChild(navs);
+        shadow.appendChild(mapbas);
         header.appendChild(icon);
         header.appendChild(info);
-        info.appendChild(butapp)
+        info.appendChild(butapp);
     }
 }
 
