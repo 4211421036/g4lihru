@@ -100,6 +100,8 @@ class OpdiApp extends HTMLElement {
         prof.appendChild(imgp);
 
         const navs = document.createElement('opdi-bar')
+        navs.setAttribute('class', 'bar-op op-di')
+
         const mapbas = document.createElement('side-map')
 
         const mapli = document.createElement('map-bar')
@@ -112,6 +114,7 @@ class OpdiApp extends HTMLElement {
         mapli.appendChild(mapa)
 
         const basHom = document.createElement('bar-side')
+        basHom.setAttribute('class', 'items')
         navs.appendChild(basHom)
 
         const likHome = document.createElement('a')
@@ -120,6 +123,7 @@ class OpdiApp extends HTMLElement {
         basHom.appendChild(likHome)
 
         const basHom2 = document.createElement('bar-side')
+        basHom2.setAttribute('class', 'items')
         navs.appendChild(basHom2)
 
         const likHome2 = document.createElement('a')
@@ -128,14 +132,16 @@ class OpdiApp extends HTMLElement {
         basHom2.appendChild(likHome2)
 
         const basHom3 = document.createElement('bar-side')
+        basHom3.setAttribute('class', 'items')
         navs.appendChild(basHom3)
 
         const likHome3 = document.createElement('a')
         likHome3.href = '#news'
         likHome3.innerText = 'News'
         basHom3.appendChild(likHome3)
-        
+
         const basHom4 = document.createElement('bar-side')
+        basHom4.setAttribute('class', 'items')
         navs.appendChild(basHom4)
 
         const likHome4 = document.createElement('a')
