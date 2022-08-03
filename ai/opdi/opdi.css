@@ -270,6 +270,15 @@ opdi-news {
     position: relative;
 }
 
+.more::after {
+    content: '\2807';
+    position: absolute;
+    right: 1rem;
+    top: 0.1rem;
+    color: white;
+    font-size: 12pt;
+}
+
 opdi-maps-title {
     position: relative;
     top: 1rem;
