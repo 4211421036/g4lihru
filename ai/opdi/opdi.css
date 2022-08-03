@@ -1,56 +1,6 @@
 body {
     background-color: #070000;
 }
-::-webkit-scrollbar {
-    width: 10px
-}
-
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-corner,
-::-webkit-scrollbar-track {
-    background-color: transparent
-}
-
-::-webkit-scrollbar-button {
-    background-repeat: no-repeat;
-    cursor: pointer
-}
-
-::-webkit-scrollbar-button:vertical {
-    background-position: 50%;
-    width: 18px;
-    height: 18px
-}
-
-::-webkit-scrollbar-button:vertical:increment {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAUUlEQVQ4T6XLMQ6AMAwEwfz/bXRIfOeQCxckK8iKYgqvfCPJLxgNjAZGA6OB0VjCcV55M/8/jkbDMv+VJbSdccHYvsYFo4HRwGhgNDAaGPdl3LNlBnofQ4+bAAAAAElFTkSuQmCC)
-}
-
-::-webkit-scrollbar-button:vertical:increment:hover {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAUklEQVQ4T6XLsQ2AMAwF0ey/A1swAnt95MIFyQlyoniFT/4jyS8YDYwGRgOjgdFYwnFeeTP/P45GwzL/lSW0nXHB2L7GBaOB0cBoYDQwGhj3Zdx8sf7rjOGQqwAAAABJRU5ErkJggg==)
-}
-
-::-webkit-scrollbar-button:vertical:decrement {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAVUlEQVQ4T6XMMQoAIQxEUe9/NrsFrzOSIqDxgzu7xSv8ZGySfsHowOjA6MDowOjAmPozFGpfYQw5vn2CsY5TvQtHoOGq3m+PLzA6MDowOjA6ML6nNgFW+wZ6kTk6FAAAAABJRU5ErkJggg==)
-}
-
-::-webkit-scrollbar-button:vertical:decrement:hover {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAVklEQVQ4T6XMwQ3AIAwEQfrvgS5SAn0d8sMSmJXIJY95sPLRJP2C0YHRgdGB0YHRgTH1ZyjUvsIYcnz7BGMdp3oXjkDDVb3fHl9gdGB0YHRgdGB8T20CB+X+675uLU0AAAAASUVORK5CYII=)
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 9px;
-    border: 3px solid transparent;
-    background-color: #355169
-}
-
-::-webkit-scrollbar-thumb:vertical {
-    min-height: 50px
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #9db4c4
-}
 
 opdi-app {
     width: 100%;
@@ -75,7 +25,7 @@ opdi-bar {
 
 opdi-bar>bar-side {
     display: inline-block;
-    padding: 5px 20px;
+    padding: 0px 28px;
     float: left;
     left: -10rem;
     border-radius: 25px;
@@ -123,6 +73,52 @@ side-map>map-bar:hover {
 side-map>map-bar>a {
     color: white;
     text-decoration: none;
+}
+
+@media only screen and (max-device-width: 767px) {
+    opdi-bar {
+        padding-bottom: 0;
+        position: fixed;
+        top: 2.5rem;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        left: 0;
+        padding-left: 0px;
+        text-align: center;
+    }
+    opdi-bar::-webkit-scrollbar {
+        display: none;
+    }
+    .bar-op:before,
+    .bar-op:after {
+        content: '';
+        height: 20%;
+    }
+    .bar-op>bar-side,
+    .items {
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 60px;
+        height: max-content;
+        width: max-content;
+    }
+    .bar-op {
+        display: grid;
+        grid-gap: calc(var(--gutter) / 2);
+        grid-template-columns: 10px;
+        grid-template-rows: minmax(15px, 1fr);
+        grid-auto-flow: column;
+        grid-auto-columns: calc(50% - var(--gutter) * 2);
+        overflow-x: scroll;
+        scroll-snap-type: x proximity;
+        margin-bottom: calc(-.25 * var(--gutter));
+    }
 }
 
 @media only screen and (device-width: 768px) {
@@ -268,15 +264,6 @@ opdi-news {
 
 #chat {
     position: relative;
-}
-
-.more::after {
-    content: '\2807';
-    position: absolute;
-    right: 1rem;
-    top: 0.1rem;
-    color: white;
-    font-size: 12pt;
 }
 
 opdi-maps-title {
@@ -667,6 +654,28 @@ opdi-grid img {
     position: relative;
     width: 60%;
     left: 25%;
+}
+
+opdi-notifly {
+    position: fixed;
+    right: 1rem;
+}
+
+.more::after {
+    content: '\2807';
+    position: absolute;
+    right: 1rem;
+    top: 0.1rem;
+    color: white;
+    font-size: 12pt;
+}
+
+input {
+    position: fixed;
+    border-radius: 25px;
+    right: 3rem;
+    top: 0.3rem;
+    border: none;
 }
 
 .list-grid {
