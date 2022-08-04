@@ -46,32 +46,32 @@
     ],
     "screenshots" : [
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.splashdesain.webp",
+            "src": "https://g4lihru.me/ai/siic/data/siic.splash.logos.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Splash Desain UI/UX Mobile of Awesome RECIS App"
+            "label": "Side Splash Desain UI/UX Mobile of Awesome SIIC App"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.side12.webp",
+            "src": "https://g4lihru.me/ai/siic/data/siic.3.pif33.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Homescreen 1 and 2 Mobile of Awesome RECIS App"
+            "label": "Side Homescreen 1 Mobile of Awesome SIIC App"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.side123.webp",
+            "src": "https://g4lihru.me/ai/siic/data/siic.1.pif33.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Homescreen 3 and install app Mobile of Awesome RECIS App"
+            "label": "Side Homescreen 2 Mobile of Awesome SIIC App"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.side.appfit.webp",
+            "src": "https://g4lihru.me/ai/siic/data/siic.2.pif33.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Homescreen 4 and App Fiture Mobile of Awesome RECIS App"
+            "label": "Side Homescreen 3 and Install App Fiture Mobile of Awesome RECIS App"
         }
     ],
     "prefer_related_applications": true,
@@ -83,10 +83,10 @@
     "display": "standalone",
     "shortcuts" : [
           {
-            "short_name": "File RECIS App",
+            "short_name": "File SIIC App",
             "name": "Research Files",
             "url": "pdf/",
-            "description": "RECIS (Recycle Tree Community Intellagance Systems) Sebagai Solusi Dalam Penghijauan Kembali Untuk Mewujudkan SDGs 2030",
+            "description": "SIIC (System Vehicle Intelligence Community) Sebagai Aktualisasi Mahasiswa dalam Mengatasi Kemacetan untuk Mewujudkan SDGs 2030",
             "icons": [
                 {
                     "src": "https://g4lihru.me/ai/siic/logo/recis.4922636343426925150.research.96x96.png",
@@ -99,7 +99,7 @@
             "short_name": "Profile Peneliti 1",
             "name": "Profile Peneliti 1",
             "url": "ig/peneliti/1/",
-            "description": "Ketua Peneliti RECIS Untuk Kosmik 2022",
+            "description": "Ketua Peneliti SIIC Untuk Kosmik 2022",
             "icons": [
                 {
                     "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.ig.96x96.png",
@@ -112,7 +112,7 @@
             "short_name": "Profile Peneliti 2",  
             "name": "Profile Peneliti 2",
             "url": "ig/peneliti/2/",
-            "description": "Anggota Peneliti RECIS Untuk Kosmik 2022",
+            "description": "Anggota Peneliti SIIC Untuk Kosmik 2022",
             "icons": [
                 {
                     "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.ig.96x96.png",
