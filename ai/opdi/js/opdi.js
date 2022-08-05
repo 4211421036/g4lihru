@@ -46,7 +46,7 @@ class OpdiApp extends HTMLElement {
         const E = document.createElement("a");
         E.href = "#chat", E.innerText = "Chat", g.appendChild(E);
         const lo = document.createElement("img");
-        lo.setAttribute("class", "img-searc"), lo.id = "img-sear" lo.alt = "search", lo.src = lp, i.appendChild(lo);
+        lo.setAttribute("class", "img-searc"), lo.id = "img-sear", lo.alt = "search", lo.src = lp, i.appendChild(lo);
         const y = document.createElement("bar-side");
         y.setAttribute("class", "items"), r.appendChild(y);
         const f = document.createElement("a");
