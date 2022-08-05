@@ -25,7 +25,7 @@ class OpdiApp extends HTMLElement {
         a.setAttribute("class", "notifly"), t.appendChild(a);
         const i = document.createElement("opdi-search");
         let d, s, q, lp;
-        i.setAttribute("class", "search"), t.appendChild(i), d = this.hasAttribute("img") ? this.getAttribute("img") : "notifly.svg", s = this.hasAttribute("img") ? this.getAttribute("img") : "profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "search.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "logo.svg";
+        i.setAttribute("class", "search"), t.appendChild(i), d = this.hasAttribute("img") ? this.getAttribute("img") : "data/icon/notifly.svg", s = this.hasAttribute("img") ? this.getAttribute("img") : "data/icon/profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "data/icon/search.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "data/icon/logo.svg";
         const c = document.createElement("input");
         c.setAttribute("class", "img-search"), c.type = "text", c.onkeyup = "myFunction()", c.placeholder = "Search Menu", c.title = "Search", c.setAttribute("id", "Input-Opdi"), i.appendChild(c);
         const l = document.createElement("img");
