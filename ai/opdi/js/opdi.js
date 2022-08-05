@@ -24,8 +24,8 @@ class OpdiApp extends HTMLElement {
         const a = document.createElement("opdi-notifly");
         a.setAttribute("class", "notifly"), t.appendChild(a);
         const i = document.createElement("opdi-search");
-        let d, s, q;
-        i.setAttribute("class", "search"), t.appendChild(i), d = this.hasAttribute("img") ? this.getAttribute("img") : "notifly.svg", s = this.hasAttribute("img") ? this.getAttribute("img") : "profile.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "logo.svg";
+        let d, s, q, lp;
+        i.setAttribute("class", "search"), t.appendChild(i), d = this.hasAttribute("img") ? this.getAttribute("img") : "notifly.svg", s = this.hasAttribute("img") ? this.getAttribute("img") : "profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "search.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "logo.svg";
         const c = document.createElement("input");
         c.setAttribute("class", "img-search"), c.type = "text", c.onkeyup = "myFunction()", c.placeholder = "Search Menu", c.title = "Search", c.setAttribute("id", "Input-Opdi"), i.appendChild(c);
         const l = document.createElement("img");
@@ -45,6 +45,8 @@ class OpdiApp extends HTMLElement {
         g.setAttribute("class", "items"), r.appendChild(g);
         const E = document.createElement("a");
         E.href = "#chat", E.innerText = "Chat", g.appendChild(E);
+        const lo = document.createElement("img");
+        lo.setAttribute("class", "img-sear img-searc"), lo.alt = "search", lo.src = lp, i.appendChild(lo);
         const y = document.createElement("bar-side");
         y.setAttribute("class", "items"), r.appendChild(y);
         const f = document.createElement("a");
