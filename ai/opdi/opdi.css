@@ -72,6 +72,11 @@ opdi-sub-text {
     background-color: transparent;
 }
 
+.s {
+    width: max-content;
+    height: max-content;
+}
+
 opdi-sub {
     position: relative;
     width: 100%;
