@@ -886,6 +886,7 @@ opdi-file {
 opdi-layer-text {
     position: relative;
     width: max-content;
+    height: max-content;
     top: 1rem;
     float: left;
     left: 4rem;
