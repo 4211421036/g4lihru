@@ -46,32 +46,39 @@
     ],
     "screenshots" : [
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.splashdesain.webp",
+            "src": "https://g4lihru.me/ai/opdi/data/opdi.screen.1.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Splash Desain UI/UX Mobile of Awesome RECIS App"
+            "label": "Side Splash Desain UI/UX Mobile of Awesome OPDI App"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.side12.webp",
+            "src": "https://g4lihru.me/ai/opdi/data/opdi.screen.2.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Homescreen 1 and 2 Mobile of Awesome RECIS App"
+            "label": "Side Homescreen 1 and Future App Mobile of Awesome OPDI App"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.side123.webp",
+            "src": "https://g4lihru.me/ai/opdi/data/opdi.screen.3.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Homescreen 3 and install app Mobile of Awesome RECIS App"
+            "label": "Side Homescreen 2 and Future Mobile of Awesome OPDI App"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.laman.mobile.screen.side.appfit.webp",
+            "src": "https://g4lihru.me/ai/opdi/data/opdi.screen.4.webp",
             "sizes": "885x720",
             "type": "image/webp",
             "platform": "wide",
-            "label": "Side Homescreen 4 and App Fiture Mobile of Awesome RECIS App"
+            "label": "Side Homescreen 3 and App Future Mobile of Awesome OPDI App"
+        },
+        {
+            "src": "https://g4lihru.me/ai/opdi/data/opdi.screen.5.webp",
+            "sizes": "885x720",
+            "type": "image/webp",
+            "platform": "wide",
+            "label": "Side Homescreen 4 and App Future Helpdesk Mobile of Awesome OPDI App"
         }
     ],
     "prefer_related_applications": true,
@@ -83,10 +90,10 @@
     "display": "standalone",
     "shortcuts" : [
           {
-            "short_name": "File RECIS App",
+            "short_name": "File OPDI App",
             "name": "Research Files",
             "url": "pdf/",
-            "description": "RECIS (Recycle Tree Community Intellagance Systems) Sebagai Solusi Dalam Penghijauan Kembali Untuk Mewujudkan SDGs 2030",
+            "description": "OPDI (Optometri Digital)",
             "icons": [
                 {
                     "src": "https://g4lihru.me/ai/siic/logo/recis.4922636343426925150.research.96x96.png",
@@ -99,7 +106,7 @@
             "short_name": "Profile Peneliti 1",
             "name": "Profile Peneliti 1",
             "url": "ig/peneliti/1/",
-            "description": "Ketua Peneliti RECIS Untuk Kosmik 2022",
+            "description": "Ketua Peneliti OPDI Untuk Kosmik 2022",
             "icons": [
                 {
                     "src": "https://g4lihru.me/ai/siic/logo/recis.-2143340583627970034.ig.96x96.png",
