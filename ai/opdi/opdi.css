@@ -100,6 +100,7 @@ opdi-sub {
     width: 50px;
     left: -5rem;
     top: -5rem;
+    height: max-content;
 }
 
 .btn-sub {
@@ -505,6 +506,8 @@ opdi-logo {
     position: relative;
     left: 50%;
     top: 5%;
+    width: max-content;
+    height: max-content;
 }
 
 .img-profile {
@@ -529,6 +532,8 @@ opdi-logo {
     align-items: center;
     align-content: center;
     align-self: center;
+    width: max-content;
+    height: max-content;
 }
 
 .all-app {
@@ -538,6 +543,8 @@ opdi-logo {
     align-items: center;
     align-content: center;
     align-self: center;
+    width: max-content;
+    height: max-content;
 }
 
 .butapp {
