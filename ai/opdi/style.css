@@ -144,7 +144,7 @@ opdi-bar>bar-side {
 }
 
 opdi-bar>bar-side:hover {
-    background-color: #2779BF;
+    background-color: white;
 }
 
 opdi-bar>bar-side>a {
