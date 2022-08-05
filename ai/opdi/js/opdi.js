@@ -54,7 +54,9 @@ class OpdiApp extends HTMLElement {
         const A = document.createElement("a");
         A.href = "#howto", A.innerText = "How to", C.appendChild(A);
         const AB = document.createElement("a");
-        AB.href = "#reward", A.innerText = "Reward", C.appendChild(AB);
+        const AC = document.createElement("bar-side");
+        AC.setAttribute("class", "items"), r.appendChild(AC);
+        AB.href = "#reward", A.innerText = "Reward", AC.appendChild(AB);
         const T = document.createElement("link");
         T.setAttribute("rel", "stylesheet"), T.setAttribute("href", "style.css"), e.appendChild(T), e.appendChild(t), e.appendChild(r)
     }
