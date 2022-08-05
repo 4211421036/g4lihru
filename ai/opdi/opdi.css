@@ -50,7 +50,7 @@
 }
 
  ::-webkit-scrollbar-thumb:hover {
-    background-color: #B8E3FF
+    background-color: #a2cff5
 }
 
 body {
@@ -674,7 +674,7 @@ opdi-logo {
 .bottom::-webkit-scrollbar-thumb {
     border-radius: 9px;
     border: 3px solid transparent;
-    background-color: #11101d
+    background-color: #B8E3FF
 }
 
 .bottom::-webkit-scrollbar-thumb:vertical {
@@ -682,7 +682,7 @@ opdi-logo {
 }
 
 .bottom::-webkit-scrollbar-thumb:hover {
-    background-color: #9db4c4
+    background-color: #a2cff5
 }
 
 
