@@ -40,7 +40,7 @@ class OpdiApp extends HTMLElement {
         const h = document.createElement("bar-side");
         h.setAttribute("class", "items"), r.appendChild(h);
         const b = document.createElement("a");
-        b.href = "#map", b.innerText = "Maps", h.appendChild(b);
+        b.href = "#file", b.innerText = "File", h.appendChild(b);
         const g = document.createElement("bar-side");
         g.setAttribute("class", "items"), r.appendChild(g);
         const E = document.createElement("a");
@@ -52,7 +52,9 @@ class OpdiApp extends HTMLElement {
         const C = document.createElement("bar-side");
         C.setAttribute("class", "items"), r.appendChild(C);
         const A = document.createElement("a");
-        A.href = "#pdf", A.innerText = "File PDF", C.appendChild(A);
+        A.href = "#howto", A.innerText = "How to", C.appendChild(A);
+        const AB = document.createElement("a");
+        AB.href = "#reward", A.innerText = "Reward", C.appendChild(AB);
         const T = document.createElement("link");
         T.setAttribute("rel", "stylesheet"), T.setAttribute("href", "style.css"), e.appendChild(T), e.appendChild(t), e.appendChild(r)
     }
