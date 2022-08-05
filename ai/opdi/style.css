@@ -186,6 +186,13 @@ side-map>map-bar>a {
 }
 
 @media only screen and (max-device-width: 767px) {
+    #img-sear {
+        position: absolute;
+        right: 1rem;
+        top: 0.2rem;
+        width: max-content;
+        height: max-content;
+    }
     .screen {
         position: fixed;
         display: flex;
@@ -276,6 +283,9 @@ side-map>map-bar>a {
 }
 
 @media only screen and (device-width: 768px) {
+    .img-searc {
+        display: none;
+    }
     .search {
         position: absolute;
         width: 139px;
@@ -344,6 +354,9 @@ opdi-bar>bar-side {
 }
 
 @media only screen and (min-device-width: 1024px) {
+    .img-searc {
+        display: none;
+    }
     .op-di {
         position: fixed;
         top: 22%;
