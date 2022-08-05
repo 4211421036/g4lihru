@@ -32,44 +32,57 @@
     <script src="./js/opdi.js" defer></script>
 </head>
 <body>    
-    <noscript><h1><strong>We're sorry but Optrimetri Digital Team doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></h1></noscript>
-    <br>
-    <br>
-    <br>
-    <br>
-    <opdi-layer id="map">
-        <h1>Maps</h1>
+    <noscript><strong>We're sorry but Optrimetri Digital Team doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
+    <opdi-layer class="tr"></opdi-layer>
+    <opdi-layer class="tr">
+        <img class="sig" src="sig.svg">
+        <opdi-sub>
+            <opdi-sub-text>Mulai Berlanganan</opdi-sub-text>
+            <button class="btn-sub" align="center" type="button">Mulai</button>
+        </opdi-sub>
     </opdi-layer>
-    <br>
     <opdi-layer>
-        <opdi-chat id="chat">
-            <img class="img-profile" src="profile.svg" alt="profile" />
-            <img class="img-profile" src="profile.svg" alt="profile" />
-        </opdi-chat>
-        <opdi-chat id="chat-time">
-            <time id="time"></time>
-        </opdi-chat>
+        <opdi-layer-text>File</opdi-layer-text>
+        <img class="img-chat" src="eyefil.svg" alt="" srcset="">
+        <opdi-layer-des>Yuk cek hasil matamu disini !</opdi-layer-des>
         <opdi-more class="more"></opdi-more>
     </opdi-layer>
     <br>
     <opdi-layer>
-        <opdi-news id="news">Berita Terkini</opdi-news>
-        <opdi-news-grid>
-        </opdi-news-grid>
+        <opdi-layer-text>Chat</opdi-layer-text>
+        <img class="img-chat" src="eyech.svg" alt="" srcset="">
+        <opdi-layer-des>Yuk mulai chat dengan dokter !</opdi-layer-des>
         <opdi-more class="more"></opdi-more>
     </opdi-layer>
     <br>
-    <opdi-layer id="pdf">
+    <opdi-layer>
+        <opdi-layer-text>News</opdi-layer-text>
+        <img class="img-chat" src="eyenew.svg" alt="" srcset="">
+        <opdi-layer-des>Yuk cek berita mata terkini !</opdi-layer-des>
         <opdi-more class="more"></opdi-more>
     </opdi-layer>
     <br>
+    <opdi-layer>
+        <opdi-layer-text>How to</opdi-layer-text>
+        <img class="img-chat" src="eyehow.svg" alt="" srcset="">
+        <opdi-layer-des>Yuk mulai menjaga kesehatan mata kita !</opdi-layer-des>
+        <opdi-more class="more"></opdi-more>
+    </opdi-layer>
+    <br>
+    <opdi-layer>
+        <opdi-layer-text>Reward</opdi-layer-text>
+        <img class="img-chat" src="eyerad.svg" alt="" srcset="">
+        <opdi-layer-des>Yuk lihat hasil seberapa aktif dirimu !</opdi-layer-des>
+        <opdi-more class="more"></opdi-more>
+        <img class="sih" src="sih.svg">
+    </opdi-layer>
     <opdi-header class="header">
         <opdi-header-home class="home" tabindex="0">
-            <img src="home.svg" class="all-home" alt="home" />
+            <img src="home.svg" class="all-home" title="" alt="" />
         </opdi-header-home>
         <opdi-header-info class="app-all">
-            <button data-link="" class="butappa" title="Apps">
-                <img src="app.svg" class="all-app" alt="app" />
+            <button data-link="" class="butappa" title="ha" type="button">
+                <img src="app.svg" class="all-app" title="" alt=""/>
             </button>
         </opdi-header-info>
     </opdi-header>
@@ -86,40 +99,56 @@
                     <div class="list-item">
                         <div class="grid">
                             <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Glasses
+                                <div class="img-op" onclick="hallo()">
+                                    <img src="eyetes.svg" alt="">
+                                </div>
+                                hallo
+                            </opdi-grid>
+                            <opdi-grid class="list-grid">
+                                <div class="img-op">
+                                    <img src="eyefac.svg" alt="">
+                                </div>
+                                hallo
+                            </opdi-grid>
+                            <opdi-grid class="list-grid">
+                                <div class="img-op">
+                                    <img src="eyedoc.svg" alt="">
+                                </div>
+                                hallo
+                            </opdi-grid>
+                            <opdi-grid class="list-grid">
+                                <div class="img-op">
+                                    <img src="eyevit.svg" alt="">
+                                </div>
+                                hallo
+                            </opdi-grid>
+                            <opdi-grid class="list-grid">
+                                <div class="img-op">
+                                    <img src="eyeglas.svg" alt="">
+                                </div>
+                                hallo
+                            </opdi-grid>
+                            <opdi-grid class="list-grid">
+                                <div class="img-op">
+                                    <img src="eyelans.svg" alt="">
+                                </div>
+                                hallo
+                            </opdi-grid>
+                            <opdi-grid class="list-grid">
+                                <div class="img-op">
+                                    <img src="eyeque.svg" alt="">
+                                </div>
+                                hallo
+                            </opdi-grid>
+                            <opdi-grid class="list-grid">
+                                <div class="img-op">
+                                    <img src="eyehel.svg" alt="">
+                                </div>
+                                hallo
                             </opdi-grid>
                             <opdi-grid class="list-grid">
                                 <div class="img-op"></div>
-                                Sunglasses
-                            </opdi-grid>
-                            <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Contacts
-                            </opdi-grid>
-                            <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Glaucoma
-                            </opdi-grid>
-                            <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Cataract
-                            </opdi-grid>
-                            <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Diabetes
-                            </opdi-grid>
-                            <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Macular
-                            </opdi-grid>
-                            <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Dry & Allergy
-                            </opdi-grid>
-                            <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
-                                Conditions
+                                hallo
                             </opdi-grid>
                         </div>
                     </div>
