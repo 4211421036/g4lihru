@@ -138,6 +138,7 @@ opdi-bar>bar-side {
     left: -10rem;
     border-radius: 25px;
     margin-left: 5px;
+    color: #16558F;
     background-color: #61B0B7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -320,6 +321,7 @@ opdi-bar>bar-side {
     left: -10rem;
     border-radius: 25px;
     margin-left: 5px;
+    color: #16558F;
     background-color: #61B0B7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
