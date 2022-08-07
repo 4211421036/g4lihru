@@ -6,28 +6,28 @@ let main = document.createElement("script");
 main.setAttribute("src", "js/main.js"), document.body.appendChild(main);
 
 function eyetes() {
-    window.location.replace("/eyetes/");
+    window.location.replace("/ai/opdi/eyetes/");
 }
 function eyefac() {
-    window.location.replace("/eyefac/");
+    window.location.replace("/ai/opdi/eyefac/");
 }
 function eyedoc() {
-    window.location.replace("/eyedoc/");
+    window.location.replace("/ai/opdi/eyedoc/");
 }
 function eyevit() {
-    window.location.replace("/eyevit/");
+    window.location.replace("/ai/opdi/eyevit/");
 }
 function eyeglas() {
-    window.location.replace("/eyeglas/");
+    window.location.replace("/ai/opdi/eyeglas/");
 }
 function eyeque() {
-    window.location.replace("/eyeque/");
+    window.location.replace("/ai/opdi/eyeque/");
 }
 function eyehel() {
-    window.location.replace("/eyehel/");
+    window.location.replace("/ai/opdi/eyehel/");
 }
 function eyechal() {
-    window.location.replace("/eyechal/");
+    window.location.replace("/ai/opdi/eyechal/");
 }
 
 function myFunction() { var e, t, n, a; for (e = document.getElementById("Input-Opdi").value.toUpperCase(), t = document.getElementById("map-bar").getElementsByTagName("bar-side"), a = 0; a < t.length; a++)((n = t[a].getElementsByTagName("a")[0]).textContent || n.innerText).toUpperCase().indexOf(e) > -1 ? t[a].style.display = "" : t[a].style.display = "none" }
