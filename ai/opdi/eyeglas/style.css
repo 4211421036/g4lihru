@@ -87,6 +87,8 @@ opdi-back {
     right: 0;
 }
 
+
+
 opdi-sub {
     position: relative;
     width: 100%;
@@ -199,7 +201,33 @@ side-map>map-bar>a {
     text-decoration: none;
 }
 
+.scope-log {
+    width: 180px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.logo-gla {
+    position: absolute;
+    left: 1rem;
+    top: 25%;
+    display: flex;
+}
+
+.img-profile {
+    position: absolute;
+    right: 6%;
+    top: 18%;
+    height: 30px;
+}
+
 @media only screen and (max-device-width: 767px) {
+    #profile {
+        position: absolute;
+        right: 3%;
+        top: 15%;
+        height: 30px;
+    }
     #img-sear {
         position: absolute;
         right: 1rem;
@@ -214,7 +242,7 @@ side-map>map-bar>a {
         background: linear-gradient(260.76deg, #0583D2 8.7%, rgba(111, 203, 211)91.3%);
         border-radius: 0 0 25px 25px;
         top: 0;
-        height: 10rem;
+        height: 8rem;
         left: 0;
     }
     .search {
@@ -297,6 +325,12 @@ side-map>map-bar>a {
 }
 
 @media only screen and (device-width: 768px) {
+    #profile {
+        position: absolute;
+        right: 11%;
+        top: 15%;
+        height: 30px;
+    }
     .img-searc {
         display: none;
     }
