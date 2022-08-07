@@ -250,7 +250,7 @@ side-map>map-bar>a {
         width: 90%;
         height: 37px;
         left: 5%;
-        top: 70%;
+        top: 60%;
         background: rgba(184, 227, 255, 0.5);
         border-radius: 20px;
     }
@@ -478,8 +478,8 @@ opdi-text {
     position: absolute;
     width: 70px;
     height: 20px;
-    left: 40%;
-    top: 15%;
+    left: 45%;
+    top: 25%;
     font-family: 'Myanmar Khyay';
     font-style: normal;
     font-weight: 500;
