@@ -68,6 +68,15 @@ opdi-sub-text {
     background: transparent;
 }
 
+opdi-back {
+    position: absolute;
+    left: 0;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    top: 19px;
+}
+
 .tr {
     background: transparent;
     background-color: transparent;
