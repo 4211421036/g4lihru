@@ -29,7 +29,7 @@ class OpdiApp extends HTMLElement {
         j.setAttribute('class', 'logo-text'), j.innerText = 'GLASSES', k.appendChild(j)
         const i = document.createElement("opdi-search");
         let s, q, lp, xi, v;
-        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "eyeim.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "back.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "eyeglas.svg";
+        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "ai/opdi/data/icon/profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "ai/opdi/data/icon/search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "ai/opdi/data/icon/eyeim.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "ai/opdi/data/icon/back.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "ai/opdi/data/icon/eyeglas.svg";
         const c = document.createElement("input");
         c.setAttribute("class", "img-search"), c.type = "text", c.onkeyup = "myFunction()", c.placeholder = "Search Menu", c.title = "Search", c.setAttribute("id", "Input-Opdi"), i.appendChild(c);
         const uv = document.createElement("img");
@@ -47,7 +47,7 @@ class OpdiApp extends HTMLElement {
         lo.setAttribute("class", "img-searc"), lo.id = "img-sear"
         lo.alt = "search", lo.src = lp, i.appendChild(lo);
         const T = document.createElement("link");
-        T.setAttribute("rel", "stylesheet"), T.setAttribute("href", "style.css"), e.appendChild(T), e.appendChild(t)
+        T.setAttribute("rel", "stylesheet"), T.setAttribute("href", "ai/opdi/style.css"), e.appendChild(T), e.appendChild(t)
     }
 }
 customElements.define("opdi-app", OpdiApp);
