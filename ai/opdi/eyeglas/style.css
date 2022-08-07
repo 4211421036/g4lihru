@@ -780,7 +780,7 @@ opdi-logo {
     border-top-left-radius: 15px;
     overflow: hidden;
     width: 100%;
-    height: 85%;
+    height: max-content;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     display: -webkit-box;
     display: -webkit-flex;
