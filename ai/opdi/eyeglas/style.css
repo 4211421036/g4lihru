@@ -530,6 +530,8 @@ opdi-logo {
     position: relative;
     left: 50%;
     top: 5%;
+    width: max-content;
+    height: max-content;
 }
 
 .img-profile {
@@ -563,6 +565,8 @@ opdi-logo {
     align-items: center;
     align-content: center;
     align-self: center;
+    width: max-content;
+    height: max-content;
 }
 
 .butapp {
