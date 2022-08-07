@@ -5,6 +5,30 @@ cfg.setAttribute("src", "js/config.js"), document.body.appendChild(cfg);
 let main = document.createElement("script");
 main.setAttribute("src", "js/main.js"), document.body.appendChild(main);
 
+function eyetes() {
+    window.location.replace("/eyetes/");
+}
+function eyefac() {
+    window.location.replace("/eyefac/");
+}
+function eyedoc() {
+    window.location.replace("/eyedoc/");
+}
+function eyevit() {
+    window.location.replace("/eyevit/");
+}
+function eyeglas() {
+    window.location.replace("/eyeglas/");
+}
+function eyeque() {
+    window.location.replace("/eyeque/");
+}
+function eyehel() {
+    window.location.replace("/eyehel/");
+}
+function eyechal() {
+    window.location.replace("/eyechal/");
+}
 
 function myFunction() { var e, t, n, a; for (e = document.getElementById("Input-Opdi").value.toUpperCase(), t = document.getElementById("map-bar").getElementsByTagName("bar-side"), a = 0; a < t.length; a++)((n = t[a].getElementsByTagName("a")[0]).textContent || n.innerText).toUpperCase().indexOf(e) > -1 ? t[a].style.display = "" : t[a].style.display = "none" }
 class OpdiApp extends HTMLElement {
