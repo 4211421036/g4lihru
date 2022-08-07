@@ -82,6 +82,11 @@ opdi-back {
     background-color: transparent;
 }
 
+.circ {
+    position: absolute;
+    right: 0;
+}
+
 opdi-sub {
     position: relative;
     width: 100%;
@@ -581,7 +586,7 @@ opdi-logo {
 }
 
 .header {
-    background-color: #11101d;
+    background-color: #557DA1;
 }
 
 .app-menu-line {
