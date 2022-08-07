@@ -222,12 +222,6 @@ side-map>map-bar>a {
 }
 
 @media only screen and (max-device-width: 767px) {
-    #profile {
-        position: absolute;
-        right: 3%;
-        top: 15%;
-        height: 30px;
-    }
     #img-sear {
         position: absolute;
         right: 1rem;
@@ -262,7 +256,7 @@ side-map>map-bar>a {
     }
     #profile {
         position: absolute;
-        right: 20%;
+        right: 2%;
         top: 15%;
         height: 30px;
     }
