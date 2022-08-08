@@ -160,11 +160,7 @@
             $('#locker').text('Selanjutnya');
             setTimeout(function () {
                 slider.on('click tap', function (event) {
-                    if (!slider.hasClass('unlocked'))
-                        return;
-                    slider.removeClass('unlocked');
-                    $('#locker').text('Mulai');
-                    slider.off('click tap');
+                    slider.append('<opdi-link><a href="../pdf">Klik View</a></opdi-link>');
                 });
             }, 0);
         });
