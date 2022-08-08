@@ -81,9 +81,8 @@ opdi-back {
 
 opdi-text {
     position: absolute;
-    width: 70px;
+    width: max-content;
     height: 20px;
-    left: 45%;
     top: 25%;
     font-family: 'Myanmar Khyay';
     font-style: normal;
