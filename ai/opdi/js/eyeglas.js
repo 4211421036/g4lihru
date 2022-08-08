@@ -57,7 +57,7 @@ class OpdiApp extends HTMLElement {
         j.setAttribute('class', 'logo-text'), j.innerText = 'GLASSES', k.appendChild(j)
         const i = document.createElement("opdi-search");
         let s, q, lp, xi, v, mi;
-        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/eyeim.svg",mi = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/glasco.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/back.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/eyeglas.svg";
+        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/eyeim.svg",mi = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/glasco.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/back.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/eyeglas.svg";
         const c = document.createElement("input");
         c.setAttribute("class", "img-search"), c.type = "text", c.onkeyup = "myFunction()", c.placeholder = "Search Menu", c.title = "Search", c.setAttribute("id", "Input-Opdi"), i.appendChild(c);
         const um = document.createElement("img");
@@ -78,7 +78,7 @@ class OpdiApp extends HTMLElement {
         lo.setAttribute("class", "img-searc"), lo.id = "img-sear"
         lo.alt = "search", lo.src = lp, i.appendChild(lo);
         const T = document.createElement("link");
-        T.setAttribute("rel", "stylesheet"), T.setAttribute("href", "style.css"), e.appendChild(T), e.appendChild(t)
+        T.setAttribute("rel", "stylesheet"), T.setAttribute("href", "style.css"), e.appendChild(T), e.appendChild(t), e.appendChild(r)
     }
 }
 customElements.define("opdi-app", OpdiApp);
