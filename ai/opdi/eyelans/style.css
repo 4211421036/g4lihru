@@ -195,14 +195,17 @@ opdi-app {
 
 .scope-log {
     width: 180px;
+    display: flex;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
 .logo-gla {
     position: absolute;
+    width: max-content;
+    height: inherit;
     left: 1rem;
-    top: 25%;
+    top: -5%;
     display: flex;
 }
 
@@ -368,7 +371,7 @@ opdi-text {
     font-family: 'Myanmar Khyay';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 20px;
     color: #16558F;
 }
