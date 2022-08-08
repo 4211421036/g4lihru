@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -29,11 +30,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://g4lihru.me/ai/opdi/js/eyechal.js" defer></script>
+    <script src="https://g4lihru.me/ai/opdi/js/eyelans.js" defer></script>
 </head>
 
 <body>
     <noscript><strong>We're sorry but Optrimetri Digital Team doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
+    <opdi-button id="button-background">
+        <opdi-text class="slide-text">Swipe</opdi-text>
+        <opdi-slider id="slider">
+            <i id="locker" class="material-icons">Mulai</i>
+        </opdi-slider>
+    </opdi-button>
     <opdi-header class="header">
         <opdi-header-home class="home" tabindex="0">
             <img src="https://g4lihru.me/ai/opdi/data/icon/home.svg" class="all-home" title="home" alt="home" />
@@ -57,55 +64,55 @@
                     <div class="list-item">
                         <div class="grid">
                             <opdi-grid class="list-grid">
-                                <div class="img-op" onclick="hallo()">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyetes.svg" alt="eyetes">
+                                <div class="img-op" onclick="eyetes()">
+                                    <img class="s" src="../data/icon/eyetes.svg" alt="eyetes">
                                 </div>
                                 Eye Test
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyefac.svg" alt="eyefact">
+                                <div class="img-op" onclick="eyefac()">
+                                    <img class="s" src="../data/icon/eyefac.svg" alt="eyefact">
                                 </div>
                                 Eye Fact
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyedoc.svg" alt="eyedoc">
+                                <div class="img-op" onclick="eyedoc()">
+                                    <img class="s" src="../data/icon/eyedoc.svg" alt="eyedoc">
                                 </div>
                                 Quesioner
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyevit.svg" alt="eyevit">
+                                <div class="img-op" onclick="eyevit()">
+                                    <img class="s" src="../data/icon/eyevit.svg" alt="eyevit">
                                 </div>
                                 Vitamin
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyeglas.svg" alt="eyeglas">
+                                <div class="img-op" onclick="eyeglas()">
+                                    <img class="s" src="../data/icon/eyeglas.svg" alt="eyeglas">
                                 </div>
                                 Glasses
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyelans.svg" alt="eyelans">
+                                <div class="img-op" onclick="eyelans()">
+                                    <img class="s" src="../data/icon/eyelans.svg" alt="eyelans">
                                 </div>
                                 Contact Lens
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyeque.svg" alt="eyeque">
+                                <div class="img-op" onclick="eyeque()">
+                                    <img class="s" src="../data/icon/eyeque.svg" alt="eyeque">
                                 </div>
                                 Question
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op">
-                                    <img class="s" src="https://g4lihru.me/ai/opdi/data/icon/eyehel.svg" alt="eyehel">
+                                <div class="img-op" onclick="eyehel()">
+                                    <img class="s" src="../data/icon/eyehel.svg" alt="eyehel">
                                 </div>
                                 Helpdesk
                             </opdi-grid>
                             <opdi-grid class="list-grid">
-                                <div class="img-op"></div>
+                                <div class="img-op" onclick="eyechal()"></div>
                                 Challange
                             </opdi-grid>
                         </div>
@@ -124,6 +131,62 @@
             </div>
         </div>
     </div>
+    <script>
+        var initialMouse = 0;
+        var slideMovementTotal = 0;
+        var mouseIsDown = false;
+        var slider = $('#slider');
+
+        slider.on('mousedown touchstart', function (event) {
+            mouseIsDown = true;
+            slideMovementTotal = $('#button-background').width() - $(this).width() + 10;
+            initialMouse = event.clientX || event.originalEvent.touches[0].pageX;
+        });
+
+        $(document.body, '#slider').on('mouseup touchend', function (event) {
+            if (!mouseIsDown)
+                return;
+            mouseIsDown = false;
+            var currentMouse = event.clientX || event.changedTouches[0].pageX;
+            var relativeMouse = currentMouse - initialMouse;
+
+            if (relativeMouse < slideMovementTotal) {
+                $('.slide-text').fadeTo(300, 1);
+                slider.animate({
+                    left: "-10px"
+                }, 300);
+                return;
+            }
+            slider.addClass('unlocked');
+            $('#locker').text('Selanjutnya');
+            setTimeout(function () {
+                slider.on('click tap', function (event) {
+                    slider.append('<opdi-link><a href="../pdf">Klik</a></opdi-link>');
+                });
+            }, 0);
+        });
+
+        $(document.body).on('mousemove touchmove', function (event) {
+            if (!mouseIsDown)
+                return;
+
+            var currentMouse = event.clientX || event.originalEvent.touches[0].pageX;
+            var relativeMouse = currentMouse - initialMouse;
+            var slidePercent = 1 - (relativeMouse / slideMovementTotal);
+
+            $('.slide-text').fadeTo(0, slidePercent);
+
+            if (relativeMouse <= 0) {
+                slider.css({ 'left': '-10px' });
+                return;
+            }
+            if (relativeMouse >= slideMovementTotal + 10) {
+                slider.css({ 'left': slideMovementTotal + 'px' });
+                return;
+            }
+            slider.css({ 'left': relativeMouse - 10 });
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", (function() {
             document.getElementById("bottom");
