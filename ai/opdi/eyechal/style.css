@@ -1,3 +1,5 @@
+
+
 :root {
     --gutter: 30px;
 }
@@ -58,15 +60,6 @@ body {
     background-color: #B8E3FF;
 }
 
-opdi-sub-text {
-    position: relative;
-    height: 20px;
-    position: relative;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background: transparent;
-}
 
 opdi-back {
     position: absolute;
@@ -77,53 +70,107 @@ opdi-back {
     top: 19px;
 }
 
-.tr {
-    background: transparent;
-    background-color: transparent;
-}
-
 .circ {
     position: absolute;
     right: 0;
 }
 
-
-
-opdi-sub {
-    position: relative;
-    width: 100%;
-    display: flex;
-    left: 0;
-    top: 1rem;
-    height: 40px;
-    background: transparent;
+.s {
+   width: max-content;
+   height: max-content;
 }
 
-.sig {
+#button-background {
     position: absolute;
-    right: 0;
-    top: 2rem;
-    width: 39.31px;
-    height: 39.31px;
-}
-
-.sih {
-    position: relative;
-    width: 50px;
-    left: -5rem;
-    top: -5rem;
-}
-
-.btn-sub {
-    content: 'mulai';
-    position: relative;
-    width: 78px;
-    height: 40px;
-    border: none;
-    top: 0;
-    right: 2rem;
     background: linear-gradient(267.24deg, #0583D2 17.33%, #62B1B8 89.43%);
-    border-radius: 30px;
+    width: 50%;
+    height: 80px;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: white;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#slider {
+    transition: width 0.3s, border-radius 0.3s, height 0.3s;
+    position: absolute;
+    float: left;
+    background: linear-gradient(267.24deg, #0583D2 17.33%, #62B1B8 89.43%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scope-ico {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -25%);
+    height: max-content;
+    width: max-content;
+}
+.scope-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -25%);
+    height: max-content;
+    width: 50%;
+    font-family: 'Myanmar Khyay';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 15px;
+    text-align: center;
+    color: #184058;
+}
+
+#slider.unlocked {
+    transition: all 0.3s;
+    width: 100%;
+    left: 0 !important;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.material-icons {
+    color: black;
+    font-size: 20px;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.slide-text {
+    color: #3a3d55;
+    font-size: 24px;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
 }
 
 opdi-app {
@@ -133,84 +180,19 @@ opdi-app {
     top: 0;
 }
 
-opdi-bar {
-    position: fixed;
-    top: 2.5rem;
-    width: 95%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    left: 1rem;
-    padding-left: 0px;
-    text-align: center;
-    line-break: 25px;
-}
-
-opdi-bar>bar-side {
-    display: inline-block;
-    padding: 0px 28px;
-    float: left;
-    left: -10rem;
-    border-radius: 25px;
-    margin-left: 5px;
-    color: #16558F;
-    background-color: #61B0B7;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-opdi-bar>bar-side:hover {
-    background-color: white;
-}
-
-opdi-bar>bar-side>a {
-    color: #557DA1;
-    text-decoration: none;
-}
-
-side-map {
-    position: absolute;
-    top: 20%;
-    width: 95%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    left: 1rem;
-    padding-left: 0px;
-    text-align: center;
-}
-
-side-map>map-bar {
-    display: inline-block;
-    padding: 5px 20px;
-    float: left;
-    left: -10rem;
-    border-radius: 25px;
-    margin-left: 5px;
-    background-color: rgb(26, 81, 101);
-    color: antiquewhite;
-}
-
-side-map>map-bar:hover {
-    background-color: #2779BF;
-}
-
-side-map>map-bar>a {
-    color: white;
-    text-decoration: none;
-}
-
 .scope-log {
     width: 180px;
+    display: flex;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
 .logo-gla {
     position: absolute;
+    width: max-content;
+    height: inherit;
     left: 1rem;
-    top: 25%;
+    top: -5%;
     display: flex;
 }
 
@@ -266,52 +248,6 @@ side-map>map-bar>a {
         top: -10px;
         height: 35px;
     }
-    opdi-bar {
-        padding-bottom: 0;
-        position: fixed;
-        top: 30%;
-        width: 100%;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        left: 0;
-        padding-left: 0px;
-        text-align: center;
-    }
-    opdi-bar::-webkit-scrollbar {
-        display: none;
-    }
-    .bar-op:before,
-    .bar-op:after {
-        content: '';
-        height: 20%;
-    }
-    .bar-op>bar-side,
-    .items {
-        scroll-snap-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 60px;
-        height: max-content;
-        width: max-content;
-    }
-    .op-di {
-        top: 30%;
-    }
-    .bar-op {
-        display: grid;
-        grid-gap: calc(var(--gutter) / 2);
-        grid-template-columns: 10px;
-        grid-template-rows: minmax(15px, 1fr);
-        grid-auto-flow: column;
-        grid-auto-columns: calc(45% - var(--gutter) * 2);
-        overflow-x: scroll;
-        scroll-snap-type: x proximity;
-        margin-bottom: calc(-.25 * var(--gutter));
-    }
     .img-profile {
         position: absolute;
         right: 1rem;
@@ -352,32 +288,6 @@ side-map>map-bar>a {
     }
 }
 
-opdi-bar {
-    top: 20%;
-    padding-bottom: 0;
-    position: fixed;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    left: 0;
-    padding-left: -1px;
-    text-align: center;
-}
-
-opdi-bar>bar-side {
-    display: inline-block;
-    padding: 0px 28px;
-    float: left;
-    left: -10rem;
-    border-radius: 25px;
-    margin-left: 5px;
-    color: #16558F;
-    background-color: #61B0B7;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 .img-op {
     width: 100px;
     height: 100px;
@@ -415,35 +325,6 @@ opdi-bar>bar-side {
         display: flex;
         position: relative;
     }
-    side-map {
-        position: absolute;
-        top: 13.5%;
-        width: 95%;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        left: 1rem;
-        padding-left: 0px;
-        text-align: center;
-    }
-    side-map>map-bar {
-        display: inline-block;
-        padding: 5px 20px;
-        float: left;
-        left: -10rem;
-        border-radius: 25px;
-        margin-left: 5px;
-        background-color: rgb(26, 81, 101);
-        color: antiquewhite;
-    }
-    side-map>map-bar:hover {
-        background-color: #2779BF;
-    }
-    side-map>map-bar>a {
-        color: white;
-        text-decoration: none;
-    }
 }
 
 opdi-header {
@@ -470,30 +351,16 @@ opdi-side {
 
 opdi-text {
     position: absolute;
-    width: 70px;
+    width: max-content;
     height: 20px;
-    left: 45%;
     top: 25%;
+    left: 30%;
     font-family: 'Myanmar Khyay';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 20px;
     color: #16558F;
-}
-
-opdi-username {
-    position: absolute;
-    width: max-content;
-    height: 20px;
-    left: 30%;
-    top: calc(60% + 2rem + 100px - 104px);
-    font-family: 'Myanmar Khyay';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    color: #355069;
 }
 
 opdi-header-home {
@@ -508,35 +375,6 @@ opdi-header-info {
     width: 100%;
 }
 
-opdi-layer {
-    position: relative;
-    top: 2.5rem;
-    background-color: #a2cff5;
-    display: flex;
-    width: 100%;
-    height: 25vh;
-    border-radius: 25px;
-}
-
-opdi-news {
-    position: relative;
-    left: 2%;
-    top: 5%;
-    color: aliceblue;
-}
-
-#chat {
-    position: relative;
-}
-
-opdi-maps-title {
-    position: relative;
-    top: 1rem;
-    float: right;
-    margin: 0;
-    color: white;
-}
-
 opdi-logo {
     position: absolute;
     width: 139px;
@@ -545,13 +383,6 @@ opdi-logo {
     top: 19px;
     background: rgba(184, 227, 255, 0.5);
     border-radius: 20px;
-}
-
-#chat-time {
-    position: relative;
-    left: 3rem;
-    top: 0.5rem;
-    color: aliceblue;
 }
 
 .all-home {
