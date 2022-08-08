@@ -35,12 +35,6 @@
 
 <body>
     <noscript><strong>We're sorry but Optrimetri Digital Team doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
-    <opdi-button id="button-background">
-        <opdi-text class="slide-text">Swipe</opdi-text>
-        <opdi-slider id="slider">
-            <i id="locker" class="material-icons">Mulai</i>
-        </opdi-slider>
-    </opdi-button>
     <opdi-header class="header">
         <opdi-header-home class="home" tabindex="0">
             <img src="https://g4lihru.me/ai/opdi/data/icon/home.svg" class="all-home" title="home" alt="home" />
@@ -131,6 +125,12 @@
             </div>
         </div>
     </div>
+    <opdi-button id="button-background">
+        <opdi-text class="slide-text">Swipe</opdi-text>
+        <opdi-slider id="slider">
+            <i id="locker" class="material-icons">Mulai</i>
+        </opdi-slider>
+    </opdi-button>
     <script>
         var initialMouse = 0;
         var slideMovementTotal = 0;
@@ -161,7 +161,7 @@
             $('#locker').text('Selanjutnya');
             setTimeout(function () {
                 slider.on('click tap', function (event) {
-                    slider.append('<opdi-link><a href="../pdf">Klik</a></opdi-link>');
+                    slider.append('<opdi-link><a href="index.html">Klik</a></opdi-link>');
                 });
             }, 0);
         });
