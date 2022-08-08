@@ -79,20 +79,6 @@ opdi-back {
    height: max-content;
 }
 
-opdi-text {
-    position: absolute;
-    width: max-content;
-    height: 20px;
-    top: 25%;
-    left: 30%;
-    font-family: 'Myanmar Khyay';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-    color: #16558F;
-}
-
 #button-background {
     position: absolute;
     background: linear-gradient(267.24deg, #0583D2 17.33%, #62B1B8 89.43%);
@@ -364,14 +350,14 @@ opdi-side {
 
 opdi-text {
     position: absolute;
-    width: 70px;
+    width: max-content;
     height: 20px;
-    left: 45%;
     top: 25%;
+    left: 30%;
     font-family: 'Myanmar Khyay';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 20px;
     color: #16558F;
 }
