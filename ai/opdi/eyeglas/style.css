@@ -141,16 +141,16 @@ opdi-text {
     font-size: 20px;
     line-height: 15px;
     text-align: center;
-
-    color: #557DA2;
+    color: #184058;
 }
+
 #slider.unlocked {
     transition: all 0.3s;
     width: 100%;
     left: 0 !important;
     height: inherit;
     border-radius: inherit;
-    }
+}
 
 .material-icons {
     color: black;
