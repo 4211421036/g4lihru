@@ -8,6 +8,9 @@ main.setAttribute("src", "js/main.js"), document.body.appendChild(main);
 function eyetes() {
     window.location.replace("/ai/opdi/eyetes/");
 }
+function eyelans() {
+    window.location.replace("/ai/opdi/eyelans/");
+}
 function eyefac() {
     window.location.replace("/ai/opdi/eyefac/");
 }
