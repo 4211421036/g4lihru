@@ -69,7 +69,7 @@ opdi-back {
 }
 
 opdi-shop{
-    position: relative;
+    position: absolute;
     display: flex;
     width: 183.3px;
     height: 47px;
@@ -78,6 +78,22 @@ opdi-shop{
     transform: translate(-50%, 10%);
     background: linear-gradient(267.24deg, #0583D2 17.33%, #62B1B8 89.43%);
     border-radius: 30px;
+}
+
+#scope-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -25%);
+    height: max-content;
+    width: max-content;
+    font-family: 'Myanmar Khyay';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 15px;
+    text-align: center;
+    color: #184058;
 }
 
 .circ {
@@ -369,7 +385,7 @@ opdi-text {
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 20px;
+    line-height: normal;
     color: #16558F;
 }
 
