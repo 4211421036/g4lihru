@@ -84,16 +84,16 @@ opdi-shop{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -50%);
     height: max-content;
     width: max-content;
     font-family: 'Myanmar Khyay';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 15px;
+    line-height: normal;
     text-align: center;
-    color: #184058;
+    color: white;
 }
 
 .circ {
@@ -153,7 +153,7 @@ opdi-shop{
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 15px;
+    line-height: normal;
     text-align: center;
     color: #184058;
 }
@@ -380,11 +380,11 @@ opdi-text {
     width: max-content;
     height: 20px;
     top: 25%;
-    left: 30%;
+    left: 40%;
     font-family: 'Myanmar Khyay';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 20px;
     line-height: normal;
     color: #16558F;
 }
