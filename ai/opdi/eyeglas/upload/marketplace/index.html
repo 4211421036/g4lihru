@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "Jeeliz"><html><head>
+  <meta charset="utf-8">
+
+  <link rel="preload" href="images/LOGO_JEELIZ_BETA.png" as="image">
+  <link rel="preload" href="styles/bundle.css" as="style">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://jeeliz.com/sunglasses/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="google-site-verification" content="lBpR3g7e2nw29QfISmqVm35zr1oSjTDLT4S-RF23HKQ">
+
+  <title>Jeeliz Virtual Try-On</title>
+
+  <link rel="manifest" href="manifest.json">
+  <!-- Google Analytics script -->
+  <script async src="js/analytics.js"></script><script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-78159065-1', 'auto');
+  </script>
+
+  <!-- opengraph -->
+  <meta name="description" content="Try Ray-Ban sunglasses with your webcam in your browser, share your pictures with your friends and buy your favorite frames at the best price on Amazon.">
+  <!-- Facebook OGPs -->
+  <meta property="og:description" content="Try Ray-Ban sunglasses with your webcam in your browser, share your pictures with your friends and buy your favorite frames at the best price on Amazon.">
+  <meta property="og:title" content="JEELIZ Sunglasses virtual try-on">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.jeeliz.com/sunglasses/">
+  <meta property="og:image" content="images/jeeliz_image.jpg">
+  <meta property="og:site_name" content="JEELIZ.COM">
+
+  <!-- Twitter cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="JEELIZ.COM">
+  <meta name="twitter:title" content="JEELIZ Sunglasses virtual try-on">
+  <meta name="twitter:description" content="Try Ray-Ban sunglasses with your webcam in your browser, share your pictures with your friends and buy your favorite frames at the best price on Amazon.">
+  <meta name="twitter:image" content="images/jeeliz_image.jpg">  
+
+  <!-- Special fonts -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.fr,Intl.~locale.en"></script>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="images/logo32.png" type="image/x-icon">
+  <link href="images/logo32.png" rel="icon" type="image/png">
+
+  <!-- Slick carousel -->
+  <link rel="stylesheet" type="text/css" href="css/bundle.css">
+  
+  
+
+  <!-- Caman picture filters -->
+  <script src="js/caman.full.min.js"></script>
+  <!-- TextDecoder polyfill -->
+  <script src="js/encoding.js"></script>
+  <script src="js/vintage.min.js"></script>
+
+  <script src="js/jeefitNNC.js"></script>
+  <!-- <script src='scripts/dev/1_replaced.js'></script> -->
+
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="JEELIZ">
+  <link rel="apple-touch-icon" href="images/logo152.png">
+
+  <!-- Google Fonts: Raleway -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
+  
+  <!-- The icon for windows -->
+  <meta name="msapplication-TileImage" content="images/logoIcons/logo144.png">
+  <meta name="msapplication-TileColor" content="#01afec">
+
+  <!-- only very standard style for browser which suck -->
+  <script>
+    window.ISBROWSERNOTSUCKS = false;
+    function openBrowserSucks() {
+      setTimeout(function() {
+        const DOMwhiteMask = document.getElementById('whiteMask');
+        if (DOMwhiteMask) {
+          document.body.removeChild(DOMwhiteMask);
+        }    
+        const DOMbrowserSuck = document.getElementById('browserSucksModal');
+        if (!DOMbrowserSuck) {
+          return;
+        }
+        if (window.ISBROWSERNOTSUCKS) {
+          document.body.removeChild(DOMbrowserSuck);
+        } else {
+          DOMbrowserSuck.style.display = 'block';
+        }
+      }, 5000); // end setTimeout
+      const hPx = 1.25 * window.outerHeight;
+      const DOMwhiteMask = document.getElementById('whiteMask');
+      if (DOMwhiteMask) {
+        DOMwhiteMask.style.height = hPx.toString() + 'px';
+      }
+    }; //end openBrowserSucks()
+
+    // LOG GLOBAL ERROR TO GOOGLEANALYTICS
+    function logJSErrorsGA(errLabel, errorAction) {
+      // Need to transform to string otherwise not displayed in GA
+      const errorActionText = String(errorAction)
+      ga('send', 'event', errLabel, errorActionText)
+    };
+    
+    window.addEventListener('error', (e) => {
+      console.log('INFO in index.html - window.addEventListener("error") called')
+      const message = e.message
+      logJSErrorsGA('GLOBAL_ERROR', message)
+    })
+  </script>
+
+  <style type="text/css">
+    .browserSucksModal {
+      position: fixed;
+      z-index: 10;
+      width: 100%;
+      display: none;
+      font-family: Helvetica;
+      text-align: center;
+    }
+    .browserSucks-error {
+      text-align: center;
+      margin-top: 50px;
+      color: #444;
+    }
+    .browserSucks-img {
+      max-width: 100%;
+      width: 100px;
+      margin-left: auto;
+    }
+    .browserSucks-text1 {
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    .browserSucks-text2 {
+      margin-bottom: 10px;
+    }
+    .browserSucks-text3 {
+      margin-top: 40px;
+    }
+
+    .whiteMask {
+      background-color: white;
+      width: 100vw;
+      top: 0px;
+      left: 0px;
+      z-index: 8;
+      position: absolute;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whiteMaskText {
+      text-align: center;
+      font-family: Helvetica Neu, Arial, sans-serif;
+      font-size: 14pt;`
+      color: #444;
+    }
+
+    .SEOCloak {
+      font-family: Helvetica;
+      width: 80;
+      width: 60%;
+      /*border-top: 10px solid silver;*/
+      margin-left: auto;
+      margin-right: auto;
+      border-left: 1px solid blue;
+      border-right: 1px solid blue;
+      max-width: 960px;
+    }
+
+    .SEOCloak img {
+      max-width: 60%;
+    }
+
+    /*
+      Style for the whiteMask loader
+    */
+    .sk-folding-cube {
+      margin: 20px auto;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      -webkit-transform: rotateZ(45deg);
+              transform: rotateZ(45deg);
+    }
+
+    .sk-folding-cube .sk-cube {
+      float: left;
+      width: 50%;
+      height: 50%;
+      position: relative;
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1); 
+    }
+    .sk-folding-cube .sk-cube:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(12, 127, 194);
+      -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+              animation: sk-foldCubeAngle 2.4s infinite linear both;
+      -webkit-transform-origin: 100% 100%;
+          -ms-transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+    }
+    .sk-folding-cube .sk-cube2 {
+      -webkit-transform: scale(1.1) rotateZ(90deg);
+              transform: scale(1.1) rotateZ(90deg);
+    }
+    .sk-folding-cube .sk-cube3 {
+      -webkit-transform: scale(1.1) rotateZ(180deg);
+              transform: scale(1.1) rotateZ(180deg);
+    }
+    .sk-folding-cube .sk-cube4 {
+      -webkit-transform: scale(1.1) rotateZ(270deg);
+              transform: scale(1.1) rotateZ(270deg);
+    }
+    .sk-folding-cube .sk-cube2:before {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+    }
+    .sk-folding-cube .sk-cube3:before {
+      -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s; 
+    }
+    .sk-folding-cube .sk-cube4:before {
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s;
+    }
+    @-webkit-keyframes sk-foldCubeAngle {
+      0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+                transform: perspective(140px) rotateX(-180deg);
+        opacity: 0; 
+      } 25%, 75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+                transform: perspective(140px) rotateX(0deg);
+        opacity: 1; 
+      } 90%, 100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+                transform: perspective(140px) rotateY(180deg);
+        opacity: 0; 
+      } 
+    }
+
+    @keyframes sk-foldCubeAngle {
+      0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+                transform: perspective(140px) rotateX(-180deg);
+        opacity: 0; 
+      } 25%, 75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+                transform: perspective(140px) rotateX(0deg);
+        opacity: 1; 
+      } 90%, 100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+                transform: perspective(140px) rotateY(180deg);
+        opacity: 0; 
+      }
+    }
+  </style>
+</head>
+
+
+<body onload="openBrowserSucks();">
+  <div class="whiteMask" id="whiteMask" style="height: 750px;">
+    <div class="whiteMaskLoader">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+    <div class="whiteMaskText">Loading</div>  
+    </div>
+
+  </div>
+  <script>
+    const hPx = 1.25 * window.outerHeight;
+    const DOMwhiteMask = document.getElementById('whiteMask');
+    if (DOMwhiteMask){
+      DOMwhiteMask.style.height = hPx.toString() + 'px';
+    }
+  </script>
+
+  <div id="fb-root"></div>
+  <div id="appRoot" class="jeelizAppRoot"></div>
+
+  <div class="browserSucksModal" id="browserSucksModal">
+    <div class="browserSucks-error"><b>ERROR:</b> Your browser isn't compatible</div>
+    <img classname="browserSucks-img" src="fonts/robot.svg" alt="A cool robot">
+    <div class="browserSucks-text1">Unfortunately, your browser isn't compatible with our web application.</div>
+    <div class="browserSucks-text2">Please visit jeeliz.com with:</div>
+    <div classname="browserSucks-links">
+      <div classname="browserSucks-google"><a href="https://www.google.com/chrome" target="_blank" rel>Google Chrome (54 or +)</a></div>
+      <div classname="browserSucks-firefox"><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox (46 or +)</a></div>
+      <div classname="browserSucks-safari">Safari (9 or +)</div>
+    </div>
+    <div class="browserSucks-text3">Thank you for your understanding.</div>
+  </div>
+
+  <div id="SEOCloak" class="SEOCloak">
+    <!--SEOCLOAK-->
+  </div>
+
+  <script src="js/bundle.js" async></script>
+  <script src="js/ImageResizer.js" async></script>
+
+  <!-- Facebook SDK for Facebook Share button -->
+  <script src="js/facebook.js"></script>
+
+  <script src="js/appSettings.js"></script>
+
+  <script>    
+    // launch service worker - should be in the HTML file
+    /*const isLocal = ('hostname' in window.location)
+                && APPSETTINGS.disableServiceWorkersHosts.indexOf(window.location.hostname)!==-1;// (window.location.hostname==='127.0.0.1' || window.location.hostname==='localhost');
+    //isLocal = false;            
+    if (('serviceWorker' in navigator) && !isLocal) {
+      console.log('Will service worker register?');
+      navigator.serviceWorker.register('service-worker.js').then(function(reg){
+        console.log('INFO: service-worker registered');
+        try {
+          reg.update()
+        } catch (e) {
+          console.log('WARNING: cannot update service-worker')
+          logJSErrorsGA('SERVICEWORKER_UPDATE', e)
+        }
+      }).catch(function (err) {
+        console.log("WARNING: cannot register service worker - ", err);
+        logJSErrorsGA('SERVICEWORKER_REGISTRATION', err)
+      });
+    }//*/
+  </script>
+
+
+
+</body></html>
