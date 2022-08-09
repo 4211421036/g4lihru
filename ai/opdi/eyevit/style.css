@@ -1,4 +1,5 @@
 
+
 :root {
     --gutter: 30px;
 }
@@ -69,17 +70,6 @@ opdi-back {
     top: 19px;
 }
 
-opdi-shop{
-    position: relative;
-    display: flex;
-    width: 183.3px;
-    height: 47px;
-    left: 50%;
-    bottom: 10%;
-    transform: translate(-50%, 10%);
-    background: linear-gradient(267.24deg, #0583D2 17.33%, #62B1B8 89.43%);
-    border-radius: 30px;
-}
 .circ {
     position: absolute;
     right: 0;
@@ -126,15 +116,22 @@ opdi-shop{
     height: max-content;
     width: max-content;
 }
-
-#scope-text {
+.scope-text {
     position: absolute;
-    width: max-content;
-    height: max-content;
     left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    top: 50%;
+    transform: translate(-50%, -25%);
+    height: max-content;
+    width: 50%;
+    font-family: 'Myanmar Khyay';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 15px;
+    text-align: center;
+    color: #184058;
 }
+
 #slider.unlocked {
     transition: all 0.3s;
     width: 100%;
