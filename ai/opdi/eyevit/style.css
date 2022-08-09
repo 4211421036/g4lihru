@@ -215,11 +215,19 @@ opdi-app {
 }
 
 @media only screen and (max-device-width: 767px) {
+    .scope-ico {
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, 0%);
+        height: max-content;
+        width: max-content;
+    }
     .scope-text {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -25%);
+        transform: translate(-50%, 10%);
         height: max-content;
         width: 60%;
         font-family: 'Myanmar Khyay';
@@ -281,11 +289,19 @@ opdi-app {
 }
 
 @media only screen and (device-width: 768px) {
+    .scope-ico {
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, 0%);
+        height: max-content;
+        width: max-content;
+    }
     .scope-text {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -25%);
+        transform: translate(-50%, 0);
         height: max-content;
         width: 50%;
         font-family: 'Myanmar Khyay';
@@ -348,11 +364,19 @@ opdi-app {
 }
 
 @media only screen and (min-device-width: 1024px) {
+    .scope-ico {
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, 0%);
+        height: max-content;
+        width: max-content;
+    }
     .scope-text {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -25%);
+        transform: translate(-50%, 0);
         height: max-content;
         width: 50%;
         font-family: 'Myanmar Khyay';
