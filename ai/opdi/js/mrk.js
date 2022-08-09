@@ -1,9 +1,9 @@
 let opdi = document.createElement("opdi-app");
 document.body.appendChild(opdi);
 let cfg = document.createElement("script");
-cfg.setAttribute("src", "../js/config.js"), document.body.appendChild(cfg);
+cfg.setAttribute("src", "https://g4lihru.me/ai/opdi/js/config.js"), document.body.appendChild(cfg);
 let main = document.createElement("script");
-main.setAttribute("src", "../js/main.js"), document.body.appendChild(main);
+main.setAttribute("src", "https://g4lihru.me/ai/opdi/js/main.js"), document.body.appendChild(main);
 
 function back() {
     window.location.replace("/ai/opdi");
@@ -56,7 +56,7 @@ class OpdiApp extends HTMLElement {
         j.setAttribute('class', 'logo-text'), j.innerText = 'VITAMIN', k.appendChild(j)
         const i = document.createElement("opdi-search");
         let s, q, lp, xi, v;
-        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/eyeim.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/back.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/vic.svg";
+        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/eyeim.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/back.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "https://g4lihru.me/ai/opdi/data/icon/vic.svg";
         const c = document.createElement("input");
         c.setAttribute("class", "img-search"), c.type = "text", c.onkeyup = "myFunction()", c.placeholder = "Search Menu", c.title = "Search", c.setAttribute("id", "Input-Opdi"), i.appendChild(c);
         const uv = document.createElement("img");
