@@ -1,9 +1,9 @@
 let opdi = document.createElement("opdi-app");
 document.body.appendChild(opdi);
 let cfg = document.createElement("script");
-cfg.setAttribute("src", "js/config.js"), document.body.appendChild(cfg);
+cfg.setAttribute("src", "../js/config.js"), document.body.appendChild(cfg);
 let main = document.createElement("script");
-main.setAttribute("src", "js/main.js"), document.body.appendChild(main);
+main.setAttribute("src", "../js/main.js"), document.body.appendChild(main);
 
 function back() {
     window.location.replace("/ai/opdi");
