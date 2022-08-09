@@ -66,7 +66,7 @@ class OpdiApp extends HTMLElement {
         j.setAttribute('class', 'logo-text'), j.innerText = 'VITAMIN', k.appendChild(j)
         const i = document.createElement("opdi-search");
         let s, q, lp, xi, v, mi;
-        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "eyeim.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "back.svg", mi = this.hasAttribute("img") ? this.getAttribute("img") : "vico.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "vic.svg";
+        i.setAttribute("class", "search"), t.appendChild(i), s = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/profile.svg", lp = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/search.svg", xi = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/eyeim.svg", v = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/back.svg", mi = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/vico.svg", q = this.hasAttribute("img") ? this.getAttribute("img") : "../data/icon/vic.svg";
         const c = document.createElement("input");
         c.setAttribute("class", "img-search"), c.type = "text", c.onkeyup = "myFunction()", c.placeholder = "Search Menu", c.title = "Search", c.setAttribute("id", "Input-Opdi"), i.appendChild(c);
         const um = document.createElement("img");
