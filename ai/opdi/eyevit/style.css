@@ -142,21 +142,6 @@ opdi-shop{
     height: max-content;
     width: max-content;
 }
-.scope-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -25%);
-    height: max-content;
-    width: 50%;
-    font-family: 'Myanmar Khyay';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: normal;
-    text-align: center;
-    color: #184058;
-}
 
 #slider.unlocked {
     transition: all 0.3s;
@@ -230,6 +215,21 @@ opdi-app {
 }
 
 @media only screen and (max-device-width: 767px) {
+    .scope-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -25%);
+        height: max-content;
+        width: 60%;
+        font-family: 'Myanmar Khyay';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: normal;
+        text-align: center;
+        color: #184058;
+    }
     #img-sear {
         position: absolute;
         right: 1rem;
@@ -281,6 +281,22 @@ opdi-app {
 }
 
 @media only screen and (device-width: 768px) {
+    .scope-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -25%);
+        height: max-content;
+        width: 50%;
+        font-family: 'Myanmar Khyay';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: normal;
+        text-align: center;
+        color: #184058;
+    }
+
     #profile {
         position: absolute;
         right: 11%;
@@ -332,6 +348,22 @@ opdi-app {
 }
 
 @media only screen and (min-device-width: 1024px) {
+    .scope-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -25%);
+        height: max-content;
+        width: 50%;
+        font-family: 'Myanmar Khyay';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: normal;
+        text-align: center;
+        color: #184058;
+    }
+
     .img-searc {
         display: none;
     }
