@@ -301,7 +301,7 @@ opdi-app {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 55%);
         height: max-content;
         width: 50%;
         font-family: 'Myanmar Khyay';
