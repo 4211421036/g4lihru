@@ -1,9 +1,9 @@
 {
-    "short_name": "Optometri Digital",
-    "name": "Optometri Digital",
+    "short_name": "RETIKA",
+    "name": "RETIKA",
     "description": "Alex, Jarvis, Galih",
     "lang": "id-ID",
-    "publisher": "Optometri Digital",
+    "publisher": "Galvix",
     "categories": ["Research", "education", "organization"],
     "icons": [{
             "src": "https://g4lihru.me/ai/siic/data/siic.logos.48.png",
@@ -92,8 +92,8 @@
           {
             "short_name": "File OPDI App",
             "name": "Research Files",
-            "url": "pdf/",
-            "description": "OPDI (Optometri Digital)",
+            "url": "pdf/BMC_Galvix_Alex%20Zaro%20Daeli.pdf",
+            "description": "RETIKA",
             "icons": [
                 {
                     "src": "https://g4lihru.me/ai/siic/logo/recis.4922636343426925150.research.96x96.png",
