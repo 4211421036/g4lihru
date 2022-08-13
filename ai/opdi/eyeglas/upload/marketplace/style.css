@@ -1027,10 +1027,6 @@ opdi-search {
 }
 
 .list-grid {
-    width: 150px;
-    height: 152px;
-    left: 25px;
-    top: 99px;
     background: #D9D9D9;
     border-radius: 50px;
     color: black;
