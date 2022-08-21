@@ -28,10 +28,27 @@
     <link rel="apple-touch-icon" href="https://g4lihru.me/987654567.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/opdi.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
     <script src="smooth-scrollbar.js"></script>
     <script src="overscroll.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(this).scrollTop(0);
+
+            $("#hamburger").click(function() {
+                navSlider();
+            });
+        });
+
+        function navSlider() {
+            $("#menu-mobile").animate({
+                width: "toggle",
+                direction: "left"
+            });
+        }
+    </script>
 </head>
-<body>    
+<body id="bodyscroll">    
     <noscript><strong>We're sorry but Optrimetri Digital Team doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
     <opdi-layer class="tr"></opdi-layer>
     <opdi-layer class="tr">
