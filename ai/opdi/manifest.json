@@ -28,11 +28,6 @@
         {
             "src": "data/icon/retika.logos.192x192.webp",
             "sizes": "192x192",
-            "type": "image/webp"
-        },
-        {
-            "src": "data/icon/retika.logos.512x512.webp",
-            "sizes": "512x512",
             "type": "image/webp",
             "purpose": "maskable"
         }
