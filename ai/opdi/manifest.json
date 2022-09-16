@@ -1,39 +1,39 @@
 {
     "short_name": "RETIKA",
     "name": "RETIKA",
-    "description": "Alex, Jarvis, Galih",
+    "description": "Diciptakan oleh hasil kolaborasi Alex (UI), Jarvis (UTY), Galih (UNNES)",
     "lang": "id-ID",
     "publisher": "Galvix",
     "categories": ["Research", "education", "organization"],
     "icons": [{
-            "src": "https://g4lihru.me/ai/siic/data/siic.logos.48.png",
+            "src": "data/icon/retika.logos.48x48.webp",
             "sizes": "48x48",
-            "type": "image/png"
+            "type": "image/webp"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/data/siic.logos.72.png",
+            "src": "data/icon/retika.logos.72x72.webp",
             "sizes": "72x72",
-            "type": "image/png"
+            "type": "image/webp"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/data/siic.logos.96.png",
+            "src": "data/icon/retika.logos.96x96.webp",
             "sizes": "96x96",
-            "type": "image/png"
+            "type": "image/webp"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/data/siic.logos.144.png",
+            "src": "data/icon/retika.logos.144x144.webp",
             "sizes": "144x144",
-            "type": "image/png"
+            "type": "image/webp"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/data/siic.logos.192.png",
+            "src": "data/icon/retika.logos.192x192.webp",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/webp"
         },
         {
-            "src": "https://g4lihru.me/ai/siic/data/siic.logos.512.png",
+            "src": "data/icon/retika.logos.512x512.webp",
             "sizes": "512x512",
-            "type": "image/png",
+            "type": "image/webp",
             "purpose": "maskable"
         }
     ],
