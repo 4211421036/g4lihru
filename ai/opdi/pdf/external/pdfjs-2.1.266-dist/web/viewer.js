@@ -5132,7 +5132,7 @@ var defaultOptions = {
     kind: OptionKind.VIEWER
   },
   defaultUrl: {
-    value: 'compressed.tracemonkey-pldi-09.pdf',
+    value: 'Retika_Galvix_Alex Zaro Daeli.pdf',
     kind: OptionKind.VIEWER
   },
   defaultZoomValue: {
