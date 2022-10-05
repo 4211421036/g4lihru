@@ -1,8 +1,3 @@
-Image
-
-Screenshot (857).png
-Image
-Private comments
 #GALIH RIDHO UTOMO
 #4211421036
 #FISIKA MURNI
