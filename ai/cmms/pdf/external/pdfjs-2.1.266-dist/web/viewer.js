@@ -5132,7 +5132,7 @@ var defaultOptions = {
     kind: OptionKind.VIEWER
   },
   defaultUrl: {
-    value: 'compressed.tracemonkey-pldi-09.pdf',
+    value: 'GALIH RIDHO UTOMO_CMMS (Construction Material Management Systems) Sebagai Solusi dalam Efisiensi Perbaikan pada Lubang Jalan Berbasis ERM di Kota Tangerang_SELEKSI MAPRES FISIKA UNNES 2022.pdf',
     kind: OptionKind.VIEWER
   },
   defaultZoomValue: {
