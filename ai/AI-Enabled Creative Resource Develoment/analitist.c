@@ -2,7 +2,8 @@
     Devolement by
     @author GALIH RIDHO UTOMO
     @author Dea Nisah
-    @copyright KOSMIKA 2023
+    @author Nining Hardiyanti
+    @copyright KOSMIKA 2023 and UKMP 2023
     @protectedsection me.g4lihru.protect.shell
     @version 1.0
 */
