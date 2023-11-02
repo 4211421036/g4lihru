@@ -4,6 +4,22 @@
 ![CardioNet Logo](https://github.com/4211421036/g4lihru/blob/main/Pemprogaman/Pemprogaman%20Sistem%20Instrumentasi/Logo-Transparan-Warna-1-225x300.png)
 ---
 
+**Disusun Oleh:**
+
+| No. | Nama                     | NIM        |
+|---|------------------------|------------|
+| 1 | Delvira Ambarwati     | 4211421002 |
+| 2 | Riswari Setyo Nugraheni | 4211421035 |
+| 3 | Galih Ridho Utomo      | 4211421036 |
+
+---
+
+**Dosen Pengampu:**
+
+Teguh Darsono, M.Si., Ph.D.
+
+---
+
 ## 1.1 Latar Belakang
 
 Detak jantung merupakan salah satu faktor penting yang digunakan oleh dokter sebagai penentu bentuk kesehatan fisik dan mental seseorang. Detak jantung yang tidak normal, diperlukan upaya lebih untuk mencegah hal-hal yang tidak diinginkan. Penyakit jantung dikenal sebagai salah satu penyebab kematian tertinggi di dunia (Ikhsani, R. B., 2022). Karena otot jantung sendiri bergerak secara tak sadar dan refleks, jumlah denyut jantung yang terjadi tidak dapat dihitung sendiri oleh manusia. Denyut atau detak jantung merupakan indikasi penting di dalam bidang kesehatan yang berguna sebagai bahan evaluasi yang relatif efektif dan cepat untuk mengetahui kondisi dan kesehatan pada tubuh seseorang.
