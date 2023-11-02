@@ -1,7 +1,7 @@
 # DESAIN CARDIONET (CARDIOVASCULAR NETWORK)
 ## INTEGRASI SENSOR DETAK JANTUNG DAN OKSIGEN GUNA PENCEGAHAN SUDDEN CARDIAC ARREST
 
-![CardioNet Logo](https://github.com/4211421036/g4lihru/edit/main/Pemprogaman/Pemprogaman%20Sistem%20Instrumentasi/Pemprogaman/Pemprogaman Sistem Instrumentasi/Logo-Transparan-Warna-1-225x300.png) <!-- Tambahkan gambar logo sesuai kebutuhan -->
+![CardioNet Logo]([https://github.com/4211421036/g4lihru/edit/main/Pemprogaman/Pemprogaman%20Sistem%20Instrumentasi/Pemprogaman/Pemprogaman Sistem Instrumentasi/Logo-Transparan-Warna-1-225x300.png](https://github.com/4211421036/g4lihru/blob/main/Pemprogaman/Pemprogaman%20Sistem%20Instrumentasi/Logo-Transparan-Warna-1-225x300.png)) <!-- Tambahkan gambar logo sesuai kebutuhan -->
 
 ---
 
