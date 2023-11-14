@@ -32,15 +32,32 @@ Dr. Sunarno, S.Si., M.Si.
 
 # Rancangan Pembuatan Smart Home Berbasis Arduino
 **METODE RISET**
---
-	Waktu dan Tempat Pelaksanaan Riset
---
+---
+Waktu dan Tempat Pelaksanaan Riset
+---
 Riset ini akan dilaksakan selama perkuliahan yang telah disepakati di Lab Fisika, Jurusan Fisika, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Negeri Semarang.
---
- Bahan dan Alat Riset
---
-	Bahan Riset
-Bahan yang digunakan dalam riset ini adalah arkilik (tebal 3mm) dengan5 ukuran 1×1 meter, ATK, timah dan minyak flux.
-	Alat Riset
-Alat yang digunakan pada riset ini yaitu solder, penggaris ukuran 30 cm, cutter, gunting, ESP32, sensor detak jantung, sensor oksigen, breadboard, kabel jumper, adaptor 12V, 3A, tipe jaring.
+---
+Bahan dan Alat Riset
+---
+Bahan Riset
+Bahan yang digunakan dalam riset ini adalah Aplikasi Arduino IDE, Aplikasi Visual Studio Code, arkilik (tebal 3mm) dengan5 ukuran 1×1 meter, ATK.
+Alat Riset
+Alat yang digunakan pada riset ini yaitu Arduino Uno, Relay, Kabel Jumper, Kabel Tipe Jaring 5V 1A
 
+Pembuatan Rancangan
+
+_Instalisasi Module Python_
+
+install module mediapipe
+
+  	pip install mediapipe
+
+install module cv2
+
+	pip install cv2
+
+install module pyfirmata
+
+ 	pip install pyfirmata
+
+Selanjutnya di upload ke board Arduino
