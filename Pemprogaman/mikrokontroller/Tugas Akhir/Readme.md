@@ -1,4 +1,10 @@
 ## Progjek Microkontroller
+![CardioNet Logo](https://github.com/4211421036/g4lihru/blob/main/Pemprogaman/Pemprogaman%20Sistem%20Instrumentasi/Logo-Transparan-Warna-1-225x300.png)
+---
+
+**Disusun Oleh:**
+
+## Identitas Anggota Kelompok
 ---
 | Nama | NIM |
 |------|------|
