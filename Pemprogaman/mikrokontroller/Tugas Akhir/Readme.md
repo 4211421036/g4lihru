@@ -3,21 +3,13 @@
 | Nama | NIM |
 |------|------|
 | DELVIRA AMBARWATI | 4211421002 |
-|------|------|
 | DIANICA MAULINA | 4211421004 |
-|------|------|
 | SHOFINA MUMTAZ MAHARDHIKA | 4211421008 |
-|------|------|
 | PRADIPTA KUSUMA YUDHA	| 4211421017|
-|------|------|
 | Ali Muntoha | 4211421022 |
-|------|------|
 | GALIH RIDHO UTOMO | 4211421036 |
-|------|------|
 | VINAYA MIFTA ALIFAH | 4211421041 |
-|------|------|
 | LAMTIAR PUTRI ANISA SITOHANG | 4211421042 |
-|------|------|
 
 ---
 
